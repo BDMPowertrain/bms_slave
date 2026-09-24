@@ -1,0 +1,13 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "remote_bq79616paprq1") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_bq79616paprq1.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_ucz1h470mcl6gs") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_ucz1h470mcl6gs.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_cga3e3x7r1h474k080ae") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_cga3e3x7r1h474k080ae.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_rcs060359r0fkea") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_rcs060359r0fkea.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_crcw251210r0fkeg") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_crcw251210r0fkeg.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_zxtn4004kqtc") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_zxtn4004kqtc.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_crcw1210150rfkea") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_crcw1210150rfkea.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_c0805x224k1racauto") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_c0805x224k1racauto.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_cl05a105ko5nnnc") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_cl05a105ko5nnnc.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_cl31b475kbhnfne") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_cl31b475kbhnfne.pretty/") (options "") (descr "Remote download"))
+)

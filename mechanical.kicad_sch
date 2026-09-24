@@ -1,0 +1,34 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "2cab4869-4ca2-4aa4-b492-483b2b02a101")
+	(paper "A4")
+	(title_block
+		(title "Mechanical")
+	)
+	(lib_symbols)
+	(text_box "[${#}] ${TITLE}"
+		(exclude_from_sim no)
+		(at 80.01 15.24 0)
+		(size 130.81 12.7)
+		(margins 5.9999 5.9999 5.9999 5.9999)
+		(stroke
+			(width -0.0001)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(face "Times New Roman")
+				(size 8 8)
+				(thickness 1.2)
+				(bold yes)
+				(color 162 22 34 1)
+			)
+		)
+		(uuid "fbb0aa7e-044a-4b72-aa91-4fd85c5c28ff")
+	)
+)

@@ -1729,55 +1729,6 @@
 		(uuid "dee96870-b977-4804-a805-318fe8afe5f2")
 	)
 	(sheet
-		(at 340.36 313.69)
-		(size 35.56 5.08)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "5fb05893-0da3-4f58-a52b-cb6d6f4cb80b")
-		(property "Sheetname" "Power - Sequencing"
-			(at 340.36 312.6609 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(face "Times New Roman")
-					(size 1.905 1.905)
-					(bold yes)
-					(color 0 0 0 1)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Power - Sequencing.kicad_sch"
-			(at 341.63 314.96 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(face "Arial")
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
-					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 340.36 302.26)
 		(size 35.56 5.08)
 		(exclude_from_sim no)
@@ -1821,7 +1772,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
-					(page "7")
+					(page "11")
 				)
 			)
 		)
