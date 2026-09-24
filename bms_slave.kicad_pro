@@ -529,7 +529,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "BOARD_TEMPLATE.kicad_pro",
+    "filename": "bms_slave.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -912,11 +912,11 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "BOARD_TEMPLATE.net",
+      "netlist": "bms_slave.net",
       "plot": "Manufacturing/Fabrication/Gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "STEP_Blender/BOARD_TEMPLATE.step",
+      "step": "STEP_Blender/bms_slave.step",
       "svg": "",
       "vrml": ""
     },
@@ -928,7 +928,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "Manufacturing/Assembly/BOARD_TEMPLATE-bom-k8.csv",
+    "bom_export_filename": "Manufacturing/Assembly/bms_slave-bom-k8.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -1060,8 +1060,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "BOARD_TEMPLATE.kicad_sch",
-        "name": "BOARD_TEMPLATE",
+        "filename": "bms_slave.kicad_sch",
+        "name": "bms_slave",
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
@@ -1071,7 +1071,7 @@
   "sheets": [
     [
       "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c",
-      "BOARD_TEMPLATE"
+      "bms_slave"
     ],
     [
       "82da9dbf-ba38-4d08-ba35-a220fa2963b1",
@@ -1122,7 +1122,7 @@
     "RELEASE_TITLE_1.0.2": "",
     "RELEASE_TITLE_1.1.0": "",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
-    "REVISION": "",
+    "REVISION": "0.1.0",
     "SHEET_NAME_1": "Cover Page",
     "SHEET_NAME_10": "......................................",
     "SHEET_NAME_11": "......................................",

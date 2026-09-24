@@ -506,15 +506,15 @@ definitions:
 
   # Metadata — MEMBER: set once by configure.py, never by hand =================
 
-  PROJECT_NAME: Board Name
-  BOARD_NAME: BOARD_NAME
-  DESCRIPTION: One-line description of what this board does.
+  PROJECT_NAME: BMS Slave
+  BOARD_NAME: BMS_SLAVE
+  DESCRIPTION: Slave BMS board that balances 8s cells, and reads temp for enepaq based temp sensors.
 
   COMPANY: Blue Devil Motor Sports
-  DESIGNER: Author
+  DESIGNER: Aidan Brzezinski
 
   LOGO: 'Logos/bdm_logo.png'
-  GIT_URL: 'https://github.com/BDMPowertrain/PLACEHOLDER'
+  GIT_URL: 'https://github.com/BDMPowertrain/BMS_Slave'
 
   # Preflight ==================================================================
 

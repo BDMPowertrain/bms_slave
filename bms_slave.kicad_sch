@@ -1770,7 +1770,7 @@
 			)
 		)
 		(instances
-			(project "BOARD_TEMPLATE"
+			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
 					(page "6")
 				)
@@ -1819,7 +1819,7 @@
 			)
 		)
 		(instances
-			(project "BOARD_TEMPLATE"
+			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
 					(page "7")
 				)
@@ -1868,7 +1868,7 @@
 			)
 		)
 		(instances
-			(project "BOARD_TEMPLATE"
+			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
 					(page "2")
 				)
@@ -1917,7 +1917,7 @@
 			)
 		)
 		(instances
-			(project "BOARD_TEMPLATE"
+			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
 					(page "3")
 				)
