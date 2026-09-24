@@ -1,0 +1,33 @@
+# KiBot output for TXT Report (e.g. Fabrication/Assembly notes)
+# https://kibot.readthedocs.io/en/latest/configuration/outputs/report.html
+
+kibot:
+  version: 1
+
+outputs:
+  - name: @NAME@
+    comment: '@COMMENT@'
+    type: report
+    category: '@DIR@'
+    dir: '@DIR@'
+    output_id: @OUTPUT_ID@
+    options:
+      output: '%f-%I%v.txt'
+      template: @TEMPLATE@
+      exclude_filter: '_mechanical'
+      mm_digits: 3
+      display_trailing_zeros: True
+      # Same reasoning as kibot_out_md_report.yaml: this template only uses
+      # PCB stat variables (${bb_w_mm}, ${drill_pth_real_mm}, etc.), never a
+      # collected image, so `collect_images: auto`'s default of running the
+      # entire pdf_fabrication/pcb_print chain (and its drill-table
+      # dependency) just to write a notes .txt file is pure waste — and
+      # breaks on any board with no drillable feature yet.
+      collect_images: 'no'
+...
+definitions:
+  NAME: txt_fabrication_notes
+  COMMENT: Report
+  DIR: Manufacturing
+  OUTPUT_ID: _notes
+  TEMPLATE: kibot_ressources/template/fabrication_notes.txt

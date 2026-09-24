@@ -1,0 +1,24 @@
+# KiCad text formats — diffable as text (also what Prism's semantic diffing
+# reads). merge=union stops git from refusing to merge two changed
+# schematics, but a unioned S-expression file is still nonsense to open in
+# KiCad — this exists to make a conflict an obvious mess someone stops and
+# asks about, not to make schematic merges actually work. The real
+# protection is the one-owner-at-a-time convention in README.md.
+*.kicad_sch text merge=union
+*.kicad_pcb text
+*.kicad_pro text
+*.kicad_wks text
+*.kicad_dru text
+
+# Treat as generated/vendored: not shown in language stats, collapsed in
+# diffs on GitHub's UI.
+Logos/* -diff
+*.step -diff -text
+*.png -diff -text
+
+# Force LF regardless of a Windows checkout's core.autocrlf setting. A CRLF
+# shebang line (#!/bin/bash\r) fails to find the interpreter inside a Linux
+# Docker container or CI runner — this bit us running kibot_launch.sh locally
+# after checking it out on Windows.
+*.sh text eol=lf
+*.py text eol=lf

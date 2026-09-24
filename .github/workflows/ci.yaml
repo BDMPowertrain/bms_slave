@@ -1,0 +1,394 @@
+name: CI
+
+# Rebuilt directly from upstream nguyen-v/KDT_Hierarchical_KiBot's own
+# ci.yaml, applying: (1) KiCad 10 only, no more 8/9/10 branching — every "if
+# kicad_version == X" step collapses to one; (2) the Node.js 20 deprecation
+# action-version bumps from upstream PR #15, EXCEPT git-auto-commit-action,
+# deliberately kept at the same v5 upstream uses — see the note on "Update
+# Outputs" below. Everything else, including the separate notes/README
+# pre-pass before the main group, matches upstream's structure exactly:
+# several rounds of "simplifying" this ourselves each introduced a new bug
+# upstream's actual working version doesn't have.
+#
+# Note: a local test run failed on "Missing ... drill_table.csv" — this
+# turned out to be the test board genuinely having zero vias/holes at the
+# time (nothing to drill), not a workflow bug. Confirm the board you're
+# testing against actually has a drillable feature before treating that
+# error as a pipeline problem.
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+' # Match semantic versioning tags
+    branches:
+      - main
+      - dev
+    paths-ignore:
+      - '*.md'
+
+env:
+  kibot_config: kibot_yaml/kibot_main.yaml
+  # Used variant. This is the ONLY thing configure.py --variant changes in
+  # this file. We assume:
+  # DRAFT: only schematic in progress, will only generate schematic PDF, netlist and BoM
+  # PRELIMINARY: will generate both schematic and PCB documents, but no ERC/DRC
+  # CHECKED: will generate both schematic and PCB documents, with ERC/DRC
+  # RELEASED: similar to CHECKED, automatically selected when pushing a tag to main
+  kibot_variant: DRAFT
+
+  kibot_log: kibot_run.log
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    needs: generate_outputs
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
+
+      # Checkout above lands us in detached HEAD at the tag commit. By the
+      # time this job runs, `main` has always moved past that commit —
+      # generate_outputs (this job's `needs:`) already pushed the generated
+      # outputs to main first. `git pull origin main` here used to fail hard
+      # ("divergent branches, need to specify how to reconcile") because
+      # there's no tracking branch to pull *into* from a detached HEAD, so
+      # git can't auto-pick fast-forward/merge/rebase. We don't want to
+      # merge anything here anyway — we just want the release job's working
+      # directory to be exactly what's on main, so it can find the files
+      # `args:` below lists. Point main at origin/main directly instead.
+      - name: Pull latest changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git fetch origin main
+          git checkout -B main origin/main
+
+      - name: Release
+        uses: docker://antonyurchenko/git-release:v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: |
+            Schematic/*.pdf
+            Manufacturing/Assembly/*
+            Manufacturing/Fabrication/*.pdf
+            Manufacturing/Fabrication/*.zip
+            Manufacturing/Fabrication/*.txt
+            3D/*.step
+            Testing/Testpoints/*.csv
+
+  generate_outputs:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'Merge pull request') || github.ref_type == 'tag'"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # Deliberate deviation from upstream KDT, which doesn't do this: delete
+      # every previously-generated output before regenerating. Without it, a
+      # file that stops being relevant (e.g. a drill table for a via that no
+      # longer exists on the board) just sits there forever, since nothing
+      # else would ever remove it, and it would keep getting silently
+      # re-committed as if it were still current.
+      - name: Clean previous generated outputs
+        run: |
+          rm -rf Manufacturing Schematic 3D Testing Reports
+          # Images/ keeps a tracked .gitkeep so the empty dir survives in git
+          # between runs (KiBot never recreates it) — clean only the PNGs
+          # KiBot generates into it, not the directory itself.
+          rm -f Images/*.png
+
+      # Run these changelog update steps only on tag pushes. This step must
+      # NOT switch the working tree onto main (unlike the release job's
+      # "Pull latest changes", which genuinely wants to) — we're still
+      # checked out at the tag here, and the next two steps need THIS
+      # checkout's CHANGELOG.md to exist so extract-release-notes can read
+      # it. Confirmed the hard way: an earlier version of this step did
+      # `git checkout -B main origin/main`, which replaced the whole working
+      # tree with main's content — main has no CHANGELOG.md at all — so
+      # extract-release-notes failed with ENOENT immediately after.
+      # All we actually need here is for `origin/main` to be a known ref,
+      # because `stefanzweifel/git-auto-commit-action`'s `branch: main`
+      # input (used below in "Commit updated CHANGELOG") does its own
+      # `git checkout main --` internally before committing — confirmed by
+      # reading its entrypoint.sh directly — and that carries this step's
+      # uncommitted CHANGELOG.md edit across the switch. A plain fetch is
+      # all that's needed for that later checkout to succeed.
+      - name: Pull latest changes for changelog update
+        if: ${{ github.ref_type == 'tag' }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git fetch origin main
+
+      - name: Extract release notes
+        if: ${{ github.ref_type == 'tag' }}
+        uses: ffurrer2/extract-release-notes@v3
+        id: extract-release-notes
+        with:
+          prerelease: true
+
+      - name: Update changelog
+        if: ${{ github.ref_type == 'tag' }}
+        uses: thomaseizinger/keep-a-changelog-new-release@v3
+        with:
+          tag: ${{ github.ref_name }}
+
+      # Requires github-actions[bot] on this repo's branch-protection bypass
+      # list (Settings -> Branches -> your `main` rule -> allow bypass) —
+      # this pushes straight to main, same as the "Update Outputs" step and
+      # the tag-case merge in "Pull latest changes" below. All three need
+      # the same bypass exception.
+      # Deliberately NOT stefanzweifel/git-auto-commit-action here (unlike
+      # the other two auto-commit steps in this file) — that action does
+      # its own internal `git checkout main --` before committing, which
+      # fails ("local changes would be overwritten by checkout") whenever
+      # main's CHANGELOG.md differs from the tag's checkout in any way that
+      # conflicts with this step's uncommitted edit. Since CHANGELOG.md
+      # changes on nearly every release, that's not a one-off — it broke on
+      # a real run even after main was already properly synced. Instead:
+      # commit the edit on the tag's own checkout (safe, no branch switch
+      # involved), then transplant just that file's new content onto a
+      # fresh main checkout explicitly, and return to the tag's checkout
+      # afterward so the rest of this job still sees the tag's tree.
+      - name: Commit updated CHANGELOG
+        if: ${{ github.ref_type == 'tag' }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "No CHANGELOG.md changes to commit."
+          else
+            git add CHANGELOG.md
+            git commit -m "Update CHANGELOG"
+            changelog_commit=$(git rev-parse HEAD)
+
+            git fetch origin main
+            git checkout -B main origin/main
+            git checkout "$changelog_commit" -- CHANGELOG.md
+            git add CHANGELOG.md
+            if git diff --cached --quiet -- CHANGELOG.md; then
+              echo "main's CHANGELOG.md already matches — nothing to push."
+            else
+              git commit -m "Update CHANGELOG"
+              git push origin main
+            fi
+
+            # Return to $changelog_commit, NOT $GITHUB_SHA — later steps
+            # (Revision History sheet generation reads CHANGELOG.md via
+            # get_changelog.py) need to see the RENAMED [x.y.z] section,
+            # not the original tag commit's pre-rename [Unreleased] one.
+            # $changelog_commit is exactly $GITHUB_SHA plus that one edit.
+            git checkout "$changelog_commit"
+          fi
+
+      - name: Cache 3D models data
+        id: models-cache
+        uses: actions/cache@v5
+        with:
+          path: ~/cache_3d
+          key: cache_3d
+
+      - name: Determine VERSION Argument and Override Variant if Tag
+        id: determine-version-and-args
+        run: |
+          last_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          # The CI badge in README.md needs an actual branch name in its URL
+          # (badge.svg?branch=<name>) — a tag push has no branch, so point it
+          # at main, since that's what a tag always merges into.
+          #
+          # effective_variant, not $kibot_variant, drives everything below.
+          # `echo "kibot_variant=RELEASED" >> $GITHUB_ENV` only takes effect
+          # in the NEXT step — this script's own $kibot_variant stays at
+          # whatever the job's static default was for its entire remaining
+          # run. Branching the case statement below on $kibot_variant meant
+          # a tag push computed notes_skip for the wrong (pre-override)
+          # variant — on this repo that was DRAFT, giving an EMPTY
+          # notes_skip, which breaks the action's own command-building
+          # (`-s` with nothing after it shifts every argument after it,
+          # leaving `variant=RELEASED` orphaned as a bare positional arg —
+          # that's the exact "Unknown output/group `variant=RELEASED`"
+          # crash). Confirmed root cause from a real failed run.
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            branch_arg="main"
+            effective_variant="RELEASED"
+            version_arg="-E REVISION='${last_tag}' -E BRANCH='${branch_arg}'"
+            echo "Overriding kibot_variant to 'RELEASED' for tag"
+            echo "kibot_variant=RELEASED" >> $GITHUB_ENV
+          else
+            branch_arg="${{ github.ref_name }}"
+            effective_variant="$kibot_variant"
+            version_arg="-E REVISION='${last_tag}+ (Unreleased)' -E BRANCH='${branch_arg}'"
+            echo "kibot_variant=${{ env.kibot_variant }}" >> $GITHUB_ENV
+          fi
+
+          # Determine additional_args based on the variant. notes_skip
+          # mirrors kibot_launch.sh's per-variant skip-pre lists for the
+          # "notes" pass exactly — it must NEVER include `all` here. `-s`/
+          # `skip:` on the action IS `--skip-pre` (confirmed against
+          # `kibot --help`), so `skip: all` skips update_xml too, and this
+          # "Generate notes" step is what's supposed to run update_xml FIRST
+          # so the second step's set_text_variables (which always runs
+          # before update_xml within a single invocation — priority 90 vs
+          # 50) finds the sheet-title XML already written. Skipping `all`
+          # here means the SECOND step's set_text_variables runs with no
+          # XML on disk yet, and every SHEET_NAME_* variable gets written as
+          # the literal text "Error: XML File not found" — which then gets
+          # committed straight into the .kicad_pro. (Confirmed root cause of
+          # the same bug recurring on 2026-09-10.)
+          case "$effective_variant" in
+            "DRAFT")
+              additional_args="--skip-pre draw_fancy_stackup,erc,drc ${version_arg} --log ${{ env.kibot_log }} draft_group"
+              notes_skip=""
+              ;;
+            "PRELIMINARY")
+              additional_args="--skip-pre erc,drc ${version_arg} --log ${{ env.kibot_log }} all_group"
+              notes_skip="erc,drc"
+              ;;
+            "CHECKED"|"RELEASED")
+              additional_args="${version_arg} --log ${{ env.kibot_log }} all_group"
+              notes_skip="set_text_variables,draw_fancy_stackup,erc,drc"
+              ;;
+            *)
+              echo "Unknown variant: $effective_variant"
+              exit 1
+              ;;
+          esac
+
+          echo "version_arg=${version_arg}" >> $GITHUB_ENV
+          echo "additional_args=${additional_args}" >> $GITHUB_ENV
+          echo "notes_skip=${notes_skip}" >> $GITHUB_ENV
+
+      # Generate notes (skipped for DRAFT variant)
+      - name: Generate notes (KiCad 10)
+        if: env.kibot_variant != 'DRAFT'
+        uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          skip: ${{ env.notes_skip }}
+          variant: ${{ env.kibot_variant }}
+          config: ${{ env.kibot_config }}
+          additional_args: ${{ env.version_arg }} --log kibot_run_notes.log notes
+
+      # Generate README only (only for DRAFT variant). Deliberately does NOT
+      # skip set_text_variables like upstream's original does — that
+      # preflight is what fills in BOARD_NAME/PROJECT_NAME/DESCRIPTION/
+      # GIT_URL/COMPANY/DESIGNER; skipping it left the DRAFT-stage README
+      # showing stale placeholder text and a broken CI badge (empty
+      # GIT_URL), confirmed from a real generated run.
+      - name: Generate README only (KiCad 10)
+        if: env.kibot_variant == 'DRAFT'
+        uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          skip: draw_fancy_stackup,erc,drc
+          variant: ${{ env.kibot_variant }}
+          config: ${{ env.kibot_config }}
+          additional_args: ${{ env.version_arg }} --log kibot_run_readme.log readme_group
+
+      # Generate outputs
+      #
+      # A board with zero drillable holes anywhere (no vias, no through-hole
+      # parts) WILL fail here — this isn't recoverable from CI config. KiBot's
+      # pdf_fabrication drill map assumes at least one hole layer pair always
+      # exists and crashes (IndexError in draw_drill_map) when it doesn't,
+      # and there's no way to route around that without permanently dropping
+      # the drill-map page for every board. See the README's "Hard
+      # requirement" note in CI/CD, Variants, and the Changelog: a board
+      # needs at least one via or through-hole part before PRELIMINARY+.
+      - name: Generate outputs (KiCad 10)
+        uses: INTI-CMNB/KiBot@v2_dk10
+        with:
+          additional_args: ${{ env.additional_args }}
+          variant: ${{ env.kibot_variant }}
+          config: ${{ env.kibot_config }}
+          cache3D: YES
+
+      # The KiBot action's docker run creates every generated file as root
+      # (it's a bind-mounted volume) — everything from this point on runs
+      # directly on the runner as the unprivileged `runner` user. Without
+      # this, `git checkout`/`git merge` below fail with "Permission
+      # denied" trying to unlink/overwrite those root-owned files (confirmed
+      # from a real run). Same underlying cause as the drill-table sudo fix
+      # from earlier, just hitting a different step this time — fixing it
+      # once here instead of patching every step downstream individually.
+      - name: Fix file ownership (KiBot's docker run leaves files as root)
+        run: sudo chown -R $(id -u):$(id -g) .
+
+      - name: Pull latest changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "Triggered by a tag, committing changes in detached HEAD state"
+            git add -A
+            git commit -m "Update Outputs (release)"
+
+            DETACHED_COMMIT=$(git rev-parse HEAD)
+            echo "Checking out the main branch"
+            git fetch origin main
+            git checkout main
+
+            echo "Merging detached HEAD commit into main"
+            git merge --no-ff $DETACHED_COMMIT -m "Merge outputs from tag-triggered workflow" -X theirs
+            echo "Pushing to main branch"
+            git push origin main
+          else
+            echo "Triggered by a branch, using the current branch"
+            git pull origin ${{ github.ref_name }} --tags --force
+          fi
+
+      - name: Discard changes to .kicad_pcb files and remove temp files
+        run: |
+          git checkout HEAD -- $(git ls-files "*.kicad_pcb")
+          git clean -f "*.kicad_pcb"
+          git clean -f "*.kicad_pro"
+          git clean -f "*.kicad_dru"
+          git clean -f "*.kicad_prl"
+
+      # No file_pattern: commits everything that actually changed, whatever
+      # that is for this run's variant. This is the upstream default and
+      # it's deliberate — every attempt at hand-listing "the" output paths
+      # here has broken on some variant that doesn't produce all of them
+      # (DRAFT never creates Manufacturing/, 3D/, Testing/, or Reports/, and
+      # git add fails hard, not silently, on a pattern matching zero files).
+      # Kept at v5, matching upstream exactly — the Node 20 warning this
+      # triggers is cosmetic (GitHub runs it on Node 24 regardless); v7
+      # changed detached-HEAD handling in a way we haven't independently
+      # verified is safe for this exact job shape, and this step is the one
+      # thing the whole pipeline depends on actually working.
+      - name: Update Outputs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: ${{ github.ref_name }}
+          commit_message: Update Outputs
+
+      - name: Store log
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: log_file
+          path: ${{ env.kibot_log }}
+
+      - name: Store notes log
+        if: ${{ always() && env.kibot_variant != 'DRAFT' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: log_file_notes
+          path: kibot_run_notes.log
+
+      - name: Store README log
+        if: ${{ always() && env.kibot_variant == 'DRAFT' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: log_file_readme
+          path: kibot_run_readme.log

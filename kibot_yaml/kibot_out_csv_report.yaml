@@ -1,0 +1,30 @@
+# KiBot output for CSV Report
+# https://kibot.readthedocs.io/en/latest/configuration/outputs/report.html
+
+kibot:
+  version: 1
+
+outputs:
+  - name: @NAME@
+    comment: '@COMMENT@'
+    type: report
+    category: '@DIR@'
+    dir: '@DIR@'
+    output_id: @OUTPUT_ID@
+    # Higher than the default (50): both pdf_fabrication and pdf_assembly
+    # embed this report by filename and error if it hasn't written its CSV
+    # yet — declared list order alone doesn't guarantee that, priority does.
+    priority: @PRIORITY@
+    options:
+      output: '%f-%I%v.csv'
+      template: @TEMPLATE@
+      exclude_filter: '_mechanical'
+      csv_remove_leading_spaces: true
+...
+definitions:
+  NAME: csv_report
+  COMMENT: Report in CSV format
+  DIR: Manufacturing
+  OUTPUT_ID: ''
+  TEMPLATE: total_components
+  PRIORITY: 60

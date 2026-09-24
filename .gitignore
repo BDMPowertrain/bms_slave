@@ -1,0 +1,36 @@
+*-backups
+\#auto_saved_files#
+_autosave-*
+*.lck
+*.bak
+*.ini
+*.kicad_sch-bak
+*.kicad_pro-bak
+*.kicad_pcb-bak
+*.kicad_prl-bak
+fp-info-cache
+*Zone.Identifier
+kibot_*.kicad_pcb
+kibot_*.kicad_dru
+kibot_*.kicad_prl
+kibot_*.kicad_pro
+
+# The `update_xml` preflight writes <board>.xml at the project root on every
+# KiBot run, purely as an intermediate the same run reads back (sheet-title
+# lookups for the ToC). It's not a real deliverable — never commit it.
+/*.xml
+
+# RemoteLibrary/ (KiCad's local cache of parts placed from Prism's Remote
+# Symbols panel) is intentionally NOT ignored here, see README.md section
+# 2.4 and 7. Prism's own Release Studio build flags a missing footprint
+# entry in fp-lib-table as a warning, meaning a clean checkout is expected
+# to have these files present, not regenerate them on demand. Committing
+# them keeps a fresh clone self-contained. See that section for the other
+# half of this: sym-lib-table/fp-lib-table must use ${KIPRJMOD}-relative
+# URIs, not absolute host paths, or committing this folder doesn't help.
+
+# Generated outputs are committed back to the repo by CI (see ci.yaml) so
+# README.md's embedded images and the fabrication/assembly documents are
+# visible directly on GitHub, not just as a downloadable workflow artifact.
+# Nothing in Schematic/, Manufacturing/, Testing/, 3D/, Images/, Reports/ is
+# gitignored — those folders don't exist in a fresh clone until CI runs once.

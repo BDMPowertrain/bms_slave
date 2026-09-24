@@ -1,0 +1,33 @@
+# KiBot output for MD Report (e.g. README.md)
+# https://kibot.readthedocs.io/en/latest/configuration/outputs/report.html
+
+kibot:
+  version: 1
+
+outputs:
+  - name: @NAME@
+    comment: '@COMMENT@'
+    type: report
+    category: '@CATEGORY@'
+    dir: '@DIR@'
+    options:
+      output: '@OUTPUT_NAME@.md'
+      template: @TEMPLATE@
+      # Without this, KiBot's `collect_images: auto` default silently runs
+      # EVERY pcb_print-type output (pdf_fabrication, etc.) whenever the
+      # template isn't one of KiBot's own built-in names — even though our
+      # readme.txt never uses what that collects. That's what drags the
+      # fabrication PDF (and its drill-table dependency) into a plain README
+      # generation, breaking DRAFT (schematic-only, no PCB yet) on any board
+      # without a drillable feature. We only ever pull PNGs via `_outpath`
+      # (a separate mechanism this doesn't affect), so we don't need it.
+      collect_images: 'no'
+
+...
+definitions:
+  NAME: md_readme
+  COMMENT: Report
+  DIR: .
+  CATEGORY: /
+  OUTPUT_NAME: README
+  TEMPLATE: kibot_ressources/template/readme.txt
