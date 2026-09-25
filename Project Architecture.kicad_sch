@@ -49,7 +49,7 @@
 		(uuid "f4789478-c68e-4cee-9edd-5d11b744f94d")
 	)
 	(sheet
-		(at 134.62 137.16)
+		(at 297.18 88.9)
 		(size 40.64 22.86)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -65,7 +65,7 @@
 		)
 		(uuid "5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855")
 		(property "Sheetname" "Temperature Sense"
-			(at 134.62 136.4484 0)
+			(at 297.18 88.1884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -78,7 +78,7 @@
 			)
 		)
 		(property "Sheetfile" "temperature_sense.kicad_sch"
-			(at 134.62 160.6046 0)
+			(at 297.18 112.3446 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -87,6 +87,36 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "GND" passive
+			(at 337.82 109.22 0)
+			(uuid "cc79e977-b33e-4765-bc92-e22cf8587e88")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TSREF" passive
+			(at 297.18 93.98 180)
+			(uuid "727e074e-4791-4102-8802-93c728229b28")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "T_P[1..8]" passive
+			(at 337.82 93.98 0)
+			(uuid "ad7685f8-6ff9-4726-86c9-946997f5d7a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -98,7 +128,7 @@
 		)
 	)
 	(sheet
-		(at 96.52 81.28)
+		(at 205.74 154.94)
 		(size 33.02 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -114,7 +144,7 @@
 		)
 		(uuid "6c6a059d-71c7-49d0-bb31-68bf0320ac4e")
 		(property "Sheetname" "Connectors"
-			(at 96.52 80.5684 0)
+			(at 205.74 154.2284 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -127,7 +157,7 @@
 			)
 		)
 		(property "Sheetfile" "connectors.kicad_sch"
-			(at 96.52 99.6446 0)
+			(at 205.74 173.3046 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -147,7 +177,7 @@
 		)
 	)
 	(sheet
-		(at 142.24 111.76)
+		(at 251.46 88.9)
 		(size 33.02 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -163,7 +193,7 @@
 		)
 		(uuid "dc8544ca-af63-40ad-8cbc-696b729b5531")
 		(property "Sheetname" "Power & Reference"
-			(at 142.24 111.0484 0)
+			(at 251.46 87.8709 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -176,7 +206,7 @@
 			)
 		)
 		(property "Sheetfile" "power_and_reference.kicad_sch"
-			(at 142.24 130.1246 0)
+			(at 251.46 107.2646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -185,6 +215,46 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "CVDD" passive
+			(at 251.46 101.6 180)
+			(uuid "9af6140c-75d2-4470-af4f-e7ef3d83e31c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GND" passive
+			(at 284.48 104.14 0)
+			(uuid "e66d614a-7342-4e8c-82bf-2b6fb5431135")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TSREF" passive
+			(at 284.48 93.98 0)
+			(uuid "7afa7d62-1f34-420b-a70c-aafef076eae9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VMODULE" passive
+			(at 251.46 93.98 180)
+			(uuid "5b4eb57b-8b78-4c8e-a5e0-0848910e9c89")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -196,8 +266,8 @@
 		)
 	)
 	(sheet
-		(at 139.7 81.28)
-		(size 33.02 20.32)
+		(at 205.74 88.9)
+		(size 33.02 40.64)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -212,7 +282,7 @@
 		)
 		(uuid "e396eed5-f415-436d-900e-61677bb6572f")
 		(property "Sheetname" "Cell Sense & Balance"
-			(at 139.7 80.5684 0)
+			(at 205.74 87.8709 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -225,7 +295,7 @@
 			)
 		)
 		(property "Sheetfile" "cell_sense_and_balance.kicad_sch"
-			(at 139.7 102.1846 0)
+			(at 205.74 130.1246 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -234,6 +304,36 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "GROUND" passive
+			(at 238.76 127 0)
+			(uuid "3614fa5e-7f81-47f6-a6c6-1aee3a374f65")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TAP[0..8]" bidirectional
+			(at 205.74 93.98 180)
+			(uuid "aa721659-4c52-4dbb-8cfb-2a84b8997b97")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VMODULE" passive
+			(at 238.76 93.98 0)
+			(uuid "6c8d1c1b-53a8-4bf7-8b16-0366e0108756")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
@@ -245,7 +345,7 @@
 		)
 	)
 	(sheet
-		(at 134.62 165.1)
+		(at 279.4 147.32)
 		(size 45.72 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -261,7 +361,7 @@
 		)
 		(uuid "f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1")
 		(property "Sheetname" "Daisy Chain"
-			(at 134.62 164.3884 0)
+			(at 279.4 146.6084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -274,7 +374,7 @@
 			)
 		)
 		(property "Sheetfile" "daisy_chain.kicad_sch"
-			(at 134.62 191.0846 0)
+			(at 279.4 173.3046 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -294,7 +394,7 @@
 		)
 	)
 	(sheet
-		(at 134.62 198.12)
+		(at 203.2 185.42)
 		(size 48.26 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -310,7 +410,7 @@
 		)
 		(uuid "f4a7f626-808e-4d0f-b4d4-b24a2b39d327")
 		(property "Sheetname" "Mechanical"
-			(at 134.62 197.4084 0)
+			(at 203.2 184.7084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -323,7 +423,7 @@
 			)
 		)
 		(property "Sheetfile" "mechanical.kicad_sch"
-			(at 134.62 224.1046 0)
+			(at 203.2 211.4046 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

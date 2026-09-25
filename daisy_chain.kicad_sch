@@ -1508,7 +1508,7 @@
 	)
 	(symbol
 		(lib_id "remote_bq79616paprq1:BQ79616PAPRQ1")
-		(at 121.92 67.31 0)
+		(at 152.4 78.74 0)
 		(unit 4)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1518,7 +1518,7 @@
 		(dnp no)
 		(uuid "b0e87dd4-b575-4bb7-9b47-224b01ce76d3")
 		(property "Reference" "U1"
-			(at 127 63.5 0)
+			(at 157.48 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1529,7 +1529,7 @@
 			)
 		)
 		(property "Value" "BQ79616PAPRQ1"
-			(at 127 93.98 0)
+			(at 157.48 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1540,7 +1540,7 @@
 			)
 		)
 		(property "Footprint" "remote_bq79616paprq1:BQ79616PAPRQ1"
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1551,7 +1551,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/bq79612-q1.pdf"
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1562,7 +1562,7 @@
 			)
 		)
 		(property "Description" "Battery Multi-Function Controller IC Lithium Ion 64-HTQFP (10x10)"
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1573,7 +1573,7 @@
 			)
 		)
 		(property "Manufacturer" "Texas Instruments"
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1584,7 +1584,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "BQ79616PAPRQ1"
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1595,7 +1595,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1606,7 +1606,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1617,7 +1617,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1628,7 +1628,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1639,7 +1639,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1650,7 +1650,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1661,7 +1661,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1672,7 +1672,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1683,7 +1683,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1694,7 +1694,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 121.92 67.31 0)
+			(at 152.4 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

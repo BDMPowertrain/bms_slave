@@ -5530,29 +5530,6 @@
 			)
 		)
 	)
-	(label "TAP[0..8]"
-		(at 116.84 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b4d89955-83c7-48dc-856d-45877429314b")
-		(property "Netclass" "TAP"
-			(at 116.84 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
 	(label "VC8"
 		(at 172.72 116.84 0)
 		(fields_autoplaced yes)
@@ -5712,7 +5689,7 @@
 			)
 		)
 	)
-	(hierarchical_label "CELL_TAPS"
+	(hierarchical_label "TAP[0..8]"
 		(shape bidirectional)
 		(at 116.84 53.34 180)
 		(effects
@@ -5722,6 +5699,18 @@
 			(justify right)
 		)
 		(uuid "05366d18-6146-47bc-a6ce-fd6305d12cbb")
+		(property "Netclass" "TAP"
+			(at 106.68 55.88 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
 	)
 	(hierarchical_label "GROUND"
 		(shape passive)

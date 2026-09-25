@@ -4135,6 +4135,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 58.42) (xy 93.98 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7471f5f6-e412-4794-bbb3-18ca002127e0")
+	)
+	(wire
+		(pts
 			(xy 167.64 60.96) (xy 167.64 63.5)
 		)
 		(stroke
@@ -4312,6 +4322,16 @@
 			(type default)
 		)
 		(uuid "d4c0ed8a-7837-4d26-a238-b17e46ae7818")
+	)
+	(wire
+		(pts
+			(xy 88.9 58.42) (xy 93.98 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daaa7dda-e2c6-470d-ab02-3952887cb766")
 	)
 	(wire
 		(pts
@@ -4648,6 +4668,17 @@
 			(justify left)
 		)
 		(uuid "198fd532-fb7f-46b8-838a-8fdfd7efdf51")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 88.9 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "396ac111-8901-42f9-b17b-3c1003a1b537")
 	)
 	(hierarchical_label "CVDD"
 		(shape passive)
@@ -6449,6 +6480,84 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
 					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 93.98 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "762c2e0a-b270-4799-bd55-06bce0bc9270")
+		(property "Reference" "#PWR015"
+			(at 93.98 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 93.98 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
+			(at 93.98 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "409704c5-af15-4828-b24d-797c5e35ee00")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
