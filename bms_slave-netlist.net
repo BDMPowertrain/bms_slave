@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-_y2myohq/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-cje8ewzm/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -626,6 +626,581 @@
 		)
 	)
 	(components
+		(comp
+			(ref "J1")
+			(value "0436500200")
+			(footprint "remote_0436500200:CONN_SD-43650-001_02_MOL")
+			(datasheet "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline")
+			(description "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)")
+			(fields
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0436500200")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_0436500200:CONN_SD-43650-001_02_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)")
+			)
+			(libsource
+				(lib "remote_0436500200")
+				(part "0436500200")
+				(description "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Molex")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "0436500200")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Connectors")
+			)
+			(property
+				(name "Sheetfile")
+				(value "connectors.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Connectors/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
+			)
+			(tstamps "305dfa71-df8d-4156-9312-1f3cc373a38a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "0430450200")
+			(footprint "remote_0430450200:CONN_SD-43045-001_02_MOL")
+			(datasheet "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+			(description "Connector Header Through Hole, Right Angle 2 position")
+			(fields
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0430450200")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_0430450200:CONN_SD-43045-001_02_MOL")
+				(field
+					(name "Datasheet") "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 2 position")
+			)
+			(libsource
+				(lib "remote_0430450200")
+				(part "0430450200")
+				(description "Connector Header Through Hole, Right Angle 2 position")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Molex")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "0430450200")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Connectors")
+			)
+			(property
+				(name "Sheetfile")
+				(value "connectors.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Connectors/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
+			)
+			(tstamps "757cfabc-e187-43f9-b801-9401412ea543")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "0436500900")
+			(footprint "remote_0436500900:CONN_SD-43650-001_09_MOL")
+			(datasheet "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500900_sd.pdf?inline")
+			(description "Connector Header Through Hole, Right Angle 9 position 0.118\" (3.00mm)")
+			(fields
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0436500900")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_0436500900:CONN_SD-43650-001_09_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500900_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 9 position 0.118\" (3.00mm)")
+			)
+			(libsource
+				(lib "remote_0436500900")
+				(part "0436500900")
+				(description "Connector Header Through Hole, Right Angle 9 position 0.118\" (3.00mm)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Molex")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "0436500900")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Connectors")
+			)
+			(property
+				(name "Sheetfile")
+				(value "connectors.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Connectors/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
+			)
+			(tstamps "6585b1fd-9e48-488d-99b0-9d8575d41072")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "0430451600")
+			(footprint "remote_0430451600:CONN_SD-43045-001_16_MOL")
+			(datasheet "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/430/43045/430451600_sd.pdf?inline")
+			(description "Connector Header Through Hole, Right Angle 16 position 0.118\" (3.00mm)")
+			(fields
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0430451600")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_0430451600:CONN_SD-43045-001_16_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/430/43045/430451600_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 16 position 0.118\" (3.00mm)")
+			)
+			(libsource
+				(lib "remote_0430451600")
+				(part "0430451600")
+				(description "Connector Header Through Hole, Right Angle 16 position 0.118\" (3.00mm)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Molex")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "0430451600")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Connectors")
+			)
+			(property
+				(name "Sheetfile")
+				(value "connectors.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Connectors/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
+			)
+			(tstamps "cfccbeb0-a3f7-44ac-9e30-e115f26aeff1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+					)
+				)
+			)
+		)
 		(comp
 			(ref "C1")
 			(value "10nF")
@@ -11187,6 +11762,367 @@
 	(variants)
 	(libparts
 		(libpart
+			(lib "remote_0430450200")
+			(part "0430450200")
+			(description "Connector Header Through Hole, Right Angle 2 position")
+			(docs "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "0430450200")
+				(field
+					(name "Footprint") "remote_0430450200:CONN_SD-43045-001_02_MOL")
+				(field
+					(name "Datasheet") "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 2 position")
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0430450200")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_0430451600")
+			(part "0430451600")
+			(description "Connector Header Through Hole, Right Angle 16 position 0.118\" (3.00mm)")
+			(docs "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/430/43045/430451600_sd.pdf?inline")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "0430451600")
+				(field
+					(name "Footprint") "remote_0430451600:CONN_SD-43045-001_16_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/430/43045/430451600_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 16 position 0.118\" (3.00mm)")
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0430451600")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "unspecified")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "unspecified")
+				)
+				(pin
+					(num "5")
+					(name "5")
+					(type "unspecified")
+				)
+				(pin
+					(num "6")
+					(name "6")
+					(type "unspecified")
+				)
+				(pin
+					(num "7")
+					(name "7")
+					(type "unspecified")
+				)
+				(pin
+					(num "8")
+					(name "8")
+					(type "unspecified")
+				)
+				(pin
+					(num "9")
+					(name "9")
+					(type "unspecified")
+				)
+				(pin
+					(num "10")
+					(name "10")
+					(type "unspecified")
+				)
+				(pin
+					(num "11")
+					(name "11")
+					(type "unspecified")
+				)
+				(pin
+					(num "12")
+					(name "12")
+					(type "unspecified")
+				)
+				(pin
+					(num "13")
+					(name "13")
+					(type "unspecified")
+				)
+				(pin
+					(num "14")
+					(name "14")
+					(type "unspecified")
+				)
+				(pin
+					(num "15")
+					(name "15")
+					(type "unspecified")
+				)
+				(pin
+					(num "16")
+					(name "16")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_0436500200")
+			(part "0436500200")
+			(description "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)")
+			(docs "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "0436500200")
+				(field
+					(name "Footprint") "remote_0436500200:CONN_SD-43650-001_02_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)")
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0436500200")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_0436500900")
+			(part "0436500900")
+			(description "Connector Header Through Hole, Right Angle 9 position 0.118\" (3.00mm)")
+			(docs "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500900_sd.pdf?inline")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "0436500900")
+				(field
+					(name "Footprint") "remote_0436500900:CONN_SD-43650-001_09_MOL")
+				(field
+					(name "Datasheet") "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500900_sd.pdf?inline")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 9 position 0.118\" (3.00mm)")
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0436500900")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "unspecified")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "unspecified")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "unspecified")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "unspecified")
+				)
+				(pin
+					(num "5")
+					(name "5")
+					(type "unspecified")
+				)
+				(pin
+					(num "6")
+					(name "6")
+					(type "unspecified")
+				)
+				(pin
+					(num "7")
+					(name "7")
+					(type "unspecified")
+				)
+				(pin
+					(num "8")
+					(name "8")
+					(type "unspecified")
+				)
+				(pin
+					(num "9")
+					(name "9")
+					(type "unspecified")
+				)
+			)
+		)
+		(libpart
 			(lib "remote_bq79616paprq1")
 			(part "BQ79616PAPRQ1")
 			(description "Battery Multi-Function Controller IC Lithium Ion 64-HTQFP (10x10)")
@@ -13300,6 +14236,237 @@
 		)
 		(net
 			(code "29")
+			(name "/Project Architecture/Connectors/COMH.N")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "30")
+			(name "/Project Architecture/Connectors/COMH.P")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "32")
+			(name "/Project Architecture/Connectors/COML.N")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "33")
+			(name "/Project Architecture/Connectors/COML.P")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "35")
+			(name "/Project Architecture/Connectors/TAP0")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "36")
+			(name "/Project Architecture/Connectors/TAP1")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "37")
+			(name "/Project Architecture/Connectors/TAP2")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "38")
+			(name "/Project Architecture/Connectors/TAP3")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "39")
+			(name "/Project Architecture/Connectors/TAP4")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "5")
+				(pinfunction "5_5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "40")
+			(name "/Project Architecture/Connectors/TAP5")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "6")
+				(pinfunction "6_6")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "41")
+			(name "/Project Architecture/Connectors/TAP6")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "7")
+				(pinfunction "7_7")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "42")
+			(name "/Project Architecture/Connectors/TAP7")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "8")
+				(pinfunction "8_8")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "43")
+			(name "/Project Architecture/Connectors/TAP8")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "9")
+				(pinfunction "9_9")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "45")
+			(name "/Project Architecture/Connectors/T_P1")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "46")
+			(name "/Project Architecture/Connectors/T_P2")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "47")
+			(name "/Project Architecture/Connectors/T_P3")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "48")
+			(name "/Project Architecture/Connectors/T_P4")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "49")
+			(name "/Project Architecture/Connectors/T_P5")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "5")
+				(pinfunction "5_5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "50")
+			(name "/Project Architecture/Connectors/T_P6")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "6")
+				(pinfunction "6_6")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "51")
+			(name "/Project Architecture/Connectors/T_P7")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "7")
+				(pinfunction "7_7")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "52")
+			(name "/Project Architecture/Connectors/T_P8")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "8")
+				(pinfunction "8_8")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "54")
 			(name "/Project Architecture/Power & Reference/CVDD")
 			(class "Default")
 			(node
@@ -13315,7 +14482,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "55")
 			(name "/Project Architecture/Power & Reference/TSREF")
 			(class "Default")
 			(node
@@ -13331,7 +14498,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "56")
 			(name "/Project Architecture/Power & Reference/VMODULE")
 			(class "Default")
 			(node
@@ -13341,7 +14508,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "57")
 			(name "/Project Architecture/Temperature Sense/GPIO1")
 			(class "Default")
 			(node
@@ -13362,7 +14529,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "58")
 			(name "/Project Architecture/Temperature Sense/GPIO2")
 			(class "Default")
 			(node
@@ -13383,7 +14550,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "59")
 			(name "/Project Architecture/Temperature Sense/GPIO3")
 			(class "Default")
 			(node
@@ -13404,7 +14571,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "60")
 			(name "/Project Architecture/Temperature Sense/GPIO4")
 			(class "Default")
 			(node
@@ -13425,7 +14592,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "61")
 			(name "/Project Architecture/Temperature Sense/GPIO5")
 			(class "Default")
 			(node
@@ -13446,7 +14613,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "62")
 			(name "/Project Architecture/Temperature Sense/GPIO6")
 			(class "Default")
 			(node
@@ -13467,7 +14634,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "63")
 			(name "/Project Architecture/Temperature Sense/GPIO7")
 			(class "Default")
 			(node
@@ -13488,7 +14655,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "64")
 			(name "/Project Architecture/Temperature Sense/GPIO8")
 			(class "Default")
 			(node
@@ -13509,7 +14676,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "65")
 			(name "/Project Architecture/Temperature Sense/TBIAS")
 			(class "Default")
 			(node
@@ -13560,7 +14727,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "66")
 			(name "/Project Architecture/Temperature Sense/TSREF")
 			(class "Default")
 			(node
@@ -13571,7 +14738,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "67")
 			(name "/Project Architecture/Temperature Sense/T_P1")
 			(class "Default")
 			(node
@@ -13586,7 +14753,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "68")
 			(name "/Project Architecture/Temperature Sense/T_P2")
 			(class "Default")
 			(node
@@ -13601,7 +14768,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "69")
 			(name "/Project Architecture/Temperature Sense/T_P3")
 			(class "Default")
 			(node
@@ -13616,7 +14783,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "70")
 			(name "/Project Architecture/Temperature Sense/T_P4")
 			(class "Default")
 			(node
@@ -13631,7 +14798,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "71")
 			(name "/Project Architecture/Temperature Sense/T_P5")
 			(class "Default")
 			(node
@@ -13646,7 +14813,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "72")
 			(name "/Project Architecture/Temperature Sense/T_P6")
 			(class "Default")
 			(node
@@ -13661,7 +14828,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "73")
 			(name "/Project Architecture/Temperature Sense/T_P7")
 			(class "Default")
 			(node
@@ -13676,7 +14843,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "74")
 			(name "/Project Architecture/Temperature Sense/T_P8")
 			(class "Default")
 			(node
@@ -13691,7 +14858,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "76")
 			(name "GND")
 			(class "GND,TAP")
 			(node
@@ -13831,7 +14998,60 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "77")
+			(name "Net-(J4-Pad10)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "10")
+				(pinfunction "10_10")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "11")
+				(pinfunction "11_11")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "12")
+				(pinfunction "12_12")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "13")
+				(pinfunction "13_13")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "14")
+				(pinfunction "14_14")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "15")
+				(pinfunction "15_15")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "16")
+				(pinfunction "16_16")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "9")
+				(pinfunction "9_9")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "78")
 			(name "Net-(Q1-B)")
 			(class "Default")
 			(node
@@ -13848,7 +15068,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "79")
 			(name "Net-(Q1-C)")
 			(class "Default")
 			(node
@@ -13869,7 +15089,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "80")
 			(name "Net-(Q1-E)")
 			(class "Default")
 			(node
@@ -13891,7 +15111,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "81")
 			(name "Net-(R20-Pad1)")
 			(class "Default")
 			(node
@@ -13906,7 +15126,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "82")
 			(name "Net-(U1Power and references-AVDD)")
 			(class "Default")
 			(node
@@ -13922,7 +15142,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "83")
 			(name "Net-(U1Power and references-DVDD)")
 			(class "Default")
 			(node
@@ -13938,7 +15158,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "84")
 			(name "Net-(U1Power and references-NEG5V)")
 			(class "Default")
 			(node
@@ -13954,7 +15174,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "85")
 			(name "Net-(U1Power and references-REFHP)")
 			(class "Default")
 			(node
@@ -13970,7 +15190,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "86")
 			(name "unconnected-(U1Aux inputs-BBN-Pad63)")
 			(class "Default")
 			(node
@@ -13981,7 +15201,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "87")
 			(name "unconnected-(U1Aux inputs-BBP-Pad64)")
 			(class "Default")
 			(node
@@ -13992,7 +15212,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "88")
 			(name "unconnected-(U1Communication-COMHN-Pad42)")
 			(class "Default")
 			(node
@@ -14003,7 +15223,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "89")
 			(name "unconnected-(U1Communication-COMHP-Pad43)")
 			(class "Default")
 			(node
@@ -14014,7 +15234,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "90")
 			(name "unconnected-(U1Communication-COMLN-Pad41)")
 			(class "Default")
 			(node
@@ -14025,7 +15245,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "91")
 			(name "unconnected-(U1Communication-COMLP-Pad40)")
 			(class "Default")
 			(node
@@ -14036,7 +15256,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "92")
 			(name "unconnected-(U1Communication-FAULT_N-Pad62)")
 			(class "Default")
 			(node
@@ -14047,7 +15267,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "93")
 			(name "unconnected-(U1Communication-RX-Pad52)")
 			(class "Default")
 			(node
@@ -14058,7 +15278,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "94")
 			(name "unconnected-(U1Communication-TX-Pad53)")
 			(class "Default")
 			(node
