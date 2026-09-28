@@ -940,7 +940,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -30.48 0)
+				(at 0 -35.56 0)
 				(length 5.08)
 				(name "AVDD"
 					(effects
@@ -958,7 +958,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -45.72 0)
+				(at 0 -40.64 0)
 				(length 5.08)
 				(name "AVSS"
 					(effects
@@ -976,7 +976,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -40.64 0)
+				(at 0 -5.08 0)
 				(length 5.08)
 				(name "NEG5V"
 					(effects
@@ -1012,7 +1012,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -5.08 0)
+				(at 0 -10.16 0)
 				(length 5.08)
 				(name "CVSS"
 					(effects
@@ -1066,7 +1066,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -15.24 0)
+				(at 0 -20.32 0)
 				(length 5.08)
 				(name "DVDD"
 					(effects
@@ -1084,7 +1084,7 @@
 				)
 			)
 			(pin power_in line
-				(at 0 -20.32 0)
+				(at 0 -25.4 0)
 				(length 5.08)
 				(name "DVSS"
 					(effects

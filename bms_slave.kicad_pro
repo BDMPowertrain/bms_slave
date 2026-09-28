@@ -254,6 +254,10 @@
           "drill": 0.0
         },
         {
+          "diameter": 0.4064,
+          "drill": 0.2032
+        },
+        {
           "diameter": 0.55,
           "drill": 0.25
         },
@@ -535,7 +539,6 @@
   "net_settings": {
     "classes": [
       {
-        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -554,193 +557,88 @@
         "wire_width": 6
       },
       {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.28,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2032,
         "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "CAN Bus",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Chassis",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
-        "schematic_color": "rgb(139, 103, 213)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "GND",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 2,
-        "schematic_color": "rgb(0, 0, 0)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "High Power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 3,
-        "schematic_color": "rgb(177, 11, 198)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.7,
-        "via_drill": 0.3,
-        "wire_width": 24
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.2,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Kelvin Diff Pair",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 4,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power 12V",
+        "name": "BAL",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 5,
-        "schematic_color": "rgb(255, 0, 171)",
-        "track_width": 0.2,
+        "schematic_color": "rgb(194, 0, 194)",
         "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
+        "wire_width": 6
       },
       {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power 3V3",
+        "name": "DAISY",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 6,
-        "schematic_color": "rgb(220, 142, 0)",
-        "track_width": 0.2,
+        "priority": 0,
+        "schematic_color": "rgb(0, 0, 194)",
         "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
+        "wire_width": 6
       },
       {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power 5V",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 7,
-        "schematic_color": "rgb(212, 0, 32)",
-        "track_width": 0.2,
-        "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power A3V3",
+        "name": "GND",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 8,
-        "schematic_color": "rgb(162, 155, 0)",
-        "track_width": 0.2,
+        "schematic_color": "rgb(72, 72, 72)",
         "tuning_profile": "",
-        "via_diameter": 0.55,
-        "via_drill": 0.25,
-        "wire_width": 24
+        "wire_width": 8
       },
       {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.28,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2032,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "RS422 Diff Pair",
+        "bus_width": 20,
+        "line_style": 1,
+        "name": "ISO_H",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 9,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "priority": 1,
+        "schematic_color": "rgb(0, 132, 0)",
         "tuning_profile": "",
-        "via_diameter": 0.6,
-        "via_drill": 0.25,
+        "wire_width": 8
+      },
+      {
+        "bus_width": 20,
+        "line_style": 1,
+        "name": "ISO_L",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
+        "schematic_color": "rgb(194, 194, 0)",
+        "tuning_profile": "",
+        "wire_width": 8
+      },
+      {
+        "line_style": 0,
+        "name": "PWR",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 7,
+        "schematic_color": "rgb(132, 132, 0)",
+        "tuning_profile": "",
+        "wire_width": 8
+      },
+      {
+        "line_style": 0,
+        "name": "SENSE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 6,
+        "schematic_color": "rgb(221, 133, 0)",
+        "tuning_profile": "",
+        "wire_width": 6
+      },
+      {
+        "bus_width": 24,
+        "line_style": 0,
+        "name": "TAP",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 4,
+        "schematic_color": "rgb(194, 0, 0)",
+        "tuning_profile": "",
+        "wire_width": 6
+      },
+      {
+        "bus_width": 20,
+        "line_style": 0,
+        "name": "TEMP",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
+        "schematic_color": "rgb(0, 132, 0)",
+        "tuning_profile": "",
         "wire_width": 6
       }
     ],
@@ -749,6 +647,9 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "/Project Architecture/CVDD": [
+        "PWR"
+      ],
       "/Project Architecture/Cell Sense & Balance/CB0": [
         "BAL"
       ],
@@ -832,6 +733,126 @@
       ],
       "/Project Architecture/Cell Sense & Balance/VC8": [
         "SENSE"
+      ],
+      "/Project Architecture/Cell Sense & Balance/VMODULE": [
+        "PWR"
+      ],
+      "/Project Architecture/Connectors/COMH.N": [
+        "ISO_L"
+      ],
+      "/Project Architecture/Connectors/COMH.P": [
+        "ISO_H"
+      ],
+      "/Project Architecture/Connectors/COML.N": [
+        "ISO_L"
+      ],
+      "/Project Architecture/Connectors/COML.P": [
+        "ISO_H"
+      ],
+      "/Project Architecture/Connectors/T_P1": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P2": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P3": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P4": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P5": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P6": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P7": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P8": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/T_P[1..8]": [
+        "TEMP"
+      ],
+      "/Project Architecture/Daisy Chain/COMH_CT": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COMH_WN": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COMH_WP": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COML_CT": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COML_WN": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COML_WP": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/U1_COMHN": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/U1_COMHP": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/U1_COMLN": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/U1_COMLP": [
+        "DAISY"
+      ],
+      "/Project Architecture/GND": [
+        "GND"
+      ],
+      "/Project Architecture/Power & Reference/AVDD": [
+        "PWR"
+      ],
+      "/Project Architecture/Power & Reference/DVDD": [
+        "PWR"
+      ],
+      "/Project Architecture/Power & Reference/LDOIN": [
+        "PWR"
+      ],
+      "/Project Architecture/Power & Reference/NPNB": [
+        "PWR"
+      ],
+      "/Project Architecture/Power & Reference/VCOLL": [
+        "PWR"
+      ],
+      "/Project Architecture/Power & Reference/VCOLL_R": [
+        "PWR"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO1": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO2": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO3": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO4": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO5": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO6": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO7": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/GPIO8": [
+        "TEMP"
+      ],
+      "/Project Architecture/Temperature Sense/TBIAS": [
+        "TEMP"
       ]
     },
     "netclass_patterns": [
@@ -1132,7 +1153,7 @@
       "version": 1
     },
     "net_format_name": "KiCad",
-    "page_layout_descr_file": "Templates/Schematic_GIT.kicad_wks",
+    "page_layout_descr_file": "kicad-embed://Schematic_GIT_A4.kicad_wks",
     "plot_directory": "Schematic/",
     "reuse_designators": true,
     "spice_current_sheet_as_root": false,
@@ -1150,7 +1171,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "J1-4,R1-21,#PWR1-14,C1-28,Q1-2,U1-3",
+    "used_designators": "NT1-2,J1-8,TP1-14,R1-86,CR1-4,#PWR1-66,D1-2,C1-84,Q1-2,U1-6",
     "variants": []
   },
   "sheets": [
@@ -1220,7 +1241,7 @@
     "RELEASE_TITLE_1.0.2": "",
     "RELEASE_TITLE_1.1.0": "",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
-    "REVISION": "+ (Unreleased)",
+    "REVISION": "0.1.0",
     "SHEET_NAME_1": "Cover Page",
     "SHEET_NAME_10": "Revision History",
     "SHEET_NAME_11": "......................................",
