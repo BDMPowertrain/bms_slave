@@ -1,0 +1,1246 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1*%
+%TF.CreationDate,Date%
+%TF.ProjectId,bms_slave,626d735f-736c-4617-9665-2e6b69636164,+ (Unreleased)*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Copper,L1,Top*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 Aperture macros list*
+%AMRoundRect*
+0 Rectangle with rounded corners*
+0 $1 Rounding radius*
+0 $2 $3 $4 $5 $6 $7 $8 $9 X,Y pos of 4 corners*
+0 Add a 4 corners polygon primitive as box body*
+4,1,4,$2,$3,$4,$5,$6,$7,$8,$9,$2,$3,0*
+0 Add four circle primitives for the rounded corners*
+1,1,$1+$1,$2,$3*
+1,1,$1+$1,$4,$5*
+1,1,$1+$1,$6,$7*
+1,1,$1+$1,$8,$9*
+0 Add four rect primitives between the rounded corners*
+20,1,$1+$1,$2,$3,$4,$5,0*
+20,1,$1+$1,$4,$5,$6,$7,0*
+20,1,$1+$1,$6,$7,$8,$9,0*
+20,1,$1+$1,$8,$9,$2,$3,0*%
+G04 Aperture macros list end*
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD10RoundRect,0.200000X-0.200000X-0.275000X0.200000X-0.275000X0.200000X0.275000X-0.200000X0.275000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD11RoundRect,0.135000X-0.135000X-0.185000X0.135000X-0.185000X0.135000X0.185000X-0.135000X0.185000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD12RoundRect,0.250000X-0.362500X-1.425000X0.362500X-1.425000X0.362500X1.425000X-0.362500X1.425000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD13R,5.511800X5.918200*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD14R,0.939800X2.489200*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD15RoundRect,0.140000X-0.140000X-0.170000X0.140000X-0.170000X0.140000X0.170000X-0.140000X0.170000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD16RoundRect,0.225000X-0.225000X-0.250000X0.225000X-0.250000X0.225000X0.250000X-0.225000X0.250000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD17R,0.609600X0.304800*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD18C,2.000000*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD19R,0.901700X0.482600*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD20RoundRect,0.250000X0.650000X-0.325000X0.650000X0.325000X-0.650000X0.325000X-0.650000X-0.325000X0*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD21C,1.574800*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD22RoundRect,0.218750X-0.218750X-0.256250X0.218750X-0.256250X0.218750X0.256250X-0.218750X0.256250X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD23R,1.308100X0.685800*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD24RoundRect,0.250000X-0.250000X-0.475000X0.250000X-0.475000X0.250000X0.475000X-0.250000X0.475000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD25RoundRect,0.250000X-0.312500X-1.075000X0.312500X-1.075000X0.312500X1.075000X-0.312500X1.075000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD26RoundRect,0.140000X0.170000X-0.140000X0.170000X0.140000X-0.170000X0.140000X-0.170000X-0.140000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD27RoundRect,0.225000X-0.250000X0.225000X-0.250000X-0.225000X0.250000X-0.225000X0.250000X0.225000X0*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD28R,1.500000X0.299999*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD29R,0.299999X1.500000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD30C,0.499999*%
+%TD*%
+%TA.AperFunction,SMDPad,CuDef*%
+%ADD31R,8.000000X8.000000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+%TO.P,R2,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP8*%
+X235170000Y-91035000D03*
+%TO.P,R2,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC8*%
+X236820000Y-91035000D03*
+%TD*%
+D11*
+%TO.P,R34,1*%
+%TO.N,/Project Architecture/Connectors/T_P4*%
+X271995000Y-131495000D03*
+%TO.P,R34,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO4*%
+X273015000Y-131495000D03*
+%TD*%
+D12*
+%TO.P,R9,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP5*%
+X214642500Y-99435000D03*
+%TO.P,R9,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB5*%
+X220567500Y-99435000D03*
+%TD*%
+D13*
+%TO.P,Q1,1,C_1*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL*%
+X217433000Y-132229300D03*
+D14*
+%TO.P,Q1,2,B_2*%
+%TO.N,/Project Architecture/Power & Reference/NPNB*%
+X215152999Y-140598600D03*
+%TO.P,Q1,3,E_3*%
+%TO.N,/Project Architecture/Power & Reference/LDOIN*%
+X219713001Y-140598600D03*
+%TD*%
+D15*
+%TO.P,C39,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHP*%
+X191910000Y-140440000D03*
+%TO.P,C39,2*%
+%TO.N,/Project Architecture/GND*%
+X192870000Y-140440000D03*
+%TD*%
+D16*
+%TO.P,C1,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/BAT*%
+X223190000Y-83505000D03*
+%TO.P,C1,2*%
+%TO.N,/Project Architecture/GND*%
+X224740000Y-83505000D03*
+%TD*%
+D17*
+%TO.P,D2,1,C_1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X272185000Y-141902500D03*
+%TO.P,D2,2,A_2*%
+%TO.N,/Project Architecture/Power & Reference/TSREF*%
+X274471000Y-141902500D03*
+%TD*%
+D15*
+%TO.P,C27,1*%
+%TO.N,/Project Architecture/GND*%
+X228175000Y-131395000D03*
+%TO.P,C27,2*%
+%TO.N,/Project Architecture/Power & Reference/LDOIN*%
+X229135000Y-131395000D03*
+%TD*%
+D16*
+%TO.P,C18,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB2*%
+X231210000Y-96055000D03*
+%TO.P,C18,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB1*%
+X232760000Y-96055000D03*
+%TD*%
+D15*
+%TO.P,C29,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO1*%
+X274915000Y-125515000D03*
+%TO.P,C29,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-125515000D03*
+%TD*%
+D16*
+%TO.P,C4,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB8*%
+X223190000Y-91035000D03*
+%TO.P,C4,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB7*%
+X224740000Y-91035000D03*
+%TD*%
+D10*
+%TO.P,R25,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-130805000D03*
+%TO.P,R25,2*%
+%TO.N,/Project Architecture/Connectors/T_P3*%
+X269870000Y-130805000D03*
+%TD*%
+D11*
+%TO.P,R32,1*%
+%TO.N,/Project Architecture/Connectors/T_P2*%
+X271995000Y-127515000D03*
+%TO.P,R32,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO2*%
+X273015000Y-127515000D03*
+%TD*%
+%TO.P,R38,1*%
+%TO.N,/Project Architecture/Connectors/T_P8*%
+X271995000Y-139455000D03*
+%TO.P,R38,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO8*%
+X273015000Y-139455000D03*
+%TD*%
+D18*
+%TO.P,TP8,1,1_1*%
+%TO.N,/Project Architecture/GND*%
+X107150000Y-147100000D03*
+%TD*%
+D10*
+%TO.P,R16,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP1*%
+X239180000Y-93545000D03*
+%TO.P,R16,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC1*%
+X240830000Y-93545000D03*
+%TD*%
+D15*
+%TO.P,C33,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO5*%
+X274915000Y-133395000D03*
+%TO.P,C33,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-133395000D03*
+%TD*%
+D12*
+%TO.P,R19,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP0*%
+X214642500Y-123985000D03*
+%TO.P,R19,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB0*%
+X220567500Y-123985000D03*
+%TD*%
+D19*
+%TO.P,CR1,1*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WP*%
+X191098750Y-59950799D03*
+%TO.P,CR1,2*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WN*%
+X191098750Y-61850801D03*
+%TO.P,CR1,3*%
+%TO.N,/Project Architecture/GND*%
+X193397450Y-60900800D03*
+%TD*%
+D20*
+%TO.P,C24,1*%
+%TO.N,/Project Architecture/CVDD*%
+X144000000Y-88725000D03*
+%TO.P,C24,2*%
+%TO.N,/Project Architecture/GND*%
+X144000000Y-85775000D03*
+%TD*%
+D18*
+%TO.P,TP12,1,1_1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLN*%
+X88950000Y-137000000D03*
+%TD*%
+D12*
+%TO.P,R17,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP1*%
+X214642500Y-119075000D03*
+%TO.P,R17,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB1*%
+X220567500Y-119075000D03*
+%TD*%
+D21*
+%TO.P,J2,1,1_1*%
+%TO.N,/Project Architecture/Connectors/COMH.P*%
+X189935700Y-100660400D03*
+%TO.P,J2,2,2_2*%
+%TO.N,/Project Architecture/Connectors/COMH.N*%
+X186935701Y-100660400D03*
+%TD*%
+D10*
+%TO.P,R23,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-125785000D03*
+%TO.P,R23,2*%
+%TO.N,/Project Architecture/Connectors/T_P1*%
+X269870000Y-125785000D03*
+%TD*%
+D22*
+%TO.P,D1,1,K_1*%
+%TO.N,/Project Architecture/GND*%
+X227132884Y-144135000D03*
+%TO.P,D1,2,A_2*%
+%TO.N,Net-(D1-A)*%
+X228707884Y-144135000D03*
+%TD*%
+D23*
+%TO.P,U2,1*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WP*%
+X170103450Y-48460000D03*
+%TO.P,U2,2*%
+%TO.N,/Project Architecture/Daisy Chain/COML_CT*%
+X170103450Y-51000000D03*
+%TO.P,U2,3*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WN*%
+X170103450Y-53540000D03*
+%TO.P,U2,4*%
+%TO.N,/Project Architecture/Connectors/COML.N*%
+X178396550Y-53540000D03*
+%TO.P,U2,5*%
+%TO.N,unconnected-(U2-Pad5)*%
+X178396550Y-51000000D03*
+%TO.P,U2,6*%
+%TO.N,/Project Architecture/Connectors/COML.P*%
+X178396550Y-48460000D03*
+%TD*%
+D15*
+%TO.P,C31,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO3*%
+X274915000Y-129455000D03*
+%TO.P,C31,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-129455000D03*
+%TD*%
+%TO.P,C36,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO8*%
+X274915000Y-139305000D03*
+%TO.P,C36,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-139305000D03*
+%TD*%
+D21*
+%TO.P,J1,1,1_1*%
+%TO.N,/Project Architecture/Connectors/COML.P*%
+X189777001Y-82160400D03*
+%TO.P,J1,2,2_2*%
+%TO.N,/Project Architecture/Connectors/COML.N*%
+X189777001Y-85160399D03*
+%TD*%
+D18*
+%TO.P,TP7,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/TSREF*%
+X107150000Y-143050000D03*
+%TD*%
+%TO.P,TP6,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/LDOIN*%
+X103100000Y-147100000D03*
+%TD*%
+D10*
+%TO.P,R30,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-143355000D03*
+%TO.P,R30,2*%
+%TO.N,/Project Architecture/Connectors/T_P8*%
+X269870000Y-143355000D03*
+%TD*%
+D23*
+%TO.P,U3,1*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WP*%
+X175603450Y-142210000D03*
+%TO.P,U3,2*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_CT*%
+X175603450Y-144750000D03*
+%TO.P,U3,3*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WN*%
+X175603450Y-147290000D03*
+%TO.P,U3,4*%
+%TO.N,/Project Architecture/Connectors/COMH.N*%
+X183896550Y-147290000D03*
+%TO.P,U3,5*%
+%TO.N,unconnected-(U3-Pad5)*%
+X183896550Y-144750000D03*
+%TO.P,U3,6*%
+%TO.N,/Project Architecture/Connectors/COMH.P*%
+X183896550Y-142210000D03*
+%TD*%
+D16*
+%TO.P,C11,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC1*%
+X227200000Y-93545000D03*
+%TO.P,C11,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC0*%
+X228750000Y-93545000D03*
+%TD*%
+D18*
+%TO.P,TP5,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL*%
+X103100000Y-143050000D03*
+%TD*%
+D10*
+%TO.P,R18,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP0*%
+X239180000Y-96055000D03*
+%TO.P,R18,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC0*%
+X240830000Y-96055000D03*
+%TD*%
+D24*
+%TO.P,C28,1*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL*%
+X226895000Y-141375000D03*
+%TO.P,C28,2*%
+%TO.N,/Project Architecture/GND*%
+X228795000Y-141375000D03*
+%TD*%
+D16*
+%TO.P,C6,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC6*%
+X223190000Y-96055000D03*
+%TO.P,C6,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC5*%
+X224740000Y-96055000D03*
+%TD*%
+D25*
+%TO.P,R21,1*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL_R*%
+X222952500Y-134755000D03*
+%TO.P,R21,2*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL*%
+X225877500Y-134755000D03*
+%TD*%
+D11*
+%TO.P,R31,1*%
+%TO.N,/Project Architecture/Connectors/T_P1*%
+X271995000Y-125525000D03*
+%TO.P,R31,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO1*%
+X273015000Y-125525000D03*
+%TD*%
+%TO.P,R33,1*%
+%TO.N,/Project Architecture/Connectors/T_P3*%
+X271995000Y-129505000D03*
+%TO.P,R33,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO3*%
+X273015000Y-129505000D03*
+%TD*%
+D10*
+%TO.P,R10,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP4*%
+X239180000Y-86015000D03*
+%TO.P,R10,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC4*%
+X240830000Y-86015000D03*
+%TD*%
+D11*
+%TO.P,R40,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHP*%
+X188990000Y-138500000D03*
+%TO.P,R40,2*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHN*%
+X190010000Y-138500000D03*
+%TD*%
+D16*
+%TO.P,C12,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC0*%
+X227200000Y-96055000D03*
+%TO.P,C12,2*%
+%TO.N,/Project Architecture/GND*%
+X228750000Y-96055000D03*
+%TD*%
+D10*
+%TO.P,R1,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP8*%
+X235170000Y-88525000D03*
+%TO.P,R1,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/BAT*%
+X236820000Y-88525000D03*
+%TD*%
+D18*
+%TO.P,TP11,1,1_1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLP*%
+X88950000Y-132950000D03*
+%TD*%
+D16*
+%TO.P,C7,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC5*%
+X227200000Y-83505000D03*
+%TO.P,C7,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC4*%
+X228750000Y-83505000D03*
+%TD*%
+D12*
+%TO.P,R11,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP4*%
+X214642500Y-104345000D03*
+%TO.P,R11,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB4*%
+X220567500Y-104345000D03*
+%TD*%
+D21*
+%TO.P,J3,1,1_1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP0*%
+X86473000Y-65839596D03*
+%TO.P,J3,2,2_2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP1*%
+X86473000Y-62839597D03*
+%TO.P,J3,3,3_3*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP2*%
+X86473000Y-59839598D03*
+%TO.P,J3,4,4_4*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP3*%
+X86473000Y-56839599D03*
+%TO.P,J3,5,5_5*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP4*%
+X86473000Y-53839600D03*
+%TO.P,J3,6,6_6*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP5*%
+X86473000Y-50839601D03*
+%TO.P,J3,7,7_7*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP6*%
+X86473000Y-47839602D03*
+%TO.P,J3,8,8_8*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP7*%
+X86473000Y-44839603D03*
+%TO.P,J3,9,9_9*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP8*%
+X86473000Y-41839603D03*
+%TD*%
+D11*
+%TO.P,R43,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHP*%
+X188990000Y-144470000D03*
+%TO.P,R43,2*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WP*%
+X190010000Y-144470000D03*
+%TD*%
+D16*
+%TO.P,C8,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC4*%
+X227200000Y-86015000D03*
+%TO.P,C8,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC3*%
+X228750000Y-86015000D03*
+%TD*%
+D10*
+%TO.P,R14,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP2*%
+X239180000Y-91035000D03*
+%TO.P,R14,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC2*%
+X240830000Y-91035000D03*
+%TD*%
+%TO.P,R12,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP3*%
+X239180000Y-88525000D03*
+%TO.P,R12,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC3*%
+X240830000Y-88525000D03*
+%TD*%
+D26*
+%TO.P,C25,1*%
+%TO.N,/Project Architecture/Power & Reference/NEG5V*%
+X142250000Y-89280000D03*
+%TO.P,C25,2*%
+%TO.N,/Project Architecture/GND*%
+X142250000Y-88320000D03*
+%TD*%
+D11*
+%TO.P,R35,1*%
+%TO.N,/Project Architecture/Connectors/T_P5*%
+X271995000Y-133485000D03*
+%TO.P,R35,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO5*%
+X273015000Y-133485000D03*
+%TD*%
+D24*
+%TO.P,C21,1*%
+%TO.N,/Project Architecture/GND*%
+X135100000Y-82750000D03*
+%TO.P,C21,2*%
+%TO.N,/Project Architecture/Power & Reference/DVDD*%
+X137000000Y-82750000D03*
+%TD*%
+D16*
+%TO.P,C19,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB1*%
+X235220000Y-83505000D03*
+%TO.P,C19,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB0*%
+X236770000Y-83505000D03*
+%TD*%
+D18*
+%TO.P,TP1,1,1_1*%
+%TO.N,/Project Architecture/CVDD*%
+X95000000Y-143050000D03*
+%TD*%
+D16*
+%TO.P,C15,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB5*%
+X231210000Y-88525000D03*
+%TO.P,C15,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB4*%
+X232760000Y-88525000D03*
+%TD*%
+%TO.P,C16,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB4*%
+X231210000Y-91035000D03*
+%TO.P,C16,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB3*%
+X232760000Y-91035000D03*
+%TD*%
+D10*
+%TO.P,R29,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-140845000D03*
+%TO.P,R29,2*%
+%TO.N,/Project Architecture/Connectors/T_P7*%
+X269870000Y-140845000D03*
+%TD*%
+D18*
+%TO.P,TP9,1,1_1*%
+%TO.N,/Project Architecture/Connectors/T_P1*%
+X95000000Y-132950000D03*
+%TD*%
+D16*
+%TO.P,C20,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB0*%
+X235220000Y-86015000D03*
+%TO.P,C20,2*%
+%TO.N,/Project Architecture/GND*%
+X236770000Y-86015000D03*
+%TD*%
+D15*
+%TO.P,C32,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO4*%
+X274915000Y-131425000D03*
+%TO.P,C32,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-131425000D03*
+%TD*%
+D18*
+%TO.P,TP13,1,1_1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHP*%
+X88950000Y-141050000D03*
+%TD*%
+%TO.P,TP10,1,1_1*%
+%TO.N,/Project Architecture/GND*%
+X95000000Y-137000000D03*
+%TD*%
+D12*
+%TO.P,R5,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP7*%
+X214642500Y-89615000D03*
+%TO.P,R5,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB7*%
+X220567500Y-89615000D03*
+%TD*%
+D11*
+%TO.P,R44,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHN*%
+X188990000Y-146460000D03*
+%TO.P,R44,2*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WN*%
+X190010000Y-146460000D03*
+%TD*%
+D10*
+%TO.P,R8,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP5*%
+X239180000Y-83505000D03*
+%TO.P,R8,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC5*%
+X240830000Y-83505000D03*
+%TD*%
+D21*
+%TO.P,J4,1,1_1*%
+%TO.N,/Project Architecture/Connectors/T_P1*%
+X87564300Y-100839597D03*
+%TO.P,J4,2,2_2*%
+%TO.N,/Project Architecture/Connectors/T_P2*%
+X87564300Y-97839598D03*
+%TO.P,J4,3,3_3*%
+%TO.N,/Project Architecture/Connectors/T_P3*%
+X87564300Y-94839599D03*
+%TO.P,J4,4,4_4*%
+%TO.N,/Project Architecture/Connectors/T_P4*%
+X87564300Y-91839599D03*
+%TO.P,J4,5,5_5*%
+%TO.N,/Project Architecture/Connectors/T_P5*%
+X87564300Y-88839600D03*
+%TO.P,J4,6,6_6*%
+%TO.N,/Project Architecture/Connectors/T_P6*%
+X87564300Y-85839601D03*
+%TO.P,J4,7,7_7*%
+%TO.N,/Project Architecture/Connectors/T_P7*%
+X87564300Y-82839602D03*
+%TO.P,J4,8,8_8*%
+%TO.N,/Project Architecture/Connectors/T_P8*%
+X87564300Y-79839603D03*
+%TO.P,J4,9,9_9*%
+%TO.N,/Project Architecture/GND*%
+X90564299Y-100839597D03*
+%TO.P,J4,10,10_10*%
+X90564299Y-97839598D03*
+%TO.P,J4,11,11_11*%
+X90564299Y-94839599D03*
+%TO.P,J4,12,12_12*%
+X90564299Y-91839599D03*
+%TO.P,J4,13,13_13*%
+X90564299Y-88839600D03*
+%TO.P,J4,14,14_14*%
+X90564299Y-85839601D03*
+%TO.P,J4,15,15_15*%
+X90564299Y-82839602D03*
+%TO.P,J4,16,16_16*%
+X90564299Y-79839603D03*
+%TD*%
+D11*
+%TO.P,R36,1*%
+%TO.N,/Project Architecture/Connectors/T_P6*%
+X271995000Y-135475000D03*
+%TO.P,R36,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO6*%
+X273015000Y-135475000D03*
+%TD*%
+D10*
+%TO.P,R27,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-135825000D03*
+%TO.P,R27,2*%
+%TO.N,/Project Architecture/Connectors/T_P5*%
+X269870000Y-135825000D03*
+%TD*%
+D18*
+%TO.P,TP4,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/LDOIN*%
+X99050000Y-147100000D03*
+%TD*%
+D16*
+%TO.P,C2,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC8*%
+X223190000Y-86015000D03*
+%TO.P,C2,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC7*%
+X224740000Y-86015000D03*
+%TD*%
+%TO.P,C10,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC2*%
+X227200000Y-91035000D03*
+%TO.P,C10,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC1*%
+X228750000Y-91035000D03*
+%TD*%
+%TO.P,C5,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC7*%
+X223190000Y-93545000D03*
+%TO.P,C5,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC6*%
+X224740000Y-93545000D03*
+%TD*%
+D27*
+%TO.P,C22,1*%
+%TO.N,/Project Architecture/GND*%
+X142000000Y-92475000D03*
+%TO.P,C22,2*%
+%TO.N,/Project Architecture/Power & Reference/AVDD*%
+X142000000Y-94025000D03*
+%TD*%
+D25*
+%TO.P,R20,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VMODULE*%
+X222952500Y-130545000D03*
+%TO.P,R20,2*%
+%TO.N,/Project Architecture/Power & Reference/VCOLL_R*%
+X225877500Y-130545000D03*
+%TD*%
+D16*
+%TO.P,C17,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB3*%
+X231210000Y-93545000D03*
+%TO.P,C17,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB2*%
+X232760000Y-93545000D03*
+%TD*%
+D12*
+%TO.P,R7,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP6*%
+X214642500Y-94525000D03*
+%TO.P,R7,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB6*%
+X220567500Y-94525000D03*
+%TD*%
+D15*
+%TO.P,C37,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLP*%
+X193670000Y-47490000D03*
+%TO.P,C37,2*%
+%TO.N,/Project Architecture/GND*%
+X194630000Y-47490000D03*
+%TD*%
+D11*
+%TO.P,R41,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLP*%
+X190750000Y-51480000D03*
+%TO.P,R41,2*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WP*%
+X191770000Y-51480000D03*
+%TD*%
+D18*
+%TO.P,TP2,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/DVDD*%
+X95000000Y-147100000D03*
+%TD*%
+D11*
+%TO.P,R39,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLP*%
+X190750000Y-47500000D03*
+%TO.P,R39,2*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLN*%
+X191770000Y-47500000D03*
+%TD*%
+D15*
+%TO.P,C34,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO6*%
+X274915000Y-135365000D03*
+%TO.P,C34,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-135365000D03*
+%TD*%
+D10*
+%TO.P,R24,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-128295000D03*
+%TO.P,R24,2*%
+%TO.N,/Project Architecture/Connectors/T_P2*%
+X269870000Y-128295000D03*
+%TD*%
+D11*
+%TO.P,R37,1*%
+%TO.N,/Project Architecture/Connectors/T_P7*%
+X271995000Y-137465000D03*
+%TO.P,R37,2*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO7*%
+X273015000Y-137465000D03*
+%TD*%
+D12*
+%TO.P,R15,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP2*%
+X214642500Y-114165000D03*
+%TO.P,R15,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB2*%
+X220567500Y-114165000D03*
+%TD*%
+D16*
+%TO.P,C13,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB7*%
+X231210000Y-83505000D03*
+%TO.P,C13,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB6*%
+X232760000Y-83505000D03*
+%TD*%
+D10*
+%TO.P,R26,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-133315000D03*
+%TO.P,R26,2*%
+%TO.N,/Project Architecture/Connectors/T_P4*%
+X269870000Y-133315000D03*
+%TD*%
+D28*
+%TO.P,U1,1,BAT_1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/BAT*%
+X126950002Y-87250000D03*
+%TO.P,U1,2,CB16_2*%
+X126950002Y-87749999D03*
+%TO.P,U1,3,VC16_3*%
+X126950002Y-88250000D03*
+%TO.P,U1,4,CB15_4*%
+X126950002Y-88749999D03*
+%TO.P,U1,5,VC15_5*%
+X126950002Y-89250001D03*
+%TO.P,U1,6,CB14_6*%
+X126950002Y-89750000D03*
+%TO.P,U1,7,VC14_7*%
+X126950002Y-90249999D03*
+%TO.P,U1,8,CB13_8*%
+X126950002Y-90750000D03*
+%TO.P,U1,9,VC13_9*%
+X126950002Y-91250000D03*
+%TO.P,U1,10,CB12_10*%
+X126950002Y-91750001D03*
+%TO.P,U1,11,VC12_11*%
+X126950002Y-92250000D03*
+%TO.P,U1,12,CB11_12*%
+X126950002Y-92749999D03*
+%TO.P,U1,13,VC11_13*%
+X126950002Y-93250001D03*
+%TO.P,U1,14,CB10_14*%
+X126950002Y-93750000D03*
+%TO.P,U1,15,VC10_15*%
+X126950002Y-94250001D03*
+%TO.P,U1,16,CB9_16*%
+X126950002Y-94750000D03*
+D29*
+%TO.P,U1,17,VC9_17*%
+X128900001Y-96699999D03*
+%TO.P,U1,18,CB8_18*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB8*%
+X129400000Y-96699999D03*
+%TO.P,U1,19,VC8_19*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC8*%
+X129900001Y-96699999D03*
+%TO.P,U1,20,CB7_20*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB7*%
+X130400000Y-96699999D03*
+%TO.P,U1,21,VC7_21*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC7*%
+X130900002Y-96699999D03*
+%TO.P,U1,22,CB6_22*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB6*%
+X131400001Y-96699999D03*
+%TO.P,U1,23,VC6_23*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC6*%
+X131900000Y-96699999D03*
+%TO.P,U1,24,CB5_24*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB5*%
+X132400001Y-96699999D03*
+%TO.P,U1,25,VC5_25*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC5*%
+X132900001Y-96699999D03*
+%TO.P,U1,26,CB4_26*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB4*%
+X133400002Y-96699999D03*
+%TO.P,U1,27,VC4_27*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC4*%
+X133900001Y-96699999D03*
+%TO.P,U1,28,CB3_28*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB3*%
+X134400000Y-96699999D03*
+%TO.P,U1,29,VC3_29*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC3*%
+X134900002Y-96699999D03*
+%TO.P,U1,30,CB2_30*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB2*%
+X135400001Y-96699999D03*
+%TO.P,U1,31,VC2_31*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC2*%
+X135900002Y-96699999D03*
+%TO.P,U1,32,CB1_32*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB1*%
+X136400001Y-96699999D03*
+D28*
+%TO.P,U1,33,VC1_33*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC1*%
+X138350000Y-94750000D03*
+%TO.P,U1,34,CB0_34*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB0*%
+X138350000Y-94250001D03*
+%TO.P,U1,35,VC0_35*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC0*%
+X138350000Y-93750000D03*
+%TO.P,U1,36,REFHM_36*%
+%TO.N,/Project Architecture/GND*%
+X138350000Y-93250001D03*
+%TO.P,U1,37,REFHP_37*%
+%TO.N,/Project Architecture/Power & Reference/REFHP*%
+X138350000Y-92749999D03*
+%TO.P,U1,38,AVDD_38*%
+%TO.N,/Project Architecture/Power & Reference/AVDD*%
+X138350000Y-92250000D03*
+%TO.P,U1,39,AVSS_39*%
+%TO.N,/Project Architecture/GND*%
+X138350000Y-91750001D03*
+%TO.P,U1,40,COMLP_40*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLP*%
+X138350000Y-91250000D03*
+%TO.P,U1,41,COMLN_41*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLN*%
+X138350000Y-90750000D03*
+%TO.P,U1,42,COMHN_42*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHN*%
+X138350000Y-90249999D03*
+%TO.P,U1,43,COMHP_43*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHP*%
+X138350000Y-89750000D03*
+%TO.P,U1,44,NEG5V_44*%
+%TO.N,/Project Architecture/Power & Reference/NEG5V*%
+X138350000Y-89250001D03*
+%TO.P,U1,45,CVDD_45*%
+%TO.N,/Project Architecture/CVDD*%
+X138350000Y-88749999D03*
+%TO.P,U1,46,CVSS_46*%
+%TO.N,/Project Architecture/GND*%
+X138350000Y-88250000D03*
+%TO.P,U1,47,LDOIN_47*%
+%TO.N,/Project Architecture/Power & Reference/LDOIN*%
+X138350000Y-87749999D03*
+%TO.P,U1,48,NPNB_48*%
+%TO.N,/Project Architecture/Power & Reference/NPNB*%
+X138350000Y-87250000D03*
+D29*
+%TO.P,U1,49,DVDD_49*%
+%TO.N,/Project Architecture/Power & Reference/DVDD*%
+X136400001Y-85300001D03*
+%TO.P,U1,50,DVSS_50*%
+%TO.N,/Project Architecture/GND*%
+X135900002Y-85300001D03*
+%TO.P,U1,51,TSREF_51*%
+%TO.N,/Project Architecture/Power & Reference/TSREF*%
+X135400001Y-85300001D03*
+%TO.P,U1,52,RX_52*%
+%TO.N,/Project Architecture/CVDD*%
+X134900002Y-85300001D03*
+%TO.P,U1,53,TX_53*%
+%TO.N,unconnected-(U1Communication-TX-Pad53)*%
+X134400000Y-85300001D03*
+%TO.P,U1,54,GPIO8_54*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO8*%
+X133900001Y-85300001D03*
+%TO.P,U1,55,GPIO7_55*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO7*%
+X133400002Y-85300001D03*
+%TO.P,U1,56,GPIO6_56*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO6*%
+X132900001Y-85300001D03*
+%TO.P,U1,57,GPIO5_57*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO5*%
+X132400001Y-85300001D03*
+%TO.P,U1,58,GPIO4_58*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO4*%
+X131900000Y-85300001D03*
+%TO.P,U1,59,GPIO3_59*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO3*%
+X131400001Y-85300001D03*
+%TO.P,U1,60,GPIO2_60*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO2*%
+X130900002Y-85300001D03*
+%TO.P,U1,61,GPIO1_61*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO1*%
+X130400000Y-85300001D03*
+%TO.P,U1,62,FAULT_N_62*%
+%TO.N,unconnected-(U1Communication-FAULT_N-Pad62)*%
+X129900001Y-85300001D03*
+%TO.P,U1,63,BBN_63*%
+%TO.N,unconnected-(U1Aux inputs-BBN-Pad63)*%
+X129400000Y-85300001D03*
+%TO.P,U1,64,BBP_64*%
+%TO.N,unconnected-(U1Aux inputs-BBP-Pad64)*%
+X128900001Y-85300001D03*
+D30*
+%TO.P,U1,65,PAD_65*%
+%TO.N,/Project Architecture/GND*%
+X129400000Y-87749999D03*
+X129400000Y-89049999D03*
+X129400000Y-90350001D03*
+X129400000Y-91650001D03*
+X129400000Y-92950001D03*
+X129400000Y-94250001D03*
+X130700000Y-87749999D03*
+X130700000Y-89049999D03*
+X130700000Y-90350001D03*
+X130700000Y-91650001D03*
+X130700000Y-92950001D03*
+X130700000Y-94250001D03*
+X132000000Y-87749999D03*
+X132000000Y-89049999D03*
+X132000000Y-90350001D03*
+X132000000Y-91650001D03*
+X132000000Y-92950001D03*
+X132000000Y-94250001D03*
+D31*
+X132650001Y-91000000D03*
+D30*
+X133300002Y-87749999D03*
+X133300002Y-89049999D03*
+X133300002Y-90350001D03*
+X133300002Y-91650001D03*
+X133300002Y-92950001D03*
+X133300002Y-94250001D03*
+X134600002Y-87749999D03*
+X134600002Y-89049999D03*
+X134600002Y-90350001D03*
+X134600002Y-91650001D03*
+X134600002Y-92950001D03*
+X134600002Y-94250001D03*
+X135900002Y-87749999D03*
+X135900002Y-89049999D03*
+X135900002Y-90350001D03*
+X135900002Y-91650001D03*
+X135900002Y-92950001D03*
+X135900002Y-94250001D03*
+%TD*%
+D15*
+%TO.P,C40,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHN*%
+X191910000Y-142410000D03*
+%TO.P,C40,2*%
+%TO.N,/Project Architecture/GND*%
+X192870000Y-142410000D03*
+%TD*%
+D11*
+%TO.P,R22,1*%
+%TO.N,/Project Architecture/CVDD*%
+X228165000Y-133375000D03*
+%TO.P,R22,2*%
+%TO.N,Net-(D1-A)*%
+X229185000Y-133375000D03*
+%TD*%
+D10*
+%TO.P,R28,1*%
+%TO.N,/Project Architecture/Temperature Sense/TBIAS*%
+X268220000Y-138335000D03*
+%TO.P,R28,2*%
+%TO.N,/Project Architecture/Connectors/T_P6*%
+X269870000Y-138335000D03*
+%TD*%
+D19*
+%TO.P,CR2,1*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WP*%
+X194224950Y-148960799D03*
+%TO.P,CR2,2*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_WN*%
+X194224950Y-150860801D03*
+%TO.P,CR2,3*%
+%TO.N,/Project Architecture/GND*%
+X196523650Y-149910800D03*
+%TD*%
+D15*
+%TO.P,C30,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO2*%
+X274915000Y-127485000D03*
+%TO.P,C30,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-127485000D03*
+%TD*%
+%TO.P,C38,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLN*%
+X193670000Y-49460000D03*
+%TO.P,C38,2*%
+%TO.N,/Project Architecture/GND*%
+X194630000Y-49460000D03*
+%TD*%
+D16*
+%TO.P,C3,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/BAT*%
+X223190000Y-88525000D03*
+%TO.P,C3,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB8*%
+X224740000Y-88525000D03*
+%TD*%
+D15*
+%TO.P,C41,1*%
+%TO.N,/Project Architecture/Daisy Chain/COML_CT*%
+X193670000Y-55370000D03*
+%TO.P,C41,2*%
+%TO.N,/Project Architecture/GND*%
+X194630000Y-55370000D03*
+%TD*%
+D12*
+%TO.P,R13,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP3*%
+X214642500Y-109255000D03*
+%TO.P,R13,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB3*%
+X220567500Y-109255000D03*
+%TD*%
+D16*
+%TO.P,C26,1*%
+%TO.N,/Project Architecture/Power & Reference/TSREF*%
+X222840000Y-143135000D03*
+%TO.P,C26,2*%
+%TO.N,/Project Architecture/GND*%
+X224390000Y-143135000D03*
+%TD*%
+%TO.P,C23,1*%
+%TO.N,/Project Architecture/GND*%
+X222840000Y-140625000D03*
+%TO.P,C23,2*%
+%TO.N,/Project Architecture/Power & Reference/REFHP*%
+X224390000Y-140625000D03*
+%TD*%
+D15*
+%TO.P,C42,1*%
+%TO.N,/Project Architecture/Daisy Chain/COMH_CT*%
+X191910000Y-146350000D03*
+%TO.P,C42,2*%
+%TO.N,/Project Architecture/GND*%
+X192870000Y-146350000D03*
+%TD*%
+%TO.P,C35,1*%
+%TO.N,/Project Architecture/Temperature Sense/GPIO7*%
+X274915000Y-137335000D03*
+%TO.P,C35,2*%
+%TO.N,/Project Architecture/GND*%
+X275875000Y-137335000D03*
+%TD*%
+D10*
+%TO.P,R4,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP7*%
+X235170000Y-93545000D03*
+%TO.P,R4,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC7*%
+X236820000Y-93545000D03*
+%TD*%
+D16*
+%TO.P,C9,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC3*%
+X227200000Y-88525000D03*
+%TO.P,C9,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC2*%
+X228750000Y-88525000D03*
+%TD*%
+D18*
+%TO.P,TP3,1,1_1*%
+%TO.N,/Project Architecture/Power & Reference/AVDD*%
+X99050000Y-143050000D03*
+%TD*%
+D16*
+%TO.P,C14,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB6*%
+X231210000Y-86015000D03*
+%TO.P,C14,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB5*%
+X232760000Y-86015000D03*
+%TD*%
+D10*
+%TO.P,R6,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP6*%
+X235170000Y-96055000D03*
+%TO.P,R6,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/VC6*%
+X236820000Y-96055000D03*
+%TD*%
+D11*
+%TO.P,R42,1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMLN*%
+X190750000Y-53470000D03*
+%TO.P,R42,2*%
+%TO.N,/Project Architecture/Daisy Chain/COML_WN*%
+X191770000Y-53470000D03*
+%TD*%
+D12*
+%TO.P,R3,1*%
+%TO.N,/Project Architecture/Cell Sense & Balance/TAP8*%
+X214642500Y-84705000D03*
+%TO.P,R3,2*%
+%TO.N,/Project Architecture/Cell Sense & Balance/CB8*%
+X220567500Y-84705000D03*
+%TD*%
+D18*
+%TO.P,TP14,1,1_1*%
+%TO.N,/Project Architecture/Daisy Chain/U1_COMHN*%
+X88950000Y-145100000D03*
+%TD*%
+M02*
