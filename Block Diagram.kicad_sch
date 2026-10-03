@@ -6,7 +6,6 @@
 	(paper "A3")
 	(title_block
 		(title "Block Diagram")
-		(date "2025-01-12")
 		(rev "${REVISION}")
 		(company "${COMPANY}")
 	)

@@ -6,7 +6,6 @@
 	(paper "A4")
 	(title_block
 		(title "Project Architecture")
-		(date "2025-01-12")
 		(rev "${REVISION}")
 		(company "${COMPANY}")
 	)
@@ -291,6 +290,12 @@
 		)
 		(uuid "f4789478-c68e-4cee-9edd-5d11b744f94d")
 	)
+	(junction
+		(at 106.68 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7e5d577f-c822-4657-b9f0-3b6eab8780d9")
+	)
 	(wire
 		(pts
 			(xy 76.2 129.54) (xy 73.66 129.54)
@@ -341,6 +346,16 @@
 		)
 		(uuid "42c518a7-f4d2-45c2-b55e-718ad81e2eb3")
 	)
+	(wire
+		(pts
+			(xy 185.42 58.42) (xy 185.42 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50893769-3b76-4684-91b9-21643f4da633")
+	)
 	(bus
 		(pts
 			(xy 101.6 111.76) (xy 190.5 111.76)
@@ -350,6 +365,16 @@
 			(type default)
 		)
 		(uuid "680ab0a0-527c-49bf-940e-55ccdd9370d5")
+	)
+	(wire
+		(pts
+			(xy 185.42 60.96) (xy 190.5 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7045fa85-6100-4ab8-a739-1a30b4eacc7e")
 	)
 	(wire
 		(pts
@@ -363,6 +388,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 60.96) (xy 114.3 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e1c4f91-a99d-4b4f-8498-94deaa7ff1ac")
+	)
+	(wire
+		(pts
 			(xy 187.96 129.54) (xy 187.96 132.08)
 		)
 		(stroke
@@ -373,7 +408,7 @@
 	)
 	(bus
 		(pts
-			(xy 177.8 60.96) (xy 190.5 60.96)
+			(xy 177.8 68.58) (xy 190.5 68.58)
 		)
 		(stroke
 			(width 0)
@@ -423,7 +458,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 60.96) (xy 114.3 60.96)
+			(xy 101.6 60.96) (xy 106.68 60.96)
 		)
 		(stroke
 			(width 0)
@@ -460,6 +495,16 @@
 			(type default)
 		)
 		(uuid "e6caa658-36fb-4976-9744-d3e537852068")
+	)
+	(wire
+		(pts
+			(xy 106.68 58.42) (xy 106.68 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee7377a0-1599-4505-b597-2ca841171a5b")
 	)
 	(wire
 		(pts
@@ -565,6 +610,83 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VSSA")
+		(at 106.68 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1f78a8a4-65f6-442a-b49b-8b763130e25a")
+		(property "Reference" "#PWR054"
+			(at 106.68 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VMODULE"
+			(at 106.68 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"VSSA\""
+			(at 106.68 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "41fcc14c-381d-4ad5-9beb-29d20e885cc7")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -1040,6 +1162,83 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "power:VSSA")
+		(at 185.42 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dd77e336-2f40-438a-b949-4268e71c1948")
+		(property "Reference" "#PWR055"
+			(at 185.42 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VMODULE"
+			(at 185.42 54.61 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 185.42 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 185.42 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"VSSA\""
+			(at 185.42 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e360f316-1050-45e7-9453-214c66b7387c")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
 		(at 152.4 55.88)
 		(size 25.4 25.4)
@@ -1103,7 +1302,7 @@
 			)
 		)
 		(pin "T_P[1..8]" passive
-			(at 177.8 60.96 0)
+			(at 177.8 68.58 0)
 			(uuid "ad7685f8-6ff9-4726-86c9-946997f5d7a8")
 			(effects
 				(font
@@ -1191,7 +1390,7 @@
 			)
 		)
 		(pin "T_P[1..8]" passive
-			(at 190.5 60.96 180)
+			(at 190.5 68.58 180)
 			(uuid "80dd08a3-c5d8-4adb-8ad1-0b0419fc96f9")
 			(effects
 				(font
@@ -1207,6 +1406,16 @@
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
+				)
+				(justify left)
+			)
+		)
+		(pin "VMODULE" passive
+			(at 190.5 60.96 180)
+			(uuid "dd41f57f-1663-441f-beac-b505163a33a6")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
@@ -1482,7 +1691,7 @@
 		)
 	)
 	(sheet
-		(at 233.68 54.61)
+		(at 228.6 57.15)
 		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1493,11 +1702,11 @@
 			(type solid)
 		)
 		(fill
-			(color 0 0 0 0)
+			(color 255 255 194 1)
 		)
 		(uuid "f4a7f626-808e-4d0f-b4d4-b24a2b39d327")
 		(property "Sheetname" "Mechanical"
-			(at 233.68 53.34 0)
+			(at 228.6 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1510,7 +1719,7 @@
 			)
 		)
 		(property "Sheetfile" "mechanical.kicad_sch"
-			(at 233.68 80.5946 0)
+			(at 228.6 83.1346 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

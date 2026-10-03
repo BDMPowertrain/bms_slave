@@ -459,7 +459,7 @@
 		(uuid "f005ffb0-bc8d-459c-8099-5e32478f6cb0")
 	)
 	(embedded_fonts no)
-	(model "/home/aidan/Downloads/DPAK_04KQTC_DIO.step"
+	(model "${KIPRJMOD}/RemoteLibrary/remote_3d/DPAK_04KQTC_DIO.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -8,148 +8,6 @@
 		(title "Cell Sense & Balance")
 	)
 	(lib_symbols
-		(symbol "Device:NetTie_2"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "NT"
-				(at 0 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "NetTie_2"
-				(at 0 -1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Net tie, 2 pins"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "net tie short"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Net*Tie*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "NetTie_2_0_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "NetTie_2_1_1"
-				(pin passive line
-					(at -2.54 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power local)
 			(pin_numbers
@@ -3641,12 +3499,6 @@
 		(uuid "4cbce18f-ddd6-4769-996c-fdac02d5bd32")
 	)
 	(junction
-		(at 251.46 218.44)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "54d1b559-c956-4b54-87f5-7d1ba01e005a")
-	)
-	(junction
 		(at 195.58 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3761,22 +3613,10 @@
 		(uuid "ae482ad2-c7a2-4239-89f5-934ce0cd9db4")
 	)
 	(junction
-		(at 172.72 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b541d99b-a603-402b-83e1-d8fef96044f8")
-	)
-	(junction
 		(at 251.46 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b64819f5-4226-43e6-9a5c-d85b79f19226")
-	)
-	(junction
-		(at 157.48 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bf7c6e0b-f619-41da-8b69-95f1940334b8")
 	)
 	(junction
 		(at 274.32 218.44)
@@ -3925,9 +3765,18 @@
 		)
 		(uuid "a90e10e2-92c6-484b-845c-5540e187b77e")
 	)
+	(bus_entry
+		(at 157.48 50.8)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcb150ac-a9dc-4407-bfb7-5dd16a819afc")
+	)
 	(bus
 		(pts
-			(xy 241.3 58.42) (xy 241.3 205.74)
+			(xy 241.3 55.88) (xy 241.3 205.74)
 		)
 		(stroke
 			(width 0)
@@ -4034,16 +3883,6 @@
 			(type default)
 		)
 		(uuid "0ecf0790-e9b3-4c41-99a8-3445db0d1554")
-	)
-	(bus
-		(pts
-			(xy 162.56 111.76) (xy 162.56 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "113543e7-9c86-4f37-b02d-0b169fb4b922")
 	)
 	(wire
 		(pts
@@ -4305,16 +4144,6 @@
 		)
 		(uuid "3416da16-d259-4202-8381-179c21345f66")
 	)
-	(bus
-		(pts
-			(xy 241.3 55.88) (xy 241.3 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35a33507-a894-4f43-a80d-606db933b426")
-	)
 	(wire
 		(pts
 			(xy 195.58 71.12) (xy 195.58 73.66)
@@ -4357,16 +4186,6 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 60.96) (xy 172.72 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f96af79-a430-4f71-82ab-d4a74370cb76")
-	)
-	(wire
-		(pts
 			(xy 185.42 124.46) (xy 185.42 139.7)
 		)
 		(stroke
@@ -4394,6 +4213,16 @@
 			(type default)
 		)
 		(uuid "441f3143-e334-4adc-b53d-6dbed26a6524")
+	)
+	(wire
+		(pts
+			(xy 160.02 109.22) (xy 162.56 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47c14837-2588-4524-a45a-62072c266829")
 	)
 	(wire
 		(pts
@@ -4564,26 +4393,6 @@
 			(type default)
 		)
 		(uuid "7530f439-0ca6-4421-8a21-a088fab0c20c")
-	)
-	(bus
-		(pts
-			(xy 162.56 55.88) (xy 157.48 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76824e57-a00c-48b1-a0ff-208848a4f930")
-	)
-	(bus
-		(pts
-			(xy 157.48 50.8) (xy 236.22 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76fc364d-143e-4bd4-8489-4cf707bd35ea")
 	)
 	(wire
 		(pts
@@ -4817,6 +4626,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 53.34) (xy 160.02 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e1e07a3-274a-43ab-bfc2-b7fb5588151e")
+	)
+	(wire
+		(pts
 			(xy 261.62 106.68) (xy 264.16 106.68)
 		)
 		(stroke
@@ -4884,16 +4703,6 @@
 			(type default)
 		)
 		(uuid "aa9e2eb5-621a-4d27-8cbb-d6d788972bdb")
-	)
-	(wire
-		(pts
-			(xy 251.46 226.06) (xy 251.46 223.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac74d652-ec74-4ad1-bc92-233dc61beb5f")
 	)
 	(wire
 		(pts
@@ -5257,6 +5066,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 58.42) (xy 172.72 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f31effd0-3c43-4b17-bd6c-eeb5b5336208")
+	)
+	(wire
+		(pts
 			(xy 254 137.16) (xy 251.46 137.16)
 		)
 		(stroke
@@ -5277,7 +5096,7 @@
 	)
 	(bus
 		(pts
-			(xy 142.24 50.8) (xy 157.48 50.8)
+			(xy 142.24 50.8) (xy 236.22 50.8)
 		)
 		(stroke
 			(width 0)
@@ -7657,87 +7476,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:NetTie_2")
-		(at 251.46 220.98 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "27863c19-9333-4211-a9ba-daf26f840446")
-		(property "Reference" "NT2"
-			(at 248.92 220.98 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NetTie_2"
-			(at 248.92 218.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Net tie, 2 pins"
-			(at 251.46 220.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "8ed3130b-2eba-4cf1-9fed-7a09c57fc8ab")
-		)
-		(pin "1"
-			(uuid "7595b847-d388-4a6f-8974-5585eb6b279f")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
-					(reference "NT2")
 					(unit 1)
 				)
 			)
@@ -10156,84 +9894,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 251.46 226.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "82d0cb0c-5857-4050-8c40-b743f89d6237")
-		(property "Reference" "#PWR014"
-			(at 251.46 232.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 251.46 231.14 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 251.46 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6b4d7395-4c32-400b-85f1-945aab09e5b6")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
-					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -13190,7 +12850,7 @@
 	)
 	(symbol
 		(lib_id "power:VSSA")
-		(at 172.72 55.88 0)
+		(at 172.72 58.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13200,7 +12860,7 @@
 		(dnp no)
 		(uuid "b4db5f94-a05d-45d8-aad3-19e53a1ac046")
 		(property "Reference" "#PWR012"
-			(at 172.72 59.69 0)
+			(at 172.72 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13211,7 +12871,7 @@
 			)
 		)
 		(property "Value" "VMODULE"
-			(at 172.72 52.07 0)
+			(at 172.72 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13221,7 +12881,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 172.72 55.88 0)
+			(at 172.72 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13232,7 +12892,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 172.72 55.88 0)
+			(at 172.72 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13243,7 +12903,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 172.72 55.88 0)
+			(at 172.72 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15514,87 +15174,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
 					(reference "C14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:NetTie_2")
-		(at 172.72 58.42 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f840acb8-30b1-4494-bfd3-706492a643e8")
-		(property "Reference" "NT1"
-			(at 170.18 59.69 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "NetTie_2"
-			(at 170.18 57.15 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Net tie, 2 pins"
-			(at 172.72 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "5205aebf-db16-45fe-9753-6c6894c45478")
-		)
-		(pin "1"
-			(uuid "74cea2b5-69b0-4088-8fdc-4f594fe820b1")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f"
-					(reference "NT1")
 					(unit 1)
 				)
 			)
