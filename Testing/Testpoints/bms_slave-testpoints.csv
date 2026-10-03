@@ -1,15 +1,15 @@
 Testpoint Ref.,Net,Net Class,X,Y,Side,Pad Type,Value,Footprint
-TP1,/Project Architecture/CVDD,"PWR,Default",31.0000,-37.0500,top,SMT,,TestPoint_Pad_D2.0mm
-TP2,/Project Architecture/Power & Reference/DVDD,"PWR,Default",31.0000,-41.1000,top,SMT,,TestPoint_Pad_D2.0mm
-TP3,/Project Architecture/Power & Reference/AVDD,"PWR,Default",35.0500,-37.0500,top,SMT,,TestPoint_Pad_D2.0mm
-TP4,/Project Architecture/Power & Reference/LDOIN,"PWR,Default",35.0500,-41.1000,top,SMT,,TestPoint_Pad_D2.0mm
-TP5,/Project Architecture/Power & Reference/VCOLL,"PWR,Default",39.1000,-37.0500,top,SMT,,TestPoint_Pad_D2.0mm
-TP6,/Project Architecture/Power & Reference/LDOIN,"PWR,Default",39.1000,-41.1000,top,SMT,,TestPoint_Pad_D2.0mm
-TP7,/Project Architecture/Power & Reference/TSREF,Default,43.1500,-37.0500,top,SMT,,TestPoint_Pad_D2.0mm
-TP8,/Project Architecture/GND,"GND,Default",43.1500,-41.1000,top,SMT,,TestPoint_Pad_D2.0mm
-TP9,/Project Architecture/Connectors/T_P1,"TEMP,Default",31.0000,-26.9500,top,SMT,,TestPoint_Pad_D2.0mm
-TP10,/Project Architecture/GND,"GND,Default",31.0000,-31.0000,top,SMT,,TestPoint_Pad_D2.0mm
-TP11,/Project Architecture/Daisy Chain/U1_COMLP,"DAISY,Default",24.9500,-26.9500,top,SMT,,TestPoint_Pad_D2.0mm
-TP12,/Project Architecture/Daisy Chain/U1_COMLN,"DAISY,Default",24.9500,-31.0000,top,SMT,,TestPoint_Pad_D2.0mm
-TP13,/Project Architecture/Daisy Chain/U1_COMHP,"DAISY,Default",24.9500,-35.0500,top,SMT,,TestPoint_Pad_D2.0mm
-TP14,/Project Architecture/Daisy Chain/U1_COMHN,"DAISY,Default",24.9500,-39.1000,top,SMT,,TestPoint_Pad_D2.0mm
+TP1,/Project Architecture/CVDD,"PWR,Default",-5.0000,-33.0500,top,SMT,,TestPoint_Pad_D2.0mm
+TP2,/Project Architecture/Power & Reference/DVDD,"PWR,Default",-5.0000,-37.1000,top,SMT,,TestPoint_Pad_D2.0mm
+TP3,/Project Architecture/Power & Reference/AVDD,"PWR,Default",-0.9500,-33.0500,top,SMT,,TestPoint_Pad_D2.0mm
+TP4,/Project Architecture/Power & Reference/LDOIN,"PWR,Default",-0.9500,-37.1000,top,SMT,,TestPoint_Pad_D2.0mm
+TP5,/Project Architecture/Power & Reference/VCOLL,"PWR,Default",3.1000,-33.0500,top,SMT,,TestPoint_Pad_D2.0mm
+TP6,/Project Architecture/Power & Reference/LDOIN,"PWR,Default",3.1000,-37.1000,top,SMT,,TestPoint_Pad_D2.0mm
+TP7,/Project Architecture/Power & Reference/TSREF,Default,7.1500,-33.0500,top,SMT,,TestPoint_Pad_D2.0mm
+TP8,/Project Architecture/GND,"GND,Default",7.1500,-37.1000,top,SMT,,TestPoint_Pad_D2.0mm
+TP9,/Project Architecture/Connectors/T_P1,"TEMP,Default",-5.0000,-22.9500,top,SMT,,TestPoint_Pad_D2.0mm
+TP10,/Project Architecture/GND,"GND,Default",-5.0000,-27.0000,top,SMT,,TestPoint_Pad_D2.0mm
+TP11,/Project Architecture/Daisy Chain/U1_COMLP,"DAISY,Default",-11.0500,-22.9500,top,SMT,,TestPoint_Pad_D2.0mm
+TP12,/Project Architecture/Daisy Chain/U1_COMLN,"DAISY,Default",-11.0500,-27.0000,top,SMT,,TestPoint_Pad_D2.0mm
+TP13,/Project Architecture/Daisy Chain/U1_COMHP,"DAISY,Default",-11.0500,-31.0500,top,SMT,,TestPoint_Pad_D2.0mm
+TP14,/Project Architecture/Daisy Chain/U1_COMHN,"DAISY,Default",-11.0500,-35.1000,top,SMT,,TestPoint_Pad_D2.0mm
