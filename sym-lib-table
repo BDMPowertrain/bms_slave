@@ -28,7 +28,7 @@
 	(lib (name "remote_era-2apb202x") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/symbols/remote_era-2apb202x.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_ltst-c190kgkt") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/symbols/remote_ltst-c190kgkt.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0430451612") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0430451612.kicad_sym") (options "") (descr "Remote download"))
-	(lib (name "remote_0430451200") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0430451200.kicad_sym") (options "") (descr "Remote download"))
+	(lib (name "remote_0430451200") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/symbols/remote_0430451200.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0436500218") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0436500218.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0430450212") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0430450212.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0436501200") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0436501200.kicad_sym") (options "") (descr "Remote download"))

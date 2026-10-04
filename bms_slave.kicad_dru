@@ -128,3 +128,25 @@
 (rule "Test Point Courtyard Exclusion"
 (constraint courtyard_clearance (min -1mm))
 (condition "A.Reference =='FM*'"))
+
+# ----------------------------------- Keep Outs -------------------------------------------
+
+# 1. Cable side of the transformers vs everything else
+(rule "ISO clearance"
+  (condition "A.NetClass == 'ISO' && B.NetClass != 'ISO'")
+  (constraint clearance (min 3mm)))
+
+# 2. Inside the daisy keep-out: only daisy nets, plus GND for cap/TVS returns
+(rule "DAISY_KO foreign copper"
+  (condition "A.intersectsArea('DAISY_KO') && A.NetClass != 'DAISY' && A.NetClass != 'ISO' && A.NetClass != 'GND'")
+  (constraint disallow track via))
+
+# 3. Inside the cable-side zone: only ISO nets
+(rule "ISO_ZONE foreign copper"
+  (condition "A.intersectsArea('ISO_ZONE') && A.NetClass != 'ISO'")
+  (constraint disallow track via))
+
+# 4. Daisy pairs: P/N length matched
+(rule "Daisy skew"
+  (condition "A.inDiffPair('*COM*')")
+  (constraint skew (max 0.5mm)))
