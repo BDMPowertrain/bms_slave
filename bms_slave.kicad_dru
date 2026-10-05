@@ -1,24 +1,21 @@
 (version 1)
-# PCBWay Custom DRC for KiCad 10
-# 4 layers, 2 oz outer and 1 oz inner. Optimized for lowest cost.
-#
-# CARRIED OVER FROM KDT'S 6-LAYER DEFAULTS, NOT INDEPENDENTLY VERIFIED FOR
-# 4-LAYER: re-check these numeric minimums (trace/space, via, hole sizes)
-# against PCBWay's current 4-layer capability table before TIM's first
-# fab order.
+# PCBWay Custom DRC for KiCad 10 - EV27 BMS slave
+# 4 layers, 1 oz outer and 1 oz inner, 1.6 mm. Optimized for lowest cost.
+# PCBWay limits: trace/space 0.1 mm (0.15 rec.), drill 0.2 mm min (under 0.2 costs more),
+# copper to edge 0.3 mm.
 
 # ----------------------------------- Minimum trace width and spacing --------------------
 
-# 2oz copper
+# 1oz copper
 (rule "Minimum Trace Width and Spacing (outer layer)"
-(constraint track_width (min 0.2mm))
-(constraint clearance (min 0.2mm))
+(constraint track_width (min 0.15mm))
+(constraint clearance (min 0.15mm))
 (layer outer)
 (condition "A.Type == 'track'"))
 
 (rule "Minimum Trace Width and Spacing (innner layer)"
-(constraint track_width (min 0.2mm))
-(constraint clearance (min 0.2mm))
+(constraint track_width (min 0.15mm))
+(constraint clearance (min 0.15mm))
 (layer inner)
 (condition "A.Type == 'track'"))
 
@@ -26,13 +23,15 @@
 
 # Drill/hole size - listed here to maintain order of rule application. Must not override rule set in Via hole/diameter size below.
 (rule "drill hole size (mechanical)"
-(constraint hole_size (min 0.15mm) (max 6.3mm)))
+(constraint hole_size (min 0.2mm) (max 6.3mm)))
 
 # ----------------------------------- Via hole/diameter size -------------------------------------------
 
+# 0.2 mm drill / 0.5 mm pad = 0.15 mm ring per side, meets PCBWay
 (rule "Minimum Via Diameter and Hole Size"
-(constraint hole_size (min 0.25mm))
-(constraint via_diameter (min 0.55mm))
+(constraint hole_size (min 0.2mm))
+(constraint via_diameter (min 0.5mm))
+(constraint annular_width (min 0.15mm))
 (condition "A.Type == 'via'"))
 
 
@@ -50,10 +49,6 @@
 (constraint hole_size (min 0.25mm))
 (constraint annular_width (min 0.15mm))
 (condition "A.Type == 'Pad' && A.isPlated()"))
-
-(rule "Minimum Castellated Hole Size"
-(constraint hole_size (min 0.6mm))
-(condition "A.Type == 'pad' && A.Fabrication_Property == 'Castellated pad'"))
 
 (rule "Min. Plated Slot Width"
 (constraint hole_size (min 0.5mm))
@@ -83,7 +78,7 @@
 (condition "A.Type == 'pad' && B.Type == A.Type && A.Net != B.Net"))
 
 (rule "pad to pad clearance (without hole, different nets)"
-(constraint clearance (min 0.2mm))
+(constraint clearance (min 0.15mm))
 (condition "A.Type == 'Pad' && B.Type == 'Pad'"))
 
 (rule "NPTH to Track clearance"
@@ -103,10 +98,9 @@
 (condition "A.isPlated() && A.Type != 'Via' && B.Type == 'track'"))
 
 # ----------------------------------- Board Outlines (PICK ONE) -------------------------------------
-#Default Routed Edge Clearance
+#Default Routed Edge Clearance (no condition, so pours are pulled back too)
 (rule "Trace to Outline"
-(constraint edge_clearance (min 0.3mm))
-(condition "A.Type == 'track'"))
+(constraint edge_clearance (min 0.3mm)))
 
 # ----------------------------------- Silkscreen ----------------------------------------------------
 (rule "Minimum Text"
@@ -125,28 +119,50 @@
 (condition "A.Reference =='TP*'"))
 
 # ----------------------------------- Fiducials Courtyard -------------------------------------------
-(rule "Test Point Courtyard Exclusion"
+(rule "Fiducial Courtyard Exclusion"
 (constraint courtyard_clearance (min -1mm))
 (condition "A.Reference =='FM*'"))
 
 # ----------------------------------- Keep Outs -------------------------------------------
+# Needs rule areas named exactly DAISY_KO and ISO_ZONE (one per port, COMH + COML)
 
 # 1. Cable side of the transformers vs everything else
 (rule "ISO clearance"
-  (condition "A.NetClass == 'ISO' && B.NetClass != 'ISO'")
-  (constraint clearance (min 3mm)))
+(constraint clearance (min 3mm))
+(condition "A.NetClass == 'ISO' && B.NetClass != 'ISO'"))
 
 # 2. Inside the daisy keep-out: only daisy nets, plus GND for cap/TVS returns
 (rule "DAISY_KO foreign copper"
-  (condition "A.intersectsArea('DAISY_KO') && A.NetClass != 'DAISY' && A.NetClass != 'ISO' && A.NetClass != 'GND'")
-  (constraint disallow track via))
+(constraint disallow track via)
+(condition "A.intersectsArea('DAISY_KO') && A.NetClass != 'DAISY' && A.NetClass != 'ISO' && A.NetClass != 'GND'"))
 
 # 3. Inside the cable-side zone: only ISO nets
 (rule "ISO_ZONE foreign copper"
-  (condition "A.intersectsArea('ISO_ZONE') && A.NetClass != 'ISO'")
-  (constraint disallow track via))
+(constraint disallow track via)
+(condition "A.intersectsArea('ISO_ZONE') && A.NetClass != 'ISO'"))
+
+# ----------------------------------- Daisy Chain -------------------------------------------
+
+# 3W: 0.2 mm trace -> 0.4 mm edge gap to anything (other COM lines, shield vias, GND pour).
+# With 0.5 mm shield vias: COM-to-COM pitch = 0.1 + 0.4 + 0.5 + 0.4 + 0.1 = 1.5 mm.
+# Relaxed inside U1's courtyard where the 0.5 mm pin pitch makes it impossible.
+(rule "Daisy 3W spacing"
+(constraint clearance (min 0.4mm))
+(condition "A.Type == 'track' && A.NetClass == 'DAISY' && !A.intersectsCourtyard('U1')"))
 
 # 4. Daisy pairs: P/N length matched
 (rule "Daisy skew"
-  (condition "A.inDiffPair('*COM*')")
-  (constraint skew (max 0.5mm)))
+(constraint skew (max 0.5mm) (within_diff_pairs))
+(condition "A.inDiffPair('*COM*')"))
+
+# ----------------------------------- Cell Sense VC/CB Match ---------------------------------
+# VCn (top) and CBn (bottom) same length within 2 mm
+(rule "Cell 0 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC0' || A.NetName == '*/CB0'"))
+(rule "Cell 1 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC1' || A.NetName == '*/CB1'"))
+(rule "Cell 2 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC2' || A.NetName == '*/CB2'"))
+(rule "Cell 3 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC3' || A.NetName == '*/CB3'"))
+(rule "Cell 4 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC4' || A.NetName == '*/CB4'"))
+(rule "Cell 5 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC5' || A.NetName == '*/CB5'"))
+(rule "Cell 6 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC6' || A.NetName == '*/CB6'"))
+(rule "Cell 7 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC7' || A.NetName == '*/CB7'"))
+(rule "Cell 8 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC8' || A.NetName == '*/CB8'"))
