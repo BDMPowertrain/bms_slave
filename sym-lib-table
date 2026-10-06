@@ -32,4 +32,5 @@
 	(lib (name "remote_0436500218") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0436500218.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0430450212") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0430450212.kicad_sym") (options "") (descr "Remote download"))
 	(lib (name "remote_0436501200") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/symbols/remote_0436501200.kicad_sym") (options "") (descr "Remote download"))
+	(lib (name "remote_0430451024") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/symbols/remote_0430451024.kicad_sym") (options "") (descr "Remote download"))
 )
