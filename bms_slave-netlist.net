@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-nh106fjo/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-ankq52su/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -19,9 +19,9 @@
 		(textvar
 			(name "DESIGNER") "Aidan Brzezinski")
 		(textvar
-			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				75.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		1.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.250 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
+			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				77.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		1.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.250 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "6133d31")
+			(name "GIT_HASH_PCB") "d929d93")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -1171,7 +1171,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "757b9d45-fa28-4c0b-b7b4-71e3579ef7c5")
+			(tstamps "871681ff-c64d-4a69-942b-284ebcbbe8bd")
 			(units
 				(unit
 					(name "A")
@@ -1205,6 +1205,12 @@
 						)
 						(pin
 							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
 						)
 					)
 				)
@@ -16126,6 +16132,16 @@
 					(name "10")
 					(type "unspecified")
 				)
+				(pin
+					(num "11")
+					(name "11")
+					(type "unspecified")
+				)
+				(pin
+					(num "12")
+					(name "12")
+					(type "unspecified")
+				)
 			)
 		)
 		(libpart
@@ -18649,8 +18665,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "11")
-				(pinfunction "11_11")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
@@ -18670,8 +18686,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "10")
-				(pinfunction "10_10")
+				(pin "7")
+				(pinfunction "7_7")
 				(pintype "unspecified")
 			)
 			(node
@@ -18691,8 +18707,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "9")
-				(pinfunction "9_9")
+				(pin "2")
+				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
@@ -18733,8 +18749,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "7")
-				(pinfunction "7_7")
+				(pin "9")
+				(pinfunction "9_9")
 				(pintype "unspecified")
 			)
 			(node
@@ -18754,8 +18770,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "6")
-				(pinfunction "6_6")
+				(pin "10")
+				(pinfunction "10_10")
 				(pintype "unspecified")
 			)
 			(node
@@ -18775,8 +18791,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "5")
-				(pinfunction "5_5")
+				(pin "11")
+				(pinfunction "11_11")
 				(pintype "unspecified")
 			)
 			(node
@@ -18796,8 +18812,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "4")
-				(pinfunction "4_4")
+				(pin "12")
+				(pinfunction "12_12")
 				(pintype "unspecified")
 			)
 			(node
@@ -18817,8 +18833,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J3")
-				(pin "3")
-				(pinfunction "3_3")
+				(pin "5")
+				(pinfunction "5_5")
 				(pintype "unspecified")
 			)
 			(node
@@ -20128,14 +20144,32 @@
 			)
 			(node
 				(ref "J3")
-				(pin "12")
-				(pinfunction "12_12")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "4_4")
 				(pintype "unspecified")
 			)
 			(node
 				(ref "J4")
 				(pin "10")
 				(pinfunction "10_10")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "11")
+				(pinfunction "11_11")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "J4")
+				(pin "12")
+				(pinfunction "12_12")
 				(pintype "unspecified")
 			)
 			(node
@@ -20209,8 +20243,8 @@
 			(class "PWR,Default")
 			(node
 				(ref "J3")
-				(pin "1")
-				(pinfunction "1_1")
+				(pin "6")
+				(pinfunction "6_6")
 				(pintype "unspecified")
 			)
 			(node
@@ -20226,17 +20260,6 @@
 		)
 		(net
 			(code "76")
-			(name "unconnected-(J3-Pad2)")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "unspecified+no_connect")
-			)
-		)
-		(net
-			(code "77")
 			(name "unconnected-(U1Aux inputs-BBN-Pad63)")
 			(class "Default")
 			(node
@@ -20247,7 +20270,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "77")
 			(name "unconnected-(U1Aux inputs-BBP-Pad64)")
 			(class "Default")
 			(node
@@ -20258,7 +20281,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "78")
 			(name "unconnected-(U1Communication-FAULT_N-Pad62)")
 			(class "Default")
 			(node
@@ -20269,7 +20292,7 @@
 			)
 		)
 		(net
-			(code "80")
+			(code "79")
 			(name "unconnected-(U1Communication-TX-Pad53)")
 			(class "Default")
 			(node
@@ -20280,7 +20303,7 @@
 			)
 		)
 		(net
-			(code "81")
+			(code "80")
 			(name "unconnected-(U2-Pad5)")
 			(class "Default")
 			(node
@@ -20290,7 +20313,7 @@
 			)
 		)
 		(net
-			(code "82")
+			(code "81")
 			(name "unconnected-(U3-Pad5)")
 			(class "Default")
 			(node
