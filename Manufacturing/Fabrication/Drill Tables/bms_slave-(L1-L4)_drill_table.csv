@@ -1,8 +1,8 @@
 Count,Hole Size,Plated,Hole Shape,Drill Layer Pair,Hole Type
-30,0.20mm (7.87mils),PTH,Round,L1 - L4,Via
+74,0.20mm (7.87mils),PTH,Round,L1 - L4,Via
 36,0.20mm (8.00mils),PTH,Round,L1 - L4,Pad
-1,0.25mm (9.84mils),PTH,Round,L1 - L4,Via
-9,0.30mm (11.81mils),PTH,Round,L1 - L4,Via
+3,0.25mm (9.84mils),PTH,Round,L1 - L4,Via
+11,0.30mm (11.81mils),PTH,Round,L1 - L4,Via
 26,1.07mm (42.00mils),PTH,Round,L1 - L4,Pad
 2,2.46mm (97.00mils),PTH,Round,L1 - L4,Pad
-Total 104,,,,,
+Total 152,,,,,

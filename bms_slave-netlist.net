@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-ankq52su/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-bp3i1fzm/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -21,7 +21,7 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				77.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		1.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.250 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "d929d93")
+			(name "GIT_HASH_PCB") "220891d")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -15878,6 +15878,62 @@
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
 			(tstamps "ab29e077-9448-41d5-b93e-222eb74b1c4e")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "H5")
+			(value "MountingHole")
+			(footprint "MountingHole:MountingHole_3.2mm_M3")
+			(description "Mounting Hole without connection")
+			(fields
+				(field
+					(name "KiLib_Generator") "mounting_hardware/mounting_hole")
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole without connection")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole")
+				(description "Mounting Hole without connection")
+			)
+			(property
+				(name "KiLib_Generator")
+				(value "mounting_hardware/mounting_hole")
+			)
+			(property
+				(name "Sheetname")
+				(value "Mechanical")
+			)
+			(property
+				(name "Sheetfile")
+				(value "mechanical.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*")
+			)
+			(sheetpath
+				(names "/Project Architecture/Mechanical/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
+			)
+			(tstamps "2e570183-8992-48cc-a027-111c82eff5f5")
 			(units
 				(unit
 					(name "A")
