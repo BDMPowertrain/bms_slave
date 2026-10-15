@@ -160,16 +160,16 @@
 (condition "A.inDiffPair('*COM*')"))
 
 # ----------------------------------- Cell Sense VC/CB Match ---------------------------------
-# VCn (top) and CBn (bottom) same length within 2 mm
-(rule "Cell 0 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC0' || A.NetName == '*/CB0'"))
-(rule "Cell 1 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC1' || A.NetName == '*/CB1'"))
-(rule "Cell 2 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC2' || A.NetName == '*/CB2'"))
-(rule "Cell 3 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC3' || A.NetName == '*/CB3'"))
-(rule "Cell 4 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC4' || A.NetName == '*/CB4'"))
-(rule "Cell 5 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC5' || A.NetName == '*/CB5'"))
-(rule "Cell 6 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC6' || A.NetName == '*/CB6'"))
-(rule "Cell 7 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC7' || A.NetName == '*/CB7'"))
-(rule "Cell 8 VC/CB match" (constraint skew (max 2mm)) (condition "A.NetName == '*/VC8' || A.NetName == '*/CB8'"))
+# VCn (top) and CBn (bottom) same length within 10 mm
+(rule "Cell 0 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC0' || A.NetName == '*/CB0'"))
+(rule "Cell 1 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC1' || A.NetName == '*/CB1'"))
+(rule "Cell 2 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC2' || A.NetName == '*/CB2'"))
+(rule "Cell 3 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC3' || A.NetName == '*/CB3'"))
+(rule "Cell 4 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC4' || A.NetName == '*/CB4'"))
+(rule "Cell 5 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC5' || A.NetName == '*/CB5'"))
+(rule "Cell 6 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC6' || A.NetName == '*/CB6'"))
+(rule "Cell 7 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC7' || A.NetName == '*/CB7'"))
+(rule "Cell 8 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC8' || A.NetName == '*/CB8'"))
 
 # ----------------------------------- U1 Fan-out -------------------------
 # BQ79616 is 0.5 mm pitch: pad gap ~0.2 mm, so net class clearances (BAL 0.3, TAP 0.5) and

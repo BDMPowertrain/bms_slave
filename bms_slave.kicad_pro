@@ -17,7 +17,7 @@
         "copper_text_upright": false,
         "courtyard_line_width": 0.05,
         "dimension_precision": 3,
-        "dimension_units": 3,
+        "dimension_units": 2,
         "dimensions": {
           "arrow_length": 1270000,
           "extension_offset": 500000,
@@ -149,7 +149,7 @@
         "max_error": 0.005,
         "min_clearance": 0.2,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.25,
+        "min_copper_edge_clearance": 0.4,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.254,
         "min_hole_to_hole": 0.254,
@@ -162,7 +162,7 @@
         "min_through_hole_diameter": 0.25,
         "min_track_width": 0.2,
         "min_via_annular_width": 0.15,
-        "min_via_diameter": 0.55,
+        "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "solder_mask_to_copper_clearance": 0.0,
@@ -804,6 +804,9 @@
       "/Project Architecture/Connectors/T_P[1..8]": [
         "TEMP"
       ],
+      "/Project Architecture/Daisy Chain/COMH.CT": [
+        "ISO"
+      ],
       "/Project Architecture/Daisy Chain/COMH_CT": [
         "DAISY"
       ],
@@ -1183,7 +1186,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "TP1-14,R1-86,U1-6,Q1-2,NT1-2,J1-8,H1-5,FID1-3,D1-2,C1-84,CR1-4,#PWR1-66",
+    "used_designators": "JP1,TP1-14,R1-86,U1-6,Q1-2,NT1-2,J1-8,H1-5,FID1-3,D1-2,C1-84,CR1-4,#PWR1-66",
     "variants": []
   },
   "sheets": [

@@ -4809,11 +4809,11 @@
 		(uuid "5179ec1f-ce62-4f0c-a511-e56e3a9ae20d")
 	)
 	(no_connect
-		(at 223.52 110.49)
+		(at 232.41 110.49)
 		(uuid "8fe259c7-7fc4-4be5-98ac-6ef57d7b76dd")
 	)
 	(no_connect
-		(at 223.52 63.5)
+		(at 232.41 63.5)
 		(uuid "a2507b34-f195-4957-bb96-4dc20eef5eb8")
 	)
 	(bus_entry
@@ -4861,6 +4861,16 @@
 			(type default)
 		)
 		(uuid "07c296e9-d9d3-4b20-80ce-7f16495d327b")
+	)
+	(wire
+		(pts
+			(xy 223.52 110.49) (xy 232.41 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a07d06a-2fc5-4e4e-9ada-0fbeab3114f9")
 	)
 	(wire
 		(pts
@@ -5514,6 +5524,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 63.5) (xy 232.41 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d42d3333-3840-4eda-b6ce-746374b62617")
+	)
+	(wire
+		(pts
 			(xy 142.24 53.34) (xy 172.72 53.34)
 		)
 		(stroke
@@ -5759,6 +5779,52 @@
 		(uuid "3ae681b6-ecd4-4f42-a7a3-237c38698f8d")
 		(property "Netclass" "DAISY"
 			(at 175.26 111.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(label "COMH.CT"
+		(at 223.52 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3b85fbd2-2fa3-43ae-98e9-53fef71a38c6")
+		(property "Netclass" "ISO"
+			(at 223.52 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(label "COMH.CT"
+		(at 223.52 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3fc3d211-04dd-44a8-bcf4-62c80012b0f7")
+		(property "Netclass" "ISO"
+			(at 223.52 111.76 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
