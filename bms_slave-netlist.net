@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-czitqxl6/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-96mdwdah/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -19,9 +19,9 @@
 		(textvar
 			(name "DESIGNER") "Aidan Brzezinski")
 		(textvar
-			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				77.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.250 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
+			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.400 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "30e9a8d")
+			(name "GIT_HASH_PCB") "9f504a6")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -43,9 +43,9 @@
 		(textvar
 			(name "RELEASE_BODY_UNRELEASED") "Version Unreleased not found.")
 		(textvar
-			(name "RELEASE_DATE") "14-Oct-2026")
+			(name "RELEASE_DATE") "15-Oct-2026")
 		(textvar
-			(name "RELEASE_DATE_NUM") "2026-10-14")
+			(name "RELEASE_DATE_NUM") "2026-10-15")
 		(textvar
 			(name "RELEASE_TITLE_1.0.0")
 		)
@@ -8233,7 +8233,64 @@
 				(names "/Project Architecture/Power & Reference/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531/")
 			)
-			(tstamps "4e30129a-2583-4458-b2a7-5b70273c81c9")
+			(tstamps "55113cfa-b508-4dc7-a372-af8f898f9e72")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "JP1")
+			(value "SolderJumper_2_Open")
+			(footprint "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
+			(description "Solder Jumper, 2-pole, open")
+			(fields
+				(field
+					(name "Footprint") "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Solder Jumper, 2-pole, open")
+			)
+			(libsource
+				(lib "Jumper")
+				(part "SolderJumper_2_Open")
+				(description "Solder Jumper, 2-pole, open")
+			)
+			(property
+				(name "Sheetname")
+				(value "Power & Reference")
+			)
+			(property
+				(name "Sheetfile")
+				(value "power_and_reference.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "solder jumper SPST")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SolderJumper*Open*")
+			)
+			(sheetpath
+				(names "/Project Architecture/Power & Reference/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531/")
+			)
+			(tstamps "16e47c88-96a1-4e82-bddf-55cdf96f35cc")
 			(units
 				(unit
 					(name "A")
@@ -8794,7 +8851,7 @@
 				(names "/Project Architecture/Power & Reference/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531/")
 			)
-			(tstamps "c87549e6-aae2-4810-9a2e-3cc66be43dc2")
+			(tstamps "d6ec93bc-25f2-4a3b-a86c-f2048b3768f6")
 			(units
 				(unit
 					(name "A")
@@ -15840,6 +15897,40 @@
 			)
 		)
 		(libpart
+			(lib "Jumper")
+			(part "SolderJumper_2_Open")
+			(description "Solder Jumper, 2-pole, open")
+			(footprints
+				(fp "SolderJumper*Open*")
+			)
+			(fields
+				(field
+					(name "Reference") "JP")
+				(field
+					(name "Value") "SolderJumper_2_Open")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Solder Jumper, 2-pole, open")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "B")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
 			(lib "Mechanical")
 			(part "Fiducial")
 			(description "Fiducial Marker")
@@ -18147,6 +18238,10 @@
 			(uri "${KICAD10_SYMBOL_DIR}/Connector.kicad_sym")
 		)
 		(library
+			(logical "Jumper")
+			(uri "${KICAD10_SYMBOL_DIR}/Jumper.kicad_sym")
+		)
+		(library
 			(logical "Mechanical")
 			(uri "${KICAD10_SYMBOL_DIR}/Mechanical.kicad_sym")
 		)
@@ -18964,8 +19059,8 @@
 			(class "ISO,Default")
 			(node
 				(ref "J4")
-				(pin "2")
-				(pinfunction "2_2")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
@@ -18980,8 +19075,8 @@
 			(class "ISO,Default")
 			(node
 				(ref "J4")
-				(pin "1")
-				(pinfunction "1_1")
+				(pin "2")
+				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
@@ -18996,8 +19091,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "18")
-				(pinfunction "18_18")
+				(pin "04")
+				(pinfunction "04_04")
 				(pintype "passive")
 			)
 			(node
@@ -19023,8 +19118,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "16")
-				(pinfunction "16_16")
+				(pin "06")
+				(pinfunction "06_06")
 				(pintype "passive")
 			)
 			(node
@@ -19044,8 +19139,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "14")
-				(pinfunction "14_14")
+				(pin "08")
+				(pinfunction "08_08")
 				(pintype "passive")
 			)
 			(node
@@ -19065,8 +19160,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "12")
-				(pinfunction "12_12")
+				(pin "10")
+				(pinfunction "10_10")
 				(pintype "passive")
 			)
 			(node
@@ -19086,8 +19181,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "10")
-				(pinfunction "10_10")
+				(pin "12")
+				(pinfunction "12_12")
 				(pintype "passive")
 			)
 			(node
@@ -19107,8 +19202,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "08")
-				(pinfunction "08_08")
+				(pin "14")
+				(pinfunction "14_14")
 				(pintype "passive")
 			)
 			(node
@@ -19128,8 +19223,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "06")
-				(pinfunction "06_06")
+				(pin "16")
+				(pinfunction "16_16")
 				(pintype "passive")
 			)
 			(node
@@ -19149,8 +19244,8 @@
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "04")
-				(pinfunction "04_04")
+				(pin "18")
+				(pinfunction "18_18")
 				(pintype "passive")
 			)
 			(node
@@ -19166,6 +19261,21 @@
 		)
 		(net
 			(code "45")
+			(name "/Project Architecture/Daisy Chain/COMH.CT")
+			(class "ISO,Default")
+			(node
+				(ref "U2")
+				(pin "5")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "46")
 			(name "/Project Architecture/Daisy Chain/COMH_CT")
 			(class "DAISY,Default")
 			(node
@@ -19180,7 +19290,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "47")
 			(name "/Project Architecture/Daisy Chain/COMH_WN")
 			(class "DAISY,Default")
 			(node
@@ -19200,7 +19310,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "48")
 			(name "/Project Architecture/Daisy Chain/COMH_WP")
 			(class "DAISY,Default")
 			(node
@@ -19220,7 +19330,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "49")
 			(name "/Project Architecture/Daisy Chain/COML_CT")
 			(class "DAISY,Default")
 			(node
@@ -19235,7 +19345,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "50")
 			(name "/Project Architecture/Daisy Chain/COML_WP")
 			(class "DAISY,Default")
 			(node
@@ -19270,7 +19380,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "51")
 			(name "/Project Architecture/Daisy Chain/U1_COMHN")
 			(class "DAISY,Default")
 			(node
@@ -19302,7 +19412,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "52")
 			(name "/Project Architecture/Daisy Chain/U1_COMHP")
 			(class "DAISY,Default")
 			(node
@@ -19334,7 +19444,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "53")
 			(name "/Project Architecture/Daisy Chain/U1_COMLN")
 			(class "DAISY,Default")
 			(node
@@ -19366,7 +19476,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "54")
 			(name "/Project Architecture/Daisy Chain/U1_COMLP")
 			(class "DAISY,Default")
 			(node
@@ -19398,7 +19508,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "55")
 			(name "/Project Architecture/Power & Reference/AVDD")
 			(class "PWR,Default")
 			(node
@@ -19420,7 +19530,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "56")
 			(name "/Project Architecture/Power & Reference/DVDD")
 			(class "PWR,Default")
 			(node
@@ -19442,7 +19552,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "57")
 			(name "/Project Architecture/Power & Reference/LDOIN")
 			(class "PWR,Default")
 			(node
@@ -19476,7 +19586,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "58")
 			(name "/Project Architecture/Power & Reference/NEG5V")
 			(class "Default")
 			(node
@@ -19492,7 +19602,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "59")
 			(name "/Project Architecture/Power & Reference/NPNB")
 			(class "PWR,Default")
 			(node
@@ -19509,7 +19619,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "60")
 			(name "/Project Architecture/Power & Reference/REFHP")
 			(class "Default")
 			(node
@@ -19525,7 +19635,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "61")
 			(name "/Project Architecture/Power & Reference/TSREF")
 			(class "Default")
 			(node
@@ -19553,7 +19663,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "62")
 			(name "/Project Architecture/Power & Reference/VCOLL")
 			(class "PWR,Default")
 			(node
@@ -19580,7 +19690,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "63")
 			(name "/Project Architecture/Power & Reference/VCOLL_R")
 			(class "PWR,Default")
 			(node
@@ -19595,7 +19705,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "64")
 			(name "/Project Architecture/Temperature Sense/GPIO1")
 			(class "TEMP,Default")
 			(node
@@ -19616,7 +19726,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "65")
 			(name "/Project Architecture/Temperature Sense/GPIO2")
 			(class "TEMP,Default")
 			(node
@@ -19637,7 +19747,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "66")
 			(name "/Project Architecture/Temperature Sense/GPIO3")
 			(class "TEMP,Default")
 			(node
@@ -19658,7 +19768,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "67")
 			(name "/Project Architecture/Temperature Sense/GPIO4")
 			(class "TEMP,Default")
 			(node
@@ -19679,7 +19789,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "68")
 			(name "/Project Architecture/Temperature Sense/GPIO5")
 			(class "TEMP,Default")
 			(node
@@ -19700,7 +19810,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "69")
 			(name "/Project Architecture/Temperature Sense/GPIO6")
 			(class "TEMP,Default")
 			(node
@@ -19721,7 +19831,7 @@
 			)
 		)
 		(net
-			(code "69")
+			(code "70")
 			(name "/Project Architecture/Temperature Sense/GPIO7")
 			(class "TEMP,Default")
 			(node
@@ -19742,7 +19852,7 @@
 			)
 		)
 		(net
-			(code "70")
+			(code "71")
 			(name "/Project Architecture/Temperature Sense/GPIO8")
 			(class "TEMP,Default")
 			(node
@@ -19763,7 +19873,7 @@
 			)
 		)
 		(net
-			(code "71")
+			(code "72")
 			(name "/Project Architecture/Temperature Sense/TBIAS")
 			(class "TEMP,Default")
 			(node
@@ -19814,7 +19924,7 @@
 			)
 		)
 		(net
-			(code "72")
+			(code "73")
 			(name "CVDD")
 			(class "PWR,Default")
 			(node
@@ -19823,8 +19933,9 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R22")
+				(ref "JP1")
 				(pin "1")
+				(pinfunction "A_1")
 				(pintype "passive")
 			)
 			(node
@@ -19847,7 +19958,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "74")
 			(name "GND")
 			(class "GND,Default")
 			(node
@@ -20047,7 +20158,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "75")
 			(name "Net-(D1-A)")
 			(class "Default")
 			(node
@@ -20063,7 +20174,23 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "76")
+			(name "Net-(JP1-B)")
+			(class "Default")
+			(node
+				(ref "JP1")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R22")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "77")
 			(name "VMODULE")
 			(class "PWR,Default")
 			(node
@@ -20084,7 +20211,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "78")
 			(name "unconnected-(U1Aux inputs-BBN-Pad63)")
 			(class "Default")
 			(node
@@ -20095,7 +20222,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "79")
 			(name "unconnected-(U1Aux inputs-BBP-Pad64)")
 			(class "Default")
 			(node
@@ -20106,7 +20233,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "80")
 			(name "unconnected-(U1Communication-FAULT_N-Pad62)")
 			(class "Default")
 			(node
@@ -20117,7 +20244,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "81")
 			(name "unconnected-(U1Communication-TX-Pad53)")
 			(class "Default")
 			(node
@@ -20125,26 +20252,6 @@
 				(pin "53")
 				(pinfunction "TX_53")
 				(pintype "output+no_connect")
-			)
-		)
-		(net
-			(code "80")
-			(name "unconnected-(U2-Pad5)")
-			(class "Default")
-			(node
-				(ref "U2")
-				(pin "5")
-				(pintype "unspecified+no_connect")
-			)
-		)
-		(net
-			(code "81")
-			(name "unconnected-(U3-Pad5)")
-			(class "Default")
-			(node
-				(ref "U3")
-				(pin "5")
-				(pintype "unspecified+no_connect")
 			)
 		)
 	)
