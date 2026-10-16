@@ -5688,7 +5688,7 @@
 			)
 		)
 	)
-	(label "COML_WP"
+	(label "COML_WN"
 		(at 175.26 105.41 0)
 		(fields_autoplaced yes)
 		(effects
@@ -5813,7 +5813,7 @@
 			)
 		)
 	)
-	(label "COMH.CT"
+	(label "COML.CT"
 		(at 223.52 110.49 0)
 		(fields_autoplaced yes)
 		(effects

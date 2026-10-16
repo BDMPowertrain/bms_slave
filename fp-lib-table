@@ -31,4 +31,7 @@
 	(lib (name "remote_n_a") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/footprints/remote_n_a.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_ips1-115-01-l-d") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/footprints/remote_ips1-115-01-l-d.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_ips1-110-01-l-d") (type "KiCad") (uri "C:/Users/abrzezins/Git/bms_slave/RemoteLibrary/footprints/remote_ips1-110-01-l-d.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_sae_electric_logo") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_sae_electric_logo.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_bmd_logo") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_bmd_logo.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_sparky_logo") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_sparky_logo.pretty/") (options "") (descr "Remote download"))
 )

@@ -1,11 +1,11 @@
 {
   "board": {
-    "active_layer": 5,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
-    "high_contrast_mode": 0,
+    "high_contrast_mode": 1,
     "net_color_mode": 1,
     "opacity": {
       "images": 0.6,
@@ -53,7 +53,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "ffffffff_fffffff7_ff555575_fff5fff5",
+    "visible_layers": "ffffffff_fffffff7_ff555575_fff5fff7",
     "zone_display_mode": 0
   },
   "git": {
@@ -124,7 +124,32 @@
   },
   "open_jobsets": [],
   "project": {
-    "files": []
+    "files": [
+      {
+        "name": "bms_slave.kicad_sch",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": 0,
+          "pos_y": 0,
+          "size_x": 1280,
+          "size_y": 1440
+        }
+      },
+      {
+        "name": "bms_slave.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": 0,
+          "pos_y": 0,
+          "size_x": 1280,
+          "size_y": 1395
+        }
+      }
+    ]
   },
   "schematic": {
     "hierarchy_collapsed": [],

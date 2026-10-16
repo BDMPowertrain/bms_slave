@@ -16,7 +16,7 @@
         "copper_text_thickness": 0.3,
         "copper_text_upright": false,
         "courtyard_line_width": 0.05,
-        "dimension_precision": 3,
+        "dimension_precision": 0,
         "dimension_units": 2,
         "dimensions": {
           "arrow_length": 1270000,
@@ -816,7 +816,13 @@
       "/Project Architecture/Daisy Chain/COMH_WP": [
         "DAISY"
       ],
+      "/Project Architecture/Daisy Chain/COML.CT": [
+        "ISO"
+      ],
       "/Project Architecture/Daisy Chain/COML_CT": [
+        "DAISY"
+      ],
+      "/Project Architecture/Daisy Chain/COML_WN": [
         "DAISY"
       ],
       "/Project Architecture/Daisy Chain/COML_WP": [
@@ -1186,7 +1192,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "JP1,NT1-2,H1-6,TP1-14,R1-86,J1-8,U1-6,Q1-2,FID1-3,D1-2,C1-84,CR1-4,#PWR1-66",
+    "used_designators": "G1-3,TP1-14,JP1,R1-86,#PWR1-66,CR1-4,#G1-2,C1-84,H1-5,J1-8,FID1-3,NT1-2,Q1-2,D1-2,U1-6",
     "variants": []
   },
   "sheets": [

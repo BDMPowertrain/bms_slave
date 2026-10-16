@@ -1737,6 +1737,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 78.74) (xy 111.76 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04ee302d-cb48-4736-91ab-6d62ff164818")
+	)
+	(wire
+		(pts
 			(xy 152.4 77.47) (xy 152.4 81.28)
 		)
 		(stroke
@@ -1744,6 +1754,16 @@
 			(type default)
 		)
 		(uuid "0596e4ea-cf06-4b86-ae9a-9d48cb084cef")
+	)
+	(wire
+		(pts
+			(xy 101.6 73.66) (xy 111.76 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11a23452-df11-4360-8986-4885c965fa89")
 	)
 	(bus
 		(pts
@@ -1907,16 +1927,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 93.98) (xy 111.76 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89f9e76f-c730-4d52-b752-3c064e22914b")
-	)
-	(wire
-		(pts
 			(xy 160.02 87.63) (xy 168.91 87.63)
 		)
 		(stroke
@@ -1924,6 +1934,16 @@
 			(type default)
 		)
 		(uuid "8a0fedb6-b1e0-4fef-97e3-4ad89bc6d67a")
+	)
+	(wire
+		(pts
+			(xy 101.6 88.9) (xy 111.76 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9148e1d2-2269-4352-87d7-6e4c88163aa7")
 	)
 	(wire
 		(pts
@@ -1994,6 +2014,16 @@
 			(type default)
 		)
 		(uuid "ac9e89c6-0c78-416e-8ec9-801a5996b777")
+	)
+	(wire
+		(pts
+			(xy 101.6 93.98) (xy 111.76 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acfc0bcb-ff58-4357-bfc6-79cc54f1a0c5")
 	)
 	(wire
 		(pts
@@ -2097,16 +2127,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 78.74) (xy 111.76 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9924b31-d895-40b4-81b7-14d650d6259d")
-	)
-	(wire
-		(pts
 			(xy 66.04 78.74) (xy 66.04 81.28)
 		)
 		(stroke
@@ -2195,26 +2215,6 @@
 		)
 		(uuid "f641e0eb-7035-48dc-ad6b-e13ab25e0715")
 	)
-	(wire
-		(pts
-			(xy 101.6 88.9) (xy 111.76 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd91056b-8cf9-4bb9-ac12-3e33461144f6")
-	)
-	(wire
-		(pts
-			(xy 101.6 73.66) (xy 111.76 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fee9ac4d-80eb-4e72-9de0-305466498261")
-	)
 	(label "T_P6"
 		(at 200.66 92.71 180)
 		(effects
@@ -2235,6 +2235,16 @@
 		)
 		(uuid "12089311-edc9-441a-89f9-8f8256dd712c")
 	)
+	(label "COML.P"
+		(at 102.87 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "147e4391-ec4d-4a53-baa7-d00347dd4d01")
+	)
 	(label "TAP8"
 		(at 163.83 100.33 0)
 		(effects
@@ -2245,16 +2255,6 @@
 		)
 		(uuid "14a218ed-0c43-4536-b5d3-ebaf6fa5c73c")
 	)
-	(label "COMH.N"
-		(at 102.87 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "174433d6-284c-428e-921f-b0d83fcb4ba1")
-	)
 	(label "T_P7"
 		(at 200.66 95.25 180)
 		(effects
@@ -2264,6 +2264,16 @@
 			(justify right bottom)
 		)
 		(uuid "1ef61b2d-a485-489e-a8a9-ad9730954ac0")
+	)
+	(label "COMH.P"
+		(at 102.87 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "20ff1d5d-0cc2-4118-add8-5010150b2e83")
 	)
 	(label "TAP0"
 		(at 163.83 80.01 0)
@@ -2284,16 +2294,6 @@
 			(justify left bottom)
 		)
 		(uuid "3c5bae36-e046-42b1-a74b-5144ae2feb2f")
-	)
-	(label "COMH.P"
-		(at 102.87 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4332e644-1898-465a-a62c-8ab08cc0aba1")
 	)
 	(label "TAP1"
 		(at 163.83 82.55 0)
@@ -2335,15 +2335,15 @@
 		)
 		(uuid "aa1baf54-b9fc-4a4c-af4a-11681d847b08")
 	)
-	(label "COML.P"
-		(at 102.87 73.66 0)
+	(label "COMH.N"
+		(at 102.87 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "b9ce6bf6-85e3-4276-ae22-2116282757f4")
+		(uuid "b4ebada5-31a7-492e-87e6-bd1781401f96")
 	)
 	(label "T_P8"
 		(at 200.66 97.79 180)
@@ -2385,16 +2385,6 @@
 		)
 		(uuid "d1591256-9b90-423a-b89c-abb566ab13cc")
 	)
-	(label "COML.N"
-		(at 102.87 78.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ded36369-ec97-480f-a2b2-f62d28fd466a")
-	)
 	(label "T_P2"
 		(at 200.66 82.55 180)
 		(effects
@@ -2424,6 +2414,16 @@
 			(justify right bottom)
 		)
 		(uuid "e7d2afaa-f627-4d15-8d58-3f2e566f7c2c")
+	)
+	(label "COML.N"
+		(at 102.87 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e8b492b3-e164-4ec0-9078-7bf848a32055")
 	)
 	(hierarchical_label "GND"
 		(shape passive)
@@ -2543,8 +2543,7 @@
 	)
 	(symbol
 		(lib_id "remote_0436500200:0436500200")
-		(at 111.76 78.74 0)
-		(mirror x)
+		(at 111.76 73.66 0)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -2554,17 +2553,6 @@
 		(dnp no)
 		(uuid "1254f614-f932-47b9-bc53-cfb0c85fb260")
 		(property "Reference" "J4"
-			(at 114.3 69.85 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0436500200"
 			(at 114.3 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2575,8 +2563,19 @@
 				(justify left)
 			)
 		)
+		(property "Value" "0436500200"
+			(at 114.3 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(property "Footprint" "remote_0436500200:CONN_SD-43650-001_02_MOL"
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2587,7 +2586,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline"
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2598,7 +2597,7 @@
 			)
 		)
 		(property "Description" "Connector Header Through Hole, Right Angle 2 position 0.118\" (3.00mm)"
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2609,7 +2608,7 @@
 			)
 		)
 		(property "Manufacturer" "Molex"
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2620,7 +2619,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "0436500200"
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2631,7 +2630,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2642,7 +2641,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2653,7 +2652,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2664,7 +2663,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2675,7 +2674,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2686,7 +2685,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2697,7 +2696,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2708,7 +2707,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2719,7 +2718,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2730,7 +2729,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 111.76 78.74 0)
+			(at 111.76 73.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
