@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-52b55roe/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-bx7hk2mm/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -21,7 +21,7 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.400 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "d990f40")
+			(name "GIT_HASH_PCB") "a540ab1")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -15583,6 +15583,369 @@
 			)
 		)
 		(comp
+			(ref "G1")
+			(value "SAE Electric logo")
+			(footprint "remote_sae_electric_logo:SAE_Electric_Logo_10mm")
+			(datasheet "N/A")
+			(description "SAE Electric logo.")
+			(fields
+				(field
+					(name "Manufacturer") "BDM")
+				(field
+					(name "Manufacturer Part Number") "SAE Electric logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_sae_electric_logo:SAE_Electric_Logo_10mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "SAE Electric logo.")
+			)
+			(libsource
+				(lib "remote_sae_electric_logo")
+				(part "LOGO")
+				(description "SAE Electric logo.")
+			)
+			(property
+				(name "Manufacturer")
+				(value "BDM")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "SAE Electric logo")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Mechanical")
+			)
+			(property
+				(name "Sheetfile")
+				(value "mechanical.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Mechanical/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
+			)
+			(tstamps "afbda227-80f6-4f1b-a4e0-73495e8de2db")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "G2")
+			(value "BMD Logo")
+			(footprint "remote_bmd_logo:BDM_Logo_50mm")
+			(datasheet "N/A")
+			(description "Blue Devil Motorsports silkscreen logo.")
+			(fields
+				(field
+					(name "Manufacturer") "BMD")
+				(field
+					(name "Manufacturer Part Number") "BMD Logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_bmd_logo:BDM_Logo_50mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "Blue Devil Motorsports silkscreen logo.")
+			)
+			(libsource
+				(lib "remote_bmd_logo")
+				(part "BMD LOGO")
+				(description "Blue Devil Motorsports silkscreen logo.")
+			)
+			(property
+				(name "Manufacturer")
+				(value "BMD")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "BMD Logo")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Mechanical")
+			)
+			(property
+				(name "Sheetfile")
+				(value "mechanical.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Mechanical/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
+			)
+			(tstamps "c8b5e6f7-319b-4833-be34-5af71dff2ed3")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "G3")
+			(value "Sparky Logo")
+			(footprint "remote_sparky_logo:Sparky_Logo_50mm")
+			(datasheet "N/A")
+			(description "Sparky Logo.")
+			(fields
+				(field
+					(name "Manufacturer") "BDM")
+				(field
+					(name "Manufacturer Part Number") "Sparky Logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_sparky_logo:Sparky_Logo_50mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "Sparky Logo.")
+			)
+			(libsource
+				(lib "remote_sparky_logo")
+				(part "LOGO")
+				(description "Sparky Logo.")
+			)
+			(property
+				(name "Manufacturer")
+				(value "BDM")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "Sparky Logo")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Mechanical")
+			)
+			(property
+				(name "Sheetfile")
+				(value "mechanical.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Mechanical/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
+			)
+			(tstamps "fa6c3552-dc7e-4f61-ae82-aaab4b5a7b0b")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
 			(ref "H1")
 			(value "MountingHole")
 			(footprint "MountingHole:MountingHole_3.2mm_M3")
@@ -16155,6 +16518,58 @@
 					(num "2")
 					(name "2")
 					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_bmd_logo")
+			(part "BMD LOGO")
+			(description "Blue Devil Motorsports silkscreen logo.")
+			(docs "N/A")
+			(fields
+				(field
+					(name "Reference") "G")
+				(field
+					(name "Value") "BMD Logo")
+				(field
+					(name "Footprint") "remote_bmd_logo:BDM_Logo_50mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "Blue Devil Motorsports silkscreen logo.")
+				(field
+					(name "Manufacturer") "BMD")
+				(field
+					(name "Manufacturer Part Number") "BMD Logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
 				)
 			)
 		)
@@ -18130,6 +18545,58 @@
 			)
 		)
 		(libpart
+			(lib "remote_sae_electric_logo")
+			(part "LOGO")
+			(description "SAE Electric logo.")
+			(docs "N/A")
+			(fields
+				(field
+					(name "Reference") "G")
+				(field
+					(name "Value") "SAE Electric logo")
+				(field
+					(name "Footprint") "remote_sae_electric_logo:SAE_Electric_Logo_10mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "SAE Electric logo.")
+				(field
+					(name "Manufacturer") "BDM")
+				(field
+					(name "Manufacturer Part Number") "SAE Electric logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+		)
+		(libpart
 			(lib "remote_sm91502ala-e")
 			(part "SM91502ALA-E")
 			(description "150µH Pulse Transformer 1:1 Surface Mount")
@@ -18215,6 +18682,58 @@
 					(num "6")
 					(name "")
 					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_sparky_logo")
+			(part "LOGO")
+			(description "Sparky Logo.")
+			(docs "N/A")
+			(fields
+				(field
+					(name "Reference") "G")
+				(field
+					(name "Value") "Sparky Logo")
+				(field
+					(name "Footprint") "remote_sparky_logo:Sparky_Logo_50mm")
+				(field
+					(name "Datasheet") "N/A")
+				(field
+					(name "Description") "Sparky Logo.")
+				(field
+					(name "Manufacturer") "BDM")
+				(field
+					(name "Manufacturer Part Number") "Sparky Logo")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
 				)
 			)
 		)
@@ -19083,8 +19602,8 @@
 			(class "ISO,Default")
 			(node
 				(ref "J3")
-				(pin "2")
-				(pinfunction "2_2")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
@@ -19099,8 +19618,8 @@
 			(class "ISO,Default")
 			(node
 				(ref "J3")
-				(pin "1")
-				(pinfunction "1_1")
+				(pin "2")
+				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
@@ -19320,14 +19839,9 @@
 			(name "/Project Architecture/Daisy Chain/COMH.CT")
 			(class "ISO,Default")
 			(node
-				(ref "U2")
-				(pin "5")
-				(pintype "unspecified")
-			)
-			(node
 				(ref "U3")
 				(pin "5")
-				(pintype "unspecified")
+				(pintype "unspecified+no_connect")
 			)
 		)
 		(net
@@ -19387,6 +19901,16 @@
 		)
 		(net
 			(code "49")
+			(name "/Project Architecture/Daisy Chain/COML.CT")
+			(class "ISO,Default")
+			(node
+				(ref "U2")
+				(pin "5")
+				(pintype "unspecified+no_connect")
+			)
+		)
+		(net
+			(code "50")
 			(name "/Project Architecture/Daisy Chain/COML_CT")
 			(class "DAISY,Default")
 			(node
@@ -19401,17 +19925,12 @@
 			)
 		)
 		(net
-			(code "50")
-			(name "/Project Architecture/Daisy Chain/COML_WP")
+			(code "51")
+			(name "/Project Architecture/Daisy Chain/COML_WN")
 			(class "DAISY,Default")
 			(node
 				(ref "CR1")
 				(pin "1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "CR1")
-				(pin "2")
 				(pintype "unspecified")
 			)
 			(node
@@ -19420,14 +19939,24 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R42")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
 				(ref "U2")
 				(pin "1")
 				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "52")
+			(name "/Project Architecture/Daisy Chain/COML_WP")
+			(class "DAISY,Default")
+			(node
+				(ref "CR1")
+				(pin "2")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R42")
+				(pin "2")
+				(pintype "passive")
 			)
 			(node
 				(ref "U2")
@@ -19436,7 +19965,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "53")
 			(name "/Project Architecture/Daisy Chain/U1_COMHN")
 			(class "DAISY,Default")
 			(node
@@ -19468,7 +19997,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "54")
 			(name "/Project Architecture/Daisy Chain/U1_COMHP")
 			(class "DAISY,Default")
 			(node
@@ -19500,7 +20029,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "55")
 			(name "/Project Architecture/Daisy Chain/U1_COMLN")
 			(class "DAISY,Default")
 			(node
@@ -19532,7 +20061,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "56")
 			(name "/Project Architecture/Daisy Chain/U1_COMLP")
 			(class "DAISY,Default")
 			(node
@@ -19564,7 +20093,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "57")
 			(name "/Project Architecture/Power & Reference/AVDD")
 			(class "PWR,Default")
 			(node
@@ -19586,7 +20115,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "58")
 			(name "/Project Architecture/Power & Reference/DVDD")
 			(class "PWR,Default")
 			(node
@@ -19608,7 +20137,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "59")
 			(name "/Project Architecture/Power & Reference/LDOIN")
 			(class "PWR,Default")
 			(node
@@ -19642,7 +20171,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "60")
 			(name "/Project Architecture/Power & Reference/NEG5V")
 			(class "Default")
 			(node
@@ -19658,7 +20187,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "61")
 			(name "/Project Architecture/Power & Reference/NPNB")
 			(class "PWR,Default")
 			(node
@@ -19675,7 +20204,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "62")
 			(name "/Project Architecture/Power & Reference/REFHP")
 			(class "Default")
 			(node
@@ -19691,7 +20220,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "63")
 			(name "/Project Architecture/Power & Reference/TSREF")
 			(class "Default")
 			(node
@@ -19719,7 +20248,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "64")
 			(name "/Project Architecture/Power & Reference/VCOLL")
 			(class "PWR,Default")
 			(node
@@ -19746,7 +20275,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "65")
 			(name "/Project Architecture/Power & Reference/VCOLL_R")
 			(class "PWR,Default")
 			(node
@@ -19761,7 +20290,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "66")
 			(name "/Project Architecture/Temperature Sense/GPIO1")
 			(class "TEMP,Default")
 			(node
@@ -19782,7 +20311,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "67")
 			(name "/Project Architecture/Temperature Sense/GPIO2")
 			(class "TEMP,Default")
 			(node
@@ -19803,7 +20332,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "68")
 			(name "/Project Architecture/Temperature Sense/GPIO3")
 			(class "TEMP,Default")
 			(node
@@ -19824,7 +20353,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "69")
 			(name "/Project Architecture/Temperature Sense/GPIO4")
 			(class "TEMP,Default")
 			(node
@@ -19845,7 +20374,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "70")
 			(name "/Project Architecture/Temperature Sense/GPIO5")
 			(class "TEMP,Default")
 			(node
@@ -19866,7 +20395,7 @@
 			)
 		)
 		(net
-			(code "69")
+			(code "71")
 			(name "/Project Architecture/Temperature Sense/GPIO6")
 			(class "TEMP,Default")
 			(node
@@ -19887,7 +20416,7 @@
 			)
 		)
 		(net
-			(code "70")
+			(code "72")
 			(name "/Project Architecture/Temperature Sense/GPIO7")
 			(class "TEMP,Default")
 			(node
@@ -19908,7 +20437,7 @@
 			)
 		)
 		(net
-			(code "71")
+			(code "73")
 			(name "/Project Architecture/Temperature Sense/GPIO8")
 			(class "TEMP,Default")
 			(node
@@ -19929,7 +20458,7 @@
 			)
 		)
 		(net
-			(code "72")
+			(code "74")
 			(name "/Project Architecture/Temperature Sense/TBIAS")
 			(class "TEMP,Default")
 			(node
@@ -19980,7 +20509,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "75")
 			(name "CVDD")
 			(class "PWR,Default")
 			(node
@@ -20014,7 +20543,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "76")
 			(name "GND")
 			(class "GND,Default")
 			(node
@@ -20214,7 +20743,7 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "77")
 			(name "Net-(D1-A)")
 			(class "Default")
 			(node
@@ -20230,7 +20759,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "78")
 			(name "Net-(JP1-B)")
 			(class "Default")
 			(node
@@ -20246,7 +20775,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "79")
 			(name "VMODULE")
 			(class "PWR,Default")
 			(node
@@ -20267,7 +20796,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "80")
 			(name "unconnected-(U1Aux inputs-BBN-Pad63)")
 			(class "Default")
 			(node
@@ -20278,7 +20807,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "81")
 			(name "unconnected-(U1Aux inputs-BBP-Pad64)")
 			(class "Default")
 			(node
@@ -20289,7 +20818,7 @@
 			)
 		)
 		(net
-			(code "80")
+			(code "82")
 			(name "unconnected-(U1Communication-FAULT_N-Pad62)")
 			(class "Default")
 			(node
@@ -20300,7 +20829,7 @@
 			)
 		)
 		(net
-			(code "81")
+			(code "83")
 			(name "unconnected-(U1Communication-TX-Pad53)")
 			(class "Default")
 			(node

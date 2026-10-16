@@ -43,11 +43,13 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "C42","100pF","C_0402_1005Metric",55.5000,32.0000,180.0000,top
 "CR1","PESD1CAN,215","SOT23_PESD1_NEX",52.5534,13.0000,0.0000,top
 "CR2","PESD1CAN,215","SOT23_PESD1_NEX",52.5534,32.0000,0.0000,top
-"D1","Green","LED_0603_1608Metric",45.5275,41.6000,180.0000,top
+"D1","Green","LED_0603_1608Metric",42.8375,37.7500,180.0000,top
 "D2","NSVR0340HT1G","SOD-323_1P7X1P25_ONS",39.0000,28.5000,-90.0000,top
 "FID1","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,4.0000,0.0000,top
 "FID2","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,41.0000,0.0000,top
 "FID3","Fiducial","Fiducial_0.5mm_Mask1mm",71.5000,41.0000,0.0000,top
+"G1","SAE Electric logo","SAE_Electric_Logo_10mm",27.2500,3.2500,0.0000,top
+"G2","BMD Logo","BDM_Logo_50mm",33.2500,31.2500,180.0000,bottom
 "H1","MountingHole","MountingHole_3.2mm_M3",8.0000,4.0000,-90.0000,top
 "H2","MountingHole","MountingHole_3.2mm_M3",52.0000,4.0000,0.0000,top
 "H3","MountingHole","MountingHole_3.2mm_M3",76.0000,4.0000,0.0000,top
@@ -57,7 +59,7 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "J3","0430450200","CONN_SD-43045-001_02_MOL",70.8000,31.8081,90.0000,top
 "J4","0436500200","CONN_SD-43650-001_02_MOL",68.0000,14.5000,90.0000,top
 "J5","IPS1-110-01-L-D","SAMTEC_IPS1-110-01-L-D",8.0000,22.7500,-90.0000,bottom
-"JP1","SolderJumper_2_Open","SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm",45.1900,38.1000,90.0000,top
+"JP1","SolderJumper_2_Open","SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm",42.5000,34.2500,90.0000,top
 "Q1","ZXTN4004KQTC","DPAK_04KQTC_DIO",32.1931,35.5000,90.0000,top
 "R1","30","R_0603_1608Metric",27.8500,27.0000,-90.0000,top
 "R2","100","R_0603_1608Metric",20.8250,38.9375,0.0000,top
@@ -80,7 +82,7 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "R19","10","R_2512_6332Metric",15.5000,4.2500,0.0000,top
 "R20","150","R_1210_3225Metric",28.0000,40.7500,0.0000,top
 "R21","150","R_1210_3225Metric",32.7500,40.7500,0.0000,top
-"R22","2k","R_0402_1005Metric",45.2400,40.3000,180.0000,top
+"R22","2k","R_0402_1005Metric",42.5500,36.4500,180.0000,top
 "R23","3.3k","R_0603_1608Metric",3.6750,11.7500,0.0000,top
 "R24","3.3k","R_0603_1608Metric",3.6750,13.2700,0.0000,top
 "R25","3.3k","R_0603_1608Metric",3.6750,18.6000,0.0000,top
