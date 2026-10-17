@@ -33,7 +33,6 @@
       "vias",
       "footprint_text",
       "footprint_anchors",
-      "ratsnest",
       "grid",
       "footprints_front",
       "footprints_back",
@@ -127,26 +126,26 @@
     "files": [
       {
         "name": "bms_slave.kicad_sch",
-        "open": false,
+        "open": true,
         "window": {
           "display": 0,
           "maximized": true,
           "pos_x": 0,
           "pos_y": 0,
           "size_x": 1280,
-          "size_y": 1440
+          "size_y": 720
         }
       },
       {
         "name": "bms_slave.kicad_pcb",
-        "open": false,
+        "open": true,
         "window": {
           "display": 0,
           "maximized": true,
           "pos_x": 0,
           "pos_y": 0,
           "size_x": 1280,
-          "size_y": 1395
+          "size_y": 720
         }
       }
     ]

@@ -76,7 +76,12 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "diff_pair_gap_out_of_range|169850677|79500000|b98c8096-9e39-4e32-80e2-0f331f7cc8d9|bb9ff551-8f1e-4fbc-a227-ff1ad778bd61",
+          "Speeds slow enough does not matter."
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -159,8 +164,8 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.15,
-        "min_through_hole_diameter": 0.25,
-        "min_track_width": 0.2,
+        "min_through_hole_diameter": 0.2,
+        "min_track_width": 0.15,
         "min_via_annular_width": 0.15,
         "min_via_diameter": 0.5,
         "solder_mask_clearance": 0.0,
@@ -777,6 +782,33 @@
       "/Project Architecture/Connectors/COML{P N}": [
         "ISO"
       ],
+      "/Project Architecture/Connectors/TMP1": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP2": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP3": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP4": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP5": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP6": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP7": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP8": [
+        "TEMP"
+      ],
+      "/Project Architecture/Connectors/TMP[1..8]": [
+        "TEMP"
+      ],
       "/Project Architecture/Connectors/T_P1": [
         "TEMP"
       ],
@@ -1192,7 +1224,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "G1-3,TP1-14,JP1,R1-86,#PWR1-66,CR1-4,#G1-2,C1-84,H1-5,J1-8,FID1-3,NT1-2,Q1-2,D1-2,U1-6",
+    "used_designators": "Q1-2,U1-6,D1-2,G1-3,TP1-14,JP1,R1-86,#PWR1-66,CR1-4,C1-84,#G1-2,H1-5,J1-8,NT1-2,FID1-3",
     "variants": []
   },
   "sheets": [
@@ -1245,7 +1277,7 @@
     "COMPANY": "Blue Devil Motor Sports",
     "DESCRIPTION": "Slave BMS board that balances 8s cells, and reads temp for enepaq based temp sensors.",
     "DESIGNER": "Aidan Brzezinski",
-    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 \u00d7 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.400 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
+    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 × 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.400 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
     "GIT_HASH_PCB": "a540ab1",
     "GIT_HASH_SCH": "2fd0761",
     "GIT_URL": "https://github.com/BDMPowertrain/BMS_Slave",

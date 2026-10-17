@@ -3141,7 +3141,7 @@
 	)
 	(text_box "LAYOUT NOTE: POWER (SLUSE81F)\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1,\n   p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and\n   R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged\n   (pkg drawing notes 8-9, p.220)."
 		(exclude_from_sim no)
-		(at 228.6 114.3 0)
+		(at 210.82 99.06 0)
 		(size 40.64 34.2268)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
@@ -4213,7 +4213,7 @@
 		)
 		(uuid "241005e4-a5e9-49a7-be50-c5767ad8f93b")
 	)
-	(label "T_P5"
+	(label "TMP5"
 		(at 170.18 172.72 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4236,7 +4236,7 @@
 			)
 		)
 	)
-	(label "T_P2"
+	(label "TMP2"
 		(at 170.18 96.52 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4259,7 +4259,7 @@
 			)
 		)
 	)
-	(label "T_P1"
+	(label "TMP1"
 		(at 170.18 71.12 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4315,8 +4315,9 @@
 		)
 		(uuid "4a957824-da15-47c3-8d40-307820f15ebe")
 	)
-	(label "T_P7"
+	(label "TMP7"
 		(at 170.18 223.52 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4324,8 +4325,20 @@
 			(justify right bottom)
 		)
 		(uuid "4eb0603b-1d67-459e-964e-d328b82b61c6")
+		(property "Netclass" "TEMP"
+			(at 170.18 224.79 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
 	)
-	(label "T_P1"
+	(label "TMP1"
 		(at 93.98 104.14 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4358,7 +4371,7 @@
 		)
 		(uuid "5f055d5b-6471-43ef-878b-ddc9d7f22cb2")
 	)
-	(label "T_P6"
+	(label "TMP6"
 		(at 170.18 198.12 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4457,7 +4470,7 @@
 		)
 		(uuid "74ecbe54-fd47-4d97-984e-5a2fe60d9c5d")
 	)
-	(label "T_P3"
+	(label "TMP3"
 		(at 170.18 121.92 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4612,7 +4625,7 @@
 			)
 		)
 	)
-	(label "T_P4"
+	(label "TMP4"
 		(at 170.18 147.32 180)
 		(fields_autoplaced yes)
 		(effects
@@ -4645,8 +4658,9 @@
 		)
 		(uuid "d0476228-f086-4d28-996d-9d472d0278fa")
 	)
-	(label "T_P8"
+	(label "TMP8"
 		(at 170.18 248.92 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4654,6 +4668,18 @@
 			(justify right bottom)
 		)
 		(uuid "e6cb29a9-c05e-42d8-b867-2d0a0563c30e")
+		(property "Netclass" "TEMP"
+			(at 170.18 250.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
 	)
 	(label "TBIAS"
 		(at 172.72 83.82 180)
@@ -4733,7 +4759,7 @@
 		)
 		(uuid "a17e51a4-a54c-47ed-a862-a2df31055a77")
 	)
-	(hierarchical_label "T_P[1..8]"
+	(hierarchical_label "TMP[1..8]"
 		(shape passive)
 		(at 144.78 55.88 180)
 		(effects
