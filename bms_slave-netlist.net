@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-bx7hk2mm/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-2tl2ktm8/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -21,7 +21,7 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.400 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "a540ab1")
+			(name "GIT_HASH_PCB") "c118f52")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -16064,8 +16064,6 @@
 			(description "Mounting Hole without connection")
 			(fields
 				(field
-					(name "KiLib_Generator") "mounting_hardware/mounting_hole")
-				(field
 					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
 				(field
 					(name "Datasheet")
@@ -16077,10 +16075,6 @@
 				(lib "Mechanical")
 				(part "MountingHole")
 				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "KiLib_Generator")
-				(value "mounting_hardware/mounting_hole")
 			)
 			(property
 				(name "Sheetname")
@@ -16120,8 +16114,6 @@
 			(description "Mounting Hole without connection")
 			(fields
 				(field
-					(name "KiLib_Generator") "mounting_hardware/mounting_hole")
-				(field
 					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
 				(field
 					(name "Datasheet")
@@ -16133,10 +16125,6 @@
 				(lib "Mechanical")
 				(part "MountingHole")
 				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "KiLib_Generator")
-				(value "mounting_hardware/mounting_hole")
 			)
 			(property
 				(name "Sheetname")
@@ -19184,8 +19172,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "03")
-				(pinfunction "03_03")
+				(pin "17")
+				(pinfunction "17_17")
 				(pintype "passive")
 			)
 			(node
@@ -19205,8 +19193,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "05")
-				(pinfunction "05_05")
+				(pin "15")
+				(pinfunction "15_15")
 				(pintype "passive")
 			)
 			(node
@@ -19226,8 +19214,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "07")
-				(pinfunction "07_07")
+				(pin "13")
+				(pinfunction "13_13")
 				(pintype "passive")
 			)
 			(node
@@ -19247,8 +19235,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "09")
-				(pinfunction "09_09")
+				(pin "11")
+				(pinfunction "11_11")
 				(pintype "passive")
 			)
 			(node
@@ -19268,8 +19256,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "11")
-				(pinfunction "11_11")
+				(pin "09")
+				(pinfunction "09_09")
 				(pintype "passive")
 			)
 			(node
@@ -19289,8 +19277,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "13")
-				(pinfunction "13_13")
+				(pin "07")
+				(pinfunction "07_07")
 				(pintype "passive")
 			)
 			(node
@@ -19310,8 +19298,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "15")
-				(pinfunction "15_15")
+				(pin "05")
+				(pinfunction "05_05")
 				(pintype "passive")
 			)
 			(node
@@ -19331,8 +19319,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "17")
-				(pinfunction "17_17")
+				(pin "03")
+				(pinfunction "03_03")
 				(pintype "passive")
 			)
 			(node
@@ -19352,8 +19340,8 @@
 			(class "TAP,Default")
 			(node
 				(ref "J5")
-				(pin "19")
-				(pinfunction "19_19")
+				(pin "01")
+				(pinfunction "01_01")
 				(pintype "passive")
 			)
 			(node
@@ -19662,12 +19650,12 @@
 		)
 		(net
 			(code "36")
-			(name "/Project Architecture/Connectors/T_P1")
+			(name "/Project Architecture/Connectors/TMP1")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "04")
-				(pinfunction "04_04")
+				(pin "18")
+				(pinfunction "18_18")
 				(pintype "passive")
 			)
 			(node
@@ -19689,12 +19677,12 @@
 		)
 		(net
 			(code "37")
-			(name "/Project Architecture/Connectors/T_P2")
+			(name "/Project Architecture/Connectors/TMP2")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "06")
-				(pinfunction "06_06")
+				(pin "16")
+				(pinfunction "16_16")
 				(pintype "passive")
 			)
 			(node
@@ -19710,12 +19698,12 @@
 		)
 		(net
 			(code "38")
-			(name "/Project Architecture/Connectors/T_P3")
+			(name "/Project Architecture/Connectors/TMP3")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "08")
-				(pinfunction "08_08")
+				(pin "14")
+				(pinfunction "14_14")
 				(pintype "passive")
 			)
 			(node
@@ -19731,12 +19719,12 @@
 		)
 		(net
 			(code "39")
-			(name "/Project Architecture/Connectors/T_P4")
+			(name "/Project Architecture/Connectors/TMP4")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "10")
-				(pinfunction "10_10")
+				(pin "12")
+				(pinfunction "12_12")
 				(pintype "passive")
 			)
 			(node
@@ -19752,12 +19740,12 @@
 		)
 		(net
 			(code "40")
-			(name "/Project Architecture/Connectors/T_P5")
+			(name "/Project Architecture/Connectors/TMP5")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "12")
-				(pinfunction "12_12")
+				(pin "10")
+				(pinfunction "10_10")
 				(pintype "passive")
 			)
 			(node
@@ -19773,12 +19761,12 @@
 		)
 		(net
 			(code "41")
-			(name "/Project Architecture/Connectors/T_P6")
+			(name "/Project Architecture/Connectors/TMP6")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "14")
-				(pinfunction "14_14")
+				(pin "08")
+				(pinfunction "08_08")
 				(pintype "passive")
 			)
 			(node
@@ -19794,12 +19782,12 @@
 		)
 		(net
 			(code "42")
-			(name "/Project Architecture/Connectors/T_P7")
+			(name "/Project Architecture/Connectors/TMP7")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "16")
-				(pinfunction "16_16")
+				(pin "06")
+				(pinfunction "06_06")
 				(pintype "passive")
 			)
 			(node
@@ -19815,12 +19803,12 @@
 		)
 		(net
 			(code "43")
-			(name "/Project Architecture/Connectors/T_P8")
+			(name "/Project Architecture/Connectors/TMP8")
 			(class "TEMP,Default")
 			(node
 				(ref "J5")
-				(pin "18")
-				(pinfunction "18_18")
+				(pin "04")
+				(pinfunction "04_04")
 				(pintype "passive")
 			)
 			(node
@@ -20689,14 +20677,14 @@
 			)
 			(node
 				(ref "J5")
-				(pin "01")
-				(pinfunction "01_01")
+				(pin "19")
+				(pinfunction "19_19")
 				(pintype "passive")
 			)
 			(node
 				(ref "J5")
-				(pin "02")
-				(pinfunction "02_02")
+				(pin "20")
+				(pinfunction "20_20")
 				(pintype "passive")
 			)
 			(node
@@ -20780,8 +20768,8 @@
 			(class "PWR,Default")
 			(node
 				(ref "J5")
-				(pin "20")
-				(pinfunction "20_20")
+				(pin "02")
+				(pinfunction "02_02")
 				(pintype "passive")
 			)
 			(node
