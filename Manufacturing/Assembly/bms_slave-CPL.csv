@@ -46,17 +46,15 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "D1","Green","LED_0603_1608Metric",38.7500,40.7500,0.0000,bottom
 "D2","NSVR0340HT1G","SOD-323_1P7X1P25_ONS",39.0000,28.5000,-90.0000,top
 "FID1","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,4.0000,0.0000,top
-"FID2","Fiducial","Fiducial_0.5mm_Mask1mm",71.5000,41.0000,0.0000,top
+"FID2","Fiducial","Fiducial_0.5mm_Mask1mm",56.2500,41.0000,0.0000,top
 "FID3","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,41.0000,0.0000,top
 "G1","SAE Electric logo","SAE_Electric_Logo_10mm",27.2500,3.2500,180.0000,bottom
 "G1","SAE Electric logo","SAE_Electric_Logo_10mm",43.6153,3.2500,0.0000,top
-"G2","BMD Logo","BDM_Logo_50mm",35.6393,28.7698,180.0000,bottom
+"G2","BMD Logo","BDM_Logo_50mm",36.1107,28.7698,180.0000,bottom
 "H1","MountingHole","MountingHole_3.2mm_M3",8.0000,4.0000,-90.0000,top
-"H2","MountingHole","MountingHole_3.2mm_M3",76.0000,4.0000,0.0000,top
-"H3","MountingHole","MountingHole_3.2mm_M3",61.0000,41.0000,0.0000,top
-"H4","MountingHole","MountingHole_3.2mm_M3",61.0000,4.0000,0.0000,top
-"H5","MountingHole","MountingHole_3.2mm_M3",76.0000,41.0000,0.0000,top
-"H6","MountingHole","MountingHole_3.2mm_M3",8.0000,41.0000,0.0000,top
+"H2","MountingHole","MountingHole_3.2mm_M3",8.0000,41.0000,0.0000,top
+"H3","MountingHole","MountingHole_3.2mm_M3",61.5000,41.0000,0.0000,top
+"H4","MountingHole","MountingHole_3.2mm_M3",61.5000,4.0000,0.0000,top
 "J1","0436500200","CONN_SD-43650-001_02_MOL",70.7500,14.5000,90.0000,top
 "J2","0430450200","CONN_SD-43045-001_02_MOL",70.7500,32.0000,90.0000,top
 "J3","IPS1-110-01-L-D","SAMTEC_IPS1-110-01-L-D",8.0000,22.7500,90.0000,top
@@ -106,6 +104,26 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "R42","49.9","R_0402_1005Metric",49.7000,31.0500,0.0000,top
 "R43","49.9","R_0402_1005Metric",49.6534,13.9500,0.0000,top
 "R44","49.9","R_0402_1005Metric",49.6534,12.0500,0.0000,top
+"TP1","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,34.1800,180.0000,bottom
+"TP2","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,31.6400,180.0000,bottom
+"TP3","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,29.1000,180.0000,bottom
+"TP4","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,26.5600,180.0000,bottom
+"TP5","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,24.0200,180.0000,bottom
+"TP6","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,21.4800,180.0000,bottom
+"TP7","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,18.9400,180.0000,bottom
+"TP8","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,16.4000,180.0000,bottom
+"TP9","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,13.8600,180.0000,bottom
+"TP10","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",11.0000,11.3200,180.0000,bottom
+"TP11","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,34.1800,180.0000,bottom
+"TP12","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,31.6400,180.0000,bottom
+"TP13","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,29.1000,180.0000,bottom
+"TP14","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,26.5600,180.0000,bottom
+"TP15","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,24.0200,180.0000,bottom
+"TP16","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,21.4800,180.0000,bottom
+"TP17","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,18.9400,180.0000,bottom
+"TP18","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,16.4000,180.0000,bottom
+"TP19","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,13.8600,180.0000,bottom
+"TP20","TestPoint_Alt","TestPoint_Pad_1.0x1.0mm",5.0000,11.3200,180.0000,bottom
 "U1","BQ79616PAPRQ1","BQ79616PAPRQ1",33.5500,19.8500,0.0000,top
 "U2","SM91502ALA-E","IC6_SM91502ALA-E_BRN",61.5000,32.0000,0.0000,top
 "U3","SM91502ALA-E","IC6_SM91502ALA-E_BRN",61.5000,13.0000,0.0000,top

@@ -4,7 +4,7 @@
 
 <h1 align="center">BMS_SLAVE</h1>
 <p align="center">BMS Slave</p>
-<p align="center"><em>Slave BMS board that balances 8s cells, and reads temp for enepaq based temp sensors.</em></p>
+<p align="center"><em>8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.</em></p>
 
 <p align="center" width="100%">
   <a href="https://github.com/BDMPowertrain/BMS_Slave/actions/workflows/ci.yaml">
