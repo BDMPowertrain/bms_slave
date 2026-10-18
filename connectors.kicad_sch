@@ -1455,10 +1455,10 @@
 		)
 		(uuid "ba191091-6549-4007-9f2e-2db8b37e531e")
 	)
-	(text_box "LAYOUT NOTE: CONNECTORS\n1. J1/J4 (daisy) at board edge beside their transformers; TH pins ->\n   inner-plane keep-out >= 3 mm.\n2. J2 taps / J3 temps on the edge facing the blocks.\n3. Tab fuses at CELL END of tap harness, >= 67.2 V rated (FSAE EV.8.4.3).\n4. Verify pin 1 / row numbering on each Molex drawing."
+	(text_box "LAYOUT NOTE: CONNECTORS\n1. J1/2 (daisy) at board edge beside their transformers.\n2. Ensure that board to board connector matches battery interface board.\n3. Tab fuses at CELL END of tap harness, >= 67.2 V rated (FSAE EV.8.4.3), In this case on the Batter Interface Board."
 		(exclude_from_sim no)
-		(at 38.1 111.76 0)
-		(size 40.64 25.6924)
+		(at 76.2 106.68 0)
+		(size 52.07 19.2916)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -1505,7 +1505,7 @@
 	)
 	(text_box "DESIGN NOTE:\nUsing a single ground on connector assumes that on the battery interface board there is going to be a common ground for all temp wires. Need to route to correct ground plane for noise."
 		(exclude_from_sim no)
-		(at 241.3 62.082 0)
+		(at 233.68 63.5 0)
 		(size 30.48 18.7916)
 		(margins 2 2 2 2)
 		(stroke
@@ -2482,8 +2482,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1254f614-f932-47b9-bc53-cfb0c85fb260")
-		(property "Reference" "J4"
-			(at 114.3 82.55 0)
+		(property "Reference" "J1"
+			(at 114.3 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2494,7 +2494,7 @@
 			)
 		)
 		(property "Value" "0436500200"
-			(at 114.3 69.85 0)
+			(at 114.3 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2678,7 +2678,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "J4")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -2696,7 +2696,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41aac838-5f95-4745-a60f-bc1107c6ebee")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR014"
 			(at 198.12 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -2756,7 +2756,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "#PWR09")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -2773,7 +2773,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4d5b2899-b6ea-416d-ab3d-d2ad166b7c7c")
-		(property "Reference" "J3"
+		(property "Reference" "J2"
 			(at 114.3 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2969,7 +2969,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "J3")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -2986,7 +2986,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5ebcfe63-6c57-4d05-8538-1322283b855b")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR010"
 			(at 66.04 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -3046,7 +3046,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "#PWR053")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -3062,10 +3062,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7c41bbdd-e422-46ac-8b96-b04c91dd31e3")
-		(property "Reference" "J5"
-			(at 180.34 71.12 0)
+		(property "Reference" "J3"
+			(at 180.34 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3075,7 +3074,7 @@
 			)
 		)
 		(property "Value" "IPS1-110-01-L-D"
-			(at 180.34 73.66 0)
+			(at 180.34 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3348,7 +3347,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "J5")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -3366,7 +3365,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89343922-8b5a-4a31-9507-c9684dc56523")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR011"
 			(at 66.04 87.63 0)
 			(hide yes)
 			(show_name no)
@@ -3426,7 +3425,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "#PWR08")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -3443,7 +3442,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8d423390-627a-4106-9803-0692b310dfe7")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR013"
 			(at 198.12 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -3503,7 +3502,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "#PWR058")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -3521,7 +3520,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9f86fa5e-d836-4c07-861f-d3119419ce41")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR012"
 			(at 162.56 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -3581,7 +3580,7 @@
 		(instances
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
-					(reference "#PWR057")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)

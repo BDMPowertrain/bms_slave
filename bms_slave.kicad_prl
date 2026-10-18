@@ -33,6 +33,7 @@
       "vias",
       "footprint_text",
       "footprint_anchors",
+      "ratsnest",
       "grid",
       "footprints_front",
       "footprints_back",
@@ -52,7 +53,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "ffffffff_fffffff7_ff555575_fff5fff7",
+    "visible_layers": "ffffffff_fffffff7_ff55557f_f7f555f5",
     "zone_display_mode": 0
   },
   "git": {
@@ -123,32 +124,7 @@
   },
   "open_jobsets": [],
   "project": {
-    "files": [
-      {
-        "name": "bms_slave.kicad_sch",
-        "open": true,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 0,
-          "pos_y": 0,
-          "size_x": 1280,
-          "size_y": 720
-        }
-      },
-      {
-        "name": "bms_slave.kicad_pcb",
-        "open": true,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": 0,
-          "pos_y": 0,
-          "size_x": 1280,
-          "size_y": 720
-        }
-      }
-    ]
+    "files": []
   },
   "schematic": {
     "hierarchy_collapsed": [],
