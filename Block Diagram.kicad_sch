@@ -39,7 +39,7 @@
 		(uuid "ca4906af-4562-456f-b79d-f6f2c9056c36")
 	)
 	(rectangle
-		(start 50.8 53.34)
+		(start 50.8 50.8)
 		(end 187.96 121.92)
 		(stroke
 			(width 0.254)
@@ -51,9 +51,9 @@
 		)
 		(uuid "d1d07a44-74f4-41d4-ac1a-651b3b2ae9cd")
 	)
-	(text "Module x 8"
+	(text "BMS Slave n (x16)"
 		(exclude_from_sim no)
-		(at 50.8 52.07 0)
+		(at 50.8 49.53 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -111,14 +111,14 @@
 		)
 		(uuid "08792924-1597-48a7-a535-4ea702d4e92a")
 	)
-	(text_box "Spec 4"
+	(text_box "Isolated Com."
 		(exclude_from_sim no)
 		(at 20.32 182.88 0)
-		(size 44.45 7.62)
+		(size 44.45 8.5223)
 		(margins 2.2859 2.2859 2.2859 2.2859)
 		(stroke
 			(width -0.0001)
-			(type default)
+			(type solid)
 		)
 		(fill
 			(type none)
@@ -180,14 +180,14 @@
 		)
 		(uuid "20ca1f5a-11f7-4e9c-a280-96aad9f6320a")
 	)
-	(text_box "??"
+	(text_box "600V"
 		(exclude_from_sim no)
 		(at 66.04 182.88 0)
-		(size 27.94 7.62)
+		(size 27.94 8.5223)
 		(margins 2.2859 2.2859 2.2859 2.2859)
 		(stroke
 			(width -0.0001)
-			(type default)
+			(type solid)
 		)
 		(fill
 			(type none)
@@ -250,7 +250,7 @@
 	)
 	(text_box "[${#}] ${TITLE}"
 		(exclude_from_sim no)
-		(at 72.39 16.1976 0)
+		(at 80.01 16.1976 0)
 		(size 130.81 24.4424)
 		(margins 5.9999 5.9999 5.9999 5.9999)
 		(stroke

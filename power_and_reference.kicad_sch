@@ -8,130 +8,6 @@
 		(title "Power & Reference")
 	)
 	(lib_symbols
-		(symbol "Connector:TestPoint_Alt"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint_Alt"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "test point (alternative shape)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TestPoint_Alt_0_1"
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -0.762 3.302) (xy 0 4.064) (xy 0.762 3.302) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_Alt_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Jumper:SolderJumper_2_Open"
 			(pin_numbers
 				(hide yes)
@@ -4949,19 +4825,6 @@
 		)
 		(uuid "ae8cab21-cbe9-4119-b530-c0bb0712a8ef")
 	)
-	(rectangle
-		(start 71.12 83.82)
-		(end 93.98 152.4)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 132 0 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "be752bfa-9559-4adc-aa86-6108b94964e6")
-	)
 	(text "Power and Reference"
 		(exclude_from_sim no)
 		(at 99.06 44.45 0)
@@ -4990,20 +4853,6 @@
 		)
 		(uuid "4fb42277-6ec7-4b50-af11-97cec7d2344a")
 	)
-	(text "Test Points"
-		(exclude_from_sim no)
-		(at 71.12 82.55 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-				(thickness 0.254)
-				(bold yes)
-				(color 132 0 0 1)
-			)
-			(justify left)
-		)
-		(uuid "9a7f359e-7c84-4035-b8d3-ed92fa666a6f")
-	)
 	(text "Power"
 		(exclude_from_sim no)
 		(at 71.12 44.45 0)
@@ -5018,10 +4867,10 @@
 		)
 		(uuid "c86552e6-3586-4735-9c7a-06e6e47b1bfe")
 	)
-	(text_box "LAYOUT NOTE: POWER (SLUSE81F)\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1,\n   p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and\n   R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged\n   (pkg drawing notes 8-9, p.220)."
+	(text_box "LAYOUT NOTE: POWER (TI SLUSE81F)\n\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1, p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged (pkg drawing notes 8-9, p.220)."
 		(exclude_from_sim no)
-		(at 215.9 81.28 0)
-		(size 40.64 34.2268)
+		(at 210.82 71.12 0)
+		(size 50.8 30.48)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -5043,10 +4892,10 @@
 		)
 		(uuid "219e4732-1062-4f4e-b16d-65f901e75815")
 	)
-	(text_box "DESIGN NOTE:\nCVDD LOAD BUDGET  (SLUSE81F §7.3.1.5 p.23, Table 7-34)\r\n Ext load max : 10 mA ACTIVE/SLEEP, 5 mA SHUTDOWN (ILIM 35 mA min)\r\n RX tie       : ~0 mA (input leakage)\r\n LED + 2k0    : ~1.5 mA  (only via JP1)\r\n TOTAL        : 1.5 mA of 10 mA -> OK\r\n Daisy comm (~10 mA broadcast) is internal, not in ext budget.\r\n NO other loads on CVDD. Temp sensors = TSREF, balancing = cells.\r\n SHUTDOWN: CVDD not regulated, follows LDOIN (3.4-5.5 V) for WAKE.\r\n   IC draws 16-23 uA; LED would draw ~1 mA -> JP1 OPEN in car."
+	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI SLUSE81F 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
 		(exclude_from_sim no)
-		(at 215.9 120.4004 0)
-		(size 60.96 29.4596)
+		(at 15.24 157.48 0)
+		(size 78.74 37.994)
 		(margins 2 2 2 2)
 		(stroke
 			(width 1)
@@ -5066,10 +4915,10 @@
 		)
 		(uuid "69bb9657-4b7f-48c2-956b-b09d118a27f6")
 	)
-	(text_box "LAYOUT NOTE:\nU1 GROUNDING (TI SLUSE81F §10.1.1)\n\nAll grounds are one net (GND) in the schematic. In layout, each\nbypass cap returns to its own ground pin through a small L1\ncopper island. Islands join the L2 GND plane through vias only.\nDo NOT connect islands to each other on L1."
+	(text_box "LAYOUT NOTE: U1 GROUNDING (TI SLUSE81F 10.1.1)\n\nAll grounds are one net (GND) in the schematic. In layout, each bypass cap returns to its own ground pin through a small L1 copper island. Islands join the L2 GND plane through vias only. Do NOT connect islands to each other on L1."
 		(exclude_from_sim no)
-		(at 17.78 48.374 0)
-		(size 40.64 27.826)
+		(at 15.24 45.72 0)
+		(size 50.8 20.32)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -5093,8 +4942,8 @@
 	)
 	(text_box "[${#}] ${TITLE}"
 		(exclude_from_sim no)
-		(at 77.47 16.51 0)
-		(size 130.81 12.7)
+		(at 77.47 13.6576 0)
+		(size 130.81 24.4424)
 		(margins 5.9999 5.9999 5.9999 5.9999)
 		(stroke
 			(width -0.0001)
@@ -5114,10 +4963,33 @@
 		)
 		(uuid "8cd11304-dbb4-4155-8f33-4fd52862895e")
 	)
-	(text_box "LAYOUT NOTE:\nRULES\r\n 1. Cap within 2 mm of its pin, same layer, no via between\r\n    cap and pin.\r\n 2. Cap ground pad -> its island -> via to L2. Not a shared\r\n    trace.\r\n 3. Keep pins 40-43 (COMH/COML) clear; place caps above and\r\n    below the daisy-chain exit, not in it.\r\n 4. Thermal pad (65): 36 vias to L2 GND plane, tented/plugged."
+	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI SLUSE81F 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
 		(exclude_from_sim no)
-		(at 17.78 131.9148 0)
-		(size 40.64 32.0932)
+		(at 210.82 106.68 0)
+		(size 68.58 38.1)
+		(margins 2 2 2 2)
+		(stroke
+			(width 1)
+			(type solid)
+			(color 200 200 200 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(face "Arial")
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "8cf22c01-5d0b-4f4c-85bd-6df65262e4a6")
+	)
+	(text_box "LAYOUT NOTE: RULES\n\n1. Cap within 2 mm of its pin, same layer, no via between cap and pin.\n2. Cap ground pad -> its island -> via to L2. Not a shared trace.\n3. Keep pins 40-43 (COMH/COML) clear; place caps above and below the daisy-chain exit, not in it.\n4. Thermal pad (65): 36 vias to L2 GND plane, tented/plugged."
+		(exclude_from_sim no)
+		(at 15.24 70.0916 0)
+		(size 50.8 26.4284)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -5199,16 +5071,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 99.06) (xy 88.9 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05ddf383-098c-453e-85ab-3b99d644874c")
-	)
-	(wire
-		(pts
 			(xy 109.22 73.66) (xy 109.22 78.74)
 		)
 		(stroke
@@ -5276,16 +5138,6 @@
 			(type default)
 		)
 		(uuid "29ae597f-3160-4b4b-a556-fceafb747896")
-	)
-	(wire
-		(pts
-			(xy 73.66 121.92) (xy 88.9 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2fdd15cf-ffc2-40d8-b202-fc09bd335ecc")
 	)
 	(wire
 		(pts
@@ -5409,16 +5261,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 106.68) (xy 88.9 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6deb6185-8715-4951-a0ec-d8ed23e9176f")
-	)
-	(wire
-		(pts
 			(xy 165.1 114.3) (xy 165.1 116.84)
 		)
 		(stroke
@@ -5519,16 +5361,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 137.16) (xy 88.9 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "99451626-842b-48d2-b111-95252f7d72ab")
-	)
-	(wire
-		(pts
 			(xy 119.38 93.98) (xy 124.46 93.98)
 		)
 		(stroke
@@ -5546,16 +5378,6 @@
 			(type default)
 		)
 		(uuid "a4ba80e0-c953-4ae9-8708-7ae7fed03652")
-	)
-	(wire
-		(pts
-			(xy 73.66 129.54) (xy 88.9 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a893d29e-bbf3-44bb-b306-824888e56326")
 	)
 	(wire
 		(pts
@@ -5639,16 +5461,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 114.3) (xy 88.9 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c024e038-7f1e-4e76-9811-51dac81b1a35")
-	)
-	(wire
-		(pts
 			(xy 109.22 114.3) (xy 109.22 116.84)
 		)
 		(stroke
@@ -5709,16 +5521,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 144.78) (xy 88.9 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1c93c4b-7f46-4b0b-bbef-de9265363b1c")
-	)
-	(wire
-		(pts
 			(xy 88.9 55.88) (xy 88.9 53.34)
 		)
 		(stroke
@@ -5726,16 +5528,6 @@
 			(type default)
 		)
 		(uuid "e55d434a-e379-47e6-907e-a0552af3a64c")
-	)
-	(wire
-		(pts
-			(xy 76.2 91.44) (xy 88.9 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eaf52b78-207e-4694-ac3e-c9081e52538b")
 	)
 	(wire
 		(pts
@@ -5811,7 +5603,7 @@
 		(cells
 			(table_cell "GROUND"
 				(exclude_from_sim no)
-				(at 17.78 82.728 0)
+				(at 20.32 106.68 0)
 				(size 10.16 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5831,7 +5623,7 @@
 			)
 			(table_cell "PIN"
 				(exclude_from_sim no)
-				(at 27.94 82.728 0)
+				(at 30.48 106.68 0)
 				(size 5.08 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5851,7 +5643,7 @@
 			)
 			(table_cell "CAPS RETURNING TO IT"
 				(exclude_from_sim no)
-				(at 33.02 82.728 0)
+				(at 35.56 106.68 0)
 				(size 25.4 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5871,7 +5663,7 @@
 			)
 			(table_cell "AVSS"
 				(exclude_from_sim no)
-				(at 17.78 87.808 0)
+				(at 20.32 111.76 0)
 				(size 10.16 7.62)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5889,7 +5681,7 @@
 			)
 			(table_cell "39"
 				(exclude_from_sim no)
-				(at 27.94 87.808 0)
+				(at 30.48 111.76 0)
 				(size 5.08 7.62)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5905,9 +5697,9 @@
 				)
 				(uuid "960ee8f7-1e8c-49b3-8468-d41638e52cb6")
 			)
-			(table_cell "AVDD (38), BAT filter, VC0 filter, CB0 filter, thermal pad (65)"
+			(table_cell "AVDD (38), BAT filter, VC0 filter, CB0 filter, thermal pad, (65)GPIO filter caps."
 				(exclude_from_sim no)
-				(at 33.02 87.808 0)
+				(at 35.56 111.76 0)
 				(size 25.4 7.62)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5925,7 +5717,7 @@
 			)
 			(table_cell "DVSS"
 				(exclude_from_sim no)
-				(at 17.78 95.428 0)
+				(at 20.32 119.38 0)
 				(size 10.16 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5943,7 +5735,7 @@
 			)
 			(table_cell "50"
 				(exclude_from_sim no)
-				(at 27.94 95.428 0)
+				(at 30.48 119.38 0)
 				(size 5.08 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5961,7 +5753,7 @@
 			)
 			(table_cell "DVDD (49)\n"
 				(exclude_from_sim no)
-				(at 33.02 95.428 0)
+				(at 35.56 119.38 0)
 				(size 25.4 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5979,7 +5771,7 @@
 			)
 			(table_cell "CVSS"
 				(exclude_from_sim no)
-				(at 17.78 100.508 0)
+				(at 20.32 124.46 0)
 				(size 10.16 12.7)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -5997,7 +5789,7 @@
 			)
 			(table_cell "46"
 				(exclude_from_sim no)
-				(at 27.94 100.508 0)
+				(at 30.48 124.46 0)
 				(size 5.08 12.7)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -6013,9 +5805,9 @@
 				)
 				(uuid "2cd1c8ef-82aa-4523-84c2-ec33988525ca")
 			)
-			(table_cell "LDOIN (47), NEG5V (44), CVDD (45), TSREF (51), GPIO filter caps, daisy-chain bypass caps"
+			(table_cell "LDOIN (47), NEG5V (44), CVDD (45), TSREF (51), daisy-chain caps."
 				(exclude_from_sim no)
-				(at 33.02 100.508 0)
+				(at 35.56 124.46 0)
 				(size 25.4 12.7)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -6033,7 +5825,7 @@
 			)
 			(table_cell "REFHM"
 				(exclude_from_sim no)
-				(at 17.78 113.208 0)
+				(at 20.32 137.16 0)
 				(size 10.16 10.16)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -6051,7 +5843,7 @@
 			)
 			(table_cell "36"
 				(exclude_from_sim no)
-				(at 27.94 113.208 0)
+				(at 30.48 137.16 0)
 				(size 5.08 10.16)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -6069,7 +5861,7 @@
 			)
 			(table_cell "REFHP (37) ONLY - keep separate from AVSS on L1, join at L2 plane"
 				(exclude_from_sim no)
-				(at 33.02 113.208 0)
+				(at 35.56 137.16 0)
 				(size 25.4 10.16)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -6142,62 +5934,6 @@
 			)
 		)
 	)
-	(label "TSREF"
-		(at 73.66 137.16 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1d9e4720-19d6-4848-9668-2c72f89f1bfc")
-	)
-	(label "VCOLL"
-		(at 73.66 121.92 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "40b9f76d-8518-4050-816e-fbde90db719e")
-		(property "Netclass" "PWR"
-			(at 73.66 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(label "LDOIN"
-		(at 73.66 114.3 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "434edddf-5f46-4958-b219-03fbc55b520b")
-		(property "Netclass" "PWR"
-			(at 73.66 115.57 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
 	(label "REFHP"
 		(at 119.38 129.54 0)
 		(effects
@@ -6207,29 +5943,6 @@
 			(justify left bottom)
 		)
 		(uuid "4c6b69ae-2866-449a-89bc-a339f56cd73e")
-	)
-	(label "LDOIN"
-		(at 73.66 129.54 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "570d7129-a165-432d-a8d9-a3838e569c4a")
-		(property "Netclass" "PWR"
-			(at 73.66 130.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
 	)
 	(label "NEG5V"
 		(at 119.38 78.74 0)
@@ -6322,52 +6035,6 @@
 		(uuid "e639d8e3-3959-45e0-a9bc-33010c321178")
 		(property "Netclass" "PWR"
 			(at 119.38 110.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(label "DVDD"
-		(at 73.66 99.06 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ecdbc8bd-4354-4ec1-9cef-e2ce0337eb76")
-		(property "Netclass" "PWR"
-			(at 73.66 100.33 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(label "AVDD"
-		(at 73.66 106.68 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ffd15258-9a1b-4780-b55a-b0704bb69eaf")
-		(property "Netclass" "PWR"
-			(at 73.66 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6911,83 +6578,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:VSSA")
-		(at 76.2 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "29f229cd-1ad0-4665-9ac2-4e354527bf7a")
-		(property "Reference" "#PWR021"
-			(at 76.2 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "CVDD"
-			(at 76.2 87.63 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 76.2 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "221f599a-cb4c-49c4-8686-607cbd8954a8")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "remote_cl31b475kbhnfne:CL31B475KBHNFNE")
 		(at 119.38 73.66 180)
 		(unit 1)
@@ -7278,163 +6868,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 76.2 144.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3bb15944-cfdb-4c80-b994-1d4583427b70")
-		(property "Reference" "#PWR022"
-			(at 76.2 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 76.2 149.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 76.2 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 76.2 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 76.2 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "34a8b5e7-9382-4efc-a677-11ee3b57a403")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 129.54 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3e809766-c66c-42e1-b858-34e7fc2590b8")
-		(property "Reference" "TP6"
-			(at 86.36 126.238 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 127.508 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3f7eb943-9b83-41fe-82fc-a132bd46a12d")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 109.22 101.6 0)
 		(unit 1)
 		(body_style 1)
@@ -7662,85 +7095,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
 					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 99.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "46000d57-16d5-4909-83bd-53e71fd411f7")
-		(property "Reference" "TP2"
-			(at 86.36 95.758 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 97.028 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7dfb53af-740c-4350-b231-881f5842baa2")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -8396,85 +7750,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 144.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5694370b-be56-41ff-8d57-6adf35b788e9")
-		(property "Reference" "TP8"
-			(at 86.36 141.478 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 142.748 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9251ca3c-0a57-4b1a-b5ea-3779188a1a62")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VSSA")
 		(at 152.4 53.34 0)
 		(unit 1)
@@ -8838,164 +8113,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
 					(reference "#PWR035")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 137.16 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "845efc2d-488a-480d-b9ac-42bb30855124")
-		(property "Reference" "TP7"
-			(at 86.36 133.858 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 135.128 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bdf62aba-f0d0-4c74-ae20-d568795a2a02")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 106.68 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "85f738bc-0ce5-42d3-a0ad-ef24313ad50f")
-		(property "Reference" "TP3"
-			(at 86.36 103.378 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 104.648 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9d9dfccd-d898-4322-8e64-6b920babbf3d")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -10795,164 +9912,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 91.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "da5fe41f-1c0a-43ee-8c3f-008f365d6d0b")
-		(property "Reference" "TP1"
-			(at 86.36 88.138 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 89.408 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ffc0da9f-847e-414b-858d-34669d9378ff")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 121.92 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "dec8d2e3-b712-4cab-977e-23b341378933")
-		(property "Reference" "TP5"
-			(at 86.36 118.618 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 119.888 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "952ce325-ab54-456e-a76b-f221cec37f3c")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "remote_crcw1210150rfkea:R_US")
 		(at 157.48 55.88 0)
 		(unit 1)
@@ -10962,10 +9921,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e0a7bd27-941c-42f0-8a31-a24272e907b6")
 		(property "Reference" "R20"
-			(at 161.29 49.53 0)
+			(at 161.29 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10975,7 +9933,7 @@
 			)
 		)
 		(property "Value" "150"
-			(at 161.29 52.07 0)
+			(at 161.29 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11159,85 +10117,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
 					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 88.9 114.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e8c5b031-ea26-486e-9191-897c9e1bd228")
-		(property "Reference" "TP4"
-			(at 86.36 110.998 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 86.36 112.268 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 93.98 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 88.9 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dfb4bef7-fcb2-418f-b95c-3ee2b2e8823b")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531"
-					(reference "TP4")
 					(unit 1)
 				)
 			)

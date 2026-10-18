@@ -508,7 +508,7 @@ definitions:
 
   PROJECT_NAME: BMS Slave
   BOARD_NAME: BMS_SLAVE
-  DESCRIPTION: Slave BMS board that balances 8s cells, and reads temp for enepaq based temp sensors.
+  DESCRIPTION: '8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.'
 
   COMPANY: Blue Devil Motor Sports
   DESIGNER: Aidan Brzezinski

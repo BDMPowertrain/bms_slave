@@ -827,21 +827,6 @@
 		)
 		(uuid "861c9b1c-f3f7-4abd-84e4-7e4ecba3dc9e")
 	)
-	(text "Date: ${RELEASE_DATE}"
-		(exclude_from_sim no)
-		(at 220.98 237.49 0)
-		(effects
-			(font
-				(face "Times New Roman")
-				(size 10.16 10.16)
-				(thickness 0.6)
-				(bold yes)
-				(color 200 200 200 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "87564db8-be77-4805-a256-abae1e9d7c5b")
-	)
 	(text "27"
 		(exclude_from_sim no)
 		(at 233.68 129.54 0)
@@ -898,7 +883,7 @@
 		)
 		(uuid "8b821864-881a-4cb0-856b-2d9a97f6404e")
 	)
-	(text "${BOARD_NAME}"
+	(text "${PROJECT_NAME}"
 		(exclude_from_sim no)
 		(at 25.4 40.64 0)
 		(effects
@@ -1179,7 +1164,7 @@
 		)
 		(uuid "c7960137-7711-4ffe-94cf-8be0bcb30b2c")
 	)
-	(text "Comment"
+	(text "TI BQ79616PAPRQ1 Datasheet"
 		(exclude_from_sim no)
 		(at 222.25 177.8 0)
 		(effects
@@ -1189,6 +1174,7 @@
 				(color 0 0 0 1)
 			)
 			(justify left bottom)
+			(href "https://www.ti.com/lit/ds/symlink/bq79612-q1.pdf")
 		)
 		(uuid "cd70c2d3-2fc1-43f3-bef3-88f512b1207b")
 	)

@@ -8,6 +8,130 @@
 		(title "Connectors")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint_Alt"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint_Alt"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point (alternative shape)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_Alt_0_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy -0.762 3.302) (xy 0 4.064) (xy 0.762 3.302) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_Alt_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power local)
 			(pin_numbers
@@ -1348,6 +1472,19 @@
 		)
 	)
 	(rectangle
+		(start 233.68 63.5)
+		(end 256.54 144.78)
+		(stroke
+			(width 0.254)
+			(type dash)
+			(color 132 0 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "84bee839-c6b5-471e-9c1f-f6adb5a85e11")
+	)
+	(rectangle
 		(start 48.26 63.5)
 		(end 71.12 88.9)
 		(stroke
@@ -1400,7 +1537,7 @@
 		)
 		(uuid "1f170b12-5f12-4af1-a3e9-915dc4e17320")
 	)
-	(text "BMS Communcation Connectors"
+	(text "BMS Comminication Connectors"
 		(exclude_from_sim no)
 		(at 76.2 62.23 0)
 		(effects
@@ -1413,6 +1550,20 @@
 			(justify left)
 		)
 		(uuid "2da39602-cd1c-436c-8c42-8f5e1b8771dc")
+	)
+	(text "Test Points"
+		(exclude_from_sim no)
+		(at 233.68 62.23 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+				(thickness 0.254)
+				(bold yes)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "4d6fbbc4-3091-45d8-a6a8-995bd749973f")
 	)
 	(text "Board to Board Connector"
 		(exclude_from_sim no)
@@ -1455,7 +1606,7 @@
 		)
 		(uuid "ba191091-6549-4007-9f2e-2db8b37e531e")
 	)
-	(text_box "LAYOUT NOTE: CONNECTORS\n1. J1/2 (daisy) at board edge beside their transformers.\n2. Ensure that board to board connector matches battery interface board.\n3. Tab fuses at CELL END of tap harness, >= 67.2 V rated (FSAE EV.8.4.3), In this case on the Batter Interface Board."
+	(text_box "LAYOUT NOTE: CONNECTORS\n1. J1/2 (daisy) at board edge beside their transformers.\n2. Ensure that board to board connector matches battery interface board.\n3. Tab fuses at CELL END of tap harness, >= 67.2 V rated (FSAE EV.8.4.3), In this case on the battery interface board."
 		(exclude_from_sim no)
 		(at 76.2 106.68 0)
 		(size 52.07 19.2916)
@@ -1482,8 +1633,8 @@
 	)
 	(text_box "[${#}] ${TITLE}"
 		(exclude_from_sim no)
-		(at 85.09 15.24 0)
-		(size 130.81 12.7)
+		(at 76.2 13.6576 0)
+		(size 130.81 24.4424)
 		(margins 5.9999 5.9999 5.9999 5.9999)
 		(stroke
 			(width -0.0001)
@@ -1505,7 +1656,7 @@
 	)
 	(text_box "DESIGN NOTE:\nUsing a single ground on connector assumes that on the battery interface board there is going to be a common ground for all temp wires. Need to route to correct ground plane for noise."
 		(exclude_from_sim no)
-		(at 233.68 63.5 0)
+		(at 132.08 116.84 0)
 		(size 30.48 18.7916)
 		(margins 2 2 2 2)
 		(stroke
@@ -1747,6 +1898,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 132.08) (xy 241.3 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1072bb2a-c1f7-4f6a-b824-0239a2234462")
+	)
+	(wire
+		(pts
 			(xy 101.6 73.66) (xy 111.76 73.66)
 		)
 		(stroke
@@ -1764,6 +1925,26 @@
 			(type default)
 		)
 		(uuid "1835eeca-e615-4215-987a-d69cbd521695")
+	)
+	(wire
+		(pts
+			(xy 238.76 124.46) (xy 243.84 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d459332-eeed-439b-9925-a77fab716894")
+	)
+	(wire
+		(pts
+			(xy 238.76 119.38) (xy 243.84 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f1dc413-a55d-4d53-be17-40618963f1cd")
 	)
 	(bus
 		(pts
@@ -1787,6 +1968,16 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 73.66) (xy 243.84 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3681bb49-433e-4f40-97a9-1295ea146b1f")
+	)
+	(wire
+		(pts
 			(xy 193.04 96.52) (xy 200.66 96.52)
 		)
 		(stroke
@@ -1794,6 +1985,36 @@
 			(type default)
 		)
 		(uuid "37f00fea-0da7-43d9-a526-7a743685a4e4")
+	)
+	(wire
+		(pts
+			(xy 238.76 81.28) (xy 243.84 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a26e728-7eae-4bad-83ec-1bf9b15fdd83")
+	)
+	(wire
+		(pts
+			(xy 241.3 91.44) (xy 243.84 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42723915-0b53-4fc3-bef5-8468d7de47c0")
+	)
+	(wire
+		(pts
+			(xy 238.76 127) (xy 243.84 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43876d82-8323-4a80-9df4-222d6d5a7283")
 	)
 	(bus
 		(pts
@@ -1845,6 +2066,16 @@
 		)
 		(uuid "560e52de-0036-4ab8-bed3-ebce2e533c93")
 	)
+	(wire
+		(pts
+			(xy 241.3 132.08) (xy 243.84 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5756437d-cb1f-499f-9ddb-d56c35e81308")
+	)
 	(bus
 		(pts
 			(xy 99.06 71.12) (xy 96.52 68.58)
@@ -1854,6 +2085,46 @@
 			(type default)
 		)
 		(uuid "59f2f121-9f02-4af6-bb90-d8dfba27bc1c")
+	)
+	(wire
+		(pts
+			(xy 241.3 106.68) (xy 241.3 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c89d1d8-7aec-4ed7-8930-818e36463b8b")
+	)
+	(wire
+		(pts
+			(xy 238.76 86.36) (xy 243.84 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ed3d2cb-8cf9-4178-989b-68ef6a50e9ff")
+	)
+	(wire
+		(pts
+			(xy 238.76 129.54) (xy 243.84 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f92df0a-d09b-4672-9e83-23f4c9d30e60")
+	)
+	(wire
+		(pts
+			(xy 238.76 88.9) (xy 243.84 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63a29a91-2424-4258-b625-1b55d13bb1d9")
 	)
 	(wire
 		(pts
@@ -1884,6 +2155,16 @@
 			(type default)
 		)
 		(uuid "6f8ea51b-82ca-4e82-97d4-7043acc93ba1")
+	)
+	(wire
+		(pts
+			(xy 238.76 76.2) (xy 243.84 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7157e2ec-e487-4fcb-8340-711f5dc6b77a")
 	)
 	(wire
 		(pts
@@ -1927,6 +2208,36 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 121.92) (xy 243.84 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "807b061e-cb46-40f5-8461-83a592cd0614")
+	)
+	(wire
+		(pts
+			(xy 241.3 109.22) (xy 243.84 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8457495f-7c80-46fa-805d-f41479f217c2")
+	)
+	(wire
+		(pts
+			(xy 238.76 78.74) (xy 243.84 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a52c4e6-e5fc-4bd1-be95-30610ea4afc5")
+	)
+	(wire
+		(pts
 			(xy 198.12 101.6) (xy 198.12 104.14)
 		)
 		(stroke
@@ -1955,6 +2266,16 @@
 		)
 		(uuid "98e1538c-e87b-4b5b-91be-6d099bbbbd11")
 	)
+	(wire
+		(pts
+			(xy 238.76 68.58) (xy 243.84 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b536023-6b28-45b8-bc73-81705179b8a4")
+	)
 	(bus
 		(pts
 			(xy 207.01 66.04) (xy 203.2 71.12)
@@ -1964,6 +2285,16 @@
 			(type default)
 		)
 		(uuid "a27bf3b1-3bff-4d30-8d37-e1c610304d4e")
+	)
+	(wire
+		(pts
+			(xy 238.76 111.76) (xy 243.84 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2ee98e3-80b2-4fc8-8c43-5bda90b355b9")
 	)
 	(wire
 		(pts
@@ -1984,6 +2315,26 @@
 			(type default)
 		)
 		(uuid "acfc0bcb-ff58-4357-bfc6-79cc54f1a0c5")
+	)
+	(wire
+		(pts
+			(xy 238.76 114.3) (xy 243.84 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2e2899c-07be-48cc-bc42-a7931ddd4020")
+	)
+	(wire
+		(pts
+			(xy 238.76 71.12) (xy 243.84 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b59300f6-4186-408c-95e6-16ce69480eb7")
 	)
 	(wire
 		(pts
@@ -2057,6 +2408,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 91.44) (xy 241.3 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1d97719-5330-402d-a3c2-97aea8f72779")
+	)
+	(wire
+		(pts
 			(xy 60.96 78.74) (xy 66.04 78.74)
 		)
 		(stroke
@@ -2127,6 +2488,16 @@
 	)
 	(wire
 		(pts
+			(xy 238.76 83.82) (xy 243.84 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f46d6367-f30b-4d1b-9d51-b3cedb7c0086")
+	)
+	(wire
+		(pts
 			(xy 160.02 86.36) (xy 167.64 86.36)
 		)
 		(stroke
@@ -2145,6 +2516,26 @@
 		)
 		(uuid "f78bf4eb-9f3e-48b0-aa69-ef363bdabe5b")
 	)
+	(wire
+		(pts
+			(xy 238.76 116.84) (xy 243.84 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc45079b-3474-4fe9-aacd-60482b5e1b87")
+	)
+	(label "TAP3"
+		(at 238.76 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0c0faa5a-875e-4a11-af34-b141a8a15143")
+	)
 	(label "COML.P"
 		(at 102.87 78.74 0)
 		(effects
@@ -2155,6 +2546,26 @@
 		)
 		(uuid "147e4391-ec4d-4a53-baa7-d00347dd4d01")
 	)
+	(label "TAP8"
+		(at 238.76 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "19e57b36-9eb1-4930-bf47-b9c2b705e439")
+	)
+	(label "TMP3"
+		(at 238.76 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1aa4703d-768a-47c1-873d-836a8ec0ddae")
+	)
 	(label "TMP2"
 		(at 198.12 96.52 180)
 		(effects
@@ -2164,6 +2575,16 @@
 			(justify right bottom)
 		)
 		(uuid "1c4fb09a-427d-44be-b54d-af52f70d13f4")
+	)
+	(label "TAP7"
+		(at 238.76 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c87b438-a55d-4a2d-a4e5-440c92b9172e")
 	)
 	(label "COMH.P"
 		(at 102.87 93.98 0)
@@ -2215,6 +2636,16 @@
 		)
 		(uuid "4142462e-1bc6-4c9f-a70c-8a3d511a529f")
 	)
+	(label "TMP2"
+		(at 238.76 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "45ed8b8d-a6d6-41b0-8778-ba51cca51681")
+	)
 	(label "TMP1"
 		(at 198.12 99.06 180)
 		(effects
@@ -2224,6 +2655,16 @@
 			(justify right bottom)
 		)
 		(uuid "48d04a5e-f08e-4252-9b2b-ff6a940a2bd2")
+	)
+	(label "TAP0"
+		(at 238.76 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "527adce8-86bd-480e-8bfa-2e71a66d7af9")
 	)
 	(label "TAP5"
 		(at 162.56 86.36 0)
@@ -2245,6 +2686,26 @@
 		)
 		(uuid "70950e54-0c0d-4f96-99b6-ae4ed4a4550d")
 	)
+	(label "TMP7"
+		(at 238.76 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "71df4b88-895e-4d9f-b991-edc81fa3f27f")
+	)
+	(label "TAP4"
+		(at 238.76 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "792c6bc3-bfc3-49b4-bf35-bbadbb52304b")
+	)
 	(label "TAP1"
 		(at 162.56 96.52 0)
 		(effects
@@ -2255,6 +2716,26 @@
 		)
 		(uuid "7fa4575e-d4cc-4a37-9b58-f50c38300b6c")
 	)
+	(label "TMP5"
+		(at 238.76 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9ae3fd56-0372-4271-9385-bd601447d4e3")
+	)
+	(label "TMP1"
+		(at 238.76 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9e5a9b4c-3fdf-4ed4-b0ea-ecf9a25f4033")
+	)
 	(label "TMP7"
 		(at 198.12 83.82 180)
 		(effects
@@ -2264,6 +2745,16 @@
 			(justify right bottom)
 		)
 		(uuid "9e5e1b4c-ba6c-47b1-b5aa-4542ad3ee3ab")
+	)
+	(label "TMP8"
+		(at 238.76 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a48d9df9-4515-4e68-9592-59cb005e4d8c")
 	)
 	(label "TAP4"
 		(at 162.56 88.9 0)
@@ -2295,6 +2786,46 @@
 		)
 		(uuid "b4ebada5-31a7-492e-87e6-bd1781401f96")
 	)
+	(label "TAP5"
+		(at 238.76 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5bac0c4-f956-4ba7-8199-9840282b3e99")
+	)
+	(label "TAP2"
+		(at 238.76 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0c447d3-7900-4a18-aaf4-ac0ba6b74cc2")
+	)
+	(label "TAP6"
+		(at 238.76 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c2ea47b7-4b84-47d4-92d5-507dda80e71a")
+	)
+	(label "TMP6"
+		(at 238.76 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c945441b-e5da-4a84-bb32-c65b9e6bfe91")
+	)
 	(label "TAP3"
 		(at 162.56 91.44 0)
 		(effects
@@ -2316,6 +2847,16 @@
 		(uuid "d00cab2d-738e-47fa-8c1b-b698737d0891")
 	)
 	(label "TMP4"
+		(at 238.76 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d9869369-93e5-431f-8006-c19bc7964a5f")
+	)
+	(label "TMP4"
 		(at 198.12 91.44 180)
 		(effects
 			(font
@@ -2324,6 +2865,16 @@
 			(justify right bottom)
 		)
 		(uuid "db69cb33-4f09-4eaf-b6d7-85aeead04083")
+	)
+	(label "TAP1"
+		(at 238.76 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd6cf1e0-3aed-4fbe-9367-04e0b0cc61d7")
 	)
 	(label "COML.N"
 		(at 102.87 73.66 0)
@@ -2685,6 +3236,401 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 76.2 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1827eb90-2494-4ae3-b101-f03a4aef0cba")
+		(property "Reference" "TP4"
+			(at 248.92 76.2 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 77.47 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "657494d3-67a8-42de-b32c-8c1ee15e550d")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 119.38 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1bb066a0-090a-4352-bc4c-4908dd5de3ac")
+		(property "Reference" "TP15"
+			(at 248.92 119.38 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 120.65 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "235c02ea-18d9-4a93-9294-c2673b0a0eab")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 109.22 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2f0cc3e9-69da-4f80-aa87-83d1d2dc1f92")
+		(property "Reference" "TP11"
+			(at 248.92 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 110.49 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aa5b9dca-b2f5-4cd0-9295-ff6ba72b6148")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 81.28 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "36c4497d-17f7-45c0-8169-754adfc99bcd")
+		(property "Reference" "TP6"
+			(at 248.92 81.28 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 82.55 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "25f2e9f9-a1b6-4768-b8cc-b5e37934a31a")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 78.74 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3dfd346b-2f29-4392-ba4e-b7e9762e0fb5")
+		(property "Reference" "TP5"
+			(at 248.92 78.74 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 80.01 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "10f871ad-c447-444d-b84d-905300ec6c18")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 198.12 104.14 0)
 		(unit 1)
@@ -2757,6 +3703,85 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
 					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 116.84 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "45439ca4-69d4-4db6-a8a8-3d39fb23156c")
+		(property "Reference" "TP14"
+			(at 248.92 116.84 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 118.11 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e795966a-da81-4885-b87a-f08826446dce")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP14")
 					(unit 1)
 				)
 			)
@@ -2976,6 +4001,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 73.66 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4fc55244-c1dc-4b6c-9414-9785843446df")
+		(property "Reference" "TP3"
+			(at 248.92 73.66 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 74.93 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dd9bd232-ca22-4186-abbb-18816a448adf")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VSSA")
 		(at 66.04 71.12 0)
 		(unit 1)
@@ -3047,6 +4151,162 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VSSA")
+		(at 241.3 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5fe24acb-86cc-46b1-8974-c377907d1e84")
+		(property "Reference" "#PWR021"
+			(at 241.3 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VMODULE"
+			(at 241.3 102.87 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"VSSA\""
+			(at 241.3 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "56dddbdf-6107-4c1a-9f9b-c246d536f556")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 86.36 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "63b6607c-e9ab-480f-b4ca-164bd54dc98a")
+		(property "Reference" "TP8"
+			(at 248.92 86.36 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 87.63 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0e2fcfd2-58f8-4be7-9864-cf87d36cc7d6")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -3509,6 +4769,164 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 121.92 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "90a61f21-2447-4ae3-aa20-2b7a70585be7")
+		(property "Reference" "TP16"
+			(at 248.92 121.92 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 123.19 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "76905130-5571-4e3b-bc86-957e820b6ce9")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 129.54 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "916d5911-4d38-46d4-8ea1-41a342d13c16")
+		(property "Reference" "TP19"
+			(at 248.92 129.54 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 130.81 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "72293ff2-a7dd-4ca6-86e5-e956c0e54e05")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 162.56 104.14 0)
 		(unit 1)
@@ -3581,6 +4999,952 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 127 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a22ffca8-308d-4745-b7e2-29e9b41076ef")
+		(property "Reference" "TP18"
+			(at 248.92 127 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 128.27 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cf56a625-cbdc-4fab-b571-a8b65ab7ba4c")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 114.3 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bba74b70-4ceb-4f24-9b11-ec588baa20cd")
+		(property "Reference" "TP13"
+			(at 248.92 114.3 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 115.57 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d94e9f27-65b6-40b2-849c-9380b34cf829")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 124.46 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bc7a1eb8-b867-438c-ae56-c63a6a999e79")
+		(property "Reference" "TP17"
+			(at 248.92 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 125.73 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fc1b1c68-5124-4e1b-9b8d-ec1fda34fcfc")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 132.08 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c0f28b19-eed9-46da-b4b4-10f367fca064")
+		(property "Reference" "TP20"
+			(at 248.92 132.08 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 133.35 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f908bcd1-0c58-4cc1-9333-5d36cd668990")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 71.12 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c87df593-027f-47bd-a01f-ff5201bb1b92")
+		(property "Reference" "TP2"
+			(at 248.92 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 72.39 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dd9bd232-ca22-4186-abbb-18816a448ae0")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 68.58 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d08133aa-6de3-4eac-882f-a28c7ea8db46")
+		(property "Reference" "TP1"
+			(at 248.92 68.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 69.85 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "17083620-135d-47c8-b79b-dda7ab83c8ca")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 241.3 134.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d977ab87-09a8-4bf6-8e52-d3d9c38aab9d")
+		(property "Reference" "#PWR022"
+			(at 241.3 140.97 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 139.7 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
+			(at 241.3 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b8119a1a-79b1-4406-bc6b-af7b5445543b")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 88.9 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dc35f304-55d2-41ef-a95e-6bf1623ebb2c")
+		(property "Reference" "TP9"
+			(at 248.92 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "624669df-b226-435b-982e-8bba342a6a41")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 111.76 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dff82355-c2ef-41c4-9d05-9ae121627962")
+		(property "Reference" "TP12"
+			(at 248.92 111.76 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1fd7f2c4-30e5-4730-9b62-567b3b488cc2")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 241.3 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e436c750-7113-43a3-92ce-21defcae6354")
+		(property "Reference" "#PWR057"
+			(at 241.3 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 241.3 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
+			(at 241.3 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c3a9cf68-46d1-4e0a-b1ec-c1aebe97c0fa")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 83.82 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e679ad8a-fd19-4f8f-953f-710c416fd971")
+		(property "Reference" "TP7"
+			(at 248.92 83.82 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 85.09 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5492fa69-f898-4645-ad30-6d406058c51c")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Alt")
+		(at 243.84 91.44 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fd1f1907-5c68-4579-96d4-6d9aa50701e8")
+		(property "Reference" "TP10"
+			(at 248.92 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint_Alt"
+			(at 248.92 92.71 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 243.84 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point (alternative shape)"
+			(at 243.84 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7982adb0-9bbc-489a-b53a-ca8f868d4487")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e"
+					(reference "TP10")
 					(unit 1)
 				)
 			)

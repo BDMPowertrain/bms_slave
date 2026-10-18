@@ -60,13 +60,13 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.0,
+          "min_clearance": 0.2,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
           "pad_connection": 1,
-          "remove_islands": 1,
-          "thermal_relief_gap": 0.3,
-          "thermal_relief_spoke_width": 1.5
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -308,7 +308,52 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "power_pin_not_driven|1244600|1092200|aba63301-2cbf-4de6-9eea-03fe7d489da6|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1244600|1295400|3a61cc59-4486-4ae7-845b-0c10bf277c21|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1244600|787400|c7ce673c-e586-4538-8ba1-a77a7c38456d|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1244600|939800|5887c295-24dc-412f-b4ae-c1d24872cdb7|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1625600|1041400|420b1dd2-4df6-4bca-8732-2906d0bfcca3|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1625600|787400|f56f396a-b9ec-4892-a7fe-d79ae94a0d0d|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1625600|863600|944a93a6-394e-4a9a-acdd-aab662e95e7b|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|1803400|584200|41fcc14c-381d-4ad5-9beb-29d20e885cc7|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|2032000|609600|ee0a79e3-796e-4a2c-a6b8-59908db89e9a|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|2159000|1092200|af99977e-c8d0-47a2-af96-6e0594d11af4|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|",
+        ""
+      ],
+      [
+        "power_pin_not_driven|2159000|939800|65db6d51-2637-4135-9343-13dc4737ba77|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
@@ -1224,7 +1269,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "J1-8,H1-6,FID1-3,NT1-2,Q1-2,U1-6,D1-2,G1-3,TP1-14,JP1,R1-86,#PWR1-66,CR1-4,C1-84,#G1-2",
+    "used_designators": "TP1-20,G1-3,R1-86,JP1,CR1-4,#PWR1-66,#G1-2,C1-84,J1-8,H1-6,FID1-3,NT1-2,Q1-2,D1-2,U1-6",
     "variants": []
   },
   "sheets": [
@@ -1277,7 +1322,7 @@
     "COMPANY": "Blue Devil Motor Sports",
     "DESCRIPTION": "Slave BMS board that balances 8s cells, and reads temp for enepaq based temp sensors.",
     "DESIGNER": "Aidan Brzezinski",
-    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 \u00d7 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.500 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
+    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 × 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.500 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
     "GIT_HASH_PCB": "8b9f2ba",
     "GIT_HASH_SCH": "2fd0761",
     "GIT_URL": "https://github.com/BDMPowertrain/BMS_Slave",
@@ -1294,7 +1339,7 @@
     "RELEASE_TITLE_1.0.2": "",
     "RELEASE_TITLE_1.1.0": "",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
-    "REVISION": "+ (Unreleased)",
+    "REVISION": "1.0.0",
     "SHEET_NAME_1": "Cover Page",
     "SHEET_NAME_10": "Revision History",
     "SHEET_NAME_11": "......................................",

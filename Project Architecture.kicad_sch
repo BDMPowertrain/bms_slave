@@ -253,20 +253,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Page 4"
-		(exclude_from_sim no)
-		(at 226.06 -6.35 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(bold yes)
-				(color 20 60 40 1)
-			)
-			(justify right bottom)
-			(href "#4")
-		)
-		(uuid "adcd0da0-b17a-49f0-8601-c50069906700")
-	)
 	(text_box "[${#}] ${TITLE}"
 		(exclude_from_sim no)
 		(at 76.2 20.32 0)
@@ -291,14 +277,14 @@
 		(uuid "f4789478-c68e-4cee-9edd-5d11b744f94d")
 	)
 	(junction
-		(at 106.68 60.96)
+		(at 180.34 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e5d577f-c822-4657-b9f0-3b6eab8780d9")
 	)
 	(wire
 		(pts
-			(xy 73.66 129.54) (xy 71.12 129.54)
+			(xy 213.36 129.54) (xy 215.9 129.54)
 		)
 		(stroke
 			(width 0)
@@ -308,7 +294,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 78.74) (xy 149.86 81.28)
+			(xy 137.16 78.74) (xy 137.16 81.28)
 		)
 		(stroke
 			(width 0)
@@ -318,7 +304,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 91.44) (xy 71.12 93.98)
+			(xy 215.9 91.44) (xy 215.9 93.98)
 		)
 		(stroke
 			(width 0)
@@ -328,7 +314,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 68.58) (xy 152.4 68.58)
+			(xy 147.32 68.58) (xy 134.62 68.58)
 		)
 		(stroke
 			(width 0)
@@ -338,7 +324,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 78.74) (xy 142.24 78.74)
+			(xy 147.32 78.74) (xy 144.78 78.74)
 		)
 		(stroke
 			(width 0)
@@ -348,7 +334,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 58.42) (xy 185.42 60.96)
+			(xy 101.6 58.42) (xy 101.6 60.96)
 		)
 		(stroke
 			(width 0)
@@ -358,7 +344,7 @@
 	)
 	(bus
 		(pts
-			(xy 99.06 111.76) (xy 190.5 111.76)
+			(xy 187.96 111.76) (xy 96.52 111.76)
 		)
 		(stroke
 			(width 0)
@@ -368,7 +354,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 60.96) (xy 190.5 60.96)
+			(xy 101.6 60.96) (xy 96.52 60.96)
 		)
 		(stroke
 			(width 0)
@@ -378,7 +364,7 @@
 	)
 	(wire
 		(pts
-			(xy 190.5 129.54) (xy 187.96 129.54)
+			(xy 96.52 129.54) (xy 99.06 129.54)
 		)
 		(stroke
 			(width 0)
@@ -388,7 +374,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 60.96) (xy 114.3 60.96)
+			(xy 180.34 60.96) (xy 172.72 60.96)
 		)
 		(stroke
 			(width 0)
@@ -398,7 +384,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 129.54) (xy 187.96 132.08)
+			(xy 99.06 129.54) (xy 99.06 132.08)
 		)
 		(stroke
 			(width 0)
@@ -408,7 +394,7 @@
 	)
 	(bus
 		(pts
-			(xy 177.8 68.58) (xy 190.5 68.58)
+			(xy 109.22 68.58) (xy 96.52 68.58)
 		)
 		(stroke
 			(width 0)
@@ -418,7 +404,7 @@
 	)
 	(bus
 		(pts
-			(xy 99.06 91.44) (xy 190.5 91.44)
+			(xy 187.96 91.44) (xy 96.52 91.44)
 		)
 		(stroke
 			(width 0)
@@ -428,7 +414,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 129.54) (xy 71.12 132.08)
+			(xy 215.9 129.54) (xy 215.9 132.08)
 		)
 		(stroke
 			(width 0)
@@ -438,7 +424,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 111.76) (xy 71.12 109.22)
+			(xy 215.9 111.76) (xy 215.9 109.22)
 		)
 		(stroke
 			(width 0)
@@ -448,7 +434,7 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 78.74) (xy 142.24 81.28)
+			(xy 144.78 78.74) (xy 144.78 81.28)
 		)
 		(stroke
 			(width 0)
@@ -458,7 +444,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 60.96) (xy 106.68 60.96)
+			(xy 187.96 60.96) (xy 180.34 60.96)
 		)
 		(stroke
 			(width 0)
@@ -468,7 +454,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 91.44) (xy 71.12 91.44)
+			(xy 213.36 91.44) (xy 215.9 91.44)
 		)
 		(stroke
 			(width 0)
@@ -478,7 +464,7 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 60.96) (xy 142.24 58.42)
+			(xy 144.78 60.96) (xy 144.78 58.42)
 		)
 		(stroke
 			(width 0)
@@ -488,7 +474,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 78.74) (xy 149.86 78.74)
+			(xy 134.62 78.74) (xy 137.16 78.74)
 		)
 		(stroke
 			(width 0)
@@ -498,7 +484,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 58.42) (xy 106.68 60.96)
+			(xy 180.34 58.42) (xy 180.34 60.96)
 		)
 		(stroke
 			(width 0)
@@ -508,7 +494,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 111.76) (xy 71.12 111.76)
+			(xy 213.36 111.76) (xy 215.9 111.76)
 		)
 		(stroke
 			(width 0)
@@ -518,7 +504,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 60.96) (xy 142.24 60.96)
+			(xy 147.32 60.96) (xy 144.78 60.96)
 		)
 		(stroke
 			(width 0)
@@ -528,7 +514,7 @@
 	)
 	(bus
 		(pts
-			(xy 99.06 116.84) (xy 190.5 116.84)
+			(xy 187.96 116.84) (xy 96.52 116.84)
 		)
 		(stroke
 			(width 0)
@@ -538,8 +524,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 132.08 0)
-		(mirror y)
+		(at 99.06 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -550,7 +535,7 @@
 		(fields_autoplaced yes)
 		(uuid "03652019-8492-4200-8946-a1de819e436a")
 		(property "Reference" "#PWR09"
-			(at 187.96 138.43 0)
+			(at 99.06 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -561,7 +546,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 137.16 0)
+			(at 99.06 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -571,7 +556,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 132.08 0)
+			(at 99.06 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -582,7 +567,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 132.08 0)
+			(at 99.06 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -593,7 +578,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 187.96 132.08 0)
+			(at 99.06 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -617,7 +602,8 @@
 	)
 	(symbol
 		(lib_id "power:VSSA")
-		(at 106.68 58.42 0)
+		(at 180.34 58.42 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -627,7 +613,7 @@
 		(dnp no)
 		(uuid "1f78a8a4-65f6-442a-b49b-8b763130e25a")
 		(property "Reference" "#PWR04"
-			(at 106.68 62.23 0)
+			(at 180.34 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -638,7 +624,7 @@
 			)
 		)
 		(property "Value" "VMODULE"
-			(at 106.68 54.61 0)
+			(at 180.34 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -648,7 +634,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 58.42 0)
+			(at 180.34 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -659,7 +645,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 58.42 0)
+			(at 180.34 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -670,7 +656,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 106.68 58.42 0)
+			(at 180.34 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -694,8 +680,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 149.86 81.28 0)
-		(mirror y)
+		(at 137.16 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -706,7 +691,7 @@
 		(fields_autoplaced yes)
 		(uuid "392ad4a3-9d86-404e-9ce8-82dfec65b460")
 		(property "Reference" "#PWR07"
-			(at 149.86 87.63 0)
+			(at 137.16 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -717,7 +702,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 149.86 86.36 0)
+			(at 137.16 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -727,7 +712,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 81.28 0)
+			(at 137.16 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -738,7 +723,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 81.28 0)
+			(at 137.16 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -749,7 +734,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 149.86 81.28 0)
+			(at 137.16 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -773,8 +758,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 71.12 132.08 0)
-		(mirror y)
+		(at 215.9 132.08 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -785,7 +769,7 @@
 		(fields_autoplaced yes)
 		(uuid "3db3a413-9755-4b14-8062-50de44171c20")
 		(property "Reference" "#PWR03"
-			(at 71.12 138.43 0)
+			(at 215.9 138.43 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -796,7 +780,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 71.12 137.16 0)
+			(at 215.9 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -806,7 +790,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 132.08 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -817,7 +801,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 132.08 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -828,7 +812,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 71.12 132.08 0)
+			(at 215.9 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -852,8 +836,7 @@
 	)
 	(symbol
 		(lib_id "power:VSSA")
-		(at 71.12 109.22 0)
-		(mirror y)
+		(at 215.9 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -863,7 +846,7 @@
 		(dnp no)
 		(uuid "41a746bf-3225-489f-a482-1e6a791e3cb2")
 		(property "Reference" "#PWR02"
-			(at 71.12 113.03 0)
+			(at 215.9 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -874,7 +857,7 @@
 			)
 		)
 		(property "Value" "CVDD"
-			(at 71.12 104.14 0)
+			(at 215.9 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -884,7 +867,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 109.22 0)
+			(at 215.9 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -895,7 +878,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 109.22 0)
+			(at 215.9 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -906,7 +889,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 71.12 109.22 0)
+			(at 215.9 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -930,7 +913,8 @@
 	)
 	(symbol
 		(lib_id "power:VSSA")
-		(at 142.24 58.42 0)
+		(at 144.78 58.42 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -940,7 +924,7 @@
 		(dnp no)
 		(uuid "423895bb-930d-44f5-bf4c-fbb4994c1da0")
 		(property "Reference" "#PWR05"
-			(at 142.24 62.23 0)
+			(at 144.78 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -951,7 +935,7 @@
 			)
 		)
 		(property "Value" "CVDD"
-			(at 142.24 54.61 0)
+			(at 144.78 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -961,7 +945,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 58.42 0)
+			(at 144.78 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -972,7 +956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 58.42 0)
+			(at 144.78 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -983,7 +967,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 142.24 58.42 0)
+			(at 144.78 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1007,7 +991,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 142.24 81.28 0)
+		(at 144.78 81.28 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1018,7 +1003,7 @@
 		(fields_autoplaced yes)
 		(uuid "7b523b44-3c34-4034-9597-e583b4c4b5ef")
 		(property "Reference" "#PWR06"
-			(at 142.24 87.63 0)
+			(at 144.78 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1029,7 +1014,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 142.24 86.36 0)
+			(at 144.78 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1039,7 +1024,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 81.28 0)
+			(at 144.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1050,7 +1035,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 81.28 0)
+			(at 144.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1061,7 +1046,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 142.24 81.28 0)
+			(at 144.78 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1085,8 +1070,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 71.12 93.98 0)
-		(mirror y)
+		(at 215.9 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1097,7 +1081,7 @@
 		(fields_autoplaced yes)
 		(uuid "9b2a7aea-7907-45c0-a4a7-ddcc9627c104")
 		(property "Reference" "#PWR01"
-			(at 71.12 100.33 0)
+			(at 215.9 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1108,7 +1092,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 71.12 99.06 0)
+			(at 215.9 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1118,7 +1102,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 71.12 93.98 0)
+			(at 215.9 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1129,7 +1113,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 71.12 93.98 0)
+			(at 215.9 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1140,7 +1124,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 71.12 93.98 0)
+			(at 215.9 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1164,7 +1148,8 @@
 	)
 	(symbol
 		(lib_id "power:VSSA")
-		(at 185.42 58.42 0)
+		(at 101.6 58.42 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1174,7 +1159,7 @@
 		(dnp no)
 		(uuid "dd77e336-2f40-438a-b949-4268e71c1948")
 		(property "Reference" "#PWR08"
-			(at 185.42 62.23 0)
+			(at 101.6 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1185,7 +1170,7 @@
 			)
 		)
 		(property "Value" "VMODULE"
-			(at 185.42 54.61 0)
+			(at 101.6 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1195,7 +1180,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 58.42 0)
+			(at 101.6 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1206,7 +1191,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 185.42 58.42 0)
+			(at 101.6 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1217,7 +1202,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"VSSA\""
-			(at 185.42 58.42 0)
+			(at 101.6 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1240,7 +1225,7 @@
 		)
 	)
 	(sheet
-		(at 152.4 55.88)
+		(at 109.22 55.88)
 		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1256,7 +1241,7 @@
 		)
 		(uuid "5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855")
 		(property "Sheetname" "Temperature Sense"
-			(at 152.4 54.61 0)
+			(at 109.22 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1269,7 +1254,7 @@
 			)
 		)
 		(property "Sheetfile" "temperature_sense.kicad_sch"
-			(at 152.4 81.8646 0)
+			(at 109.22 81.8646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1281,35 +1266,35 @@
 			)
 		)
 		(pin "GND" passive
-			(at 152.4 78.74 180)
+			(at 134.62 78.74 0)
 			(uuid "cc79e977-b33e-4765-bc92-e22cf8587e88")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "TSREF" passive
-			(at 152.4 68.58 180)
+			(at 134.62 68.58 0)
 			(uuid "727e074e-4791-4102-8802-93c728229b28")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "TMP[1..8]" passive
-			(at 177.8 68.58 0)
+			(at 109.22 68.58 180)
 			(uuid "ad7685f8-6ff9-4726-86c9-946997f5d7a8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(instances
@@ -1321,7 +1306,7 @@
 		)
 	)
 	(sheet
-		(at 190.5 55.88)
+		(at 71.12 55.88)
 		(size 25.4 76.2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1337,7 +1322,7 @@
 		)
 		(uuid "6c6a059d-71c7-49d0-bb31-68bf0320ac4e")
 		(property "Sheetname" "Connectors"
-			(at 190.5 54.61 0)
+			(at 71.12 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1350,7 +1335,7 @@
 			)
 		)
 		(property "Sheetfile" "connectors.kicad_sch"
-			(at 190.5 132.6646 0)
+			(at 71.12 132.6646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1362,64 +1347,64 @@
 			)
 		)
 		(pin "COMH{P N}" bidirectional
-			(at 190.5 111.76 180)
+			(at 96.52 111.76 0)
 			(uuid "0acb5ce9-0b14-421f-8660-9de0da781f98")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "COML{P N}" bidirectional
-			(at 190.5 116.84 180)
+			(at 96.52 116.84 0)
 			(uuid "3a762bf2-bea9-4739-9876-45eaa6dd46a7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "TAP[0..8]" passive
-			(at 190.5 91.44 180)
+			(at 96.52 91.44 0)
 			(uuid "9444a117-1a25-4c59-aade-b45b4fd1c10f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "TMP[1..8]" passive
-			(at 190.5 68.58 180)
+			(at 96.52 68.58 0)
 			(uuid "80dd08a3-c5d8-4adb-8ad1-0b0419fc96f9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "GND" passive
-			(at 190.5 129.54 180)
+			(at 96.52 129.54 0)
 			(uuid "a7c4fc85-4330-4d0d-9b66-7d9aae925a41")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "VMODULE" passive
-			(at 190.5 60.96 180)
+			(at 96.52 60.96 0)
 			(uuid "dd41f57f-1663-441f-beac-b505163a33a6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(instances
@@ -1431,7 +1416,7 @@
 		)
 	)
 	(sheet
-		(at 114.3 55.88)
+		(at 147.32 55.88)
 		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1447,7 +1432,7 @@
 		)
 		(uuid "dc8544ca-af63-40ad-8cbc-696b729b5531")
 		(property "Sheetname" "Power & Reference"
-			(at 114.3 54.61 0)
+			(at 147.32 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1460,7 +1445,7 @@
 			)
 		)
 		(property "Sheetfile" "power_and_reference.kicad_sch"
-			(at 114.3 81.8646 0)
+			(at 147.32 81.8646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1472,47 +1457,47 @@
 			)
 		)
 		(pin "CVDD" passive
-			(at 139.7 60.96 0)
+			(at 147.32 60.96 180)
 			(uuid "9af6140c-75d2-4470-af4f-e7ef3d83e31c")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "GND" passive
-			(at 139.7 78.74 0)
+			(at 147.32 78.74 180)
 			(uuid "e66d614a-7342-4e8c-82bf-2b6fb5431135")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "TSREF" passive
-			(at 139.7 68.58 0)
+			(at 147.32 68.58 180)
 			(uuid "7afa7d62-1f34-420b-a70c-aafef076eae9")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "VMODULE" passive
-			(at 114.3 60.96 180)
+			(at 172.72 60.96 0)
 			(uuid "5b4eb57b-8b78-4c8e-a5e0-0848910e9c89")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(instances
@@ -1524,7 +1509,7 @@
 		)
 	)
 	(sheet
-		(at 73.66 55.88)
+		(at 187.96 55.88)
 		(size 25.4 38.1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1540,7 +1525,7 @@
 		)
 		(uuid "e396eed5-f415-436d-900e-61677bb6572f")
 		(property "Sheetname" "Cell Sense & Balance"
-			(at 73.66 54.61 0)
+			(at 187.96 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1553,7 +1538,7 @@
 			)
 		)
 		(property "Sheetfile" "cell_sense_and_balance.kicad_sch"
-			(at 73.66 94.5646 0)
+			(at 187.96 94.5646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1565,35 +1550,35 @@
 			)
 		)
 		(pin "TAP[0..8]" bidirectional
-			(at 99.06 91.44 0)
+			(at 187.96 91.44 180)
 			(uuid "aa721659-4c52-4dbb-8cfb-2a84b8997b97")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "VMODULE" passive
-			(at 99.06 60.96 0)
+			(at 187.96 60.96 180)
 			(uuid "6c8d1c1b-53a8-4bf7-8b16-0366e0108756")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "GND" passive
-			(at 73.66 91.44 180)
+			(at 213.36 91.44 0)
 			(uuid "19f03264-1321-42f5-bbe6-fd2bb2733209")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(instances
@@ -1605,7 +1590,7 @@
 		)
 	)
 	(sheet
-		(at 73.66 106.68)
+		(at 187.96 106.68)
 		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1621,7 +1606,7 @@
 		)
 		(uuid "f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1")
 		(property "Sheetname" "Daisy Chain"
-			(at 73.66 105.41 0)
+			(at 187.96 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1634,7 +1619,7 @@
 			)
 		)
 		(property "Sheetfile" "daisy_chain.kicad_sch"
-			(at 73.66 132.6646 0)
+			(at 187.96 132.6646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1646,45 +1631,45 @@
 			)
 		)
 		(pin "COMH{P N}" bidirectional
-			(at 99.06 111.76 0)
+			(at 187.96 111.76 180)
 			(uuid "b7c6b8d4-c175-4d26-a258-62d8a4d9b3a8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "COML{P N}" bidirectional
-			(at 99.06 116.84 0)
+			(at 187.96 116.84 180)
 			(uuid "f5f05886-f67d-41db-97fe-42f7bdf6f95d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(pin "GND" passive
-			(at 73.66 129.54 180)
+			(at 213.36 129.54 0)
 			(uuid "6b3259e5-1458-4c2c-8acd-a1c908de199e")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 0 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(pin "CVDD" passive
-			(at 73.66 111.76 180)
+			(at 213.36 111.76 0)
 			(uuid "c0288414-dbf3-4264-bf13-0fd3570dfa99")
 			(effects
 				(font
 					(size 1.27 1.27)
 					(color 194 0 0 1)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(instances
@@ -1696,7 +1681,7 @@
 		)
 	)
 	(sheet
-		(at 228.6 57.15)
+		(at 223.52 55.88)
 		(size 25.4 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1712,7 +1697,7 @@
 		)
 		(uuid "f4a7f626-808e-4d0f-b4d4-b24a2b39d327")
 		(property "Sheetname" "Mechanical"
-			(at 228.6 55.88 0)
+			(at 223.52 54.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1725,7 +1710,7 @@
 			)
 		)
 		(property "Sheetfile" "mechanical.kicad_sch"
-			(at 228.6 83.1346 0)
+			(at 223.52 81.8646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

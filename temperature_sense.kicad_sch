@@ -8,130 +8,6 @@
 		(title "Temperature Sense")
 	)
 	(lib_symbols
-		(symbol "Connector:TestPoint_Alt"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint_Alt"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 5.08 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "test point (alternative shape)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TestPoint_Alt_0_1"
-				(polyline
-					(pts
-						(xy 0 2.54) (xy -0.762 3.302) (xy 0 4.064) (xy 0.762 3.302) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_Alt_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power local)
 			(pin_numbers
@@ -3008,19 +2884,6 @@
 		(uuid "b6c7c29d-7b9a-4c64-8403-b0fae15dceaa")
 	)
 	(rectangle
-		(start 91.44 97.79)
-		(end 114.3 121.92)
-		(stroke
-			(width 0.254)
-			(type dash)
-			(color 132 0 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "bd1edd43-9cc6-4cac-a692-c82b87d94f1a")
-	)
-	(rectangle
 		(start 91.44 76.2)
 		(end 129.54 91.44)
 		(stroke
@@ -3060,21 +2923,7 @@
 		)
 		(uuid "15cec95a-5a2b-410a-bb84-f93bbce26a59")
 	)
-	(text "Test Points"
-		(exclude_from_sim no)
-		(at 91.44 96.52 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-				(thickness 0.254)
-				(bold yes)
-				(color 132 0 0 1)
-			)
-			(justify left)
-		)
-		(uuid "5aceada1-8ac0-4f3f-83e7-8cfc2371da46")
-	)
-	(text "Temp Reference Voltage"
+	(text "Sensor Bias & RC Filter (x8)"
 		(exclude_from_sim no)
 		(at 133.35 49.53 0)
 		(effects
@@ -3118,8 +2967,8 @@
 	)
 	(text_box "[${#}] ${TITLE}"
 		(exclude_from_sim no)
-		(at 148.59 17.78 0)
-		(size 130.81 12.7)
+		(at 144.78 14.9276 0)
+		(size 130.81 24.4424)
 		(margins 5.9999 5.9999 5.9999 5.9999)
 		(stroke
 			(width -0.0001)
@@ -3139,10 +2988,56 @@
 		)
 		(uuid "126b8579-23f7-4e95-a8b3-e3097b9e5750")
 	)
-	(text_box "LAYOUT NOTE: POWER (SLUSE81F)\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1,\n   p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and\n   R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged\n   (pkg drawing notes 8-9, p.220)."
+	(text_box "DESIGN NOTE: ENEPAQ TEMPERATURE SENSORS\n\n1. Each Enepaq 1x4 module has one 2-wire sensor output (hottest of its sensors, analog OR'd). The sensor is a shunt voltage reference (\"zener-like\"), NOT an NTC: Vout is set by temperature, not by bias current.\n2. Vout vs temp (Enepaq Table 4): -40°C 2.44 V | 25°C 1.86 V | 60°C 1.51 V | 120°C 1.30 V. Use linear interpolation.\n3. Bias: TBIAS (≈4.7 V) through 3.3 kΩ gives 0.7-1.0 mA per sensor(spec 0.4-15 mA). 8 sensors ≈ 8 mA from TSREF (limit ≥15 mA).\n4. Read the absolute GPIO voltage and convert with Table 4. Do not use TI's NTC ratiometric formula. D2's drop only changes bias current, not the reading.\n5. Sensor is isolated from the cells up to 60 V. Fine at 8S (33.6 V max); re-check if module count per slave grows.\n6. R31-R38 / C29-C36: 10 kΩ / 0.1 µF filter (fc ≈ 160 Hz). The 10 kΩ also limits GPIO clamp current on a harness fault."
+		(exclude_from_sim no)
+		(at 210.82 132.08 0)
+		(size 68.58 38.1)
+		(margins 2 2 2 2)
+		(stroke
+			(width 1)
+			(type solid)
+			(color 200 200 200 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(face "Arial")
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "2dda1d08-c8d6-4dfa-b259-121b5536ebaa")
+	)
+	(text_box "D2: blocks back-feed into TSREF if a TMP wire shorts to a cell tap. ~0.3 V drop is harmless withshunt-reference sensors."
+		(exclude_from_sim no)
+		(at 45.72 76.2 0)
+		(size 40.64 10.2572)
+		(margins 2 2 2 2)
+		(stroke
+			(width 1)
+			(type solid)
+			(color 200 200 200 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(face "Arial")
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "a8728048-e500-492d-ae7b-04745b64a194")
+	)
+	(text_box "LAYOUT NOTE: TEMPERATURE SENSE\n\n1. Place R23-R38 and C29-C36 at J3. Filter caps return to GND beside J3 pins 19/20 so harness noise goes straight back out the connector, not under U1.\n2. Sensor returns share J3-19/20 with U1's supply return. Never join them to TAP0 (J3-17) on either board.\n3. Filtered GPIO1-8 traces may run the length of the board; keep them over the GND plane, away from COMH/COML.\n4. Add 2-3 GND vias at J3-19/20.\n5. TBIAS trace carries ≈8 mA DC; 0.2 mm min width."
 		(exclude_from_sim no)
 		(at 210.82 99.06 0)
-		(size 40.64 34.2268)
+		(size 68.58 27.826)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -3163,6 +3058,29 @@
 			(justify left top)
 		)
 		(uuid "ad62bbce-fdcb-4586-93fb-96048130539a")
+	)
+	(text_box "DESIGN NOTE: BQ7961x COMPARATOR SETTINGS (SLUSE81F 7.3.x)\n\n1. OT comparator (10-39 % of TSREF) works with these sensors:\nOT_THR 31 % = 1.55 V ≈ 55°C (margin under 60°C); 30 % ≈ 61°C.\nHysteresis 2 % ≈ 0.1 V.\n2. UT comparator (66-80 %) cannot detect cold (sensor max 2.44 V = 49 %). Use it as an OPEN-WIRE detector: an open sensor pulls GPIO to TBIAS (≈94 %) and trips UT. A shorted sensor trips OT.\n3. OTCB (10-24 % = 0.5-1.2 V) can never trigger (sensor floor 1.30 V). Balancing thermal limits are firmware + die temp only."
+		(exclude_from_sim no)
+		(at 45.72 93.98 0)
+		(size 83.82 27.94)
+		(margins 2 2 2 2)
+		(stroke
+			(width 1)
+			(type solid)
+			(color 250 236 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(face "Arial")
+				(size 1.27 1.27)
+				(color 0 0 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "b5564efe-2855-4f28-9c3d-9af9b811369b")
 	)
 	(junction
 		(at 172.72 71.12)
@@ -3842,16 +3760,6 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 104.14) (xy 111.76 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "94aa35ba-80ef-4310-b3e7-34426c5bea80")
-	)
-	(wire
-		(pts
 			(xy 215.9 68.58) (xy 223.52 68.58)
 		)
 		(stroke
@@ -4112,16 +4020,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 114.3) (xy 111.76 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f1f9e47d-b43a-4abe-946a-e90dac5235bc")
-	)
-	(wire
-		(pts
 			(xy 187.96 198.12) (xy 187.96 200.66)
 		)
 		(stroke
@@ -4335,29 +4233,6 @@
 					(italic yes)
 				)
 				(justify right)
-			)
-		)
-	)
-	(label "TMP1"
-		(at 93.98 104.14 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "55909b8c-7b64-4bd0-9fa6-4f82da818c78")
-		(property "Netclass" "TEMP"
-			(at 93.98 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -5704,84 +5579,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855"
 					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 96.52 114.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1c9f026c-7fc8-4b0c-aa5e-2899ddc707e7")
-		(property "Reference" "#PWR038"
-			(at 96.52 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 96.52 119.38 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 96.52 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6e20789a-0eaa-4035-8295-c4351f9af527")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855"
-					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -9759,85 +9556,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 111.76 114.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c09b44a7-83ce-45fc-afd5-81b4904f5cdf")
-		(property "Reference" "TP10"
-			(at 109.22 110.998 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 109.22 112.268 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 116.84 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 116.84 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 111.76 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b1944750-79ba-4248-b73b-b4fefdd86a87")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855"
-					(reference "TP10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "remote_gcm155r71h104ke02j:C")
 		(at 187.96 73.66 270)
 		(unit 1)
@@ -10760,85 +10478,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855"
 					(reference "R31")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint_Alt")
-		(at 111.76 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f3adcde2-53c9-4039-9bc0-b5d4bf057b04")
-		(property "Reference" "TP9"
-			(at 109.22 100.838 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" ""
-			(at 109.22 102.108 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 116.84 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 116.84 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point (alternative shape)"
-			(at 111.76 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "567863c9-66d8-4540-b872-30ffd31554ed")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855"
-					(reference "TP9")
 					(unit 1)
 				)
 			)
