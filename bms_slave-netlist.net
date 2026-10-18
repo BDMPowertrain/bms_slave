@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-2tl2ktm8/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-qzcaiov7/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -19,9 +19,9 @@
 		(textvar
 			(name "DESIGNER") "Aidan Brzezinski")
 		(textvar
-			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.400 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
+			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.500 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "c118f52")
+			(name "GIT_HASH_PCB") "8b9f2ba")
 		(textvar
 			(name "GIT_HASH_SCH") "2fd0761")
 		(textvar
@@ -43,9 +43,9 @@
 		(textvar
 			(name "RELEASE_BODY_UNRELEASED") "Version Unreleased not found.")
 		(textvar
-			(name "RELEASE_DATE") "16-Oct-2026")
+			(name "RELEASE_DATE") "17-Oct-2026")
 		(textvar
-			(name "RELEASE_DATE_NUM") "2026-10-16")
+			(name "RELEASE_DATE_NUM") "2026-10-17")
 		(textvar
 			(name "RELEASE_TITLE_1.0.0")
 		)
@@ -625,135 +625,7 @@
 	)
 	(components
 		(comp
-			(ref "J3")
-			(value "0430450200")
-			(footprint "remote_0430450200:CONN_SD-43045-001_02_MOL")
-			(datasheet "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
-			(description "Connector Header Through Hole, Right Angle 2 position")
-			(fields
-				(field
-					(name "Manufacturer") "Molex")
-				(field
-					(name "Manufacturer Part Number") "0430450200")
-				(field
-					(name "Vendor")
-				)
-				(field
-					(name "Vendor Part Number")
-				)
-				(field
-					(name "Mass (g)")
-				)
-				(field
-					(name "RQjC (C/W)")
-				)
-				(field
-					(name "RQjC_top (C/W)")
-				)
-				(field
-					(name "Temp_max (C)")
-				)
-				(field
-					(name "Temp_min (C)")
-				)
-				(field
-					(name "Power Dissipation (W)")
-				)
-				(field
-					(name "Rate")
-				)
-				(field
-					(name "SAP Code")
-				)
-				(field
-					(name "Footprint") "remote_0430450200:CONN_SD-43045-001_02_MOL")
-				(field
-					(name "Datasheet") "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
-				(field
-					(name "Description") "Connector Header Through Hole, Right Angle 2 position")
-			)
-			(libsource
-				(lib "remote_0430450200")
-				(part "0430450200")
-				(description "Connector Header Through Hole, Right Angle 2 position")
-			)
-			(property
-				(name "Manufacturer")
-				(value "Molex")
-			)
-			(property
-				(name "Manufacturer Part Number")
-				(value "0430450200")
-			)
-			(property
-				(name "Vendor")
-				(value "")
-			)
-			(property
-				(name "Vendor Part Number")
-				(value "")
-			)
-			(property
-				(name "Mass (g)")
-				(value "")
-			)
-			(property
-				(name "RQjC (C/W)")
-				(value "")
-			)
-			(property
-				(name "RQjC_top (C/W)")
-				(value "")
-			)
-			(property
-				(name "Temp_max (C)")
-				(value "")
-			)
-			(property
-				(name "Temp_min (C)")
-				(value "")
-			)
-			(property
-				(name "Power Dissipation (W)")
-				(value "")
-			)
-			(property
-				(name "Rate")
-				(value "")
-			)
-			(property
-				(name "SAP Code")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "Connectors")
-			)
-			(property
-				(name "Sheetfile")
-				(value "connectors.kicad_sch")
-			)
-			(sheetpath
-				(names "/Project Architecture/Connectors/")
-				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
-			)
-			(tstamps "4d5b2899-b6ea-416d-ab3d-d2ad166b7c7c")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "J4")
+			(ref "J1")
 			(value "0436500200")
 			(footprint "remote_0436500200:CONN_SD-43650-001_02_MOL")
 			(datasheet "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/436/43650/436500200_sd.pdf?inline")
@@ -881,7 +753,135 @@
 			)
 		)
 		(comp
-			(ref "J5")
+			(ref "J2")
+			(value "0430450200")
+			(footprint "remote_0430450200:CONN_SD-43045-001_02_MOL")
+			(datasheet "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+			(description "Connector Header Through Hole, Right Angle 2 position")
+			(fields
+				(field
+					(name "Manufacturer") "Molex")
+				(field
+					(name "Manufacturer Part Number") "0430450200")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_0430450200:CONN_SD-43045-001_02_MOL")
+				(field
+					(name "Datasheet") "https://tools.molex.com/pdm_docs/ps/PS-43045.pdf")
+				(field
+					(name "Description") "Connector Header Through Hole, Right Angle 2 position")
+			)
+			(libsource
+				(lib "remote_0430450200")
+				(part "0430450200")
+				(description "Connector Header Through Hole, Right Angle 2 position")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Molex")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "0430450200")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Connectors")
+			)
+			(property
+				(name "Sheetfile")
+				(value "connectors.kicad_sch")
+			)
+			(sheetpath
+				(names "/Project Architecture/Connectors/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
+			)
+			(tstamps "4d5b2899-b6ea-416d-ab3d-d2ad166b7c7c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
 			(value "IPS1-110-01-L-D")
 			(footprint "remote_ips1-110-01-l-d:SAMTEC_IPS1-110-01-L-D")
 			(datasheet "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6209/ips1-1xx-xx-xx-d-xx-mkt.pdf")
@@ -13059,7 +13059,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "668e77a1-f96a-4959-bd3e-115741bc26b3")
+			(tstamps "3770d7b3-94cd-41a2-895d-343d04f859e8")
 			(units
 				(unit
 					(name "A")
@@ -13201,7 +13201,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "716187e3-e38e-4054-815a-61ad05a4e6a2")
+			(tstamps "50db7b1d-d9ad-4395-baf2-531158b647bc")
 			(units
 				(unit
 					(name "A")
@@ -13343,7 +13343,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "3770d7b3-94cd-41a2-895d-343d04f859e8")
+			(tstamps "668e77a1-f96a-4959-bd3e-115741bc26b3")
 			(units
 				(unit
 					(name "A")
@@ -13485,7 +13485,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "50db7b1d-d9ad-4395-baf2-531158b647bc")
+			(tstamps "716187e3-e38e-4054-815a-61ad05a4e6a2")
 			(units
 				(unit
 					(name "A")
@@ -13627,7 +13627,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "75569d31-ccca-43fd-851b-ef3507f00bc3")
+			(tstamps "711ea301-f86e-47a9-9866-7498d154c897")
 			(units
 				(unit
 					(name "A")
@@ -13769,7 +13769,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "711ea301-f86e-47a9-9866-7498d154c897")
+			(tstamps "75569d31-ccca-43fd-851b-ef3507f00bc3")
 			(units
 				(unit
 					(name "A")
@@ -13905,7 +13905,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "8e2bf5f6-b511-42ef-8410-8eda62b54022")
+			(tstamps "4f5b1003-5e3d-45c8-84bc-b915a53f2055")
 			(units
 				(unit
 					(name "A")
@@ -14044,7 +14044,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "4f5b1003-5e3d-45c8-84bc-b915a53f2055")
+			(tstamps "8e2bf5f6-b511-42ef-8410-8eda62b54022")
 			(units
 				(unit
 					(name "A")
@@ -14189,7 +14189,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "6b26b3d7-9e92-4205-9125-861251d82aff")
+			(tstamps "7e592d05-0c01-4cbd-a6bf-74963ae8d7d8")
 			(units
 				(unit
 					(name "A")
@@ -14331,7 +14331,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "7e592d05-0c01-4cbd-a6bf-74963ae8d7d8")
+			(tstamps "6b26b3d7-9e92-4205-9125-861251d82aff")
 			(units
 				(unit
 					(name "A")
@@ -14473,7 +14473,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "d8bfbed4-591f-49ba-a9d0-564642d4c28b")
+			(tstamps "7ba33586-c7c6-42c8-8c00-8a6c1adcb6f0")
 			(units
 				(unit
 					(name "A")
@@ -14615,7 +14615,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "781cbc7e-69af-4c42-8daf-31a6b666fe14")
+			(tstamps "97af175f-a698-4014-96f1-30575d677b46")
 			(units
 				(unit
 					(name "A")
@@ -14757,7 +14757,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "7ba33586-c7c6-42c8-8c00-8a6c1adcb6f0")
+			(tstamps "d8bfbed4-591f-49ba-a9d0-564642d4c28b")
 			(units
 				(unit
 					(name "A")
@@ -14899,7 +14899,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "97af175f-a698-4014-96f1-30575d677b46")
+			(tstamps "781cbc7e-69af-4c42-8daf-31a6b666fe14")
 			(units
 				(unit
 					(name "A")
@@ -15239,7 +15239,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "4ea2e7bb-9f38-4eaf-b75b-dbbae44a3305")
+			(tstamps "ea2ce00b-4f09-4d56-bfdf-b4182bafece7")
 			(units
 				(unit
 					(name "A")
@@ -15387,7 +15387,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "ea2ce00b-4f09-4d56-bfdf-b4182bafece7")
+			(tstamps "4ea2e7bb-9f38-4eaf-b75b-dbbae44a3305")
 			(units
 				(unit
 					(name "A")
@@ -15518,7 +15518,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "0973102e-3ef3-4876-8164-46ea669950d1")
+			(tstamps "ec8b6229-618d-4e2c-bb16-6c96cbbc3af4")
 			(units
 				(unit
 					(name "A")
@@ -15574,7 +15574,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "ec8b6229-618d-4e2c-bb16-6c96cbbc3af4")
+			(tstamps "0973102e-3ef3-4876-8164-46ea669950d1")
 			(units
 				(unit
 					(name "A")
@@ -15825,127 +15825,6 @@
 			)
 		)
 		(comp
-			(ref "G3")
-			(value "Sparky Logo")
-			(footprint "remote_sparky_logo:Sparky_Logo_50mm")
-			(datasheet "N/A")
-			(description "Sparky Logo.")
-			(fields
-				(field
-					(name "Manufacturer") "BDM")
-				(field
-					(name "Manufacturer Part Number") "Sparky Logo")
-				(field
-					(name "Vendor")
-				)
-				(field
-					(name "Vendor Part Number")
-				)
-				(field
-					(name "Mass (g)")
-				)
-				(field
-					(name "RQjC (C/W)")
-				)
-				(field
-					(name "RQjC_top (C/W)")
-				)
-				(field
-					(name "Temp_max (C)")
-				)
-				(field
-					(name "Temp_min (C)")
-				)
-				(field
-					(name "Power Dissipation (W)")
-				)
-				(field
-					(name "Rate")
-				)
-				(field
-					(name "SAP Code")
-				)
-				(field
-					(name "Footprint") "remote_sparky_logo:Sparky_Logo_50mm")
-				(field
-					(name "Datasheet") "N/A")
-				(field
-					(name "Description") "Sparky Logo.")
-			)
-			(libsource
-				(lib "remote_sparky_logo")
-				(part "LOGO")
-				(description "Sparky Logo.")
-			)
-			(property
-				(name "Manufacturer")
-				(value "BDM")
-			)
-			(property
-				(name "Manufacturer Part Number")
-				(value "Sparky Logo")
-			)
-			(property
-				(name "Vendor")
-				(value "")
-			)
-			(property
-				(name "Vendor Part Number")
-				(value "")
-			)
-			(property
-				(name "Mass (g)")
-				(value "")
-			)
-			(property
-				(name "RQjC (C/W)")
-				(value "")
-			)
-			(property
-				(name "RQjC_top (C/W)")
-				(value "")
-			)
-			(property
-				(name "Temp_max (C)")
-				(value "")
-			)
-			(property
-				(name "Temp_min (C)")
-				(value "")
-			)
-			(property
-				(name "Power Dissipation (W)")
-				(value "")
-			)
-			(property
-				(name "Rate")
-				(value "")
-			)
-			(property
-				(name "SAP Code")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "Mechanical")
-			)
-			(property
-				(name "Sheetfile")
-				(value "mechanical.kicad_sch")
-			)
-			(sheetpath
-				(names "/Project Architecture/Mechanical/")
-				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
-			)
-			(tstamps "fa6c3552-dc7e-4f61-ae82-aaab4b5a7b0b")
-			(units
-				(unit
-					(name "A")
-					(pins)
-				)
-			)
-		)
-		(comp
 			(ref "H1")
 			(value "MountingHole")
 			(footprint "MountingHole:MountingHole_3.2mm_M3")
@@ -16049,7 +15928,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "c52974aa-e1a3-4885-afab-603d622d8555")
+			(tstamps "a2193db4-84a3-4a7c-b388-5d316dd7198e")
 			(units
 				(unit
 					(name "A")
@@ -16064,6 +15943,8 @@
 			(description "Mounting Hole without connection")
 			(fields
 				(field
+					(name "KiLib_Generator") "mounting_hardware/mounting_hole")
+				(field
 					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
 				(field
 					(name "Datasheet")
@@ -16075,6 +15956,10 @@
 				(lib "Mechanical")
 				(part "MountingHole")
 				(description "Mounting Hole without connection")
+			)
+			(property
+				(name "KiLib_Generator")
+				(value "mounting_hardware/mounting_hole")
 			)
 			(property
 				(name "Sheetname")
@@ -16099,7 +15984,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "a2193db4-84a3-4a7c-b388-5d316dd7198e")
+			(tstamps "2e570183-8992-48cc-a027-111c82eff5f5")
 			(units
 				(unit
 					(name "A")
@@ -16114,6 +15999,8 @@
 			(description "Mounting Hole without connection")
 			(fields
 				(field
+					(name "KiLib_Generator") "mounting_hardware/mounting_hole")
+				(field
 					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
 				(field
 					(name "Datasheet")
@@ -16125,6 +16012,10 @@
 				(lib "Mechanical")
 				(part "MountingHole")
 				(description "Mounting Hole without connection")
+			)
+			(property
+				(name "KiLib_Generator")
+				(value "mounting_hardware/mounting_hole")
 			)
 			(property
 				(name "Sheetname")
@@ -16149,7 +16040,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "ab29e077-9448-41d5-b93e-222eb74b1c4e")
+			(tstamps "c52974aa-e1a3-4885-afab-603d622d8555")
 			(units
 				(unit
 					(name "A")
@@ -16205,7 +16096,7 @@
 				(names "/Project Architecture/Mechanical/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			)
-			(tstamps "2e570183-8992-48cc-a027-111c82eff5f5")
+			(tstamps "ab29e077-9448-41d5-b93e-222eb74b1c4e")
 			(units
 				(unit
 					(name "A")
@@ -18674,58 +18565,6 @@
 			)
 		)
 		(libpart
-			(lib "remote_sparky_logo")
-			(part "LOGO")
-			(description "Sparky Logo.")
-			(docs "N/A")
-			(fields
-				(field
-					(name "Reference") "G")
-				(field
-					(name "Value") "Sparky Logo")
-				(field
-					(name "Footprint") "remote_sparky_logo:Sparky_Logo_50mm")
-				(field
-					(name "Datasheet") "N/A")
-				(field
-					(name "Description") "Sparky Logo.")
-				(field
-					(name "Manufacturer") "BDM")
-				(field
-					(name "Manufacturer Part Number") "Sparky Logo")
-				(field
-					(name "Vendor")
-				)
-				(field
-					(name "Vendor Part Number")
-				)
-				(field
-					(name "Mass (g)")
-				)
-				(field
-					(name "RQjC (C/W)")
-				)
-				(field
-					(name "RQjC_top (C/W)")
-				)
-				(field
-					(name "Temp_max (C)")
-				)
-				(field
-					(name "Temp_min (C)")
-				)
-				(field
-					(name "Power Dissipation (W)")
-				)
-				(field
-					(name "Rate")
-				)
-				(field
-					(name "SAP Code")
-				)
-			)
-		)
-		(libpart
 			(lib "remote_zxtn4004kqtc")
 			(part "NPN")
 			(description "Bipolar (BJT) Transistor NPN 150 V 1 A 3.8 W Surface Mount TO-252-3")
@@ -19171,7 +19010,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP0")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "17")
 				(pinfunction "17_17")
 				(pintype "passive")
@@ -19192,7 +19031,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP1")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "15")
 				(pinfunction "15_15")
 				(pintype "passive")
@@ -19213,7 +19052,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP2")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "13")
 				(pinfunction "13_13")
 				(pintype "passive")
@@ -19234,7 +19073,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP3")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "11")
 				(pinfunction "11_11")
 				(pintype "passive")
@@ -19255,7 +19094,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP4")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "09")
 				(pinfunction "09_09")
 				(pintype "passive")
@@ -19276,7 +19115,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP5")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "07")
 				(pinfunction "07_07")
 				(pintype "passive")
@@ -19297,7 +19136,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP6")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "05")
 				(pinfunction "05_05")
 				(pintype "passive")
@@ -19318,7 +19157,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP7")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "03")
 				(pinfunction "03_03")
 				(pintype "passive")
@@ -19339,7 +19178,7 @@
 			(name "/Project Architecture/Cell Sense & Balance/TAP8")
 			(class "TAP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "01")
 				(pinfunction "01_01")
 				(pintype "passive")
@@ -19589,13 +19428,13 @@
 			(name "/Project Architecture/Connectors/COMH.N")
 			(class "ISO,Default")
 			(node
-				(ref "J3")
+				(ref "J2")
 				(pin "1")
 				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U3")
+				(ref "U2")
 				(pin "4")
 				(pintype "unspecified")
 			)
@@ -19605,13 +19444,13 @@
 			(name "/Project Architecture/Connectors/COMH.P")
 			(class "ISO,Default")
 			(node
-				(ref "J3")
+				(ref "J2")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U3")
+				(ref "U2")
 				(pin "6")
 				(pintype "unspecified")
 			)
@@ -19621,13 +19460,13 @@
 			(name "/Project Architecture/Connectors/COML.N")
 			(class "ISO,Default")
 			(node
-				(ref "J4")
+				(ref "J1")
 				(pin "1")
 				(pinfunction "1_1")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U2")
+				(ref "U3")
 				(pin "6")
 				(pintype "unspecified")
 			)
@@ -19637,13 +19476,13 @@
 			(name "/Project Architecture/Connectors/COML.P")
 			(class "ISO,Default")
 			(node
-				(ref "J4")
+				(ref "J1")
 				(pin "2")
 				(pinfunction "2_2")
 				(pintype "unspecified")
 			)
 			(node
-				(ref "U2")
+				(ref "U3")
 				(pin "4")
 				(pintype "unspecified")
 			)
@@ -19653,7 +19492,7 @@
 			(name "/Project Architecture/Connectors/TMP1")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "18")
 				(pinfunction "18_18")
 				(pintype "passive")
@@ -19680,7 +19519,7 @@
 			(name "/Project Architecture/Connectors/TMP2")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "16")
 				(pinfunction "16_16")
 				(pintype "passive")
@@ -19701,7 +19540,7 @@
 			(name "/Project Architecture/Connectors/TMP3")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "14")
 				(pinfunction "14_14")
 				(pintype "passive")
@@ -19722,7 +19561,7 @@
 			(name "/Project Architecture/Connectors/TMP4")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "12")
 				(pinfunction "12_12")
 				(pintype "passive")
@@ -19743,7 +19582,7 @@
 			(name "/Project Architecture/Connectors/TMP5")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "10")
 				(pinfunction "10_10")
 				(pintype "passive")
@@ -19764,7 +19603,7 @@
 			(name "/Project Architecture/Connectors/TMP6")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "08")
 				(pinfunction "08_08")
 				(pintype "passive")
@@ -19785,7 +19624,7 @@
 			(name "/Project Architecture/Connectors/TMP7")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "06")
 				(pinfunction "06_06")
 				(pintype "passive")
@@ -19806,7 +19645,7 @@
 			(name "/Project Architecture/Connectors/TMP8")
 			(class "TEMP,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "04")
 				(pinfunction "04_04")
 				(pintype "passive")
@@ -19827,7 +19666,7 @@
 			(name "/Project Architecture/Daisy Chain/COMH.CT")
 			(class "ISO,Default")
 			(node
-				(ref "U3")
+				(ref "U2")
 				(pin "5")
 				(pintype "unspecified+no_connect")
 			)
@@ -19835,71 +19674,6 @@
 		(net
 			(code "46")
 			(name "/Project Architecture/Daisy Chain/COMH_CT")
-			(class "DAISY,Default")
-			(node
-				(ref "C42")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "2")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "47")
-			(name "/Project Architecture/Daisy Chain/COMH_WN")
-			(class "DAISY,Default")
-			(node
-				(ref "CR2")
-				(pin "2")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "R44")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "3")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "48")
-			(name "/Project Architecture/Daisy Chain/COMH_WP")
-			(class "DAISY,Default")
-			(node
-				(ref "CR2")
-				(pin "1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "R43")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "1")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "49")
-			(name "/Project Architecture/Daisy Chain/COML.CT")
-			(class "ISO,Default")
-			(node
-				(ref "U2")
-				(pin "5")
-				(pintype "unspecified+no_connect")
-			)
-		)
-		(net
-			(code "50")
-			(name "/Project Architecture/Daisy Chain/COML_CT")
 			(class "DAISY,Default")
 			(node
 				(ref "C41")
@@ -19913,28 +19687,8 @@
 			)
 		)
 		(net
-			(code "51")
-			(name "/Project Architecture/Daisy Chain/COML_WN")
-			(class "DAISY,Default")
-			(node
-				(ref "CR1")
-				(pin "1")
-				(pintype "unspecified")
-			)
-			(node
-				(ref "R41")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U2")
-				(pin "1")
-				(pintype "unspecified")
-			)
-		)
-		(net
-			(code "52")
-			(name "/Project Architecture/Daisy Chain/COML_WP")
+			(code "47")
+			(name "/Project Architecture/Daisy Chain/COMH_WN")
 			(class "DAISY,Default")
 			(node
 				(ref "CR1")
@@ -19953,21 +19707,106 @@
 			)
 		)
 		(net
-			(code "53")
-			(name "/Project Architecture/Daisy Chain/U1_COMHN")
+			(code "48")
+			(name "/Project Architecture/Daisy Chain/COMH_WP")
 			(class "DAISY,Default")
 			(node
-				(ref "C40")
+				(ref "CR1")
 				(pin "1")
-				(pintype "passive")
+				(pintype "unspecified")
 			)
 			(node
-				(ref "R40")
+				(ref "R41")
 				(pin "2")
 				(pintype "passive")
 			)
 			(node
+				(ref "U2")
+				(pin "1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "49")
+			(name "/Project Architecture/Daisy Chain/COML.CT")
+			(class "ISO,Default")
+			(node
+				(ref "U3")
+				(pin "5")
+				(pintype "unspecified+no_connect")
+			)
+		)
+		(net
+			(code "50")
+			(name "/Project Architecture/Daisy Chain/COML_CT")
+			(class "DAISY,Default")
+			(node
+				(ref "C42")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "51")
+			(name "/Project Architecture/Daisy Chain/COML_WN")
+			(class "DAISY,Default")
+			(node
+				(ref "CR2")
+				(pin "1")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "R43")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "52")
+			(name "/Project Architecture/Daisy Chain/COML_WP")
+			(class "DAISY,Default")
+			(node
+				(ref "CR2")
+				(pin "2")
+				(pintype "unspecified")
+			)
+			(node
 				(ref "R44")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pintype "unspecified")
+			)
+		)
+		(net
+			(code "53")
+			(name "/Project Architecture/Daisy Chain/U1_COMHN")
+			(class "DAISY,Default")
+			(node
+				(ref "C38")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R39")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R42")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -19989,17 +19828,17 @@
 			(name "/Project Architecture/Daisy Chain/U1_COMHP")
 			(class "DAISY,Default")
 			(node
-				(ref "C39")
+				(ref "C37")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R40")
+				(ref "R39")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R43")
+				(ref "R41")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -20021,17 +19860,17 @@
 			(name "/Project Architecture/Daisy Chain/U1_COMLN")
 			(class "DAISY,Default")
 			(node
-				(ref "C37")
+				(ref "C39")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R39")
+				(ref "R40")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R41")
+				(ref "R43")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -20053,17 +19892,17 @@
 			(name "/Project Architecture/Daisy Chain/U1_COMLP")
 			(class "DAISY,Default")
 			(node
-				(ref "C38")
+				(ref "C40")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "R39")
+				(ref "R40")
 				(pin "2")
 				(pintype "passive")
 			)
 			(node
-				(ref "R42")
+				(ref "R44")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -20676,13 +20515,13 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "19")
 				(pinfunction "19_19")
 				(pintype "passive")
 			)
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "20")
 				(pinfunction "20_20")
 				(pintype "passive")
@@ -20767,7 +20606,7 @@
 			(name "VMODULE")
 			(class "PWR,Default")
 			(node
-				(ref "J5")
+				(ref "J3")
 				(pin "02")
 				(pinfunction "02_02")
 				(pintype "passive")
