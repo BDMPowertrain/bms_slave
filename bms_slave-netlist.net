@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-dmn3cfq7/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-wmisy0nk/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -23,7 +23,7 @@
 		(textvar
 			(name "GIT_HASH_PCB") "4c75971")
 		(textvar
-			(name "GIT_HASH_SCH") "4c75971")
+			(name "GIT_HASH_SCH") "57b5257")
 		(textvar
 			(name "GIT_URL") "https://github.com/BDMPowertrain/BMS_Slave")
 		(textvar
