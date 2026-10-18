@@ -29,7 +29,7 @@ on:
 
 env:
   kibot_config: kibot_yaml/kibot_main.yaml
-  # Used variant. This is the ONLY thing configure.py --variant changes in
+  # Used variant. This is the ONLY thing configure.py (stage menu) changes in
   # this file. We assume:
   # DRAFT: only schematic in progress, will only generate schematic PDF, netlist and BoM
   # PRELIMINARY: will generate both schematic and PCB documents, but no ERC/DRC

@@ -184,11 +184,11 @@ import:
   # Set text variables
   - file: kibot_pre_set_text_variables.yaml
     definitions:
-      PROJECT_NAME: @PROJECT_NAME@
+      PROJECT_NAME: "@PROJECT_NAME@"
       BOARD_NAME: @BOARD_NAME@
-      DESCRIPTION: @DESCRIPTION@
-      COMPANY: @COMPANY@
-      DESIGNER: @DESIGNER@
+      DESCRIPTION: "@DESCRIPTION@"
+      COMPANY: "@COMPANY@"
+      DESIGNER: "@DESIGNER@"
       SCRIPTS_DIR: @SCRIPTS_DIR@
       FABRICATION_DIR: @FABRICATION_DIR@
       ASSEMBLY_DIR: @ASSEMBLY_DIR@

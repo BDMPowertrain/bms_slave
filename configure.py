@@ -2,12 +2,23 @@
 """
 BDM board configuration tool.
 
-This is the ONLY supported way to change board metadata, rename a freshly
-templated project, or change a board's variant. Never hand-edit kibot_main.yaml,
-ci.yaml, or the text variables inside a .kicad_pro file — this script owns those.
+Run with no arguments for an interactive menu (same script on every OS):
 
-Python 3 standard library only. No pip install, ever. Fully self-contained:
-everything this script needs lives in this repo, no network access required.
+    py configure.py           Windows (or double-click configure.py)
+    ./configure.py            Linux/macOS (or: python3 configure.py)
+
+This is the only supported way to change board metadata, rename a freshly
+templated project, or change a board's stage (KiBot variant). It owns the
+metadata in kibot_yaml/kibot_main.yaml, the `kibot_variant:` line in
+.github/workflows/ci.yaml, and COMPANY/REVISION in the .kicad_pro text
+variables. Don't hand-edit those.
+
+Python 3 standard library only; no network access, no pip install.
+
+Non-interactive use (for scripts/CI):
+    configure.py --stage CHECKED     set the stage directly
+    configure.py --check             validate config, exit 1 on problems
+    configure.py --dry-run           show what any action would change
 """
 import argparse
 import json
@@ -17,457 +28,575 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Lowercase letters, digits, and underscores only — no hyphens, no spaces, and
-# deliberately no car/year prefix (e.g. "ev27-"), since the same template and
-# naming convention carries forward to future cars without renaming anything.
-BOARD_NAME_RE = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
+PROJECT_DIR = Path(__file__).resolve().parent
+KIBOT_MAIN = PROJECT_DIR / "kibot_yaml" / "kibot_main.yaml"
+CI_YAML = PROJECT_DIR / ".github" / "workflows" / "ci.yaml"
+
 PLACEHOLDER_STEM = "BOARD_TEMPLATE"
+# Lowercase letters, digits, underscores. No car/year prefix, so the same
+# naming carries forward to future cars without renames.
+BOARD_NAME_RE = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
 
-VARIANTS = [
-    ("DRAFT", "Schematic still being drawn. Only the netlist, schematic PDF, and a "
-              "draft BoM are generated. No ERC/DRC. Matches Plane's Design phase, early cycle."),
-    ("PRELIMINARY", "Schematic is close to final. Full schematic AND PCB documents generate, "
-                    "but ERC/DRC are still not enforced. Matches Design phase, late cycle."),
-    ("CHECKED", "Board is believed correct. Full documents generate WITH ERC/DRC enforced — "
-               "CI fails the run if either has errors. Matches Procurement/Fabrication phase."),
+STAGES = [
+    ("DRAFT", "Schematic still being drawn.",
+     "Generates schematic PDF, netlist and BoM. ERC/DRC not run."),
+    ("PRELIMINARY", "Schematic close to final, layout in progress.",
+     "Generates all schematic and PCB documents. ERC/DRC not run."),
+    ("CHECKED", "Board believed correct; ready for procurement/fab.",
+     "Generates all documents and ENFORCES ERC/DRC - CI fails on errors."),
 ]
+STAGE_NAMES = [s[0] for s in STAGES]
+
+# Free-text definitions in kibot_main.yaml. KiBot substitutes @KEY@ as raw
+# text *before* parsing YAML, so wherever these land they must be inside
+# double quotes, and the value itself must never contain `"` or `\`.
+FREE_TEXT_KEYS = ("PROJECT_NAME", "DESCRIPTION", "COMPANY", "DESIGNER")
 
 
-# ----------------------------------------------------------------------------
-# Small helpers
-# ----------------------------------------------------------------------------
-
-class Change:
-    """One (file, description) edit, tracked so we can print a summary and
-    respect --dry-run without every function needing its own if-statement."""
-    def __init__(self, path: Path, description: str):
-        self.path = path
-        self.description = description
+class ConfigError(Exception):
+    pass
 
 
-def prompt(label: str, default: str, validator=None, error_msg: str = "") -> str:
-    """Ask a question, showing `default` as what pressing Enter keeps.
-    Re-prompts forever until `validator` (if given) returns True."""
-    while True:
-        raw = input(f"{label} [{default}]: ").strip()
-        value = raw if raw else default
-        if validator is None or validator(value):
-            return value
-        print(f"  {error_msg or 'Invalid value, try again.'}")
+_EOL = {}  # Path -> original line ending, restored on write
 
 
-def atomic_write(path: Path, content: str, changes: list, description: str, dry_run: bool):
-    """Write `content` to `path` without ever leaving a half-written file if the
-    process crashes mid-write: write to a sibling temp file, then os.replace()
-    it into place (atomic on both Windows and Linux for same-volume renames).
-    Also keeps a .bak copy of whatever was there before (safe to keep around —
-    .gitignore already excludes *.bak)."""
-    changes.append(Change(path, description))
-    if dry_run:
-        return
-    if path.exists():
-        path.with_suffix(path.suffix + ".bak").write_text(
-            path.read_text(encoding="utf-8"), encoding="utf-8"
-        )
-    tmp_path = path.with_suffix(path.suffix + ".tmp")
-    tmp_path.write_text(content, encoding="utf-8")
-    os.replace(tmp_path, path)  # atomic rename
+def read(path):
+    """Read with line endings normalized to \\n (so regexes behave the same
+    on CRLF and LF files); Plan.apply() restores each file's original style."""
+    with open(path, encoding="utf-8", newline="") as f:
+        text = f.read()
+    _EOL.setdefault(path, "\r\n" if "\r\n" in text else "\n")
+    return text.replace("\r\n", "\n")
 
 
-def find_lock_files(project_dir: Path, stem: str) -> list:
-    # KiCad's LOCKFILE class writes "~<filename>.lck" next to each open file.
-    # Best-effort detection (confirmed via KiCad's own LOCKFILE source and
-    # several GitLab issue reports, but not independently verified by hand
-    # against KiCad 10) — always paired with the explicit confirmation below.
-    return sorted(project_dir.glob(f"~{stem}.*.lck"))
-
-
-def refuse_if_open(project_dir: Path, stem: str):
-    locks = find_lock_files(project_dir, stem)
-    if locks:
-        print("This project looks like it's currently open in KiCad:")
-        for lock in locks:
-            print(f"  {lock.name}")
-        print("\nClose KiCad completely, then run this script again.")
-        sys.exit(1)
-
-    # Lock-file detection is best-effort, not guaranteed — always double check.
-    if sys.stdin.isatty():
-        answer = input(
-            "Confirm KiCad is completely closed for this project right now [y/N]: "
-        ).strip().lower()
-        if answer != "y":
-            print("Aborting — close KiCad and run this script again.")
-            sys.exit(1)
-
-
-def find_project_stem(project_dir: Path) -> str:
-    pro_files = list(project_dir.glob("*.kicad_pro"))
-    if len(pro_files) != 1:
-        sys.exit(
-            f"Expected exactly one .kicad_pro file in {project_dir}, found {len(pro_files)}. "
-            "Something is wrong with this repo's layout — ask a lead for help."
-        )
-    return pro_files[0].stem
-
-
-def is_fresh_template(stem: str, kibot_main_text: str) -> bool:
-    return stem == PLACEHOLDER_STEM or "BOARD_NAME: BOARD_NAME" in kibot_main_text
-
-
-def git_remote_url(project_dir: Path) -> str:
+def _input(prompt_text):
     try:
-        result = subprocess.run(
-            ["git", "-C", str(project_dir), "remote", "get-url", "origin"],
-            capture_output=True, text=True, check=True,
-        )
-        url = result.stdout.strip()
-        # normalize git@github.com:org/repo.git -> https://github.com/org/repo
-        url = re.sub(r"^git@github\.com:", "https://github.com/", url)
-        url = re.sub(r"\.git$", "", url)
-        return url
+        return input(prompt_text)
+    except EOFError:
+        raise SystemExit("\nInput closed - nothing changed.")
+
+
+# ----------------------------------------------------------------------------
+# Console helpers
+# ----------------------------------------------------------------------------
+
+def ask(label, default="", validate=None):
+    """Prompt until `validate(value)` returns None (ok) or an error string."""
+    suffix = f" [{default}]" if default else ""
+    while True:
+        raw = _input(f"  {label}{suffix}: ").strip()
+        value = raw or default
+        error = validate(value) if validate else None
+        if not error:
+            return value
+        print(f"    ! {error}")
+
+
+def ask_yes_no(label, default=False):
+    hint = "Y/n" if default else "y/N"
+    while True:
+        raw = _input(f"  {label} [{hint}]: ").strip().lower()
+        if not raw:
+            return default
+        if raw in ("y", "yes"):
+            return True
+        if raw in ("n", "no"):
+            return False
+        print("    ! Answer y or n.")
+
+
+def heading(text):
+    print(f"\n{text}\n{'-' * len(text)}")
+
+
+# ----------------------------------------------------------------------------
+# Validation
+# ----------------------------------------------------------------------------
+
+def validate_free_text(value, required=False):
+    if required and not value:
+        return "This can't be empty."
+    if '"' in value or "\\" in value:
+        return 'Straight double quotes (") and backslashes (\\) aren\'t allowed - they break KiBot\'s config.'
+    if "@" in value:
+        return "'@' isn't allowed - KiBot uses it for variable substitution."
+    if any(ord(c) < 32 for c in value):
+        return "Control characters aren't allowed."
+    if len(value) > 300:
+        return f"Keep it under 300 characters (currently {len(value)})."
+    return None
+
+
+def validate_board_name(value):
+    if not BOARD_NAME_RE.match(value):
+        return ("Lowercase letters, digits and single underscores only "
+                "(e.g. tim, bse_apps) - no spaces, hyphens or car/year prefix.")
+    return None
+
+
+def validate_revision(value):
+    if not re.match(r"^[0-9A-Za-z][0-9A-Za-z.\-+]*$", value):
+        return "Use something like 0.1.0 or A (letters, digits, '.', '-', '+')."
+    return None
+
+
+# ----------------------------------------------------------------------------
+# kibot_main.yaml: reading, writing, linting
+# ----------------------------------------------------------------------------
+
+DOC_SEPARATOR = re.compile(r"^\.\.\.\s*$", re.MULTILINE)
+
+
+def split_definitions(text):
+    """Return (imports_part, definitions_part). The real values live in the
+    global `definitions:` block after the '...' separator; the import blocks
+    above contain KEY: "@KEY@" passthroughs with the same key names, so
+    anything keyed by name must be scoped to the definitions part."""
+    m = DOC_SEPARATOR.search(text)
+    if not m:
+        raise ConfigError("kibot_main.yaml has no '...' separator before its definitions block.")
+    return text[:m.end()], text[m.end():]
+
+
+def unquote_yaml_scalar(raw):
+    raw = raw.strip()
+    if len(raw) >= 2 and raw[0] == raw[-1] == "'":
+        return raw[1:-1].replace("''", "'")
+    if len(raw) >= 2 and raw[0] == raw[-1] == '"':
+        return re.sub(r'\\(.)', r"\1", raw[1:-1])
+    return re.sub(r"\s+#.*$", "", raw)  # plain scalar: drop trailing comment
+
+
+def quote_yaml_scalar(value):
+    """Always double-quote. Validation already forbids `"` and `\\`, but
+    escape anyway so this can never produce invalid YAML on its own."""
+    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def read_definitions(text):
+    _, defs = split_definitions(text)
+    values = {}
+    for m in re.finditer(r"^  ([A-Z0-9_]+):[ \t]*(.*)$", defs, re.MULTILINE):
+        values[m.group(1)] = unquote_yaml_scalar(m.group(2))
+    return values
+
+
+def set_definition(text, key, value):
+    head, defs = split_definitions(text)
+    pattern = re.compile(rf"^(  {re.escape(key)}:)[ \t]*.*$", re.MULTILINE)
+    if not pattern.search(defs):
+        raise ConfigError(f"'{key}:' not found in kibot_main.yaml's definitions block.")
+    new_line = f"  {key}: {quote_yaml_scalar(value)}"
+    return head + pattern.sub(lambda _: new_line, defs, count=1)
+
+
+def quote_passthroughs(text):
+    """Make every free-text `@KEY@` substitution in the import blocks sit
+    inside double quotes. Unquoted, a value containing ': ' (e.g. a
+    description) breaks YAML parsing for every KiBot run."""
+    head, defs = split_definitions(text)
+    for key in FREE_TEXT_KEYS:
+        head = re.sub(rf'^(\s*[A-Za-z_]+:[ \t]*)@{key}@[ \t]*$',
+                      rf'\g<1>"@{key}@"', head, flags=re.MULTILINE)
+    return head + defs
+
+
+YAML_INDICATORS = set("'\"&*!|>%@`[]{},#?-")
+
+
+def lint(text):
+    """Simulate KiBot's raw @VAR@ substitution over the import blocks and
+    report any line that would no longer be valid YAML. Not a full YAML
+    parser - it checks the specific failure modes free text can cause."""
+    problems = []
+    head, _ = split_definitions(text)
+    values = read_definitions(text)
+    sources = [("kibot_main.yaml", head)]
+    sources += [(p.name, read(p)) for p in sorted(KIBOT_MAIN.parent.glob("*.yaml")) if p != KIBOT_MAIN]
+    for name, body in sources:
+        problems += lint_lines(name, body, values)
+    for key in FREE_TEXT_KEYS:
+        if key in values and validate_free_text(values[key]):
+            problems.append(f"definitions: {key} - {validate_free_text(values[key])}")
+    return problems
+
+
+def lint_lines(name, body, values):
+    problems = []
+    for lineno, line in enumerate(body.splitlines(), start=1):
+        if line.lstrip().startswith("#") or "@" not in line:
+            continue
+        tokens = re.findall(r"@([A-Z0-9_]+)@", line)
+        if not any(t in FREE_TEXT_KEYS for t in tokens):
+            continue
+        m = re.match(r"^(\s*-?\s*[A-Za-z_]+:)[ \t]*(.*)$", line)
+        if not m:
+            continue
+        raw_value = re.sub(r"\s+#.*$", "", m.group(2)).strip()
+        expanded = re.sub(r"@([A-Z0-9_]+)@", lambda t: values.get(t.group(1), t.group(0)), raw_value)
+        where = f"{name} line {lineno}"
+        if raw_value.startswith('"') and raw_value.endswith('"'):
+            inner = expanded[1:-1]
+            if '"' in inner or "\\" in inner:
+                problems.append(f"{where}: value contains \" or \\ inside double quotes.")
+        elif raw_value.startswith("'") and raw_value.endswith("'"):
+            if "'" in expanded[1:-1]:
+                problems.append(f"{where}: value contains ' inside single quotes - use double quotes.")
+        else:
+            broken = ": " in expanded or " #" in expanded or (expanded and expanded[0] in YAML_INDICATORS)
+            problems.append(f"{where}: `{m.group(1).strip()} {raw_value}` is unquoted - "
+                            + ("its current value already breaks YAML parsing." if broken
+                               else "it will break KiBot as soon as the value contains ': ' or ' #'.")
+                            + " Wrap it in double quotes.")
+    return problems
+
+
+# ----------------------------------------------------------------------------
+# Other files
+# ----------------------------------------------------------------------------
+
+def find_project_stem():
+    pros = list(PROJECT_DIR.glob("*.kicad_pro"))
+    if len(pros) != 1:
+        raise ConfigError(f"Expected exactly one .kicad_pro in {PROJECT_DIR}, found {len(pros)}.")
+    return pros[0].stem
+
+
+def read_stage():
+    m = re.search(r"^\s*kibot_variant:\s*(\S+)", read(CI_YAML), re.MULTILINE)
+    return m.group(1) if m else "DRAFT"
+
+
+def git_remote_url():
+    try:
+        url = subprocess.run(["git", "-C", str(PROJECT_DIR), "remote", "get-url", "origin"],
+                             capture_output=True, text=True, check=True).stdout.strip()
     except Exception:
         return ""
+    url = re.sub(r"^git@github\.com:", "https://github.com/", url)
+    return re.sub(r"\.git$", "", url)
+
+
+def kicad_is_open(stem):
+    return sorted(p.name for p in PROJECT_DIR.glob(f"~{stem}.*.lck"))
 
 
 # ----------------------------------------------------------------------------
-# File patchers — each one is idempotent: safe to run every time, only
-# actually changes the file (and gets logged in `changes`) if the value differs.
+# Change plan: collect every edit first, validate, then write all at once.
 # ----------------------------------------------------------------------------
 
-DEFINITIONS_MARKER = re.compile(r"^\.\.\.\s*$", re.MULTILINE)
+class Plan:
+    def __init__(self):
+        self.writes = {}    # Path -> (new_text, description)
+        self.renames = []   # (old Path, new Path)
+
+    def write(self, path, text, description):
+        current = self.writes.get(path, (None,))[0]
+        if current is None and path.exists():
+            current = read(path)
+        if text != current:
+            prev = self.writes.get(path, (None, ""))[1]
+            self.writes[path] = (text, f"{prev}; {description}" if prev else description)
+
+    def text_of(self, path):
+        return self.writes[path][0] if path in self.writes else read(path)
+
+    def empty(self):
+        return not self.writes and not self.renames
+
+    def summary(self):
+        lines = [f"  rename {o.name} -> {n.name}" for o, n in self.renames]
+        lines += [f"  {p.relative_to(PROJECT_DIR)}: {d}" for p, (_, d) in self.writes.items()]
+        return "\n".join(lines)
+
+    def apply(self):
+        for old, new in self.renames:
+            old.rename(new)
+        for path, (text, _) in self.writes.items():
+            target = path
+            for old, new in self.renames:
+                if path == old:
+                    target = new
+            tmp = target.with_name(target.name + ".tmp")
+            eol = _EOL.get(path, "\n")
+            with open(tmp, "w", encoding="utf-8", newline="") as f:
+                f.write(text.replace("\n", eol) if eol != "\n" else text)
+            os.replace(tmp, target)
 
 
-def split_at_definitions(text: str):
-    """kibot_main.yaml uses KEY: @KEY@ passthrough lines inside several
-    `import:` blocks (e.g. PROJECT_NAME, BOARD_NAME, DESIGNER all appear this
-    way in the kibot_pre_set_text_variables.yaml import) to forward the real
-    values into sub-configs under the same name. The REAL values live in the
-    global `definitions:` block after the YAML '...' document separator at
-    the bottom of the file. Reading or patching by key name alone would match
-    whichever occurrence comes first in the file — the passthrough, not the
-    real one — so every lookup/patch is scoped to the text after this marker."""
-    match = DEFINITIONS_MARKER.search(text)
-    if not match:
-        sys.exit("Could not find the '...' document separator in kibot_main.yaml — has its structure changed?")
-    return text[:match.end()], text[match.end():]
-
-
-def patch_yaml_scalar(text: str, key: str, value: str) -> str:
-    """Replace a `KEY: value` line in kibot_main.yaml's global definitions
-    block (only). Regex-based on purpose — the stdlib has no YAML parser, and
-    a real YAML round-trip would strip the comments these files rely on for
-    readability."""
-    head, tail = split_at_definitions(text)
-    pattern = re.compile(rf"^(\s*{re.escape(key)}:\s*).*$", re.MULTILINE)
-    quoted = f"'{value}'" if re.search(r"[:#]", value) else value
-    if not pattern.search(tail):
-        sys.exit(f"Could not find '{key}:' in kibot_main.yaml's definitions block — has its structure changed?")
-    return head + pattern.sub(rf"\g<1>{quoted}", tail, count=1)
-
-
-def rename_project_files(project_dir: Path, old_stem: str, new_stem: str, changes: list, dry_run: bool):
-    if old_stem == new_stem:
-        return
-    for ext in (".kicad_pro", ".kicad_sch", ".kicad_pcb", ".kicad_prl", ".kicad_dru"):
-        old_path = project_dir / f"{old_stem}{ext}"
-        if not old_path.exists():
-            continue
-        new_path = project_dir / f"{new_stem}{ext}"
-        changes.append(Change(new_path, f"renamed from {old_path.name}"))
-        if not dry_run:
-            old_path.rename(new_path)
-    # Hierarchical sheet files (Block Diagram.kicad_sch, Section A - Title A.kicad_sch,
-    # etc.) are NOT renamed. Only the root project stem needs to match .kicad_pro for
-    # KiCad to recognize the project; the sub-sheets are referenced by KiCad internally
-    # via UUID + relative path, neither of which depends on the root's name. Renaming
-    # them would be pure churn for zero benefit, and would break the kibot_resources
-    # helper scripts that expect these filenames. Change a sheet's TITLE inside KiCad
-    # (double-click the sheet -> Sheet Properties), not its filename.
-
-    # BUT: KiCad also embeds the project's own name as a literal string INSIDE
-    # every .kicad_sch (root AND hierarchical sub-sheets both — it's in each
-    # sheet's symbol/sheet-instance-tracking data) and inside .kicad_pro (its
-    # own filename, plus default export paths for netlist/step/BOM). Renaming
-    # the files alone leaves all of that stale, so every .kicad_sch/.kicad_pro/
-    # .kicad_pcb in the project gets a plain text substitution of the old
-    # project name for the new one. This runs after the file rename above, so
-    # the glob below picks up the root file under its NEW name.
-    content_files = (
-        sorted(project_dir.glob("*.kicad_sch"))
-        + sorted(project_dir.glob("*.kicad_pro"))
-        + sorted(project_dir.glob("*.kicad_pcb"))
-    )
-    for path in content_files:
-        text = path.read_text(encoding="utf-8")
-        if old_stem not in text:
-            continue
-        new_text = text.replace(old_stem, new_stem)
-        atomic_write(
-            path, new_text, changes,
-            f"internal project-name references updated ({old_stem} -> {new_stem})",
-            dry_run,
-        )
-
-
-def patch_kicad_pro_text_variables(path: Path, updates: dict, changes: list, dry_run: bool, read_path: Path = None):
-    """Writes into the "text_variables" object of a .kicad_pro file without
-    touching anything else in that JSON (board settings, net classes, etc.).
-    `read_path` lets a caller read from a different (currently-existing) file
-    than the one being written to — needed for --dry-run when a rename hasn't
-    actually happened yet, so the target filename doesn't exist on disk."""
-    data = json.loads((read_path or path).read_text(encoding="utf-8"))
-    current = data.get("text_variables", {})
-    if all(current.get(k) == v for k, v in updates.items()):
-        return  # nothing changed, don't touch the file
-    current.update(updates)
-    data["text_variables"] = current
-    new_text = json.dumps(data, indent=2) + "\n"
-    atomic_write(path, new_text, changes, "text_variables (COMPANY/REVISION) updated", dry_run)
-
-
-def patch_kibot_main(path: Path, values: dict, tier2_impedance: bool, changes: list, dry_run: bool):
-    text = path.read_text(encoding="utf-8")
-    original = text
-    for key, value in values.items():
-        text = patch_yaml_scalar(text, key, value)
-
-    impedance_line = "      - @CSV_IMPEDANCE_TABLE_OUTPUT@"
-    commented = "      # - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 — configure.py uncomments this line when enabled"
-    if tier2_impedance and commented.strip("# ").strip() not in text:
-        text = text.replace(commented, impedance_line + "   # Tier 2 (enabled)")
-    elif not tier2_impedance and impedance_line in text:
-        text = text.replace(impedance_line + "   # Tier 2 (enabled)", commented)
-
-    if text != original:
-        atomic_write(path, text, changes, "board metadata / Tier 2 settings updated", dry_run)
-
-
-def patch_ci_variant(path: Path, variant: str, changes: list, dry_run: bool):
-    """The ONLY thing this script ever writes into ci.yaml: the top-level
-    `kibot_variant:` env value. Everything else in that file is maintainer-only."""
-    text = path.read_text(encoding="utf-8")
-    original = text
-    text = re.sub(r"(kibot_variant:\s*).*", rf"\g<1>{variant}", text, count=1)
-    if text != original:
-        atomic_write(path, text, changes, f"kibot_variant={variant}", dry_run)
-
-
-def seed_changelog(path: Path, changes: list, dry_run: bool):
-    if path.exists() and "[Unreleased]" in path.read_text(encoding="utf-8"):
-        return
-    content = (
-        "# Changelog\n\n"
-        "All notable changes to this board are documented here, following\n"
-        "[Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and\n"
-        "[semantic versioning for hardware](https://www.maskset.net/blog/2023/02/26/"
-        "semantic-versioning-for-hardware/).\n\n"
-        "## [Unreleased]\n\n"
-        "### Added\n\n"
-    )
-    atomic_write(path, content, changes, "seeded with [Unreleased] section", dry_run)
-
-
-def seed_readme(path: Path, board_title: str, changes: list, dry_run: bool):
-    # A new board repo inherits the template's own real README.md, so this
-    # normally never fires — it's just a fallback in case README.md is ever
-    # missing. README.md is regenerated by KiBot from
-    # kibot_resources/templates/readme.txt on every CI run; never overwrites
-    # a real one that already exists.
-    if path.exists():
-        return
-    content = (
-        f"# {board_title}\n\n"
-        "This README is placeholder text. It is fully overwritten by KiBot on "
-        "the first CI run — do not edit it by hand. See "
-        "https://github.com/BDMPowertrain/board_template in the meantime.\n"
-    )
-    atomic_write(path, content, changes, "seeded placeholder (KiBot overwrites on first CI run)", dry_run)
+def commit(plan, dry_run, confirm=True):
+    """Validate the plan, show it, and write it."""
+    if plan.empty():
+        print("\nNothing to change - everything already matches.")
+        return False
+    if KIBOT_MAIN in plan.writes:
+        problems = lint(plan.text_of(KIBOT_MAIN))
+        if problems:
+            print("\nRefusing to write - the result would break KiBot:")
+            for p in problems:
+                print(f"  - {p}")
+            return False
+    print("\nChanges:")
+    print(plan.summary())
+    if dry_run:
+        print("\n(--dry-run: nothing written)")
+        return False
+    if confirm and sys.stdin.isatty() and not ask_yes_no("Apply these changes?", default=True):
+        print("Cancelled - nothing written.")
+        return False
+    plan.apply()
+    print("\nDone. Commit and push to run CI:\n"
+          "  git add -A\n"
+          '  git commit -m "chore: update board configuration"\n'
+          "  git push")
+    return True
 
 
 # ----------------------------------------------------------------------------
-# Modes
+# Actions
 # ----------------------------------------------------------------------------
 
-def run_setup(project_dir: Path, dry_run: bool):
-    """Modes 1 and 2 share this: same prompts, current values as defaults.
-    Whether files get renamed is just whether the board name actually changed —
-    that's what makes this safely re-runnable. This mode never touches
-    ci.yaml's variant — that's Mode 3's job only."""
-    old_stem = find_project_stem(project_dir)
-    kibot_main_path = project_dir / "kibot_yaml" / "kibot_main.yaml"
-    kibot_main_text = kibot_main_path.read_text(encoding="utf-8")
-    fresh = is_fresh_template(old_stem, kibot_main_text)
-
-    refuse_if_open(project_dir, old_stem)
-
-    _, kibot_definitions_tail = split_at_definitions(kibot_main_text)
-
-    def current(key: str, fallback: str) -> str:
-        m = re.search(rf"^\s*{key}:\s*'?([^'\n]*)'?\s*$", kibot_definitions_tail, re.MULTILINE)
-        return m.group(1).strip() if m and m.group(1).strip() else fallback
-
-    print(f"\n{'First-time setup' if fresh else 'Update board settings'}\n")
-
-    board_name = prompt(
-        "Board name (repo name, e.g. tim or bse_apps)",
-        old_stem.lower() if old_stem != PLACEHOLDER_STEM else "",
-        validator=lambda v: bool(BOARD_NAME_RE.match(v)),
-        error_msg="Lowercase letters, digits, and underscores only (e.g. tim, bse_apps) "
-                  "— no spaces, no hyphens, no year/car prefix.",
-    )
-    # These four land inside a double-quoted YAML string when KiBot builds the
-    # schematic's text variables (kibot_pre_set_text_variables.yaml) — a
-    # plain apostrophe is fine there, but a literal " or \ isn't and would
-    # break every KiBot run with a cryptic YAML parse error, the same class
-    # of bug that motivated switching those fields to double quotes in the
-    # first place. Reject them here instead of letting that surface in CI.
-    def no_quotes_or_backslash(v: str) -> bool:
-        return '"' not in v and "\\" not in v
-
-    quote_error = 'Straight quotes (") and backslashes (\\) break KiBot\'s YAML config — rephrase without them.'
-
-    board_title = prompt(
-        "Human-readable board title", current("PROJECT_NAME", "Board Name"),
-        validator=no_quotes_or_backslash, error_msg=quote_error,
-    )
-    description = prompt(
-        "Short description of this board (one sentence, shown in the README)",
-        current("DESCRIPTION", ""),
-        validator=no_quotes_or_backslash, error_msg=quote_error,
-    )
-    designer = prompt(
-        "Designer name", current("DESIGNER", ""),
-        validator=no_quotes_or_backslash, error_msg=quote_error,
-    )
-    company = prompt(
-        "Company", current("COMPANY", "Blue Devil Motor Sports"),
-        validator=no_quotes_or_backslash, error_msg=quote_error,
-    )
-    revision = prompt("Initial revision (cosmetic only — real revision comes from git tags at release)",
-                       "0.1.0")
-    tier2_answer = prompt(
-        "Enable Tier 2 impedance table output? (only relevant if this board has "
-        "controlled-impedance traces) [y/n]",
-        "n", validator=lambda v: v.lower() in ("y", "n"), error_msg="Answer y or n.",
-    )
-    tier2_impedance = tier2_answer.lower() == "y"
-
-    changes = []
-    rename_project_files(project_dir, old_stem, board_name, changes, dry_run)
-
-    new_pro_path = project_dir / f"{board_name}.kicad_pro"
-    old_pro_path = project_dir / f"{old_stem}.kicad_pro"
-    read_pro_path = old_pro_path if (dry_run and old_stem != board_name) else new_pro_path
-    patch_kicad_pro_text_variables(
-        new_pro_path, {"COMPANY": company, "REVISION": revision}, changes, dry_run, read_path=read_pro_path
-    )
-
-    git_url = git_remote_url(project_dir) or f"https://github.com/BDMPowertrain/{board_name}"
-    patch_kibot_main(
-        kibot_main_path,
-        {
-            "PROJECT_NAME": board_title,
-            "BOARD_NAME": board_name.upper(),
-            "DESCRIPTION": description,
-            "DESIGNER": designer,
-            "COMPANY": company,
-            "GIT_URL": git_url,
-        },
-        tier2_impedance, changes, dry_run,
-    )
-
-    seed_changelog(project_dir / "CHANGELOG.md", changes, dry_run)
-    seed_readme(project_dir / "README.md", board_title, changes, dry_run)
-
-    print_summary(changes, dry_run)
-
-
-def run_variant(project_dir: Path, requested: str, dry_run: bool):
-    stem = find_project_stem(project_dir)
-    ci_yaml_path = project_dir / ".github" / "workflows" / "ci.yaml"
-    text = ci_yaml_path.read_text(encoding="utf-8")
-    variant_match = re.search(r"kibot_variant:\s*(\S+)", text)
-    current_variant = variant_match.group(1) if variant_match else "DRAFT"
-
+def action_stage(dry_run, requested=None):
+    current = read_stage()
     if requested is None:
-        print(f"\nCurrent variant: {current_variant}\n")
-        for i, (name, desc) in enumerate(VARIANTS, start=1):
-            marker = " (current)" if name == current_variant else ""
-            print(f"  {i}. {name}{marker}\n     {desc}\n")
-        choice = prompt(
-            "Choose a variant (1-3)", "",
-            validator=lambda v: v in ("1", "2", "3"),
-            error_msg="Enter 1, 2, or 3.",
-        )
-        requested = VARIANTS[int(choice) - 1][0]
+        heading("Project stage")
+        for i, (name, when, what) in enumerate(STAGES, start=1):
+            mark = "  <- current" if name == current else ""
+            print(f"  {i}. {name}{mark}\n     {when}\n     {what}")
+        print("\n  RELEASED isn't chosen here - pushing a version tag sets it automatically.")
+        choice = ask("Choose 1-3 (Enter to cancel)", validate=lambda v: None if v in ("", "1", "2", "3") else "Enter 1, 2 or 3.")
+        if not choice:
+            return
+        requested = STAGES[int(choice) - 1][0]
 
     requested = requested.upper()
     if requested == "RELEASED":
-        print(
-            "\nRELEASED is not something this script sets. It is produced automatically "
-            "by pushing a version tag, per the CI model — that's what guarantees a RELEASED "
-            "build always corresponds to a real, tagged, immutable release.\n\n"
-            "To release this board:\n\n"
-            "  git checkout main\n"
-            "  git pull\n"
-            "  git tag 1.0.0\n"
-            "  git push origin 1.0.0\n\n"
-            "(Only the Electrical Lead pushes tags — check with them first.)\n"
-        )
-        sys.exit(1)
-
-    if requested not in [v[0] for v in VARIANTS]:
-        sys.exit(f"Unknown variant '{requested}'. Choose from: DRAFT, PRELIMINARY, CHECKED.")
-
-    if requested == "CHECKED" and current_variant != "CHECKED":
-        print(
-            "\nMoving to CHECKED: CI will now enforce ERC and DRC. If this board has "
-            "existing errors, the NEXT CI run is expected to fail until they're fixed — "
-            "that's the point of this variant, not a bug.\n"
-        )
-
-    refuse_if_open(project_dir, stem)
-    changes = []
-    patch_ci_variant(ci_yaml_path, requested, changes, dry_run)
-    print_summary(changes, dry_run)
-
-
-def print_summary(changes: list, dry_run: bool):
-    print()
-    if not changes:
-        print("No changes needed — everything already matches what you entered.")
+        raise ConfigError("RELEASED is set by CI when a version tag is pushed, e.g.\n"
+                          "  git checkout main && git pull\n  git tag 1.0.0 && git push origin 1.0.0\n"
+                          "(Check with the Electrical Lead before tagging.)")
+    if requested not in STAGE_NAMES:
+        raise ConfigError(f"Unknown stage '{requested}'. Choose one of: {', '.join(STAGE_NAMES)}.")
+    if requested == current:
+        print(f"\nAlready at {current}.")
         return
-    heading = "Would change (--dry-run, nothing written):" if dry_run else "Changed:"
-    print(heading)
-    for c in changes:
-        print(f"  {c.path.relative_to(c.path.anchor) if c.path.is_absolute() else c.path} — {c.description}")
-    if dry_run:
-        return
-    print(
-        "\nNext steps:\n"
-        "  git status\n"
-        "  git add -A\n"
-        '  git commit -m "chore: run configure.py"\n'
-        "  git push\n"
-    )
+    if requested == "CHECKED":
+        print("\n  Note: CHECKED enforces ERC/DRC. If the board still has errors, the next CI run fails until they're fixed.")
+
+    plan = Plan()
+    text = read(CI_YAML)
+    plan.write(CI_YAML, re.sub(r"^(\s*kibot_variant:\s*)\S+", rf"\g<1>{requested}", text, count=1, flags=re.MULTILINE),
+               f"stage {current} -> {requested}")
+    commit(plan, dry_run)
+
+
+def action_board_info(dry_run, first_time=False):
+    stem = find_project_stem()
+    kibot_text = read(KIBOT_MAIN)
+    defs = read_definitions(kibot_text)
+    pro_path = PROJECT_DIR / f"{stem}.kicad_pro"
+    pro = json.loads(read(pro_path))
+    text_vars = pro.get("text_variables", {})
+
+    heading("First-time setup" if first_time else "Board info")
+    print("  Press Enter to keep the value in [brackets].\n")
+
+    board_name = ask("Board name (repo name, e.g. bms_slave)",
+                     "" if stem == PLACEHOLDER_STEM else stem.lower(), validate_board_name)
+    title = ask("Board title", defs.get("PROJECT_NAME", ""), lambda v: validate_free_text(v, required=True))
+    description = ask("One-sentence description (shown in README)", defs.get("DESCRIPTION", ""), validate_free_text)
+    designer = ask("Designer", defs.get("DESIGNER", ""), validate_free_text)
+    company = ask("Company", defs.get("COMPANY") or "Blue Devil Motor Sports", validate_free_text)
+    revision = ask("Revision (cosmetic; real revisions come from git tags)",
+                   text_vars.get("REVISION") or "0.1.0", validate_revision)
+
+    impedance_enabled = bool(re.search(r"^\s*-\s*@CSV_IMPEDANCE_TABLE_OUTPUT@", split_definitions(kibot_text)[0], re.MULTILINE))
+    impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?", impedance_enabled)
+
+    plan = Plan()
+
+    # kibot_main.yaml
+    new_kibot = quote_passthroughs(kibot_text)
+    git_url = git_remote_url() or defs.get("GIT_URL") or f"https://github.com/BDMPowertrain/{board_name}"
+    for key, value in (("PROJECT_NAME", title), ("BOARD_NAME", board_name.upper()), ("DESCRIPTION", description),
+                       ("DESIGNER", designer), ("COMPANY", company), ("GIT_URL", git_url)):
+        if defs.get(key) != value or key in FREE_TEXT_KEYS:
+            new_kibot = set_definition(new_kibot, key, value)
+    new_kibot = toggle_impedance(new_kibot, impedance)
+    plan.write(KIBOT_MAIN, new_kibot, "board metadata")
+
+    # .kicad_pro text variables
+    if text_vars.get("COMPANY") != company or text_vars.get("REVISION") != revision:
+        pro.setdefault("text_variables", {}).update({"COMPANY": company, "REVISION": revision})
+        plan.write(pro_path, json.dumps(pro, indent=2) + "\n", "COMPANY/REVISION text variables")
+
+    # Rename project files if the board name changed
+    if board_name != stem:
+        plan_rename(plan, stem, board_name)
+
+    commit(plan, dry_run)
+
+
+def toggle_impedance(text, enabled):
+    head, defs = split_definitions(text)
+    line_re = re.compile(r"^(\s*)(#\s*)?-\s*@CSV_IMPEDANCE_TABLE_OUTPUT@.*$", re.MULTILINE)
+    m = line_re.search(head)
+    if not m:
+        return text  # template has no Tier 2 impedance line
+    indent = m.group(1)
+    new_line = (f"{indent}- @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 (enabled by configure.py)" if enabled
+                else f"{indent}# - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 - enable via configure.py")
+    return head[:m.start()] + new_line + head[m.end():] + defs
+
+
+def plan_rename(plan, old_stem, new_stem):
+    """Rename the root project files and replace the old stem inside the
+    root/sub-sheet .kicad_sch, .kicad_pro and .kicad_pcb (KiCad embeds the
+    project name in sheet-instance data and export paths). Hierarchical
+    sheet filenames are left alone - KiCad references them by relative
+    path, and kibot_resources scripts expect the current names."""
+    for ext in (".kicad_pro", ".kicad_sch", ".kicad_pcb", ".kicad_prl", ".kicad_dru"):
+        old = PROJECT_DIR / f"{old_stem}{ext}"
+        new = PROJECT_DIR / f"{new_stem}{ext}"
+        if old.exists():
+            if new.exists():
+                raise ConfigError(f"Can't rename {old.name}: {new.name} already exists.")
+            plan.renames.append((old, new))
+    for path in sorted(PROJECT_DIR.glob("*.kicad_sch")) + sorted(PROJECT_DIR.glob("*.kicad_pro")) + sorted(PROJECT_DIR.glob("*.kicad_pcb")):
+        text = plan.text_of(path)
+        if old_stem in text:
+            plan.write(path, text.replace(old_stem, new_stem), f"project name {old_stem} -> {new_stem}")
+
+
+def action_show():
+    stem = find_project_stem()
+    defs = read_definitions(read(KIBOT_MAIN))
+    pro = json.loads(read(PROJECT_DIR / f"{stem}.kicad_pro"))
+    heading("Current settings")
+    rows = [("Project file", stem), ("Stage", read_stage()),
+            ("Title", defs.get("PROJECT_NAME", "")), ("Board name", defs.get("BOARD_NAME", "")),
+            ("Description", defs.get("DESCRIPTION", "")), ("Designer", defs.get("DESIGNER", "")),
+            ("Company", defs.get("COMPANY", "")), ("Revision", pro.get("text_variables", {}).get("REVISION", "")),
+            ("GitHub URL", defs.get("GIT_URL", ""))]
+    width = max(len(r[0]) for r in rows)
+    for label, value in rows:
+        print(f"  {label:<{width}}  {value}")
+
+
+def action_check(fix=False, dry_run=False):
+    text = read(KIBOT_MAIN)
+    problems = lint(text)
+    if not problems:
+        print("\nConfig OK - no problems found.")
+        return True
+    print("\nProblems found:")
+    for p in problems:
+        print(f"  - {p}")
+    fixed = quote_passthroughs(text)
+    if fix and fixed != text and not lint(fixed):
+        plan = Plan()
+        plan.write(KIBOT_MAIN, fixed, "quoted free-text @VAR@ passthroughs")
+        return commit(plan, dry_run)
+    if fixed != text and not lint(fixed):
+        print("\n  These can be fixed automatically - choose 'Check config' from the menu, or run configure.py --check --fix.")
+    return False
 
 
 # ----------------------------------------------------------------------------
+# Menu / entry point
+# ----------------------------------------------------------------------------
+
+def is_fresh_template(stem):
+    defs = read_definitions(read(KIBOT_MAIN))
+    return stem == PLACEHOLDER_STEM or defs.get("BOARD_NAME") in ("", "BOARD_NAME")
+
+
+def confirm_kicad_closed(stem):
+    locks = kicad_is_open(stem)
+    if locks:
+        raise ConfigError("This project is open in KiCad (" + ", ".join(locks) + "). Close KiCad and run this again.")
+    if sys.stdin.isatty() and not ask_yes_no("Is KiCad closed for this project?", default=True):
+        raise ConfigError("Close KiCad, then run this again.")
+
+
+def menu(dry_run):
+    stem = find_project_stem()
+    confirm_kicad_closed(stem)
+    if is_fresh_template(stem):
+        print("\nThis looks like a fresh copy of the template - let's set it up.")
+        action_board_info(dry_run, first_time=True)
+    while True:
+        stem = find_project_stem()
+        defs = read_definitions(read(KIBOT_MAIN))
+        heading(f"{defs.get('PROJECT_NAME') or stem}  -  stage: {read_stage()}")
+        print("  1. Change project stage (DRAFT / PRELIMINARY / CHECKED)\n"
+              "  2. Edit board info (title, description, designer, revision...)\n"
+              "  3. Show current settings\n"
+              "  4. Check config for problems\n"
+              "  q. Quit")
+        choice = ask("Choose", validate=lambda v: None if v.lower() in ("1", "2", "3", "4", "q") else "Enter 1-4 or q.").lower()
+        try:
+            if choice == "1":
+                action_stage(dry_run)
+            elif choice == "2":
+                action_board_info(dry_run)
+            elif choice == "3":
+                action_show()
+            elif choice == "4":
+                action_check(fix=True, dry_run=dry_run)
+            else:
+                return
+        except ConfigError as e:
+            print(f"\n  ! {e}")
+
+
 def main():
-    parser = argparse.ArgumentParser(description="BDM board configuration tool.")
-    parser.add_argument("--init", action="store_true", help="First-time setup (also runs automatically on a fresh template).")
-    parser.add_argument("--variant", nargs="?", const="", help="Change variant. Bare flag opens a menu; --variant CHECKED sets it directly.")
-    parser.add_argument("--dry-run", action="store_true", help="Show what would change without writing anything.")
+    parser = argparse.ArgumentParser(description="BDM board configuration tool. Run with no arguments for the menu.")
+    parser.add_argument("--stage", "--variant", dest="stage", metavar="NAME",
+                        help="Set the project stage directly (DRAFT, PRELIMINARY, CHECKED).")
+    parser.add_argument("--init", action="store_true", help="Run first-time setup (board info) directly.")
+    parser.add_argument("--check", action="store_true", help="Validate the config; exit 1 if there are problems.")
+    parser.add_argument("--fix", action="store_true", help="With --check, auto-fix fixable problems.")
+    parser.add_argument("--dry-run", action="store_true", help="Show what would change without writing.")
     args = parser.parse_args()
 
-    project_dir = Path(__file__).resolve().parent
+    try:
+        if args.check:
+            sys.exit(0 if action_check(fix=args.fix, dry_run=args.dry_run) else 1)
+        if args.stage:
+            confirm_kicad_closed(find_project_stem())
+            action_stage(args.dry_run, requested=args.stage)
+            return
+        if not sys.stdin.isatty():
+            raise ConfigError("The menu needs an interactive terminal. Use --stage or --check for scripts.")
+        if args.init:
+            stem = find_project_stem()
+            confirm_kicad_closed(stem)
+            action_board_info(args.dry_run, first_time=is_fresh_template(stem))
+            return
+        menu(args.dry_run)
+    except ConfigError as e:
+        sys.exit(f"Error: {e}")
+    except KeyboardInterrupt:
+        sys.exit("\nCancelled - nothing written.")
 
-    if args.variant is not None:
-        run_variant(project_dir, args.variant or None, args.dry_run)
-    else:
-        run_setup(project_dir, args.dry_run)
+
+def launched_by_double_click():
+    """True on Windows when this script owns its console window (Explorer
+    double-click), which would otherwise close before you can read output."""
+    if sys.platform != "win32":
+        return False
+    try:
+        import ctypes
+        return ctypes.windll.kernel32.GetConsoleProcessList((ctypes.c_uint * 4)(), 4) <= 2
+    except Exception:
+        return False
 
 
 if __name__ == "__main__":
-    main()
+    if sys.version_info < (3, 8):
+        sys.exit("configure.py needs Python 3.8 or newer.")
+    try:
+        main()
+    finally:
+        if launched_by_double_click():
+            input("\nPress Enter to close...")
