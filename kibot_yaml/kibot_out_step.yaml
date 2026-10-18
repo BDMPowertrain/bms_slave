@@ -6,7 +6,7 @@
 # Equivalent to:
 #   kicad-cli pcb export step --subst-models --include-tracks --include-pads
 #     --include-zones --include-inner-copper --include-silkscreen
-#     --include-soldermask --fuse-shapes --cut-vias-in-body --fill-all-vias
+#     --include-soldermask --cut-vias-in-body --fill-all-vias
 #     --drill-origin --min-distance=0.01mm
 
 kibot:
@@ -33,7 +33,11 @@ outputs:
     include_inner_copper: true
     include_silkscreen: true    # flat faces
     include_soldermask: true    # flat faces
-    fuse_shapes: true           # merge overlapping copper (slower, cleaner model)
+    # fuse_shapes is OFF on purpose: on real boards OpenCASCADE often reports
+    # "Problems encountered while fusing shapes", which makes kicad-cli exit 2
+    # and fails the CI run (the STEP is still written, but KiBot sees an error).
+    # Unfused copper is fine for fit checks and enclosure work, and exports ~2x faster.
+    fuse_shapes: false
     cut_vias_in_body: true      # via holes cut through the board body
     fill_all_vias: true         # don't cut via holes in copper layers
 
