@@ -19,9 +19,9 @@
 ***
 
 <p align="center">
-  <img alt="3D Top Angled" src="Images/bms_slave-angled_top.png" width="45%">
+  <img alt="3D Top" src="Images/bms_slave-top.png" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="3D Bottom Angled" src="Images/bms_slave-angled_bottom.png" width="45%">
+  <img alt="3D Bottom" src="Images/bms_slave-bottom.png" width="45%">
 </p>
 
 ***

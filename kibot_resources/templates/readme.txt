@@ -19,9 +19,9 @@
 ***
 
 <p align="center">
-  <img alt="3D Top Angled" src="${png_3d_viewer_angled_top_outpath}" width="45%">
+  <img alt="3D Top" src="${png_3d_viewer_top_outpath}" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="3D Bottom Angled" src="${png_3d_viewer_angled_bottom_outpath}" width="45%">
+  <img alt="3D Bottom" src="${png_3d_viewer_bottom_outpath}" width="45%">
 </p>
 
 ***

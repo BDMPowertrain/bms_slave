@@ -1540,7 +1540,7 @@
 		)
 		(uuid "2efa106d-749e-4c2c-a05c-8429f99997c2")
 	)
-	(text_box "kibot_image_png_3d_viewer_angled_bottom"
+	(text_box "kibot_image_png_3d_viewer_bottom"
 		(exclude_from_sim no)
 		(at 123.19 166.37 0)
 		(size 69.85 78.74)
@@ -1583,7 +1583,7 @@
 		)
 		(uuid "5018a9e1-9f76-429f-8094-85eee2236cda")
 	)
-	(text_box "kibot_image_png_3d_viewer_angled_top"
+	(text_box "kibot_image_png_3d_viewer_top"
 		(exclude_from_sim no)
 		(at 22.86 166.37 0)
 		(size 69.85 78.74)
