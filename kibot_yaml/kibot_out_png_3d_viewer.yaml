@@ -23,7 +23,7 @@ outputs:
     view: '@VIEW@'
     ray_tracing: @RAYTRACING@
     force_stackup_colors: false
-    orthographic: true
+    orthographic: @ORTHOGRAPHIC@
     transparent_background: true
     transparent_background_color: '@KEY_COLOR@'
     transparent_background_fuzz: 40
@@ -36,6 +36,7 @@ definitions:
   SUFFIX: ""
   VIEW: top
   RAYTRACING: true
+  ORTHOGRAPHIC: true  # false = perspective; needed for ZOOM to have any effect
   ROTATE_X: 0
   ROTATE_Y: 0
   ROTATE_Z: 0

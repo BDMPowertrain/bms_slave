@@ -404,6 +404,7 @@ import:
       ROTATE_Y: @3D_VIEWER_ROT_Y@
       ROTATE_Z: @3D_VIEWER_ROT_Z@
       ZOOM: @3D_VIEWER_ZOOM@
+      ORTHOGRAPHIC: false
       KEY_COLOR: '@KEY_COLOR@'
 
   - file: kibot_out_png_3d_viewer.yaml
@@ -417,6 +418,7 @@ import:
       ROTATE_Y: @3D_VIEWER_ROT_Y@
       ROTATE_Z: -@3D_VIEWER_ROT_Z@
       ZOOM: @3D_VIEWER_ZOOM@
+      ORTHOGRAPHIC: false
       KEY_COLOR: '@KEY_COLOR@'
 
   # STEP file ------------------------------------------------------------------
@@ -556,7 +558,7 @@ definitions:
   3D_VIEWER_ROT_X: 2
   3D_VIEWER_ROT_Y: -1
   3D_VIEWER_ROT_Z: 1
-  3D_VIEWER_ZOOM: -4  # angled views only. Zoomed out so the rotated board never clips the frame; auto_crop trims the margin. Go more negative if a large board still clips.
+  3D_VIEWER_ZOOM: -4  # angled views only: camera distance (they render in perspective, which is what lets this shrink the board). More negative = smaller. auto_crop trims the margin.
   KEY_COLOR: '#00FF00' # Background color to remove. Use a color different from your PCB
 
   # Output directories =========================================================
