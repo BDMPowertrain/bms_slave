@@ -1,5 +1,5 @@
 ** Drc report for bms_slave.kicad_pcb **
-** Created on 2026-10-18T20:00:50 **
+** Created on 2026-10-20T14:41:42 **
 
 ** Found 4 DRC violations **
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
