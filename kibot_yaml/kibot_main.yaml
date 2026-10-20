@@ -60,17 +60,17 @@ groups:
   # DRAFT's README-only pass targets this instead of the bare md_readme
   # output. md_readme has `collect_images: no` (see kibot_out_md_report.yaml)
   # so it no longer drags in pdf_fabrication/the drill table just to
-  # generate a README — but that also means nothing else makes its two
-  # angled 3D renders actually exist, since `${..._outpath}` in the
+  # generate a README — but that also means nothing else makes its
+  # 3D renders actually exist, since `${..._outpath}` in the
   # template only substitutes the expected path, it doesn't run the output
-  # that creates it. This group generates them explicitly instead. (Every
+  # that creates it. This group generates the README's top/bottom renders
+  # (and the angled ones, kept as standalone images) explicitly instead. (Every
   # other variant gets these for free via all_group's `assembly` ->
   # `3d_render` membership, so only DRAFT needs this.)
   - name: readme_group
     outputs:
       - @MD_README_OUTPUT@
-      - @PNG_3D_VIEWER_ANGLED_TOP@
-      - @PNG_3D_VIEWER_ANGLED_BOTTOM@
+      - 3d_render
 
   - name: fab
     outputs:
