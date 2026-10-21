@@ -48,6 +48,9 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "FID1","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,4.0000,0.0000,top
 "FID2","Fiducial","Fiducial_0.5mm_Mask1mm",56.2500,41.0000,0.0000,top
 "FID3","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,41.0000,0.0000,top
+"FID4","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,4.0000,180.0000,bottom
+"FID5","Fiducial","Fiducial_0.5mm_Mask1mm",3.5000,41.0000,180.0000,bottom
+"FID6","Fiducial","Fiducial_0.5mm_Mask1mm",56.2500,41.0000,180.0000,bottom
 "G1","SAE Electric logo","SAE_Electric_Logo_10mm",27.2500,3.2500,180.0000,bottom
 "G1","SAE Electric logo","SAE_Electric_Logo_10mm",43.6153,3.2500,0.0000,top
 "G2","BMD Logo","BDM_Logo_50mm",36.1107,28.7698,180.0000,bottom
