@@ -1,5 +1,5 @@
 ** Drc report for bms_slave.kicad_pcb **
-** Created on 2026-10-29T03:21:38 **
+** Created on 2026-10-29T03:50:00 **
 
 ** Found 7 DRC violations **
 [skew_out_of_range]: Skew between tracks out of range (rule 'Daisy skew' max skew 0.5000 mm; actual -2.3786 mm; target net length 6.6468 mm (from /Project Architecture/Connectors/COMH.N); actual 4.2683 mm)
