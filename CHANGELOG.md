@@ -2,18 +2,23 @@
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-29
+
 ### Fixed
 
--   Fixes
+- Fixes
 
 ### Added
 
--   Additions
+- Additions
 
 ### Changed
 
--   Changes
+- Changes
 
 ### Removed
 
--   Deletions
+- Deletions
+
+[unreleased]: https://github.com/BDMPowertrain/bms_slave/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/BDMPowertrain/bms_slave/compare/7d605508058b76088dc482c5b5efd0dbc355352f...1.0.0
