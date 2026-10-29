@@ -111,7 +111,7 @@ groups:
   - name: tables
     outputs:
       - @CSV_COMP_COUNT_OUPUT@
-      # - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 — configure.py uncomments this line when enabled
+      # - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 - enable via configure.py
       - @CSV_DRILL_TABLE_OUTPUT@
       - testpoints
       - notes
@@ -508,12 +508,12 @@ definitions:
 
   # Metadata — MEMBER: set once by configure.py, never by hand =================
 
-  PROJECT_NAME: BMS Slave
+  PROJECT_NAME: "BMS Slave"
   BOARD_NAME: BMS_SLAVE
-  DESCRIPTION: '8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.'
+  DESCRIPTION: "8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain."
 
-  COMPANY: Blue Devil Motor Sports
-  DESIGNER: Aidan Brzezinski
+  COMPANY: "Blue Devil Motor Sports"
+  DESIGNER: "Aidan Brzezinski"
 
   LOGO: 'Logos/bdm_logo.png'
   GIT_URL: 'https://github.com/BDMPowertrain/BMS_Slave'

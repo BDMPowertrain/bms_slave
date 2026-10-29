@@ -5,6 +5,7 @@
 	(uuid "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c")
 	(paper "A3")
 	(title_block
+		(date "2026-10-28")
 		(rev "${REVISION}")
 		(company "${COMPANY}")
 	)
@@ -1164,7 +1165,7 @@
 		)
 		(uuid "c7960137-7711-4ffe-94cf-8be0bcb30b2c")
 	)
-	(text "TI BQ79616PAPRQ1 Datasheet"
+	(text "BMS Slave is based on TI's BQ79616PAPRQ1. A master slave BMS System."
 		(exclude_from_sim no)
 		(at 222.25 177.8 0)
 		(effects

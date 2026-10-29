@@ -6,6 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Mechanical")
+		(date "2026-10-28")
+		(rev "${REVISION}")
+		(company "${COMPANY}")
 	)
 	(lib_symbols
 		(symbol "Mechanical:Fiducial"
@@ -4305,10 +4308,10 @@
 		)
 		(uuid "effcd9d6-157a-4f6e-8837-66dfbcb83249")
 	)
-	(text_box "LAYOUT NOTE: MOUNTING (FSAE 2027 EV.5.2.2, EV.7.5.2, EV.7.5.6)\n\n1. H1-H6: M3, 3.2 mm NPTH (no plating, no pad, no annular ring).\n2. Copper keep-out Ø <8> mm around each hole on ALL layers(M3 washer OD 7 mm + margin).\n3. No mounting holes inside the daisy-chain isolation zone. Holes outside the zone must still keep >= 4.0 mm to any cable-side copper (EV.7.5.7, 300-600 V, coated).\n4. Board GND = module negative = tractive-system potential. No connection to the chassis or any conductive surface (EV.7.5.2). Mount only with nylon screws, standoffs and washers.\n5. If the accumulator container is conductive, mount the board on an insulating plate or bracket rated >= max TS voltage and >= 90 °C (EV.5.2.2a, EV.7.2.1). Never mount directly to the container wall.\n6. Positively restrain the board and harnesses so spacing is kept under vibration (EV.7.5.6)."
+	(text_box "LAYOUT NOTE: MOUNTING (FSAE 2027 EV.5.2.2, EV.7.5.2, EV.7.5.6)\n\n1. H1-H6: M3, 3.2 mm NPTH (no plating, no pad, no annular ring).\n2. Board GND = module negative = tractive-system potential. No connection to the chassis or any conductive surface (EV.7.5.2). Mount only with nylon screws, standoffs and washers.\n3. If the accumulator container is conductive, mount the board on an insulating plate or bracket rated >= max TS voltage and >= 90 °C (EV.5.2.2a, EV.7.2.1). Never mount directly to the container wall.\n4. Positively restrain the board and harnesses so spacing is kept under vibration (EV.7.5.6)."
 		(exclude_from_sim no)
 		(at 195.58 50.8 0)
-		(size 83.82 32.0932)
+		(size 83.82 25.4)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -4330,7 +4333,7 @@
 		)
 		(uuid "7980c98a-3e70-4d2c-b4fa-5a03f5b3918c")
 	)
-	(text_box "DESIGN NOTE: FIDUCIALS / LOGOS / MARKING\n\n1. FID1-FID3: 1.0 mm copper dot, 2.0 mm mask opening and keep-out, three non-collinear points near the board corners.\n2. Logos are silkscreen graphics only: set \"Exclude from BOM\" and \"Exclude from simulation\". Keep them off pads and vias, and out of the isolation zone.\n3. Mark the isolation zone on top AND bottom silk (boundary lines + \"ISOLATION ZONE\") per EV.7.5.6 / EV.7.5.7a.\n4. Board info text uses '$'{REVISION}' and '$'{ISSUE_DATE}' so the silkscreen always matches the schematic."
+	(text_box "DESIGN NOTE: FIDUCIALS / LOGOS / MARKING\n\n1. FID1-FID3: Three non-collinear points near the board corners.\n2. Logos are silkscreen graphics only: set \"Exclude from BOM\" and \"Exclude from simulation\". Keep them off pads and vias, and out of the isolation zone.\n3. Mark the isolation zone on top AND bottom silk (boundary lines + \"ISOLATION ZONE\") per EV.7.5.6 / EV.7.5.7a.\n4. Board info text uses '$'{REVISION}' and '$'{ISSUE_DATE}' so the silkscreen always matches the schematic."
 		(exclude_from_sim no)
 		(at 20.32 50.8 0)
 		(size 76.2 25.1924)

@@ -6,6 +6,9 @@
 	(paper "A3")
 	(title_block
 		(title "Cell Sense & Balance")
+		(date "2026-10-28")
+		(rev "${REVISION}")
+		(company "${COMPANY}")
 	)
 	(lib_symbols
 		(symbol "power:GND"
@@ -3395,7 +3398,7 @@
 		)
 		(uuid "071abbdc-9ae5-44c5-8374-4ff9ed68097a")
 	)
-	(text_box "DESIGN NOTE: VC FILTER  (R_VC / C_VC)\n(TI SLUSE81F 8.2.1.2.1, p.192)\n1. R_VC = 100 ohm, C_VC = 0.47 uF. TI fixed values - do not change.\n2. Differential RC: cap across adjacent VC lines.\n   fc ~ 1/(2*pi*200*0.47u) = 1.7 kHz.\n3. Values also give hot-plug protection when harness is connected live.\n4. 100 ohm keeps input-current error < 1 mV.\n5. Cap sees 1 cell max (4.2 V). TI min 16 V; use 25 V X7R (DC-bias margin)."
+	(text_box "DESIGN NOTE: VC FILTER  (R_VC / C_VC)\n(TI Datasheet 8.2.1.2.1, p.192)\n1. R_VC = 100 ohm, C_VC = 0.47 uF. TI fixed values, do not change.\n2. Differential RC: cap across adjacent VC lines.\n   fc ~ 1/(2*pi*200*0.47u) = 1.7 kHz.\n3. Values also give hot-plug protection when harness is connected live.\n4. 100 ohm keeps input-current error < 1 mV.\n5. Cap sees 1 cell max (4.2 V). TI min 16 V; use 25 V X7R (DC-bias margin)."
 		(exclude_from_sim no)
 		(at 317.5 45.72 0)
 		(size 66.04 22.86)
@@ -3418,7 +3421,7 @@
 		)
 		(uuid "84bd0f9e-60be-40be-bb2c-afb1da8b75dc")
 	)
-	(text_box "DESIGN NOTE: CB FILTER CAPS + BAT FILTER\n(TI SLUSE81F 8.2.1.2.1-8.2.1.2.2, pp.192-193)\n1. C_CB = 0.47 uF (TI fixed): hot-plug + filtering, fc ~ 17 kHz.\n2. Clean CB path needed for VC-vs-CB (AUX ADC) diagnostic comparison.\n3. BAT: R1 = 30 ohm, C1 = 10 nF (TI fixed, hot-plug)."
+	(text_box "DESIGN NOTE: CB FILTER CAPS + BAT FILTER\n(TI Datasheet 8.2.1.2.1-8.2.1.2.2, pp.192-193)\n1. C_CB = 0.47 uF (TI fixed): hot-plug + filtering, fc ~ 17 kHz.\n2. Clean CB path needed for VC-vs-CB (AUX ADC) diagnostic comparison.\n3. BAT: R1 = 30 ohm, C1 = 10 nF (TI fixed, hot-plug)."
 		(exclude_from_sim no)
 		(at 317.5 154.94 0)
 		(size 66.04 15.24)
@@ -3466,7 +3469,7 @@
 		)
 		(uuid "9e8965b4-6b7b-4c54-8cf5-edfc58f91b50")
 	)
-	(text_box "DESIGN NOTE: CB BALANCE RESISTORS  (R_CB = 10 ohm, 2512 / 1 W)\n(TI SLUSE81F 7.3.3 p.36; Rdson 6.5 p.13; 240 mA limit p.1)\n1. I_CB = Vcell / (2*R_CB + Rdson). Current flows through BOTH R_CB\n   (CBn and CBn-1) and the internal balance FET.\n2. Rdson = 1.45-4.6 ohm (rises with die temp, part-to-part; spec Vcell > 2.8 V).\n   Vcell    I_CB (Rdson 1.45 / 4.6)   P per R_CB    P per cell\n   3.0 V    140 / 122 mA              0.15-0.20 W   ~0.4 W\n   3.6 V    168 / 146 mA              0.21-0.28 W   ~0.6 W\n   4.2 V    196 / 171 mA              0.29-0.38 W   ~0.8 W\n3. Max 196 mA < 240 mA limit (240 mA rated at 75 C ambient).\n4. ~1 % SOC/hr on 20 Ah Enepaq block.\n5. Less heat option: R_CB = 20 ohm -> ~100 mA, ~1/4 power."
+	(text_box "DESIGN NOTE: CB BALANCE RESISTORS  (R_CB = 10 ohm, 2512 / 1 W)\n(TI Datasheet 7.3.3 p.36; Rdson 6.5 p.13; 240 mA limit p.1)\n1. I_CB = Vcell / (2*R_CB + Rdson). Current flows through BOTH R_CB\n   (CBn and CBn-1) and the internal balance FET.\n2. Rdson = 1.45-4.6 ohm (rises with die temp, part-to-part; spec Vcell > 2.8 V).\n   Vcell    I_CB (Rdson 1.45 / 4.6)   P per R_CB    P per cell\n   3.0 V    140 / 122 mA              0.15-0.20 W   ~0.4 W\n   3.6 V    168 / 146 mA              0.21-0.28 W   ~0.6 W\n   4.2 V    196 / 171 mA              0.29-0.38 W   ~0.8 W\n3. Max 196 mA < 240 mA limit (240 mA rated at 75 C ambient).\n4. ~1 % SOC/hr on 20 Ah Enepaq block.\n5. Less heat option: R_CB = 20 ohm -> ~100 mA, ~1/4 power."
 		(exclude_from_sim no)
 		(at 317.5 73.66 0)
 		(size 66.04 30.48)

@@ -6,6 +6,9 @@
 	(paper "A3")
 	(title_block
 		(title "Temperature Sense")
+		(date "2026-10-28")
+		(rev "${REVISION}")
+		(company "${COMPANY}")
 	)
 	(lib_symbols
 		(symbol "power:GND"

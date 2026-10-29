@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.6,
-          "height": 1.7,
-          "width": 1.7
+          "drill": 1.04,
+          "height": 1.39,
+          "width": 1.5
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -78,8 +78,8 @@
       ],
       "drc_exclusions": [
         [
-          "diff_pair_gap_out_of_range|169850677|79500000|b98c8096-9e39-4e32-80e2-0f331f7cc8d9|bb9ff551-8f1e-4fbc-a227-ff1ad778bd61",
-          "Speeds slow enough does not matter."
+          "skew_out_of_range|170250000|78000000|5eb8a0de-d46f-48e2-8b2c-75641202a3fb|00000000-0000-0000-0000-000000000000",
+          "Slow Enought To Not Matter"
         ]
       ],
       "meta": {
@@ -809,6 +809,33 @@
       "/Project Architecture/Cell Sense & Balance/VC8": [
         "SENSE"
       ],
+      "/Project Architecture/Connectors/BUSH1": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH2": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH3": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH4": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH5": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH6": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH7": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH8": [
+        "BUSH"
+      ],
+      "/Project Architecture/Connectors/BUSH9": [
+        "BUSH"
+      ],
       "/Project Architecture/Connectors/COMH.N": [
         "ISO"
       ],
@@ -826,6 +853,9 @@
       ],
       "/Project Architecture/Connectors/COML{P N}": [
         "ISO"
+      ],
+      "/Project Architecture/Connectors/GND": [
+        "TAP"
       ],
       "/Project Architecture/Connectors/TMP1": [
         "TEMP"
@@ -880,6 +910,12 @@
       ],
       "/Project Architecture/Connectors/T_P[1..8]": [
         "TEMP"
+      ],
+      "/Project Architecture/Connectors/VMODULE": [
+        "TAP"
+      ],
+      "/Project Architecture/Connectors/{VMODULE GND TAP[0..8]}": [
+        "TAP"
       ],
       "/Project Architecture/Daisy Chain/COMH.CT": [
         "ISO"
@@ -1269,7 +1305,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "Q1-2,U1-6,D1-2,TP1-20,R1-86,JP1,G1-3,CR1-4,#PWR1-66,C1-84,#G1-2,J1-8,H1-6,NT1-2,FID1-6",
+    "used_designators": "Q1-2,F1-11,G1-3,#PWR1-66,CR1-4,D1-2,U1-6,C1-84,#G1-2,J1-12,H1-6,TP1-20,JP1,R1-86,NT1-2,FID1-6",
     "variants": []
   },
   "sheets": [
@@ -1339,7 +1375,7 @@
     "RELEASE_TITLE_1.0.2": "",
     "RELEASE_TITLE_1.1.0": "",
     "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
-    "REVISION": "+ (Unreleased)",
+    "REVISION": "1.0.0",
     "SHEET_NAME_1": "Cover Page",
     "SHEET_NAME_10": "Revision History",
     "SHEET_NAME_11": "......................................",

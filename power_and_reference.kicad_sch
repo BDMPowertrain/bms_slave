@@ -6,6 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Power & Reference")
+		(date "2026-10-28")
+		(rev "${REVISION}")
+		(company "${COMPANY}")
 	)
 	(lib_symbols
 		(symbol "Jumper:SolderJumper_2_Open"
@@ -4867,10 +4870,10 @@
 		)
 		(uuid "c86552e6-3586-4735-9c7a-06e6e47b1bfe")
 	)
-	(text_box "LAYOUT NOTE: POWER (TI SLUSE81F)\n\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1, p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged (pkg drawing notes 8-9, p.220)."
+	(text_box "LAYOUT NOTE: POWER\n\n1. Bypass caps as close as possible, REFHP most critical (10.1.2, p.205).\n2. Ground groups per table; islands on L1, join on L2 (10.1.1, Fig. 10-1, p.203-204). NEG5V -> CVSS per 10.1.1 (Fig. 8-1 shows AVSS; same net).\n3. Q1 DPAK: >= 4 cm2 VCOLL copper on L1+L4, stitched; away from U1 and R_CB. R20/R21 share dissipation (8.2.1.2.2, Fig. 8-3, p.193).\n4. Thermal pad: PAP0064F land pattern, vias tented/plugged (pkg drawing notes 8-9, p.220)."
 		(exclude_from_sim no)
 		(at 210.82 71.12 0)
-		(size 50.8 30.48)
+		(size 68.58 25.4)
 		(margins 2.25 2.25 2.25 2.25)
 		(stroke
 			(width 1)
@@ -4892,7 +4895,7 @@
 		)
 		(uuid "219e4732-1062-4f4e-b16d-65f901e75815")
 	)
-	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI SLUSE81F 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
+	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI Datasheet 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
 		(exclude_from_sim no)
 		(at 15.24 157.48 0)
 		(size 78.74 37.994)
@@ -4963,7 +4966,7 @@
 		)
 		(uuid "8cd11304-dbb4-4155-8f33-4fd52862895e")
 	)
-	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI SLUSE81F 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
+	(text_box "DESIGN NOTE: CVDD LOAD BUDGET\n(TI Datasheet 7.3.1.5 p.23; ILIM 6.5 p.12; ISHDN 6.5 p.11; modes 7.4 p.103)\n\n1. CVDD = 5 V LDO for daisy chain + I/O. Allowed external load:\n	10 mA in ACTIVE/SLEEP, 5 mA in SHUTDOWN. Current limit 35 mA min.\n2. External loads on this board:\n	RX tie to CVDD     ~0 mA   (input leakage only)\n	LED D1 + R22 2k0   ~1.5 mA (only when JP1 bridged)\n	TOTAL              ~1.5 mA of 10 mA -> OK\n3. Daisy-chain comm current (~10 mA during broadcast) is internal, not part of the 10 mA external budget.\n4. DO NOT add other loads to CVDD. Temp sensors run from TSREF; balancing current comes from the cells.\n5. SHUTDOWN: CVDD regulator is off, but the pin follows LDOIN (for WAKE detection) - it is NOT 0 V. IC draws 16-23 uA in SHUTDOWN; LED would add ~1 mA (~50x). JP1 OPEN in the car. Bridge only for bench debug."
 		(exclude_from_sim no)
 		(at 210.82 106.68 0)
 		(size 68.58 38.1)

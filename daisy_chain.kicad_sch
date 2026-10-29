@@ -6,6 +6,9 @@
 	(paper "A3")
 	(title_block
 		(title "Daisy Chain")
+		(date "2026-10-28")
+		(rev "${REVISION}")
+		(company "${COMPANY}")
 	)
 	(lib_symbols
 		(symbol "power:GND"
@@ -4575,7 +4578,7 @@
 		)
 		(uuid "20e24bfa-a15e-4c6a-9cec-a7ab7d02680e")
 	)
-	(text_box "DESIGN NOTE: DAISY CHAIN ISOLATION\n\n1. Transformer isolation per SLUSE81F Table 8-5 / Fig 8-9: R_TERM 1 kΩ, R_SERIES 49.9 Ω, C_BYPASS 220 pF/50 V C0G, centre-tap cap 100 pF to GND, TVS PESD1CAN on chip side.\n2. Cable-side centre taps (U2-5, U3-5) are left NC per Fig 8-9.\n3. Stack device: RX tied to CVDD, TX and NFAULT left NC (SLUSE81F 8.2.1.2.6).\n4. U3 is drawn with chip-side pins 1/3 opposite to U2. Polarity is preserved end to end (P->P, N->N).\n5. Ring architecture: COMH (J2) goes up the stack, COML (J1) goes down. J1 = 43650-0200 single-row, J2 = 43045-0200 dual-row so a cable cannot connect COMH to COMH.\n6. Use the same transformer PN on both ends of every link, including the master (TI SLVAEP4 5.1)."
+	(text_box "DESIGN NOTE: DAISY CHAIN ISOLATION\n\n1. Transformer isolation per Datasheet Table 8-5 / Fig 8-9: R_TERM 1 kΩ, R_SERIES 49.9 Ω, C_BYPASS 220 pF/50 V C0G, centre-tap cap 100 pF to GND, TVS PESD1CAN on chip side.\n2. Cable-side centre taps (U2-5, U3-5) are left NC per Fig 8-9.\n3. Stack device: RX tied to CVDD, TX and NFAULT left NC (Datasheet 8.2.1.2.6).\n4. U3 is drawn with chip-side pins 1/3 opposite to U2. Polarity is preserved end to end (P->P, N->N).\n5. Ring architecture: COMH (J2) goes up the stack, COML (J1) goes down. J1 = 43650-0200 single-row, J2 = 43045-0200 dual-row so a cable cannot connect COMH to COMH.\n6. Use the same transformer PN on both ends of every link, including the master (TI SLVAEP4 5.1)."
 		(exclude_from_sim no)
 		(at 78.74 111.76 0)
 		(size 76.2 35.56)
@@ -4598,7 +4601,7 @@
 		)
 		(uuid "d3a53d42-2353-40fb-ba88-dd0ac93b5dd8")
 	)
-	(text_box "LAYOUT NOTE: DAISY CHAIN (TI SLUSE81F 10.1.4, Fig 10-3)\n\n1. COMH and COML pairs: short, straight, same layer, parallel, length matched. No vias in the pairs.\n2. R_TERM and C_BYPASS close to U1 pins 40-43.\n3. Solid GND under the chip-side parts (R, C, TVS) is required for the bypass and TVS returns. Keep unrelated traces out of this area, and never route a COM pair across a plane seam.\n4. No copper on ANY layer under the transformer bodies or between the transformer cable side and J1/J2.\n5. Transformer barrier: 7.11 mm pad gap meets EV.7.5.7 300-600 V coated creepage (4.0 mm) and clearance (3.0 mm). Keep >= 4.0 mm on all layers. No plated holes, vias or pours inside the isolation zone.\n6. Place each transformer next to its connector.\n7. TP11-TP14: bare SMD pads on the trace, no stubs."
+	(text_box "LAYOUT NOTE: DAISY CHAIN (TI Datasheet 10.1.4, Fig 10-3)\n\n1. COMH and COML pairs: short, straight, same layer, parallel, length matched. No vias in the pairs.\n2. R_TERM and C_BYPASS close to U1 pins 40-43.\n3. Solid GND under the chip-side parts (R, C, TVS) is required for the bypass and TVS returns. Keep unrelated traces out of this area, and never route a COM pair across a plane seam.\n4. No copper on ANY layer under the transformer bodies or between the transformer cable side and J1/J2.\n5. Transformer barrier: 7.11 mm pad gap meets EV.7.5.7 300-600 V coated creepage (4.0 mm) and clearance (3.0 mm). Keep >= 4.0 mm on all layers. No plated holes, vias or pours inside the isolation zone.\n6. Place each transformer next to its connector.\n7. TP11-TP14: bare SMD pads on the trace, no stubs."
 		(exclude_from_sim no)
 		(at 78.74 152.4 0)
 		(size 76.2 38.1)
