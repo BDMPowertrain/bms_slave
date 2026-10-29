@@ -1,5 +1,13 @@
-# KiBot output for generating PCB 3D model in STEP format
-# https://kibot.readthedocs.io/en/latest/configuration/outputs/step.html
+# KiBot output for generating the PCB 3D model in STEP format.
+# https://kibot.readthedocs.io/en/latest/configuration/outputs/export_3d.html
+#
+# Uses `export_3d` (KiCad 9+) rather than the older `step` output, because
+# only export_3d can include copper, silkscreen and soldermask geometry.
+# Equivalent to:
+#   kicad-cli pcb export step --subst-models --include-tracks --include-pads
+#     --include-zones --include-inner-copper --include-silkscreen
+#     --include-soldermask --cut-vias-in-body --fill-all-vias
+#     --drill-origin --min-distance=0.01mm
 
 kibot:
   version: 1
@@ -7,11 +15,31 @@ kibot:
 outputs:
 - name: @NAME@
   comment: '@COMMENT@'
-  type: step
+  type: export_3d
   category: '@DIR@'
   dir: '@DIR@'
   options:
     output: '%f%I%v.%x'
+    format: step
+    # Coordinates relative to the drill/place origin (Place -> Drill/Place
+    # File Origin in the PCB editor) so the model lines up with fab outputs.
+    origin: drill
+    units: millimeters
+    min_distance: 0.01
+    subst_models: true          # use STEP/IGS models in place of VRML ones
+    include_tracks: true        # tracks and vias
+    include_pads: true
+    include_zones: true
+    include_inner_copper: true
+    include_silkscreen: true    # flat faces
+    include_soldermask: true    # flat faces
+    # fuse_shapes is OFF on purpose: on real boards OpenCASCADE often reports
+    # "Problems encountered while fusing shapes", which makes kicad-cli exit 2
+    # and fails the CI run (the STEP is still written, but KiBot sees an error).
+    # Unfused copper is fine for fit checks and enclosure work, and exports ~2x faster.
+    fuse_shapes: false
+    cut_vias_in_body: true      # via holes cut through the board body
+    fill_all_vias: true         # don't cut via holes in copper layers
 
 definitions:
   NAME: step

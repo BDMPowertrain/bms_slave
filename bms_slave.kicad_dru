@@ -1,0 +1,182 @@
+(version 1)
+# PCBWay Custom DRC for KiCad 10 - EV27 BMS slave
+# 4 layers, 1 oz outer and 1 oz inner, 1.6 mm. Optimized for lowest cost.
+# PCBWay limits: trace/space 0.1 mm (0.15 rec.), drill 0.2 mm min (under 0.2 costs more),
+# copper to edge 0.3 mm.
+
+# ----------------------------------- Minimum trace width and spacing --------------------
+
+# 1oz copper
+(rule "Minimum Trace Width and Spacing (outer layer)"
+(constraint track_width (min 0.15mm))
+(constraint clearance (min 0.15mm))
+(layer outer)
+(condition "A.Type == 'track'"))
+
+(rule "Minimum Trace Width and Spacing (innner layer)"
+(constraint track_width (min 0.15mm))
+(constraint clearance (min 0.15mm))
+(layer inner)
+(condition "A.Type == 'track'"))
+
+# ------------------------------------------------------------------------------------------------------
+
+# Drill/hole size - listed here to maintain order of rule application. Must not override rule set in Via hole/diameter size below.
+(rule "drill hole size (mechanical)"
+(constraint hole_size (min 0.2mm) (max 6.3mm)))
+
+# ----------------------------------- Via hole/diameter size -------------------------------------------
+
+# 0.2 mm drill / 0.5 mm pad = 0.15 mm ring per side, meets PCBWay
+(rule "Minimum Via Diameter and Hole Size"
+(constraint hole_size (min 0.2mm))
+(constraint via_diameter (min 0.5mm))
+(constraint annular_width (min 0.15mm))
+(condition "A.Type == 'via'"))
+
+
+# ----------------------------------- Drill/hole size --------------------------------------------------
+
+(rule "PTH Hole Size"
+(constraint hole_size (min 0.25mm) (max 6.35mm))
+(condition "A.Type != 'Via' && A.isPlated()"))
+
+(rule "Minimum Non-plated Hole Size"
+(constraint hole_size (min 0.5mm))
+(condition "A.Type == 'pad' && !A.isPlated()"))
+
+(rule "Pad Size"
+(constraint hole_size (min 0.25mm))
+(constraint annular_width (min 0.15mm))
+(condition "A.Type == 'Pad' && A.isPlated()"))
+
+(rule "Min. Plated Slot Width"
+(constraint hole_size (min 0.5mm))
+(condition "(A.Hole_Size_X != A.Hole_Size_Y) && A.isPlated()"))
+
+(rule "Min. Non-Plated Slot Width"
+(constraint hole_size (min 0.8mm))
+(condition "(A.Hole_Size_X != A.Hole_Size_Y) && !A.isPlated()"))
+
+
+# ----------------------------------- Minimum clearance ------------------------------------------------
+
+(rule "hole to hole clearance (different nets)"
+(constraint hole_to_hole (min 0.5mm))
+(condition "A.Net != B.Net"))
+
+(rule "via to track clearance"
+(constraint hole_clearance (min 0.254mm))
+(condition "A.Type == 'via' && B.Type == 'track'"))
+
+(rule "via to via clearance (same nets)"
+(constraint hole_to_hole (min 0.254mm))
+(condition "A.Type == 'via' && B.Type == A.Type && A.Net == B.Net"))
+
+(rule "pad to pad clearance (with hole, different nets)"
+(constraint hole_to_hole (min 0.5mm))
+(condition "A.Type == 'pad' && B.Type == A.Type && A.Net != B.Net"))
+
+(rule "pad to pad clearance (without hole, different nets)"
+(constraint clearance (min 0.15mm))
+(condition "A.Type == 'Pad' && B.Type == 'Pad'"))
+
+(rule "NPTH to Track clearance"
+(constraint hole_clearance (min 0.254mm))
+(condition "A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track'"))
+
+(rule "NPTH with copper around"
+(constraint hole_clearance (min 0.20mm))
+(condition "A.Pad_Type == 'NPTH, mechanical' && B.Type != 'track'"))
+
+(rule "PTH to Track clearance"
+(constraint hole_clearance (min 0.33mm))
+(constraint clearance (min 0.2mm))
+(condition "A.isPlated() && A.Type != 'Via' && B.Type == 'track'"))
+
+# ----------------------------------- Board Outlines (PICK ONE) -------------------------------------
+#Default Routed Edge Clearance (no condition, so pours are pulled back too)
+(rule "Trace to Outline"
+(constraint edge_clearance (min 0.3mm)))
+
+# ----------------------------------- Silkscreen ----------------------------------------------------
+(rule "Minimum Text"
+(constraint text_thickness (min 0.15mm))
+(constraint text_height (min 0.8mm))
+(layer "?.Silkscreen"))
+
+(rule "Pad to Silkscreen"
+(constraint silk_clearance (min 0.15mm))
+(layer outer)
+(condition "A.Type == 'pad' && (B.Type == 'text' || B.Type == 'graphic')"))
+
+# ----------------------------------- Test Points Courtyard -----------------------------------------
+(rule "Test Point Courtyard Exclusion"
+(constraint courtyard_clearance (min -1mm))
+(condition "A.Reference =='TP*'"))
+
+# ----------------------------------- Fiducials Courtyard -------------------------------------------
+(rule "Fiducial Courtyard Exclusion"
+(constraint courtyard_clearance (min -1mm))
+(condition "A.Reference =='FM*'"))
+
+# ----------------------------------- Keep Outs -------------------------------------------
+# Needs rule areas named exactly DAISY_KO and ISO_ZONE (one per port, COMH + COML)
+
+# 1. Cable side of the transformers vs everything else
+(rule "ISO clearance"
+(constraint clearance (min 3mm))
+(condition "A.NetClass == 'ISO' && B.NetClass != 'ISO'"))
+
+# 2. Inside the daisy keep-out: only daisy nets, plus GND for cap/TVS returns
+(rule "DAISY_KO foreign copper"
+(constraint disallow track via)
+(condition "A.intersectsArea('DAISY_KO') && A.NetClass != 'DAISY' && A.NetClass != 'ISO' && A.NetClass != 'GND'"))
+
+# 3. Inside the cable-side zone: only ISO nets
+(rule "ISO_ZONE foreign copper"
+(constraint disallow track via)
+(condition "A.intersectsArea('ISO_ZONE') && A.NetClass != 'ISO'"))
+
+# ----------------------------------- Daisy Chain -------------------------------------------
+
+# Layout: shield | pair | shield | pair | shield
+# 3W outside the pair: 0.2 mm trace -> 0.4 mm gap to other pairs, shield vias, GND pour.
+# Pads are excluded so tracks can leave pads at normal clearance.
+# Relaxed inside U1's courtyard where the 0.5 mm pin pitch makes it impossible.
+# Pair-to-pair pitch = 0.5 via + 0.4 + (0.2 + 0.2 + 0.2) pair + 0.4 = 1.9 mm.
+(rule "Daisy 3W spacing"
+(constraint clearance (min 0.4mm))
+(condition "A.Type == 'track' && A.NetClass == 'DAISY' && B.Type != 'Pad' && !A.intersectsCourtyard('U1') && !A.intersectsArea('U1_FANOUT')"))
+
+# Inside the pair: P to N at the diff pair gap (must come after the 3W rule so it wins)
+(rule "Daisy pair gap"
+(constraint clearance (min 0.2mm))
+(condition "A.NetClass == 'DAISY' && A.isCoupledDiffPair()"))
+
+# 4. Daisy pairs: P/N length matched
+(rule "Daisy skew"
+(constraint skew (max 0.5mm) (within_diff_pairs))
+(condition "A.inDiffPair('*COM*')"))
+
+# ----------------------------------- Cell Sense VC/CB Match ---------------------------------
+# VCn (top) and CBn (bottom) same length within 10 mm
+(rule "Cell 0 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC0' || A.NetName == '*/CB0'"))
+(rule "Cell 1 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC1' || A.NetName == '*/CB1'"))
+(rule "Cell 2 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC2' || A.NetName == '*/CB2'"))
+(rule "Cell 3 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC3' || A.NetName == '*/CB3'"))
+(rule "Cell 4 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC4' || A.NetName == '*/CB4'"))
+(rule "Cell 5 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC5' || A.NetName == '*/CB5'"))
+(rule "Cell 6 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC6' || A.NetName == '*/CB6'"))
+(rule "Cell 7 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC7' || A.NetName == '*/CB7'"))
+(rule "Cell 8 VC/CB match" (constraint skew (max 10mm)) (condition "A.NetName == '*/VC8' || A.NetName == '*/CB8'"))
+
+# ----------------------------------- U1 Fan-out -------------------------
+# BQ79616 is 0.5 mm pitch: pad gap ~0.2 mm, so net class clearances (BAL 0.3, TAP 0.5) and
+# wide tracks (BAL 0.4, GND 0.4) cannot fit between pins. Inside U1's courtyard, or a rule
+# area named U1_FANOUT drawn ~2 mm around it, everything drops to 0.15 clearance and the
+# router necks tracks to 0.2 mm. Widen back to the net class width once outside.
+(rule "U1 fan-out"
+(constraint clearance (min 0.15mm))
+(constraint track_width (min 0.15mm) (opt 0.2mm))
+(condition "A.intersectsCourtyard('U1') || A.intersectsArea('U1_FANOUT')"))

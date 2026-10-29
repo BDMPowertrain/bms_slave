@@ -60,17 +60,17 @@ groups:
   # DRAFT's README-only pass targets this instead of the bare md_readme
   # output. md_readme has `collect_images: no` (see kibot_out_md_report.yaml)
   # so it no longer drags in pdf_fabrication/the drill table just to
-  # generate a README — but that also means nothing else makes its two
-  # angled 3D renders actually exist, since `${..._outpath}` in the
+  # generate a README — but that also means nothing else makes its
+  # 3D renders actually exist, since `${..._outpath}` in the
   # template only substitutes the expected path, it doesn't run the output
-  # that creates it. This group generates them explicitly instead. (Every
+  # that creates it. This group generates the README's top/bottom renders
+  # (and the angled ones, kept as standalone images) explicitly instead. (Every
   # other variant gets these for free via all_group's `assembly` ->
   # `3d_render` membership, so only DRAFT needs this.)
   - name: readme_group
     outputs:
       - @MD_README_OUTPUT@
-      - @PNG_3D_VIEWER_ANGLED_TOP@
-      - @PNG_3D_VIEWER_ANGLED_BOTTOM@
+      - 3d_render
 
   - name: fab
     outputs:
@@ -111,7 +111,7 @@ groups:
   - name: tables
     outputs:
       - @CSV_COMP_COUNT_OUPUT@
-      # - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 — configure.py uncomments this line when enabled
+      # - @CSV_IMPEDANCE_TABLE_OUTPUT@   # Tier 2 - enable via configure.py
       - @CSV_DRILL_TABLE_OUTPUT@
       - testpoints
       - notes
@@ -184,11 +184,11 @@ import:
   # Set text variables
   - file: kibot_pre_set_text_variables.yaml
     definitions:
-      PROJECT_NAME: @PROJECT_NAME@
+      PROJECT_NAME: "@PROJECT_NAME@"
       BOARD_NAME: @BOARD_NAME@
-      DESCRIPTION: @DESCRIPTION@
-      COMPANY: @COMPANY@
-      DESIGNER: @DESIGNER@
+      DESCRIPTION: "@DESCRIPTION@"
+      COMPANY: "@COMPANY@"
+      DESIGNER: "@DESIGNER@"
       SCRIPTS_DIR: @SCRIPTS_DIR@
       FABRICATION_DIR: @FABRICATION_DIR@
       ASSEMBLY_DIR: @ASSEMBLY_DIR@
@@ -404,6 +404,7 @@ import:
       ROTATE_Y: @3D_VIEWER_ROT_Y@
       ROTATE_Z: @3D_VIEWER_ROT_Z@
       ZOOM: @3D_VIEWER_ZOOM@
+      ORTHOGRAPHIC: false
       KEY_COLOR: '@KEY_COLOR@'
 
   - file: kibot_out_png_3d_viewer.yaml
@@ -417,6 +418,7 @@ import:
       ROTATE_Y: @3D_VIEWER_ROT_Y@
       ROTATE_Z: -@3D_VIEWER_ROT_Z@
       ZOOM: @3D_VIEWER_ZOOM@
+      ORTHOGRAPHIC: false
       KEY_COLOR: '@KEY_COLOR@'
 
   # STEP file ------------------------------------------------------------------
@@ -506,15 +508,15 @@ definitions:
 
   # Metadata — MEMBER: set once by configure.py, never by hand =================
 
-  PROJECT_NAME: Board Name
-  BOARD_NAME: BOARD_NAME
-  DESCRIPTION: One-line description of what this board does.
+  PROJECT_NAME: "BMS Slave"
+  BOARD_NAME: BMS_SLAVE
+  DESCRIPTION: "8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain."
 
-  COMPANY: Blue Devil Motor Sports
-  DESIGNER: Author
+  COMPANY: "Blue Devil Motor Sports"
+  DESIGNER: "Aidan Brzezinski"
 
   LOGO: 'Logos/bdm_logo.png'
-  GIT_URL: 'https://github.com/BDMPowertrain/PLACEHOLDER'
+  GIT_URL: 'https://github.com/BDMPowertrain/BMS_Slave'
 
   # Preflight ==================================================================
 
@@ -556,7 +558,7 @@ definitions:
   3D_VIEWER_ROT_X: 2
   3D_VIEWER_ROT_Y: -1
   3D_VIEWER_ROT_Z: 1
-  3D_VIEWER_ZOOM: -1
+  3D_VIEWER_ZOOM: -4  # angled views only: camera distance (they render in perspective, which is what lets this shrink the board). More negative = smaller. auto_crop trims the margin.
   KEY_COLOR: '#00FF00' # Background color to remove. Use a color different from your PCB
 
   # Output directories =========================================================
