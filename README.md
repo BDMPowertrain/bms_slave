@@ -33,7 +33,7 @@
 | Dimensions | 80.0 × 45.0 mm |
 | Company | Blue Devil Motor Sports |
 | Designer | Aidan Brzezinski |
-| Revision | 1.0.0+ (Unreleased) |
+| Revision | + (Unreleased) |
 
 ***
 
