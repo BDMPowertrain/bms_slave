@@ -9,14 +9,16 @@ Run with no arguments for an interactive menu (same script on every OS):
 
 This is the only supported way to change board metadata, rename a freshly
 templated project, or change a board's stage (KiBot variant). It owns the
-metadata in kibot_yaml/kibot_main.yaml, the `kibot_variant:` line in
-.github/workflows/ci.yaml, and COMPANY/REVISION in the .kicad_pro text
-variables. Don't hand-edit those.
+metadata in kibot_yaml/kibot_main.yaml, the `kibot_variant:` and
+`release_version:` lines in .github/workflows/ci.yaml, and COMPANY/REVISION in
+the .kicad_pro text variables. Don't hand-edit those.
 
 Python 3 standard library only; no network access, no pip install.
 
 Non-interactive use (for scripts/CI):
     configure.py --stage CHECKED     set the stage directly
+    configure.py --stage RELEASED --version 1.0.0
+                                     release 1.0.0 on the next push
     configure.py --check             validate config, exit 1 on problems
     configure.py --dry-run           show what any action would change
 """
@@ -31,11 +33,14 @@ from pathlib import Path
 PROJECT_DIR = Path(__file__).resolve().parent
 KIBOT_MAIN = PROJECT_DIR / "kibot_yaml" / "kibot_main.yaml"
 CI_YAML = PROJECT_DIR / ".github" / "workflows" / "ci.yaml"
+CHANGELOG = PROJECT_DIR / "CHANGELOG.md"
 
 PLACEHOLDER_STEM = "BOARD_TEMPLATE"
 # Lowercase letters, digits, underscores. No car/year prefix, so the same
 # naming carries forward to future cars without renames.
 BOARD_NAME_RE = re.compile(r"^[a-z0-9]+(_[a-z0-9]+)*$")
+# Must match what ci.yaml accepts for release_version.
+RELEASE_VERSION_RE = re.compile(r"^[0-9]+\.[0-9]+\.[0-9]+$")
 
 STAGES = [
     ("DRAFT", "Schematic still being drawn.",
@@ -44,6 +49,8 @@ STAGES = [
      "Generates all schematic and PCB documents. ERC/DRC not run."),
     ("CHECKED", "Board believed correct; ready for procurement/fab.",
      "Generates all documents and ENFORCES ERC/DRC - CI fails on errors."),
+    ("RELEASED", "Board is done; publish a numbered release.",
+     "Same as CHECKED, then CI tags the version, updates main and creates the GitHub Release."),
 ]
 STAGE_NAMES = [s[0] for s in STAGES]
 
@@ -131,6 +138,17 @@ def validate_board_name(value):
     if not BOARD_NAME_RE.match(value):
         return ("Lowercase letters, digits and single underscores only "
                 "(e.g. tim, bse_apps) - no spaces, hyphens or car/year prefix.")
+    return None
+
+
+def validate_release_version(value):
+    if not RELEASE_VERSION_RE.match(value):
+        return "Use three numbers, like 1.0.0 (no leading 'v')."
+    existing = git_version_tags()
+    if value in existing:
+        return f"{value} is already released. Pick a higher version."
+    if existing and version_key(value) <= version_key(existing[0]):
+        return f"Must be higher than the last release, {existing[0]}."
     return None
 
 
@@ -267,6 +285,136 @@ def read_stage():
     return m.group(1) if m else "DRAFT"
 
 
+def read_release_version():
+    m = re.search(r"^\s*release_version:\s*[\"']?([^\"'\s]*)", read(CI_YAML), re.MULTILINE)
+    return m.group(1) if m else ""
+
+
+def set_stage_lines(text, stage, version):
+    """Set `kibot_variant:` and `release_version:` in ci.yaml, adding the
+    latter right after the former if this repo's ci.yaml predates it."""
+    text = re.sub(r"^(\s*kibot_variant:\s*)\S+", rf"\g<1>{stage}", text, count=1, flags=re.MULTILINE)
+    line = f'release_version: "{version}"'
+    if re.search(r"^\s*release_version:", text, re.MULTILINE):
+        return re.sub(r"^(\s*)release_version:.*$", rf"\g<1>{line}", text, count=1, flags=re.MULTILINE)
+    return re.sub(r"^(\s*)(kibot_variant:.*)$", rf"\g<1>\g<2>\n\g<1>{line}", text, count=1, flags=re.MULTILINE)
+
+
+def version_key(v):
+    return tuple(int(n) for n in v.split("."))
+
+
+def git_version_tags():
+    """Release tags known locally, highest first. Tags made elsewhere only
+    show up after a `git pull`; CI re-checks against GitHub anyway."""
+    try:
+        out = subprocess.run(["git", "-C", str(PROJECT_DIR), "tag", "-l"],
+                             capture_output=True, text=True, check=True).stdout
+    except Exception:
+        return []
+    return sorted((t for t in out.split() if RELEASE_VERSION_RE.match(t)), key=version_key, reverse=True)
+
+
+# ----------------------------------------------------------------------------
+# CHANGELOG.md: the [Unreleased] section becomes the release notes
+# ----------------------------------------------------------------------------
+
+NOTE_CATEGORIES = ("Fixed", "Added", "Changed", "Removed")
+# The template's example bullets, which mean "nothing written yet".
+NOTE_PLACEHOLDERS = {"Fixes", "Additions", "Changes", "Deletions"}
+UNRELEASED_RE = re.compile(r"^## \[Unreleased\][^\n]*\n(.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
+
+
+def read_release_notes(text):
+    """{category: [bullet, ...]} from the [Unreleased] section, standard
+    categories first. Placeholder bullets are dropped; a non-bullet line is
+    kept as a continuation of the bullet above it."""
+    notes = {c: [] for c in NOTE_CATEGORIES}
+    m = UNRELEASED_RE.search(text)
+    if not m:
+        return notes
+    category = "Changed"
+    for line in m.group(1).split("\n"):
+        if line.startswith("### "):
+            category = line[4:].strip()
+            notes.setdefault(category, [])
+        elif re.match(r"^\s*[-*]\s+", line):
+            bullet = re.sub(r"^\s*[-*]\s+", "", line).strip()
+            if bullet not in NOTE_PLACEHOLDERS:
+                notes[category].append(bullet)
+        elif line.strip() and notes[category]:
+            notes[category][-1] += "\n    " + line.strip()
+    return notes
+
+
+def write_release_notes(text, notes):
+    body = "".join(f"### {c}\n\n" + "".join(f"-   {b}\n" for b in bullets) + "\n"
+                   for c, bullets in notes.items() if bullets)
+    section = "## [Unreleased]\n\n" + body
+    if UNRELEASED_RE.search(text):
+        return UNRELEASED_RE.sub(lambda _: section, text, count=1)
+    m = re.search(r"^## ", text, re.MULTILINE)
+    if m:
+        return text[:m.start()] + section + text[m.start():]
+    return (text.rstrip("\n") + "\n\n" if text.strip() else "# Changelog\n\n") + section
+
+
+def print_release_notes(notes):
+    if not any(notes.values()):
+        print("    (empty)")
+    for c, bullets in notes.items():
+        if bullets:
+            print(f"    {c}:")
+            for b in bullets:
+                print(f"      - {b}")
+
+
+def edit_release_notes(plan):
+    """Interactive editor for the [Unreleased] section; adds the edit to
+    `plan`. Returns False if the user backs out of releasing empty notes."""
+    text = plan.text_of(CHANGELOG) if CHANGELOG.exists() else ""
+    notes = read_release_notes(text)
+    heading("Release notes (CHANGELOG.md [Unreleased])")
+    print_release_notes(notes)
+    if ask_yes_no("Edit the release notes now?", default=not any(notes.values())):
+        for category, bullets in notes.items():
+            print(f"\n  {category}:")
+            while True:
+                for i, b in enumerate(bullets, start=1):
+                    print(f"    {i}. {b}")
+                hint = f", -1..-{len(bullets)} removes that line" if bullets else ""
+                entry = ask(f"Add a line (Enter for next section{hint})", validate=lambda v: validate_note(v, bullets))
+                if not entry:
+                    break
+                if re.match(r"^-\d+$", entry):
+                    bullets.pop(int(entry[1:]) - 1)
+                else:
+                    bullets.append(entry)
+        print("\n  Release notes will be:")
+        print_release_notes(notes)
+    if not any(notes.values()) and not ask_yes_no("The release notes are empty. Release anyway?", default=False):
+        print("Cancelled - nothing written.")
+        return False
+    plan.write(CHANGELOG, write_release_notes(text, notes), "release notes")
+    return True
+
+
+def validate_note(value, bullets):
+    if re.match(r"^-\d+$", value):
+        n = int(value[1:])
+        return None if 1 <= n <= len(bullets) else f"There's no line {n}."
+    if value in NOTE_PLACEHOLDERS:
+        return "Describe the actual change."
+    return None
+
+
+def suggest_next_version(tags):
+    if not tags:
+        return "1.0.0"
+    major, minor, _ = version_key(tags[0])
+    return f"{major}.{minor + 1}.0"
+
+
 def git_remote_url():
     try:
         url = subprocess.run(["git", "-C", str(PROJECT_DIR), "remote", "get-url", "origin"],
@@ -311,7 +459,12 @@ class Plan:
 
     def apply(self):
         for old, new in self.renames:
-            old.rename(new)
+            if old.name.lower() == new.name.lower():  # case-only: go via a temp name
+                tmp = old.with_name(old.name + ".renaming")
+                old.rename(tmp)
+                tmp.rename(new)
+            else:
+                old.rename(new)
         for path, (text, _) in self.writes.items():
             target = path
             for old, new in self.renames:
@@ -356,36 +509,58 @@ def commit(plan, dry_run, confirm=True):
 # Actions
 # ----------------------------------------------------------------------------
 
-def action_stage(dry_run, requested=None):
+def action_stage(dry_run, requested=None, version=None):
     current = read_stage()
+    current_version = read_release_version() if current == "RELEASED" else ""
     if requested is None:
         heading("Project stage")
         for i, (name, when, what) in enumerate(STAGES, start=1):
             mark = "  <- current" if name == current else ""
             print(f"  {i}. {name}{mark}\n     {when}\n     {what}")
-        print("\n  RELEASED isn't chosen here - pushing a version tag sets it automatically.")
-        choice = ask("Choose 1-3 (Enter to cancel)", validate=lambda v: None if v in ("", "1", "2", "3") else "Enter 1, 2 or 3.")
+        choice = ask("Choose 1-4 (Enter to cancel)", validate=lambda v: None if v in ("", "1", "2", "3", "4") else "Enter 1-4.")
         if not choice:
             return
         requested = STAGES[int(choice) - 1][0]
 
     requested = requested.upper()
-    if requested == "RELEASED":
-        raise ConfigError("RELEASED is set by CI when a version tag is pushed, e.g.\n"
-                          "  git checkout main && git pull\n  git tag 1.0.0 && git push origin 1.0.0\n"
-                          "(Check with the Electrical Lead before tagging.)")
     if requested not in STAGE_NAMES:
         raise ConfigError(f"Unknown stage '{requested}'. Choose one of: {', '.join(STAGE_NAMES)}.")
-    if requested == current:
-        print(f"\nAlready at {current}.")
-        return
-    if requested == "CHECKED":
-        print("\n  Note: CHECKED enforces ERC/DRC. If the board still has errors, the next CI run fails until they're fixed.")
 
     plan = Plan()
-    text = read(CI_YAML)
-    plan.write(CI_YAML, re.sub(r"^(\s*kibot_variant:\s*)\S+", rf"\g<1>{requested}", text, count=1, flags=re.MULTILINE),
-               f"stage {current} -> {requested}")
+    if requested == "RELEASED":
+        tags = git_version_tags()
+        print(f"\n  Last release: {tags[0] if tags else 'none yet'}")
+        if version is None:
+            if not sys.stdin.isatty():
+                raise ConfigError("RELEASED needs a version: --stage RELEASED --version 1.0.0")
+            version = ask("Version to release", suggest_next_version(tags), validate_release_version)
+        error = validate_release_version(version)
+        if error:
+            raise ConfigError(error)
+        if sys.stdin.isatty():
+            if not edit_release_notes(plan):
+                return
+        elif not any(read_release_notes(read(CHANGELOG) if CHANGELOG.exists() else "").values()):
+            print("\n  Warning: CHANGELOG.md's [Unreleased] section is empty or placeholder text;"
+                  "\n  that's what the release notes will say.")
+        print(f"\n  On your next push, CI builds with ERC/DRC enforced, then tags {version},\n"
+              "  updates main and creates the GitHub Release, using the notes above.\n"
+              "  (Check with the Electrical Lead before pushing.)")
+    else:
+        if version is not None:
+            raise ConfigError("--version only applies to --stage RELEASED.")
+        version = ""
+        if requested == "CHECKED":
+            print("\n  Note: CHECKED enforces ERC/DRC. If the board still has errors, the next CI run fails until they're fixed.")
+
+    if (requested, version) == (current, current_version) and plan.empty():
+        print(f"\nAlready at {current}{' ' + version if version else ''}.")
+        return
+
+    def label(stage, v):
+        return f"{stage} {v}" if v else stage
+    plan.write(CI_YAML, set_stage_lines(read(CI_YAML), requested, version),
+               f"stage {label(current, current_version)} -> {label(requested, version)}")
     commit(plan, dry_run)
 
 
@@ -406,8 +581,11 @@ def action_board_info(dry_run, first_time=False):
     description = ask("One-sentence description (shown in README)", defs.get("DESCRIPTION", ""), validate_free_text)
     designer = ask("Designer", defs.get("DESIGNER", ""), validate_free_text)
     company = ask("Company", defs.get("COMPANY") or "Blue Devil Motor Sports", validate_free_text)
+    # CI writes values like "+ (Unreleased)" here; don't offer those as a
+    # default the validator would then reject.
+    current_rev = text_vars.get("REVISION") or ""
     revision = ask("Revision (cosmetic; real revisions come from git tags)",
-                   text_vars.get("REVISION") or "0.1.0", validate_revision)
+                   current_rev if not validate_revision(current_rev) else "0.1.0", validate_revision)
 
     impedance_enabled = bool(re.search(r"^\s*-\s*@CSV_IMPEDANCE_TABLE_OUTPUT@", split_definitions(kibot_text)[0], re.MULTILINE))
     impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?", impedance_enabled)
@@ -458,13 +636,21 @@ def plan_rename(plan, old_stem, new_stem):
         old = PROJECT_DIR / f"{old_stem}{ext}"
         new = PROJECT_DIR / f"{new_stem}{ext}"
         if old.exists():
-            if new.exists():
+            # On Windows a case-only rename (BSPD -> bspd) makes `new.exists()`
+            # true for the same file; that's fine, apply() handles it.
+            if new.exists() and not os.path.samefile(old, new):
                 raise ConfigError(f"Can't rename {old.name}: {new.name} already exists.")
             plan.renames.append((old, new))
+    # Only replace the stem where it IS the project name: as a filename
+    # (`BSPD.kicad_sch`) or a whole quoted value (`(project "BSPD"`). A plain
+    # substring replace would also hit e.g. `BSPD_Compare.kicad_sch`, breaking
+    # that sheet reference on case-sensitive filesystems (Linux CI).
+    stem_re = re.compile(rf'(?<![\w.-]){re.escape(old_stem)}(?=\.kicad_\w+|")')
     for path in sorted(PROJECT_DIR.glob("*.kicad_sch")) + sorted(PROJECT_DIR.glob("*.kicad_pro")) + sorted(PROJECT_DIR.glob("*.kicad_pcb")):
         text = plan.text_of(path)
-        if old_stem in text:
-            plan.write(path, text.replace(old_stem, new_stem), f"project name {old_stem} -> {new_stem}")
+        new_text = stem_re.sub(new_stem, text)
+        if new_text != text:
+            plan.write(path, new_text, f"project name {old_stem} -> {new_stem}")
 
 
 def action_show():
@@ -472,7 +658,10 @@ def action_show():
     defs = read_definitions(read(KIBOT_MAIN))
     pro = json.loads(read(PROJECT_DIR / f"{stem}.kicad_pro"))
     heading("Current settings")
-    rows = [("Project file", stem), ("Stage", read_stage()),
+    stage = read_stage()
+    if stage == "RELEASED":
+        stage += f" {read_release_version()}"
+    rows = [("Project file", stem), ("Stage", stage),
             ("Title", defs.get("PROJECT_NAME", "")), ("Board name", defs.get("BOARD_NAME", "")),
             ("Description", defs.get("DESCRIPTION", "")), ("Designer", defs.get("DESIGNER", "")),
             ("Company", defs.get("COMPANY", "")), ("Revision", pro.get("text_variables", {}).get("REVISION", "")),
@@ -528,7 +717,7 @@ def menu(dry_run):
         stem = find_project_stem()
         defs = read_definitions(read(KIBOT_MAIN))
         heading(f"{defs.get('PROJECT_NAME') or stem}  -  stage: {read_stage()}")
-        print("  1. Change project stage (DRAFT / PRELIMINARY / CHECKED)\n"
+        print("  1. Change project stage (DRAFT / PRELIMINARY / CHECKED / RELEASED)\n"
               "  2. Edit board info (title, description, designer, revision...)\n"
               "  3. Show current settings\n"
               "  4. Check config for problems\n"
@@ -552,7 +741,8 @@ def menu(dry_run):
 def main():
     parser = argparse.ArgumentParser(description="BDM board configuration tool. Run with no arguments for the menu.")
     parser.add_argument("--stage", "--variant", dest="stage", metavar="NAME",
-                        help="Set the project stage directly (DRAFT, PRELIMINARY, CHECKED).")
+                        help="Set the project stage directly (DRAFT, PRELIMINARY, CHECKED, RELEASED).")
+    parser.add_argument("--version", metavar="X.Y.Z", help="With --stage RELEASED, the version to release.")
     parser.add_argument("--init", action="store_true", help="Run first-time setup (board info) directly.")
     parser.add_argument("--check", action="store_true", help="Validate the config; exit 1 if there are problems.")
     parser.add_argument("--fix", action="store_true", help="With --check, auto-fix fixable problems.")
@@ -564,7 +754,7 @@ def main():
             sys.exit(0 if action_check(fix=args.fix, dry_run=args.dry_run) else 1)
         if args.stage:
             confirm_kicad_closed(find_project_stem())
-            action_stage(args.dry_run, requested=args.stage)
+            action_stage(args.dry_run, requested=args.stage, version=args.version)
             return
         if not sys.stdin.isatty():
             raise ConfigError("The menu needs an interactive terminal. Use --stage or --check for scripts.")

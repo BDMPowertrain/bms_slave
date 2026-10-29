@@ -2,18 +2,7 @@
 
 ## [Unreleased]
 
-### Fixed
-
--   Fixes
-
-### Added
-
--   Additions
-
 ### Changed
 
--   Changes
+-   Inital Release.
 
-### Removed
-
--   Deletions
