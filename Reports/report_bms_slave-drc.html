@@ -227,13 +227,13 @@
  <td class="cell-info">
    <b>PCB</b>: bms_slave<br>
    <b>Revision</b>: + (Unreleased)<br>
-   <b>Date</b>: 2026-10-21T13:49:36<br>
+   <b>Date</b>: 2026-10-29T03:21:38<br>
    <b>KiCad Version</b>: 10.0.5<br>
  </td>
  <td class="cell-stats">
-   <b>Errors</b>: 3 (+1 excluded)<br>
-   <b>Warnings</b>: 9<br>
-   <b>Total</b>: 12 (+1 excluded)<br>
+   <b>Errors</b>: 1<br>
+   <b>Warnings</b>: 6<br>
+   <b>Total</b>: 7<br>
  </td>
 </tr>
 </table>
@@ -248,69 +248,39 @@
  </thead>
  <tbody>
   <tr id="0">
-   <td class="td-error">clearance</td>
-   <td>Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)</td>
-   <td>@(106.0 mm, 106.0 mm): Pad [<no net>] of FID4 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
+   <td class="td-error">skew_out_of_range</td>
+   <td>Skew between tracks out of range (rule 'Daisy skew' max skew 0.5000 mm; actual -2.3786 mm; target net length 6.6468 mm (from /Project Architecture/Connectors/COMH.N); actual 4.2683 mm)</td>
+   <td>@(170.1 mm, 77.0 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 0.2828 mm<br></td>
   </tr>
   <tr id="1">
-   <td class="td-error">clearance</td>
-   <td>Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)</td>
-   <td>@(158.75 mm, 69.0 mm): Pad [<no net>] of FID6 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
-  </tr>
-  <tr id="2">
-   <td class="td-error">clearance</td>
-   <td>Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)</td>
-   <td>@(106.0 mm, 69.0 mm): Pad [<no net>] of FID5 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
-  </tr>
-  <tr id="3">
-   <td class="td-warning">solder_mask_bridge</td>
-   <td>Rear solder mask aperture bridges items with different nets</td>
-   <td>@(106.0 mm, 69.0 mm): Pad [<no net>] of FID5 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
-  </tr>
-  <tr id="4">
-   <td class="td-warning">solder_mask_bridge</td>
-   <td>Rear solder mask aperture bridges items with different nets</td>
-   <td>@(158.75 mm, 69.0 mm): Pad [<no net>] of FID6 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
-  </tr>
-  <tr id="5">
-   <td class="td-warning">solder_mask_bridge</td>
-   <td>Rear solder mask aperture bridges items with different nets</td>
-   <td>@(106.0 mm, 106.0 mm): Pad [<no net>] of FID4 on L4<br>@(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2<br></td>
-  </tr>
-  <tr id="6">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(106.0 mm, 69.0 mm): Footprint FID3<br></td>
   </tr>
-  <tr id="7">
+  <tr id="2">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(158.75 mm, 69.0 mm): Footprint FID2<br></td>
   </tr>
-  <tr id="8">
+  <tr id="3">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(106.0 mm, 106.0 mm): Footprint FID1<br></td>
   </tr>
-  <tr id="9">
+  <tr id="4">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(106.0 mm, 69.0 mm): Footprint FID5<br></td>
   </tr>
-  <tr id="10">
+  <tr id="5">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(158.75 mm, 69.0 mm): Footprint FID6<br></td>
   </tr>
-  <tr id="11">
+  <tr id="6">
    <td class="td-warning">lib_footprint_mismatch</td>
    <td>Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'</td>
    <td>@(106.0 mm, 106.0 mm): Footprint FID4<br></td>
-  </tr>
-  <tr id="12">
-   <td class="td-excluded">diff_pair_gap_out_of_range</td>
-   <td>Differential pair gap out of range (netclass 'Default' (diff pair) minimum gap 0.2000 mm; actual 0.1500 mm)</td>
-   <td>@(169.15 mm, 79.15 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 1.0000 mm<br>@(169.171638 mm, 79.5 mm): Track [/Project Architecture/Connectors/COMH.N] on L1, length 1.3581 mm<br></td>
   </tr>
  </tbody>
 </table>

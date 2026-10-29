@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-6zuivy3q/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-m1v27q5x/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -21,9 +21,9 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.500 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
-			(name "GIT_HASH_PCB") "d9a607e")
+			(name "GIT_HASH_PCB") "6537258")
 		(textvar
-			(name "GIT_HASH_SCH") "57b5257")
+			(name "GIT_HASH_SCH") "6537258")
 		(textvar
 			(name "GIT_URL") "https://github.com/BDMPowertrain/BMS_Slave")
 		(textvar
@@ -43,9 +43,9 @@
 		(textvar
 			(name "RELEASE_BODY_UNRELEASED") "Version Unreleased not found.")
 		(textvar
-			(name "RELEASE_DATE") "21-Oct-2026")
+			(name "RELEASE_DATE") "28-Oct-2026")
 		(textvar
-			(name "RELEASE_DATE_NUM") "2026-10-21")
+			(name "RELEASE_DATE_NUM") "2026-10-28")
 		(textvar
 			(name "RELEASE_TITLE_1.0.0")
 		)
@@ -150,7 +150,7 @@
 				(title)
 				(company "Blue Devil Motor Sports")
 				(rev "+ (Unreleased)")
-				(date)
+				(date "Date")
 				(source "bms_slave.kicad_sch")
 				(comment
 					(number "1")
@@ -198,7 +198,7 @@
 				(title "Block Diagram")
 				(company "Blue Devil Motor Sports")
 				(rev "+ (Unreleased)")
-				(date)
+				(date "Date")
 				(source "Block Diagram.kicad_sch")
 				(comment
 					(number "1")
@@ -246,7 +246,7 @@
 				(title "Project Architecture")
 				(company "Blue Devil Motor Sports")
 				(rev "+ (Unreleased)")
-				(date)
+				(date "Date")
 				(source "Project Architecture.kicad_sch")
 				(comment
 					(number "1")
@@ -292,9 +292,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			(title_block
 				(title "Connectors")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "connectors.kicad_sch")
 				(comment
 					(number "1")
@@ -340,9 +340,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/e396eed5-f415-436d-900e-61677bb6572f/")
 			(title_block
 				(title "Cell Sense & Balance")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "cell_sense_and_balance.kicad_sch")
 				(comment
 					(number "1")
@@ -388,9 +388,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531/")
 			(title_block
 				(title "Power & Reference")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "power_and_reference.kicad_sch")
 				(comment
 					(number "1")
@@ -436,9 +436,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			(title_block
 				(title "Temperature Sense")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "temperature_sense.kicad_sch")
 				(comment
 					(number "1")
@@ -484,9 +484,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			(title_block
 				(title "Daisy Chain")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "daisy_chain.kicad_sch")
 				(comment
 					(number "1")
@@ -532,9 +532,9 @@
 			(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f4a7f626-808e-4d0f-b4d4-b24a2b39d327/")
 			(title_block
 				(title "Mechanical")
-				(company)
-				(rev)
-				(date)
+				(company "Blue Devil Motor Sports")
+				(rev "+ (Unreleased)")
+				(date "Date")
 				(source "mechanical.kicad_sch")
 				(comment
 					(number "1")
@@ -1083,11 +1083,11 @@
 		(comp
 			(ref "TP1")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1134,11 +1134,11 @@
 		(comp
 			(ref "TP2")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1170,7 +1170,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "c87df593-027f-47bd-a01f-ff5201bb1b92")
+			(tstamps "8d6e8ea5-3e27-45c6-972a-b32ac10e2f2b")
 			(units
 				(unit
 					(name "A")
@@ -1185,11 +1185,11 @@
 		(comp
 			(ref "TP3")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1221,7 +1221,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "4fc55244-c1dc-4b6c-9414-9785843446df")
+			(tstamps "7494588a-92c9-42ef-ad0c-2d4273b2dfde")
 			(units
 				(unit
 					(name "A")
@@ -1236,11 +1236,11 @@
 		(comp
 			(ref "TP4")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1272,7 +1272,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "1827eb90-2494-4ae3-b101-f03a4aef0cba")
+			(tstamps "887c0949-8281-41ec-b9e0-8a49290ef500")
 			(units
 				(unit
 					(name "A")
@@ -1287,11 +1287,11 @@
 		(comp
 			(ref "TP5")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1323,7 +1323,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "3dfd346b-2f29-4392-ba4e-b7e9762e0fb5")
+			(tstamps "ac4df524-17ad-4d67-bf2d-54cc04178c2b")
 			(units
 				(unit
 					(name "A")
@@ -1338,11 +1338,11 @@
 		(comp
 			(ref "TP6")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1374,7 +1374,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "36c4497d-17f7-45c0-8169-754adfc99bcd")
+			(tstamps "af473fab-1444-4721-bea0-31aa19e7c0f5")
 			(units
 				(unit
 					(name "A")
@@ -1389,11 +1389,11 @@
 		(comp
 			(ref "TP7")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1425,7 +1425,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "e679ad8a-fd19-4f8f-953f-710c416fd971")
+			(tstamps "266ea2ce-68b6-43a4-afdd-d245466b83bd")
 			(units
 				(unit
 					(name "A")
@@ -1440,11 +1440,11 @@
 		(comp
 			(ref "TP8")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1476,7 +1476,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "63b6607c-e9ab-480f-b4ca-164bd54dc98a")
+			(tstamps "ef55b618-9bd3-49b6-a740-f511b17d4732")
 			(units
 				(unit
 					(name "A")
@@ -1491,11 +1491,11 @@
 		(comp
 			(ref "TP9")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1527,7 +1527,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "dc35f304-55d2-41ef-a95e-6bf1623ebb2c")
+			(tstamps "8a3e9ad7-56fd-41a2-8d20-aa3a0fcb0d14")
 			(units
 				(unit
 					(name "A")
@@ -1542,11 +1542,11 @@
 		(comp
 			(ref "TP10")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1578,7 +1578,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "fd1f1907-5c68-4579-96d4-6d9aa50701e8")
+			(tstamps "25d09e0c-6abb-447b-acad-819ee45b1893")
 			(units
 				(unit
 					(name "A")
@@ -1593,11 +1593,11 @@
 		(comp
 			(ref "TP11")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1629,7 +1629,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "2f0cc3e9-69da-4f80-aa87-83d1d2dc1f92")
+			(tstamps "430bb193-80e4-428c-abfe-092d63f853c2")
 			(units
 				(unit
 					(name "A")
@@ -1644,11 +1644,11 @@
 		(comp
 			(ref "TP12")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1680,7 +1680,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "dff82355-c2ef-41c4-9d05-9ae121627962")
+			(tstamps "9490920c-f4d5-4d65-814f-8441be53145d")
 			(units
 				(unit
 					(name "A")
@@ -1695,11 +1695,11 @@
 		(comp
 			(ref "TP13")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1731,7 +1731,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "bba74b70-4ceb-4f24-9b11-ec588baa20cd")
+			(tstamps "2dfe6940-1ce8-49ed-82cd-92a62f189eb3")
 			(units
 				(unit
 					(name "A")
@@ -1746,11 +1746,11 @@
 		(comp
 			(ref "TP14")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1782,7 +1782,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "45439ca4-69d4-4db6-a8a8-3d39fb23156c")
+			(tstamps "1b8d05da-c4e9-4f25-b675-792b84f61945")
 			(units
 				(unit
 					(name "A")
@@ -1797,11 +1797,11 @@
 		(comp
 			(ref "TP15")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1833,7 +1833,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "1bb066a0-090a-4352-bc4c-4908dd5de3ac")
+			(tstamps "03d09001-5595-4140-903a-9cc7c062dd4f")
 			(units
 				(unit
 					(name "A")
@@ -1848,11 +1848,11 @@
 		(comp
 			(ref "TP16")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1884,7 +1884,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "90a61f21-2447-4ae3-aa20-2b7a70585be7")
+			(tstamps "9d909fcc-7ece-4f68-8dd2-cb477083c61a")
 			(units
 				(unit
 					(name "A")
@@ -1899,11 +1899,11 @@
 		(comp
 			(ref "TP17")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1935,7 +1935,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "bc7a1eb8-b867-438c-ae56-c63a6a999e79")
+			(tstamps "e9171d08-f072-4c03-b048-799ee7bbea91")
 			(units
 				(unit
 					(name "A")
@@ -1950,11 +1950,11 @@
 		(comp
 			(ref "TP18")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -1986,7 +1986,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "a22ffca8-308d-4745-b7e2-29e9b41076ef")
+			(tstamps "43b4692c-c042-4061-9149-b2916139b9bf")
 			(units
 				(unit
 					(name "A")
@@ -2001,11 +2001,11 @@
 		(comp
 			(ref "TP19")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -2037,7 +2037,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "916d5911-4d38-46d4-8ea1-41a342d13c16")
+			(tstamps "4d44fc1b-d8f8-4388-a0ec-389d209b5bd7")
 			(units
 				(unit
 					(name "A")
@@ -2052,11 +2052,11 @@
 		(comp
 			(ref "TP20")
 			(value "TestPoint_Alt")
-			(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(description "test point (alternative shape)")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.0x1.0mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -2088,7 +2088,7 @@
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
 			)
-			(tstamps "c0f28b19-eed9-46da-b4b4-10f367fca064")
+			(tstamps "ca38887d-0fb2-407a-89c3-dce25e1661cf")
 			(units
 				(unit
 					(name "A")

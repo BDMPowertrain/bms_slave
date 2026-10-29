@@ -1,31 +1,10 @@
 ** Drc report for bms_slave.kicad_pcb **
-** Created on 2026-10-21T13:49:36 **
+** Created on 2026-10-29T03:21:38 **
 
-** Found 13 DRC violations **
-[clearance]: Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)
+** Found 7 DRC violations **
+[skew_out_of_range]: Skew between tracks out of range (rule 'Daisy skew' max skew 0.5000 mm; actual -2.3786 mm; target net length 6.6468 mm (from /Project Architecture/Connectors/COMH.N); actual 4.2683 mm)
     ; error
-    @(106.0 mm, 106.0 mm): Pad [<no net>] of FID4 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
-[clearance]: Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)
-    ; error
-    @(158.75 mm, 69.0 mm): Pad [<no net>] of FID6 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
-[clearance]: Clearance violation (pad clearance 0.3500 mm; actual 0.0000 mm)
-    ; error
-    @(106.0 mm, 69.0 mm): Pad [<no net>] of FID5 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    ; warning
-    @(106.0 mm, 69.0 mm): Pad [<no net>] of FID5 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    ; warning
-    @(158.75 mm, 69.0 mm): Pad [<no net>] of FID6 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
-[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
-    ; warning
-    @(106.0 mm, 106.0 mm): Pad [<no net>] of FID4 on L4
-    @(176.5 mm, 65.0 mm): Zone 'GND' [/Project Architecture/GND] on L4 and L3, priority 2
+    @(170.1 mm, 77.0 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 0.2828 mm
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 69.0 mm): Footprint FID3
@@ -44,10 +23,6 @@
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 106.0 mm): Footprint FID4
-[diff_pair_gap_out_of_range]: Differential pair gap out of range (netclass 'Default' (diff pair) minimum gap 0.2000 mm; actual 0.1500 mm)
-    ; error (excluded)
-    @(169.15 mm, 79.15 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 1.0000 mm
-    @(169.171638 mm, 79.5 mm): Track [/Project Architecture/Connectors/COMH.N] on L1, length 1.3581 mm
 
 ** Found 0 unconnected pads **
 
