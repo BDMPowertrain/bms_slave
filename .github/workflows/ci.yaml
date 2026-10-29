@@ -47,8 +47,8 @@ env:
   # PRELIMINARY: will generate both schematic and PCB documents, but no ERC/DRC
   # CHECKED: will generate both schematic and PCB documents, with ERC/DRC
   # RELEASED: same as CHECKED, then releases release_version (see "Releases" above)
-  kibot_variant: RELEASED
-  release_version: "1.0.0"
+  kibot_variant: DRAFT
+  release_version: ""
 
   kibot_log: kibot_run.log
 
@@ -143,6 +143,17 @@ jobs:
               exit 1
             fi
             if git rev-parse -q --verify "refs/tags/${release_version}" >/dev/null; then
+              # If THIS push is the one that set release_version, the tag
+              # predates it (a leftover from a manual tag, or a version that
+              # was already used), so quietly building as CHECKED would look
+              # like the release just "didn't happen". Fail instead.
+              before="${{ github.event.before }}"
+              prev=$(git show "${before}:.github/workflows/ci.yaml" 2>/dev/null | grep -m1 -E '^\s*release_version:' || true)
+              now=$(grep -m1 -E '^\s*release_version:' .github/workflows/ci.yaml || true)
+              if [[ "${{ github.event_name }}" == "push" && "$prev" != "$now" ]]; then
+                echo "::error::Tag ${release_version} already exists (on commit $(git rev-list -n1 "${release_version}" | cut -c1-7)), so this push can't release it. Delete the old tag (git push origin --delete ${release_version}) and push again, or pick a higher version with configure.py."
+                exit 1
+              fi
               echo "::notice::${release_version} is already released; building as CHECKED. Use configure.py to set the next version when it's time to release again."
               effective_variant="CHECKED"
             else
