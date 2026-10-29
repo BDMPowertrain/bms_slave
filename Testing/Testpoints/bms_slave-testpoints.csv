@@ -1,0 +1,21 @@
+Testpoint Ref.,Net,Net Class,X,Y,Side,Pad Type,Value,Footprint
+TP1,/Project Architecture/Cell Sense & Balance/TAP8,"TAP,Default",11.2000,34.1600,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP2,/Project Architecture/Cell Sense & Balance/TAP7,"TAP,Default",11.2000,31.6200,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP3,/Project Architecture/Cell Sense & Balance/TAP6,"TAP,Default",11.2000,29.0800,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP4,/Project Architecture/Cell Sense & Balance/TAP5,"TAP,Default",11.2000,26.5400,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP5,/Project Architecture/Cell Sense & Balance/TAP4,"TAP,Default",11.2000,24.0000,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP6,/Project Architecture/Cell Sense & Balance/TAP3,"TAP,Default",11.2000,21.4600,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP7,/Project Architecture/Cell Sense & Balance/TAP2,"TAP,Default",11.2000,18.9200,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP8,/Project Architecture/Cell Sense & Balance/TAP1,"TAP,Default",11.2000,16.3800,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP9,/Project Architecture/Cell Sense & Balance/TAP0,"TAP,Default",11.2000,13.8400,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP10,/Project Architecture/GND,"GND,Default",11.2000,11.3000,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP11,/Project Architecture/VMODULE,"PWR,Default",4.7000,34.1800,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP12,/Project Architecture/Connectors/TMP8,"TEMP,Default",4.7000,31.6400,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP13,/Project Architecture/Connectors/TMP7,"TEMP,Default",4.7000,29.1000,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP14,/Project Architecture/Connectors/TMP6,"TEMP,Default",4.7000,26.5600,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP15,/Project Architecture/Connectors/TMP5,"TEMP,Default",4.7000,24.0200,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP16,/Project Architecture/Connectors/TMP4,"TEMP,Default",4.7000,21.4800,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP17,/Project Architecture/Connectors/TMP3,"TEMP,Default",4.7000,18.9400,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP18,/Project Architecture/Connectors/TMP2,"TEMP,Default",4.7000,16.4000,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP19,/Project Architecture/Connectors/TMP1,"TEMP,Default",4.7000,13.8600,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm
+TP20,/Project Architecture/GND,"GND,Default",4.7000,11.3200,bottom,SMT,TestPoint_Alt,TestPoint_Pad_1.5x1.5mm

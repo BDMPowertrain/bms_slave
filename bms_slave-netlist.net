@@ -1,18 +1,17 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-rtculmv_/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-bjbdjjw8/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
-			(name "ASSEMBLY_NOTES")
-		)
+			(name "ASSEMBLY_NOTES") "ASSEMBLY NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	DO NOT POPULATE PARTS ARE MARKED WITH A RED CROSS.\n\n2)	DO NOT POPULATE PARTS ARE NOT PRESENT IN THE BOM.\n\n3)	IF CONFLICTING INFORMATION IS FOUND BETWEEN THE ASSEMBLY\n	FILE AND BOM, BOM SHOULD BE USED AS THE MAIN SOURCE.\n\n4)	CONFORMAL COATING IS NOT REQUIRED.\n\n5)	DOT IDENTIFIES PIN #1 LOCATION AND DEVICE ORIENTATION\n	WHEN VIEWED FROM THE TOP.")
 		(textvar
 			(name "BOARD_NAME") "BMS_SLAVE")
 		(textvar
-			(name "BRANCH") "dev")
+			(name "BRANCH") "main")
 		(textvar
-			(name "BUILD_VARIANT") "DRAFT")
+			(name "BUILD_VARIANT") "RELEASED")
 		(textvar
 			(name "COMPANY") "Blue Devil Motor Sports")
 		(textvar
@@ -20,8 +19,7 @@
 		(textvar
 			(name "DESIGNER") "Aidan Brzezinski")
 		(textvar
-			(name "FABRICATION_NOTES")
-		)
+			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)	FABRICATE PER IPC-6012A CLASS 2.\n\n2)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n3)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.\n\n4)	SURFACE FINISH: IMMERSION GOLD\n\n5)	SOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n	BE LPI, COLOR BLUE.\n\n6)	SILK SCREEN LEGEND TO BE APPLIED PER LAYER \n	STACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)	ALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n	SOLDERMASK OPENED IN GERBER.\n\n8)	VENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n	AND Pb FREE FOR MANUFACTURING\n\n9)	PCB MATERIAL REQUIREMENTS:\n\n	A.	FLAMMABILITY RATING MUST MEET OR EXCEED \n		UL94V-0 REQUIREMENTS.\n	B.	Tg 170 C OR EQUIVALENT.\n	C.	EQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n		HALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)	DESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n	BOARD SIZE				80.000 × 45.000 mm\n	BOARD THICKNESS		1.581 mm\n	TRACE WIDTH			0.200 mm\n	TRACE TO TRACE		-0.000 mm\n	MIN. HOLE (PTH)			0.200 mm\n	MIN. HOLE (NPTH)		3.050 mm\n	ANNULAR RING			0.150 mm\n	COPPER TO HOLE		0.254 mm\n	COPPER TO EDGE		0.500 mm\n	HOLE TO HOLE			0.254 mm\n\n11)	REFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)	CONFIRM SPACE WIDTHS AND SPACINGS.")
 		(textvar
 			(name "GIT_HASH_PCB") "6537258")
 		(textvar
@@ -63,7 +61,7 @@
 		(textvar
 			(name "RELEASE_TITLE_UNRELEASED") "Version Unreleased not found.")
 		(textvar
-			(name "REVISION") "+ (Unreleased)")
+			(name "REVISION") "1.0.0")
 		(textvar
 			(name "SHEET_NAME_1") "Cover Page")
 		(textvar
@@ -151,7 +149,7 @@
 			(title_block
 				(title)
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "bms_slave.kicad_sch")
 				(comment
@@ -199,7 +197,7 @@
 			(title_block
 				(title "Block Diagram")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "Block Diagram.kicad_sch")
 				(comment
@@ -247,7 +245,7 @@
 			(title_block
 				(title "Project Architecture")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "Project Architecture.kicad_sch")
 				(comment
@@ -295,7 +293,7 @@
 			(title_block
 				(title "Connectors")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "connectors.kicad_sch")
 				(comment
@@ -343,7 +341,7 @@
 			(title_block
 				(title "Cell Sense & Balance")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "cell_sense_and_balance.kicad_sch")
 				(comment
@@ -391,7 +389,7 @@
 			(title_block
 				(title "Power & Reference")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "power_and_reference.kicad_sch")
 				(comment
@@ -439,7 +437,7 @@
 			(title_block
 				(title "Temperature Sense")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "temperature_sense.kicad_sch")
 				(comment
@@ -487,7 +485,7 @@
 			(title_block
 				(title "Daisy Chain")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "daisy_chain.kicad_sch")
 				(comment
@@ -535,7 +533,7 @@
 			(title_block
 				(title "Mechanical")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "mechanical.kicad_sch")
 				(comment
@@ -583,7 +581,7 @@
 			(title_block
 				(title "Revision History")
 				(company "Blue Devil Motor Sports")
-				(rev "+ (Unreleased)")
+				(rev "1.0.0")
 				(date "Date")
 				(source "Revision History.kicad_sch")
 				(comment
