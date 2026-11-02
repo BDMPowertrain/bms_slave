@@ -429,6 +429,34 @@ def kicad_is_open(stem):
     return sorted(p.name for p in PROJECT_DIR.glob(f"~{stem}.*.lck"))
 
 
+CONFLICT_MARKER_RE = re.compile(r"^(<<<<<<<|=======|>>>>>>>)(?: |$)", re.MULTILINE)
+
+
+def project_file_problems():
+    """Unresolved git merge conflicts in the KiCad files, and a .kicad_pro
+    that isn't valid JSON. CI commits GIT_HASH_* into the .kicad_pro on every
+    run, so pulling over local .kicad_pro edits can conflict; a conflicted
+    file committed as-is breaks CI and, once opened, KiCad."""
+    problems = []
+    files = [p for pattern in ("*.kicad_pro", "*.kicad_sch", "*.kicad_pcb")
+             for p in sorted(PROJECT_DIR.glob(pattern))]
+    files += [PROJECT_DIR / "fp-lib-table", PROJECT_DIR / "sym-lib-table"]
+    for path in files:
+        if not path.is_file():
+            continue
+        text = read(path)
+        m = CONFLICT_MARKER_RE.search(text)
+        if m:
+            line = text.count("\n", 0, m.start()) + 1
+            problems.append(f"{path.name} line {line}: unresolved git merge conflict ({m.group(1)})")
+        elif path.suffix == ".kicad_pro":
+            try:
+                json.loads(text)
+            except ValueError as e:
+                problems.append(f"{path.name}: not valid JSON ({e})")
+    return problems
+
+
 _REMOTE_PATH_RE = re.compile(r'"[^"]*[\\/]RemoteLibrary[\\/]([^"]*)"')
 
 
@@ -710,7 +738,8 @@ def action_show():
 
 def action_check(fix=False, dry_run=False):
     text = read(KIBOT_MAIN)
-    problems = lint(text)
+    file_problems = project_file_problems()
+    problems = file_problems + lint(text)
     if not problems:
         print("\nConfig OK - no problems found.")
         return True
@@ -721,9 +750,14 @@ def action_check(fix=False, dry_run=False):
     if fix and fixed != text and not lint(fixed):
         plan = Plan()
         plan.write(KIBOT_MAIN, fixed, "quoted free-text @VAR@ passthroughs")
-        return commit(plan, dry_run)
+        return commit(plan, dry_run) and not file_problems
     if fixed != text and not lint(fixed):
         print("\n  These can be fixed automatically - choose 'Check config' from the menu, or run configure.py --check --fix.")
+    if file_problems:
+        print("\n  Fix those files by hand (resolve the conflict, or restore the file from an\n"
+              "  earlier commit) BEFORE opening the project in KiCad: KiCad replaces an\n"
+              "  unreadable .kicad_pro with default settings - text variables, net classes\n"
+              "  and design rules all gone.")
     return False
 
 

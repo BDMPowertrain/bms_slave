@@ -105,6 +105,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Same check as configure.py --check's project_file_problems(). CI's
+      # own GIT_HASH_* commits to the .kicad_pro make pull conflicts there
+      # common; a conflicted file committed as-is once broke a board for
+      # days, with KiBot failing obscurely instead of saying why. Fail fast
+      # with the file and line instead.
+      - name: Check project files for merge conflicts
+        run: |
+          bad=0
+          for f in *.kicad_pro *.kicad_sch *.kicad_pcb fp-lib-table sym-lib-table; do
+            [ -f "$f" ] || continue
+            line=$(grep -nE '^(<<<<<<<|=======|>>>>>>>)( |$)' "$f" | head -n1 | cut -d: -f1)
+            if [ -n "$line" ]; then
+              echo "::error file=${f},line=${line}::Unresolved git merge conflict in ${f} (line ${line}). Resolve it, or restore the file from an earlier commit, BEFORE opening the project in KiCad."
+              bad=1
+            elif [[ "$f" == *.kicad_pro ]] && ! python3 -c 'import json, sys; json.load(open(sys.argv[1], encoding="utf-8"))' "$f"; then
+              echo "::error file=${f}::${f} is not valid JSON."
+              bad=1
+            fi
+          done
+          exit $bad
+
       # Deliberate deviation from upstream KDT, which doesn't do this: delete
       # every previously-generated output before regenerating. Without it, a
       # file that stops being relevant (e.g. a drill table for a via that no
