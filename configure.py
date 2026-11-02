@@ -429,6 +429,43 @@ def kicad_is_open(stem):
     return sorted(p.name for p in PROJECT_DIR.glob(f"~{stem}.*.lck"))
 
 
+_REMOTE_PATH_RE = re.compile(r'"[^"]*[\\/]RemoteLibrary[\\/]([^"]*)"')
+
+
+def fix_remote_library_paths(project_dir=PROJECT_DIR, dry_run=False):
+    """Rewrite machine-specific RemoteLibrary paths to ${KIPRJMOD}/RemoteLibrary/...
+
+    KiCad's Remote Symbols panel (used by Prism) writes the expanded absolute
+    download path into fp-lib-table / sym-lib-table and the 3D model paths in
+    downloaded footprints. Those break on any other machine and in CI.
+    Safe to run repeatedly: already-relative paths are left unchanged.
+    Returns the list of files that were (or, with dry_run, would be) modified.
+    """
+    project_dir = Path(project_dir)
+    files = [project_dir / "fp-lib-table", project_dir / "sym-lib-table"]
+    files += sorted((project_dir / "RemoteLibrary").rglob("*.kicad_mod"))
+
+    def repl(m):
+        rest = m.group(1).replace("\\", "/")
+        return '"${KIPRJMOD}/RemoteLibrary/' + rest + '"'
+
+    changed = []
+    for f in files:
+        if not f.is_file():
+            continue
+        # newline="" on read and write preserves CRLF/LF exactly
+        with open(f, encoding="utf-8", newline="") as fh:
+            text = fh.read()
+        new = _REMOTE_PATH_RE.sub(repl, text)
+        if new != text:
+            if not dry_run:
+                with open(f, "w", encoding="utf-8", newline="") as fh:
+                    fh.write(new)
+            changed.append(f)
+            print(f"  {'would fix' if dry_run else 'fixed'} RemoteLibrary paths in {f.relative_to(project_dir)}")
+    return changed
+
+
 # ----------------------------------------------------------------------------
 # Change plan: collect every edit first, validate, then write all at once.
 # ----------------------------------------------------------------------------
@@ -750,6 +787,7 @@ def main():
     args = parser.parse_args()
 
     try:
+        fix_remote_library_paths(dry_run=args.dry_run)
         if args.check:
             sys.exit(0 if action_check(fix=args.fix, dry_run=args.dry_run) else 1)
         if args.stage:
