@@ -48,7 +48,7 @@ env:
   # CHECKED: will generate both schematic and PCB documents, with ERC/DRC
   # RELEASED: same as CHECKED, then releases release_version (see "Releases" above)
   kibot_variant: RELEASED
-  release_version: "1.1.0"
+  release_version: "1.2.0"
 
   kibot_log: kibot_run.log
 
