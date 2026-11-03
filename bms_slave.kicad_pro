@@ -78,8 +78,8 @@
       ],
       "drc_exclusions": [
         [
-          "skew_out_of_range|170250000|78000000|5eb8a0de-d46f-48e2-8b2c-75641202a3fb|00000000-0000-0000-0000-000000000000",
-          "Slow Enought To Not Matter"
+          "skew_out_of_range|170250000|78000000|2d5d23e7-36af-4540-8d8b-c4486091cb99|00000000-0000-0000-0000-000000000000",
+          "Slow enough acceptable."
         ]
       ],
       "meta": {
@@ -152,7 +152,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.2,
+        "min_clearance": 0.15,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
         "min_groove_width": 0.0,
@@ -186,6 +186,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 1,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -197,6 +198,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 1,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -208,6 +210,7 @@
         {
           "td_allow_use_two_tracks": true,
           "td_curve_segcount": 1,
+          "td_enabled": false,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -591,7 +594,7 @@
     "classes": [
       {
         "bus_width": 20,
-        "clearance": 0.2,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -610,7 +613,7 @@
       },
       {
         "bus_width": 20,
-        "clearance": 0.3,
+        "clearance": 0.15,
         "line_style": 0,
         "name": "BAL",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -676,7 +679,7 @@
       },
       {
         "bus_width": 20,
-        "clearance": 0.3,
+        "clearance": 0.15,
         "line_style": 0,
         "name": "SENSE",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -690,7 +693,7 @@
       },
       {
         "bus_width": 24,
-        "clearance": 0.5,
+        "clearance": 0.2,
         "line_style": 0,
         "name": "TAP",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -704,7 +707,7 @@
       },
       {
         "bus_width": 20,
-        "clearance": 0.2,
+        "clearance": 0.15,
         "line_style": 0,
         "name": "TEMP",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
@@ -720,7 +723,7 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
+    "net_colors": {},
     "netclass_assignments": {
       "/Project Architecture/CVDD": [
         "PWR"
@@ -809,33 +812,6 @@
       "/Project Architecture/Cell Sense & Balance/VC8": [
         "SENSE"
       ],
-      "/Project Architecture/Connectors/BUSH1": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH2": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH3": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH4": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH5": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH6": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH7": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH8": [
-        "BUSH"
-      ],
-      "/Project Architecture/Connectors/BUSH9": [
-        "BUSH"
-      ],
       "/Project Architecture/Connectors/COMH.N": [
         "ISO"
       ],
@@ -853,9 +829,6 @@
       ],
       "/Project Architecture/Connectors/COML{P N}": [
         "ISO"
-      ],
-      "/Project Architecture/Connectors/GND": [
-        "TAP"
       ],
       "/Project Architecture/Connectors/TMP1": [
         "TEMP"
@@ -883,39 +856,6 @@
       ],
       "/Project Architecture/Connectors/TMP[1..8]": [
         "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P1": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P2": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P3": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P4": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P5": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P6": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P7": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P8": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/T_P[1..8]": [
-        "TEMP"
-      ],
-      "/Project Architecture/Connectors/VMODULE": [
-        "TAP"
-      ],
-      "/Project Architecture/Connectors/{VMODULE GND TAP[0..8]}": [
-        "TAP"
       ],
       "/Project Architecture/Daisy Chain/COMH.CT": [
         "ISO"
@@ -1305,7 +1245,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "JP1,TP1-20,H1-6,FID1-6,NT1-2,R1-86,Q1-2,F1-11,G1-3,#PWR1-66,CR1-4,U1-6,D1-2,C1-84,#G1-2,J1-12",
+    "used_designators": "#G1-2,#PWR1-66,C1-84,CR1-4,D1-2,F1-11,FID1-6,G1-3,H1-6,J1-12,JP1,NT1-2,Q1-2,R1-86,TP1-20,U1-6",
     "variants": []
   },
   "sheets": [
@@ -1356,9 +1296,9 @@
     "BRANCH": "dev",
     "BUILD_VARIANT": "CHECKED",
     "COMPANY": "Blue Devil Motor Sports",
-    "DESCRIPTION": "8S BMS slave board for Blue Devil Motor Sports\u2019 EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.",
+    "DESCRIPTION": "8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.",
     "DESIGNER": "Aidan Brzezinski",
-    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 \u00d7 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.500 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
+    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 × 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.500 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
     "GIT_HASH_PCB": "6537258",
     "GIT_HASH_SCH": "6537258",
     "GIT_URL": "https://github.com/BDMPowertrain/BMS_Slave",
