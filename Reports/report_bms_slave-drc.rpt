@@ -1,7 +1,7 @@
 ** Drc report for bms_slave.kicad_pcb **
-** Created on 2026-10-29T18:27:05 **
+** Created on 2026-11-03T14:43:53 **
 
-** Found 7 DRC violations **
+** Found 9 DRC violations **
 [skew_out_of_range]: Skew between tracks out of range (rule 'Daisy skew' max skew 0.5000 mm; actual -2.3786 mm; target net length 6.6468 mm (from /Project Architecture/Connectors/COMH.N); actual 4.2683 mm)
     ; error
     @(170.1 mm, 77.0 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 0.2828 mm
@@ -14,6 +14,12 @@
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 106.0 mm): Footprint FID1
+[lib_footprint_mismatch]: Footprint 'BQ79616PAPRQ1' does not match copy in library 'remote_bq79616paprq1'
+    ; warning
+    @(136.05 mm, 90.149999 mm): Footprint U1
+[lib_footprint_mismatch]: Footprint 'SAMTEC_IPS1-110-01-L-D' does not match copy in library 'remote_ips1-110-01-l-d'
+    ; warning
+    @(110.5 mm, 87.25 mm): Footprint J3
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 69.0 mm): Footprint FID5
