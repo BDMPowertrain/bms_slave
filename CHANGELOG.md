@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+-   Main board to board connector centered.
+
 ## [1.1.0] - 2026-11-03
 
 ### Fixed
