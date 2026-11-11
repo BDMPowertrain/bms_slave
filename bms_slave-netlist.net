@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-vue31i3e/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-5zovz8gl/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -9,9 +9,9 @@
 		(textvar
 			(name "BOARD_NAME") "BMS_SLAVE")
 		(textvar
-			(name "BRANCH") "main")
+			(name "BRANCH") "dev")
 		(textvar
-			(name "BUILD_VARIANT") "RELEASED")
+			(name "BUILD_VARIANT") "CHECKED")
 		(textvar
 			(name "COMPANY") "Blue Devil Motor Sports")
 		(textvar
@@ -29,39 +29,29 @@
 		(textvar
 			(name "PROJECT_NAME") "BMS Slave")
 		(textvar
-			(name "RELEASE_BODY_1.0.0")
+			(name "RELEASE_BODY_1") "___________________________________\n\nFixed\n\n- Main board to board connector centered.")
+		(textvar
+			(name "RELEASE_BODY_2") "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.")
+		(textvar
+			(name "RELEASE_BODY_3") "___________________________________\n\nChanged\n\n- Inital Release.")
+		(textvar
+			(name "RELEASE_BODY_4")
 		)
 		(textvar
-			(name "RELEASE_BODY_1.0.1")
+			(name "RELEASE_DATE") "10-Nov-2026")
+		(textvar
+			(name "RELEASE_DATE_NUM") "2026-11-10")
+		(textvar
+			(name "RELEASE_TITLE_1") "Version 1.2.0 - 2026-11-03")
+		(textvar
+			(name "RELEASE_TITLE_2") "Version 1.1.0 - 2026-11-03")
+		(textvar
+			(name "RELEASE_TITLE_3") "Version 1.0.0 - 2026-10-29")
+		(textvar
+			(name "RELEASE_TITLE_4")
 		)
 		(textvar
-			(name "RELEASE_BODY_1.0.2")
-		)
-		(textvar
-			(name "RELEASE_BODY_1.1.0")
-		)
-		(textvar
-			(name "RELEASE_BODY_UNRELEASED") "Version Unreleased not found.")
-		(textvar
-			(name "RELEASE_DATE") "03-Nov-2026")
-		(textvar
-			(name "RELEASE_DATE_NUM") "2026-11-03")
-		(textvar
-			(name "RELEASE_TITLE_1.0.0")
-		)
-		(textvar
-			(name "RELEASE_TITLE_1.0.1")
-		)
-		(textvar
-			(name "RELEASE_TITLE_1.0.2")
-		)
-		(textvar
-			(name "RELEASE_TITLE_1.1.0")
-		)
-		(textvar
-			(name "RELEASE_TITLE_UNRELEASED") "Version Unreleased not found.")
-		(textvar
-			(name "REVISION") "1.2.0")
+			(name "REVISION") "1.2.0+ (Unreleased)")
 		(textvar
 			(name "SHEET_NAME_1") "Cover Page")
 		(textvar
@@ -149,7 +139,7 @@
 			(title_block
 				(title)
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "bms_slave.kicad_sch")
 				(comment
@@ -197,7 +187,7 @@
 			(title_block
 				(title "Block Diagram")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "Block Diagram.kicad_sch")
 				(comment
@@ -245,7 +235,7 @@
 			(title_block
 				(title "Project Architecture")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "Project Architecture.kicad_sch")
 				(comment
@@ -293,7 +283,7 @@
 			(title_block
 				(title "Connectors")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "connectors.kicad_sch")
 				(comment
@@ -341,7 +331,7 @@
 			(title_block
 				(title "Cell Sense & Balance")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "cell_sense_and_balance.kicad_sch")
 				(comment
@@ -389,7 +379,7 @@
 			(title_block
 				(title "Power & Reference")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "power_and_reference.kicad_sch")
 				(comment
@@ -437,7 +427,7 @@
 			(title_block
 				(title "Temperature Sense")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "temperature_sense.kicad_sch")
 				(comment
@@ -485,7 +475,7 @@
 			(title_block
 				(title "Daisy Chain")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "daisy_chain.kicad_sch")
 				(comment
@@ -533,7 +523,7 @@
 			(title_block
 				(title "Mechanical")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "mechanical.kicad_sch")
 				(comment
@@ -581,7 +571,7 @@
 			(title_block
 				(title "Revision History")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0")
+				(rev "1.2.0+ (Unreleased)")
 				(date "Date")
 				(source "Revision History.kicad_sch")
 				(comment
