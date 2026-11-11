@@ -49,18 +49,21 @@ outputs:
           bottom_rule_width: 0.2
           column_spacing: 2
           force_font_width: 1.27 # mm
-        - name: '@NAME_IMPEDANCE_TABLE@'
-          text_alignment: 'left'
-          invert_columns_order: false
-          border_width: 0.4
-          header_rule_width: 0.2
-          horizontal_rule_width: 0
-          vertical_rule_width: 0.2
-          top_rule_width: 0.2
-          bottom_rule_width: 0.2
-          row_spacing: 3
-          column_spacing: 2
-          row_spacing: 3
+        # impedance-table-begin: configure.py comments this entry out while the
+        # board's impedance table is off, so the PCB's impedance-table frame is
+        # left blank instead of filled with the template's example row.
+        # - name: '@NAME_IMPEDANCE_TABLE@'
+        #   text_alignment: 'left'
+        #   invert_columns_order: false
+        #   border_width: 0.4
+        #   header_rule_width: 0.2
+        #   horizontal_rule_width: 0
+        #   vertical_rule_width: 0.2
+        #   top_rule_width: 0.2
+        #   bottom_rule_width: 0.2
+        #   row_spacing: 3
+        #   column_spacing: 2
+        # impedance-table-end
         - name: '@NAME_DRILL_TABLE@'
           text_alignment: 'left'
           invert_columns_order: false

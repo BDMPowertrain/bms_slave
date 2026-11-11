@@ -11,7 +11,9 @@ This is the only supported way to change board metadata, rename a freshly
 templated project, or change a board's stage (KiBot variant). It owns the
 metadata in kibot_yaml/kibot_main.yaml, the `kibot_variant:` and
 `release_version:` lines in .github/workflows/ci.yaml, and COMPANY/REVISION in
-the .kicad_pro text variables. Don't hand-edit those.
+the .kicad_pro text variables. Don't hand-edit those. It also edits the
+fabrication/assembly notes templates in kibot_resources/templates/ (menu, and
+as part of releasing).
 
 Python 3 standard library only; no network access, no pip install.
 
@@ -26,8 +28,12 @@ import argparse
 import json
 import os
 import re
+import shlex
+import shutil
 import subprocess
 import sys
+import tempfile
+import textwrap
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
@@ -132,6 +138,51 @@ def validate_free_text(value, required=False):
     if len(value) > 300:
         return f"Keep it under 300 characters (currently {len(value)})."
     return None
+
+
+# Title block fit. Templates/*.kicad_wks draw these fields in Times New
+# Roman inside fixed boxes, and KiCad doesn't shrink or wrap them, so a long
+# value just runs out of its box. Advance widths per 1000 em for ASCII
+# 32..126, read from kibot_resources/fonts/Times New Roman.ttf.
+TIMES_WIDTHS = [
+    250, 333, 408, 500, 500, 833, 778, 180, 333, 333, 500, 564, 250, 333, 250, 278,
+    500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 278, 278, 564, 564, 564, 444,
+    921, 722, 667, 667, 722, 611, 556, 722, 722, 333, 389, 722, 611, 889, 722, 722,
+    556, 722, 667, 556, 611, 722, 722, 944, 722, 722, 611, 333, 278, 333, 469, 500,
+    333, 444, 500, 444, 500, 444, 333, 500, 500, 278, 278, 500, 278, 778, 500, 500,
+    500, 500, 333, 389, 278, 500, 500, 722, 500, 500, 444, 480, 200, 480, 541]
+OUTLINE_FONT_EM = 1.4  # KiCad draws an outline font's em at 1.4x the text size
+TYPICAL_EM_PER_CHAR = 0.44  # mixed-case names in Times New Roman
+# key: (field label, text size in mm, usable box width in mm), from the
+# .kicad_wks text position to the far edge of its box less a 0.5 mm margin.
+TITLE_BLOCK_FIELDS = {
+    "DESIGNER": ("Designer", 1.5, 25.0),
+    "PROJECT_NAME": ("Project Name", 2.5, 39.0),
+}
+
+
+def title_block_width(text, size):
+    em = sum(TIMES_WIDTHS[ord(c) - 32] if 32 <= ord(c) <= 126 else 1000 for c in text) / 1000
+    return em * size * OUTLINE_FONT_EM
+
+
+def title_block_max_chars(key):
+    _, size, room = TITLE_BLOCK_FIELDS[key]
+    return int(room / (size * OUTLINE_FONT_EM * TYPICAL_EM_PER_CHAR))
+
+
+def validate_title_block(key, value):
+    """Measured rather than a flat character count: 'Jim Li' and 'WILLIAM M'
+    differ a lot in width. The message still talks in characters."""
+    label, size, room = TITLE_BLOCK_FIELDS[key]
+    if title_block_width(value, size) <= room:
+        return None
+    fits = value
+    while fits and title_block_width(fits, size) > room:
+        fits = fits[:-1]
+    return (f"Too long for the title block's {label} box (about {title_block_max_chars(key)} characters fit, "
+            f"fewer in capitals). It would be cut off after \"{fits.rstrip()}\". Shorten it"
+            + (" - e.g. surnames or initials for several people." if key == "DESIGNER" else "."))
 
 
 def validate_board_name(value):
@@ -408,6 +459,421 @@ def validate_note(value, bullets):
     return None
 
 
+# ----------------------------------------------------------------------------
+# Manufacturing notes: the KiBot report templates spliced into the
+# fabrication and assembly drawings
+# ----------------------------------------------------------------------------
+
+NOTES_DIR = PROJECT_DIR / "kibot_resources" / "templates"
+MANUFACTURING_NOTES = (("Fabrication notes", NOTES_DIR / "fabrication_notes.txt"),
+                       ("Assembly notes", NOTES_DIR / "assembly_notes.txt"))
+NOTE_START_RE = re.compile(r"^(\d+)\)")
+NOTE_WRAP = 48  # matches the hand-wrapped width of the template notes
+
+
+def parse_notes(text):
+    """Split a notes template into its header and numbered notes. Each note
+    keeps its raw lines (tabs, ${var} references, KiBot `#?condition` lines),
+    so notes the user doesn't touch are written back byte-for-byte. The
+    blank and `#?` lines just before a note's `N)` line are its `sep`, so a
+    conditional note's condition moves or disappears with it."""
+    trailing = text.endswith("\n")
+    lines = (text[:-1] if trailing else text).split("\n")
+    starts = [i for i, line in enumerate(lines) if NOTE_START_RE.match(line)]
+
+    def sep_start(i):
+        while i > 0 and (not lines[i - 1].strip() or lines[i - 1].startswith("#?")):
+            i -= 1
+        return i
+    bounds = [sep_start(s) for s in starts]
+    notes = []
+    for k, s in enumerate(starts):
+        end = bounds[k + 1] if k + 1 < len(starts) else len(lines)
+        notes.append({"sep": lines[bounds[k]:s], "body": lines[s:end]})
+    return {"header": lines[:bounds[0]] if starts else lines, "notes": notes, "trailing": trailing}
+
+
+def render_notes(doc):
+    """Back to template text, renumbering the notes 1, 2, 3..."""
+    lines = list(doc["header"])
+    for n, note in enumerate(doc["notes"], start=1):
+        lines += note["sep"] + [NOTE_START_RE.sub(f"{n})", note["body"][0], count=1)] + note["body"][1:]
+    text = "\n".join(lines)
+    return text + "\n" if doc["trailing"] else text
+
+
+def print_notes(doc):
+    if not doc["notes"]:
+        print("    (no notes)")
+    for n, note in enumerate(doc["notes"], start=1):
+        conditions = sorted({line[2:].strip() for line in note["sep"] + note["body"] if line.startswith("#?")})
+        body = [line for line in note["body"] if not line.startswith("#?")]
+        first = NOTE_START_RE.sub("", body[0]).strip()
+        print(f"    {n:>2}) {first}" + (f"   [only if: {', '.join(conditions)}]" if conditions else ""))
+        for line in body[1:]:
+            print(("    " + line).expandtabs(8).rstrip())
+
+
+def format_note(text):
+    """A typed one-line note, wrapped and indented like the template's."""
+    wrapped = textwrap.wrap(text, NOTE_WRAP, break_long_words=False, break_on_hyphens=False) or [""]
+    return ["0)\t" + wrapped[0]] + ["\t" + w for w in wrapped[1:]]
+
+
+def validate_note_text(value):
+    if not value:
+        return "This can't be empty."
+    if value.startswith("#"):
+        return "A note can't start with '#' - KiBot reads that as a template directive."
+    if any(ord(c) < 32 for c in value):
+        return "Control characters aren't allowed."
+    return None
+
+
+def edit_in_text_editor(text, filename):
+    """Open `text` in the user's editor ($VISUAL/$EDITOR, else Notepad or
+    nano/vi) and return the saved result, or None if no editor could run."""
+    editor = os.environ.get("VISUAL") or os.environ.get("EDITOR")
+    if not editor:
+        editor = "notepad" if sys.platform == "win32" else (shutil.which("nano") or shutil.which("vi") or "vi")
+    command = [t.strip('"') for t in shlex.split(editor, posix=os.name != "nt")]
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmp = Path(tmpdir) / filename
+        with open(tmp, "w", encoding="utf-8", newline="") as f:
+            f.write(text)
+        print(f"  Opening {filename} in {command[0]}.")
+        try:
+            subprocess.run(command + [str(tmp)], check=False)
+        except OSError as e:
+            print(f"    ! Couldn't start '{editor}' ({e}). Set the EDITOR environment variable to your editor.")
+            return None
+        # Some editors (Windows 11's Notepad, `code` without --wait) return
+        # immediately, so don't read the file until the user says they're done.
+        _input("  Save the file, close the editor, then press Enter here...")
+        with open(tmp, encoding="utf-8", newline="") as f:
+            edited = f.read().lstrip("﻿").replace("\r\n", "\n")
+        if not edited.strip():
+            print("    ! The file came back empty - kept it as it was.")
+            return None
+        return edited
+
+
+def edit_notes_file(plan, label, path):
+    """Interactive editor for one notes template; adds the edit to `plan`."""
+    doc = parse_notes(plan.text_of(path))
+    print("  Drawing notes are usually written in CAPITALS. Text like ${pcb_finish_cap}\n"
+          "  is filled in by KiBot from the board.")
+    while True:
+        count = len(doc["notes"])
+
+        def validate(v):
+            m = re.match(r"^([rd])\s*(\d+)$", v.lower())
+            if v.lower() in ("", "a", "o", "s"):
+                return None
+            if m:
+                return None if 1 <= int(m.group(2)) <= count else f"There's no note {m.group(2)}."
+            return "Enter a, r N, d N, o, s or just Enter."
+        cmd = ask("a = add, r N = reword N, d N = delete N, o = open in text editor, "
+                  "s = show, Enter = done", validate=validate).lower()
+        if not cmd:
+            break
+        if cmd == "s":
+            print_notes(doc)
+        elif cmd == "a":
+            text = ask("New note (one line; it's wrapped for you)", validate=validate_note_text)
+            doc["notes"].append({"sep": [""], "body": format_note(text)})
+            print_notes(doc)
+        elif cmd == "o":
+            edited = edit_in_text_editor(render_notes(doc), path.name)
+            if edited is not None:
+                doc = parse_notes(edited)
+                print_notes(doc)
+        else:
+            n = int(cmd[1:].strip())
+            note = doc["notes"][n - 1]
+            if cmd[0] == "d":
+                del doc["notes"][n - 1]
+            else:
+                if len(note["body"]) > 1:
+                    print("    (This replaces the whole note, including any table or sub-items -\n"
+                          "     use 'o' to change just part of it.)")
+                text = ask(f"New text for note {n} (Enter to keep)", validate=lambda v: v and validate_note_text(v))
+                if text:
+                    note["body"] = format_note(text)
+            print_notes(doc)
+    plan.write(path, render_notes(doc), label.lower())
+
+
+def review_manufacturing_notes(plan, ask_first):
+    """Show each notes template and edit it. With `ask_first` (release),
+    only edit the ones the user says are wrong."""
+    for label, path in MANUFACTURING_NOTES:
+        if not path.exists():
+            continue
+        heading(f"{label} ({path.relative_to(PROJECT_DIR).as_posix()})")
+        print_notes(parse_notes(plan.text_of(path)))
+        if ask_first and ask_yes_no(f"Are the {label.lower()} correct for this release?", default=True):
+            continue
+        edit_notes_file(plan, label, path)
+
+
+# ----------------------------------------------------------------------------
+# Impedance table (Tier 2): a hand-written CSV-style template, one row per
+# controlled-impedance structure, spliced into the fabrication drawing
+# ----------------------------------------------------------------------------
+
+IMPEDANCE_TABLE = NOTES_DIR / "impedance_table.txt"
+
+
+def impedance_enabled(kibot_text):
+    head = split_definitions(kibot_text)[0]
+    return bool(re.search(r"^\s*-\s*@CSV_IMPEDANCE_TABLE_OUTPUT@", head, re.MULTILINE))
+
+
+# The fab drawing's include_table entry for the impedance table. It has to
+# follow the switch above too: KiBot generates any output include_table
+# names and fills the PCB's kibot_table_csv_impedance_table frame with it,
+# whether or not the output is in a group.
+PDF_FAB_YAML = KIBOT_MAIN.parent / "kibot_out_pdf_fabrication.yaml"
+IMPEDANCE_INCLUDE_RE = re.compile(
+    r"^[ \t]*# impedance-table-begin[^\n]*\n(?:[ \t]*#(?! -| {3})[^\n]*\n)*(.*?)^[ \t]*# impedance-table-end",
+    re.MULTILINE | re.DOTALL)
+
+
+def impedance_include_state(text):
+    """True/False for the include entry being active/commented out, or None
+    if this repo's kibot_out_pdf_fabrication.yaml has no marked entry."""
+    m = IMPEDANCE_INCLUDE_RE.search(text)
+    if not m:
+        return None
+    return any(line.strip() and not line.lstrip().startswith("#") for line in m.group(1).split("\n"))
+
+
+def toggle_impedance_include(text, enabled):
+    m = IMPEDANCE_INCLUDE_RE.search(text)
+    if not m:
+        return text
+    out = []
+    for line in m.group(1).split("\n"):
+        indent = line[:len(line) - len(line.lstrip())]
+        body = line[len(indent):]
+        if body:
+            body = (body[2:] if body.startswith("# ") else body) if enabled else \
+                   (body if body.startswith("#") else "# " + body)
+        out.append(indent + body)
+    return text[:m.start(1)] + "\n".join(out) + text[m.end(1):]
+
+
+def plan_impedance(plan, enabled):
+    """Switch the impedance table on or off everywhere it's wired in."""
+    plan.write(KIBOT_MAIN, toggle_impedance(plan.text_of(KIBOT_MAIN), enabled),
+               f"impedance table output {'on' if enabled else 'off'}")
+    if PDF_FAB_YAML.exists():
+        plan.write(PDF_FAB_YAML, toggle_impedance_include(plan.text_of(PDF_FAB_YAML), enabled),
+                   "fabrication drawing " + ("fills in" if enabled else "leaves blank") + " the impedance table")
+
+
+def parse_table(text):
+    """{header, rows, trailing}. Rows keep their raw text (the template pads
+    columns with tabs) until edited; fields split on commas."""
+    trailing = text.endswith("\n")
+    lines = [line for line in (text[:-1] if trailing else text).split("\n")]
+    rows = [{"raw": line, "fields": [f.strip() for f in line.split(",")]} for line in lines[1:] if line.strip()]
+    return {"header": lines[0] if lines else "", "rows": rows, "trailing": trailing}
+
+
+def table_columns(table):
+    return [f.strip() for f in table["header"].split(",")]
+
+
+def render_table(table):
+    lines = [table["header"]] + [r["raw"] if r["raw"] is not None else ",\t".join(r["fields"])
+                                 for r in table["rows"]]
+    text = "\n".join(lines)
+    return text + "\n" if table["trailing"] else text
+
+
+def print_table(table):
+    columns = table_columns(table)
+    rows = [r["fields"] + [""] * (len(columns) - len(r["fields"])) for r in table["rows"]]
+    widths = [max([len(c)] + [len(r[i]) for r in rows]) for i, c in enumerate(columns)]
+    print("        " + "  ".join(c.ljust(w) for c, w in zip(columns, widths)).rstrip())
+    if not rows:
+        print("        (no rows)")
+    for n, r in enumerate(rows, start=1):
+        print(f"    {n:>2}) " + "  ".join(f.ljust(w) for f, w in zip(r, widths)).rstrip())
+
+
+def validate_cell(value):
+    if not value:
+        return "This can't be empty."
+    if "," in value:
+        return "Commas aren't allowed - they separate the columns."
+    if any(ord(c) < 32 for c in value):
+        return "Control characters aren't allowed."
+    return None
+
+
+def ask_row(columns, current=None):
+    return [ask(column, current[i] if current and i < len(current) else "", validate_cell)
+            for i, column in enumerate(columns)]
+
+
+def edit_impedance_table(plan):
+    table = parse_table(plan.text_of(IMPEDANCE_TABLE))
+    columns = table_columns(table)
+    print("  One row per controlled-impedance structure. Get the values from the\n"
+          "  impedance calculator / your fab's stackup, not from memory.")
+    while True:
+        count = len(table["rows"])
+
+        def validate(v):
+            m = re.match(r"^([ed])\s*(\d+)$", v.lower())
+            if v.lower() in ("", "a", "o", "s"):
+                return None
+            if m:
+                return None if 1 <= int(m.group(2)) <= count else f"There's no row {m.group(2)}."
+            return "Enter a, e N, d N, o, s or just Enter."
+        cmd = ask("a = add row, e N = edit row N, d N = delete row N, o = open in text editor, "
+                  "s = show, Enter = done", validate=validate).lower()
+        if not cmd:
+            break
+        if cmd == "a":
+            table["rows"].append({"raw": None, "fields": ask_row(columns)})
+        elif cmd == "o":
+            edited = edit_in_text_editor(render_table(table), IMPEDANCE_TABLE.name)
+            if edited is not None:
+                table = parse_table(edited)
+                columns = table_columns(table)
+        elif cmd != "s":
+            n = int(cmd[1:].strip())
+            if cmd[0] == "d":
+                del table["rows"][n - 1]
+            else:
+                row = table["rows"][n - 1]
+                print("    (Enter keeps a value)")
+                row["fields"] = ask_row(columns, row["fields"])
+                row["raw"] = None
+        print_table(table)
+    plan.write(IMPEDANCE_TABLE, render_table(table), "impedance table")
+
+
+def review_impedance_table(plan, ask_first):
+    if not impedance_enabled(plan.text_of(KIBOT_MAIN)):
+        if ask_first:
+            print("\n  Impedance table: off for this board, skipped (turn it on in 'Edit board info').")
+        return
+    if not IMPEDANCE_TABLE.exists():
+        return
+    heading(f"Impedance table ({IMPEDANCE_TABLE.relative_to(PROJECT_DIR).as_posix()})")
+    print_table(parse_table(plan.text_of(IMPEDANCE_TABLE)))
+    if ask_first and ask_yes_no("Is the impedance table correct for this release?", default=True):
+        return
+    edit_impedance_table(plan)
+
+
+# ----------------------------------------------------------------------------
+# Stackup: KiBot's draw_fancy_stackup draws the board's own stackup (KiCad
+# Board Setup) on the fabrication drawing, with STACKUP_TABLE_NOTE under it
+# ----------------------------------------------------------------------------
+
+def sexpr_block(text, start):
+    """The balanced (...) starting at text[start], skipping quoted strings."""
+    depth, i, in_str = 0, start, False
+    while i < len(text):
+        c = text[i]
+        if in_str:
+            if c == "\\":
+                i += 1
+            elif c == '"':
+                in_str = False
+        elif c == '"':
+            in_str = True
+        elif c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+        i += 1
+    return text[start:]
+
+
+def read_stackup(pcb_text):
+    """([{layer, type, material, thickness, epsilon_r, color}], copper finish),
+    or (None, None) if the board has no stackup defined."""
+    m = re.search(r"\(stackup\b", pcb_text)
+    if not m:
+        return None, None
+    block = sexpr_block(pcb_text, m.start())
+    layers = []
+    for lm in re.finditer(r'\(layer "([^"]*)"', block):
+        body = sexpr_block(block, lm.start())
+
+        def prop(name):
+            p = re.search(rf'\({name} (?:"([^"]*)"|([^\s)]+))\)', body)
+            return (p.group(1) if p.group(1) is not None else p.group(2)) if p else ""
+        layers.append({"layer": lm.group(1), "type": prop("type"), "material": prop("material"),
+                       "thickness": prop("thickness"), "epsilon_r": prop("epsilon_r"), "color": prop("color")})
+    finish = re.search(r'\(copper_finish "([^"]*)"\)', block)
+    return layers, finish.group(1) if finish else ""
+
+
+def print_stackup(layers, finish):
+    columns = [("Layer", "layer"), ("Type", "type"), ("Material", "material"),
+               ("Thickness mm", "thickness"), ("Er", "epsilon_r"), ("Color", "color")]
+    widths = [max([len(c)] + [len(layer[k]) for layer in layers]) for c, k in columns]
+    print("    " + "  ".join(c.ljust(w) for (c, _), w in zip(columns, widths)).rstrip())
+    for layer in layers:
+        print("    " + "  ".join(layer[k].ljust(w) for (_, k), w in zip(columns, widths)).rstrip())
+    total = 0.0
+    for layer in layers:
+        try:
+            total += float(layer["thickness"] or 0)
+        except ValueError:
+            pass
+    print(f"\n    Total thickness: {total:.3f} mm    Copper finish: {finish or '(not set)'}")
+
+
+def validate_stackup_note(value):
+    # Lands unquoted in kibot_main.yaml and inside '...' in
+    # kibot_pre_draw_stackup.yaml, so ': ', ' #' and ' are out too.
+    error = validate_free_text(value)
+    if error:
+        return error
+    if "'" in value or ":" in value or "#" in value:
+        return "Apostrophes, ':' and '#' aren't allowed here - they break KiBot's config."
+    return None
+
+
+def review_stackup(plan, releasing):
+    """Show the stackup and its note. Returns False when the stackup itself
+    is wrong during a release (it can only be fixed in KiCad), so the
+    release is cancelled."""
+    stem = find_project_stem()
+    layers, finish = read_stackup(read(PROJECT_DIR / f"{stem}.kicad_pcb"))
+    heading("Stackup (drawn on the fabrication drawing, from the .kicad_pcb)")
+    if layers:
+        print_stackup(layers, finish)
+    else:
+        print("    (no stackup defined - KiBot can't draw one)")
+    note = read_definitions(plan.text_of(KIBOT_MAIN)).get("STACKUP_TABLE_NOTE", "")
+    print(f"    Note under the table: {note or '(none)'}")
+    if ask_yes_no("Is the stackup correct" + (" for this release?" if releasing else "?"), default=bool(layers)):
+        return True
+    if ask_yes_no("Is it only the note under the table that needs changing?", default=False):
+        new_note = ask("Note under the stackup table", note, validate_stackup_note)
+        plan.write(KIBOT_MAIN, set_definition(plan.text_of(KIBOT_MAIN), "STACKUP_TABLE_NOTE", new_note),
+                   "stackup table note")
+        return True
+    print("\n  The stackup itself is set in KiCad: PCB Editor > File > Board Setup >\n"
+          "  Board Stackup > Physical Stackup. Change it there, save, close KiCad,\n"
+          "  commit, and " + ("run the release again." if releasing else "check it here again."))
+    if releasing:
+        print("Cancelled - nothing written.")
+    return not releasing
+
+
 def suggest_next_version(tags):
     if not tags:
         return "1.0.0"
@@ -455,6 +921,108 @@ def project_file_problems():
             except ValueError as e:
                 problems.append(f"{path.name}: not valid JSON ({e})")
     return problems
+
+
+def load_project_json(path):
+    """The .kicad_pro as a dict, or a ConfigError that says how to repair it
+    (instead of a json traceback on a conflicted file)."""
+    text = read(path)
+    if CONFLICT_MARKER_RE.search(text):
+        raise ConfigError(f"{path.name} has an unresolved git merge conflict. Choose 'Check config' from the "
+                          "menu (or run configure.py --check --fix) to resolve it.")
+    try:
+        return json.loads(text)
+    except ValueError as e:
+        raise ConfigError(f"{path.name} is not valid JSON ({e}). Restore it from an earlier commit "
+                          f"(git log -- \"{path.name}\", then git checkout <commit> -- \"{path.name}\").")
+
+
+def project_json_text(data, like):
+    """Serialize a .kicad_pro the way KiCad writes it (2-space indent, raw
+    UTF-8 instead of \\u escapes), keeping `like`'s trailing newline or lack
+    of one, so an edit doesn't reformat lines nobody changed."""
+    return json.dumps(data, indent=2, ensure_ascii=False) + ("\n" if like.endswith("\n") else "")
+
+
+# Text variables KiBot's set_text_variables preflight rewrites on every CI
+# run (kibot_pre_set_text_variables.yaml). These are what make .kicad_pro
+# pull conflicts common, and either side of a conflict on them is fine
+# because the next CI run overwrites them anyway.
+CI_TEXT_VARIABLE_RE = re.compile(
+    r"^(REVISION|RELEASE_.*|GIT_HASH_.*|GIT_URL|BRANCH|PROJECT_NAME|BOARD_NAME|DESCRIPTION|"
+    r"COMPANY|DESIGNER|BUILD_VARIANT|FABRICATION_NOTES|ASSEMBLY_NOTES|SHEET_NAME_.*)$")
+_MISSING = object()
+
+
+def merge_json(base, ours, theirs, where=""):
+    """Three-way merge of parsed JSON. Returns (merged, conflicts) where
+    conflicts are the /key/paths both sides changed differently (ours is
+    kept there). Symmetric apart from that tie-break, so it doesn't matter
+    whether the conflict came from a merge or a rebase."""
+    if ours == theirs or theirs == base:
+        return ours, []
+    if ours == base:
+        return theirs, []
+    if isinstance(ours, dict) and isinstance(theirs, dict):
+        base = base if isinstance(base, dict) else {}
+        merged, conflicts = {}, []
+        for key in list(ours) + [k for k in theirs if k not in ours]:
+            value, c = merge_json(base.get(key, _MISSING), ours.get(key, _MISSING),
+                                  theirs.get(key, _MISSING), f"{where}/{key}")
+            if value is not _MISSING:
+                merged[key] = value
+            conflicts += c
+        return merged, conflicts
+    return ours, [where]
+
+
+def git_unmerged_versions(path):
+    """{1: base, 2: ours, 3: theirs} text of a file git has as unmerged
+    (mid-merge or mid-rebase), else {}."""
+    rel = path.relative_to(PROJECT_DIR).as_posix()
+    try:
+        out = subprocess.run(["git", "-C", str(PROJECT_DIR), "ls-files", "-u", "--", rel],
+                             capture_output=True, text=True, check=True).stdout
+        versions = {}
+        for line in out.splitlines():
+            _, sha, stage = line.split("\t", 1)[0].split()
+            blob = subprocess.run(["git", "-C", str(PROJECT_DIR), "cat-file", "blob", sha],
+                                  capture_output=True, check=True).stdout
+            versions[int(stage)] = blob.decode("utf-8").replace("\r\n", "\n")
+        return versions
+    except Exception:
+        return {}
+
+
+def resolve_project_conflict(path):
+    """Merged .kicad_pro text for a conflicted, still-unmerged file, or
+    (None, reason) if it needs a human."""
+    versions = git_unmerged_versions(path)
+    if 2 not in versions or 3 not in versions:
+        return None, ("git doesn't have both sides of the conflict any more (was the file committed "
+                      "with the markers in it?). Restore it from an earlier commit: "
+                      f"git log -- \"{path.name}\", then git checkout <commit> -- \"{path.name}\".")
+    try:
+        base, ours, theirs = (json.loads(versions[s]) if s in versions else {} for s in (1, 2, 3))
+    except ValueError as e:
+        return None, f"one side of the conflict isn't valid JSON ({e}); ask a lead."
+    merged, conflicts = merge_json(base, ours, theirs)
+    real = [c for c in conflicts
+            if not (c.startswith("/text_variables/") and CI_TEXT_VARIABLE_RE.match(c[len("/text_variables/"):]))]
+    if real:
+        return None, ("both sides changed the same project settings, so this needs a human: "
+                      + ", ".join(real) + ". Ask a lead.")
+    return project_json_text(merged, versions[2]), None
+
+
+def git_in_rebase():
+    try:
+        git_dir = subprocess.run(["git", "-C", str(PROJECT_DIR), "rev-parse", "--git-dir"],
+                                 capture_output=True, text=True, check=True).stdout.strip()
+    except Exception:
+        return False
+    git_dir = PROJECT_DIR / git_dir
+    return (git_dir / "rebase-merge").exists() or (git_dir / "rebase-apply").exists()
 
 
 _REMOTE_PATH_RE = re.compile(r'"[^"]*[\\/]RemoteLibrary[\\/]([^"]*)"')
@@ -603,8 +1171,14 @@ def action_stage(dry_run, requested=None, version=None):
         if error:
             raise ConfigError(error)
         if sys.stdin.isatty():
+            # Stackup first: if it's wrong the fix is in KiCad, so cancel
+            # before anyone has typed release notes that would be thrown away.
+            if not review_stackup(plan, releasing=True):
+                return
             if not edit_release_notes(plan):
                 return
+            review_manufacturing_notes(plan, ask_first=True)
+            review_impedance_table(plan, ask_first=True)
         elif not any(read_release_notes(read(CHANGELOG) if CHANGELOG.exists() else "").values()):
             print("\n  Warning: CHANGELOG.md's [Unreleased] section is empty or placeholder text;"
                   "\n  that's what the release notes will say.")
@@ -634,7 +1208,7 @@ def action_board_info(dry_run, first_time=False):
     kibot_text = read(KIBOT_MAIN)
     defs = read_definitions(kibot_text)
     pro_path = PROJECT_DIR / f"{stem}.kicad_pro"
-    pro = json.loads(read(pro_path))
+    pro = load_project_json(pro_path)
     text_vars = pro.get("text_variables", {})
 
     heading("First-time setup" if first_time else "Board info")
@@ -642,9 +1216,11 @@ def action_board_info(dry_run, first_time=False):
 
     board_name = ask("Board name (repo name, e.g. bms_slave)",
                      "" if stem == PLACEHOLDER_STEM else stem.lower(), validate_board_name)
-    title = ask("Board title", defs.get("PROJECT_NAME", ""), lambda v: validate_free_text(v, required=True))
+    title = ask("Board title", defs.get("PROJECT_NAME", ""),
+                lambda v: validate_free_text(v, required=True) or validate_title_block("PROJECT_NAME", v))
     description = ask("One-sentence description (shown in README)", defs.get("DESCRIPTION", ""), validate_free_text)
-    designer = ask("Designer", defs.get("DESIGNER", ""), validate_free_text)
+    designer = ask(f"Designer (max ~{title_block_max_chars('DESIGNER')} characters)", defs.get("DESIGNER", ""),
+                   lambda v: validate_free_text(v) or validate_title_block("DESIGNER", v))
     company = ask("Company", defs.get("COMPANY") or "Blue Devil Motor Sports", validate_free_text)
     # CI writes values like "+ (Unreleased)" here; don't offer those as a
     # default the validator would then reject.
@@ -652,8 +1228,7 @@ def action_board_info(dry_run, first_time=False):
     revision = ask("Revision (cosmetic; real revisions come from git tags)",
                    current_rev if not validate_revision(current_rev) else "0.1.0", validate_revision)
 
-    impedance_enabled = bool(re.search(r"^\s*-\s*@CSV_IMPEDANCE_TABLE_OUTPUT@", split_definitions(kibot_text)[0], re.MULTILINE))
-    impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?", impedance_enabled)
+    impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?", impedance_enabled(kibot_text))
 
     plan = Plan()
 
@@ -664,13 +1239,13 @@ def action_board_info(dry_run, first_time=False):
                        ("DESIGNER", designer), ("COMPANY", company), ("GIT_URL", git_url)):
         if defs.get(key) != value or key in FREE_TEXT_KEYS:
             new_kibot = set_definition(new_kibot, key, value)
-    new_kibot = toggle_impedance(new_kibot, impedance)
     plan.write(KIBOT_MAIN, new_kibot, "board metadata")
+    plan_impedance(plan, impedance)
 
     # .kicad_pro text variables
     if text_vars.get("COMPANY") != company or text_vars.get("REVISION") != revision:
         pro.setdefault("text_variables", {}).update({"COMPANY": company, "REVISION": revision})
-        plan.write(pro_path, json.dumps(pro, indent=2) + "\n", "COMPANY/REVISION text variables")
+        plan.write(pro_path, project_json_text(pro, read(pro_path)), "COMPANY/REVISION text variables")
 
     # Rename project files if the board name changed
     if board_name != stem:
@@ -718,10 +1293,18 @@ def plan_rename(plan, old_stem, new_stem):
             plan.write(path, new_text, f"project name {old_stem} -> {new_stem}")
 
 
+def action_manufacturing_docs(dry_run):
+    plan = Plan()
+    review_manufacturing_notes(plan, ask_first=False)
+    review_impedance_table(plan, ask_first=False)
+    review_stackup(plan, releasing=False)
+    commit(plan, dry_run)
+
+
 def action_show():
     stem = find_project_stem()
     defs = read_definitions(read(KIBOT_MAIN))
-    pro = json.loads(read(PROJECT_DIR / f"{stem}.kicad_pro"))
+    pro = load_project_json(PROJECT_DIR / f"{stem}.kicad_pro")
     heading("Current settings")
     stage = read_stage()
     if stage == "RELEASED":
@@ -739,26 +1322,74 @@ def action_show():
 def action_check(fix=False, dry_run=False):
     text = read(KIBOT_MAIN)
     file_problems = project_file_problems()
-    problems = file_problems + lint(text)
+    defs = read_definitions(text)
+    fit_problems = [f"{key}: {err} Change it with 'Edit board info'." for key in TITLE_BLOCK_FIELDS
+                    if (err := validate_title_block(key, defs.get(key, "")))]
+    enabled = impedance_enabled(text)
+    pdf_text = read(PDF_FAB_YAML) if PDF_FAB_YAML.exists() else ""
+    include = impedance_include_state(pdf_text)
+    impedance_problems = []
+    if include is not None and include != enabled:
+        impedance_problems.append(
+            "The impedance table is " + ("off, but the fabrication drawing still fills it in"
+                                         if not enabled else "on, but the fabrication drawing leaves it blank")
+            + f" ({PDF_FAB_YAML.name}).")
+    elif include is None and not enabled and "@NAME_IMPEDANCE_TABLE@" in pdf_text:
+        impedance_problems.append(
+            f"The impedance table is off, but {PDF_FAB_YAML.name} predates the on/off switch, so the "
+            "fabrication drawing still fills it in. Copy that file from the current template.")
+    problems = file_problems + lint(text) + fit_problems + impedance_problems
     if not problems:
         print("\nConfig OK - no problems found.")
         return True
     print("\nProblems found:")
     for p in problems:
         print(f"  - {p}")
+
+    # Automatic fixes: quoting in kibot_main.yaml, and .kicad_pro merge
+    # conflicts (almost always just CI's regenerated text variables).
+    plan = Plan()
     fixed = quote_passthroughs(text)
-    if fix and fixed != text and not lint(fixed):
-        plan = Plan()
-        plan.write(KIBOT_MAIN, fixed, "quoted free-text @VAR@ passthroughs")
-        return commit(plan, dry_run) and not file_problems
     if fixed != text and not lint(fixed):
-        print("\n  These can be fixed automatically - choose 'Check config' from the menu, or run configure.py --check --fix.")
-    if file_problems:
-        print("\n  Fix those files by hand (resolve the conflict, or restore the file from an\n"
-              "  earlier commit) BEFORE opening the project in KiCad: KiCad replaces an\n"
-              "  unreadable .kicad_pro with default settings - text variables, net classes\n"
-              "  and design rules all gone.")
-    return False
+        plan.write(KIBOT_MAIN, fixed, "quoted free-text @VAR@ passthroughs")
+    unresolved = [p for p in file_problems if ".kicad_pro" not in p] + fit_problems
+    if include is not None and include != enabled:
+        plan_impedance(plan, enabled)
+    else:
+        unresolved += impedance_problems
+    for pro in sorted(PROJECT_DIR.glob("*.kicad_pro")):
+        if not CONFLICT_MARKER_RE.search(read(pro)):
+            if any(p.startswith(pro.name) for p in file_problems):
+                unresolved.append(f"{pro.name}: not valid JSON - restore it from an earlier commit")
+            continue
+        merged, reason = resolve_project_conflict(pro)
+        if merged is None:
+            unresolved.append(f"{pro.name}: can't resolve the conflict automatically - {reason}")
+        else:
+            plan.write(pro, merged, "merge conflict resolved (both sides' changes kept)")
+
+    applied = False
+    if plan.empty():
+        pass
+    elif not fix:
+        print("\n  Some of these can be fixed automatically - choose 'Check config' from the menu,\n"
+              "  or run configure.py --check --fix.")
+    else:
+        applied = commit(plan, dry_run)
+        if applied and any(p.suffix == ".kicad_pro" for p in plan.writes) and git_in_rebase():
+            print("\n  (You're mid-rebase: instead of git commit, run git add -A then git rebase --continue.)")
+
+    if unresolved:
+        print("\nStill needs fixing by hand:" if fix else "\nNeeds fixing by hand:")
+        for p in unresolved:
+            print(f"  - {p}")
+    if any(p in unresolved for p in file_problems) or any(".kicad_pro" in p for p in unresolved):
+        print("\n  Do this BEFORE opening the project in KiCad: KiCad replaces an unreadable\n"
+              "  .kicad_pro with default settings (text variables, net classes and design\n"
+              "  rules all gone), and can't open a conflicted schematic or board at all.\n"
+              "  For a .kicad_sch/.kicad_pcb conflict, keep one whole side - whoever owns\n"
+              "  that sheet decides which (see README section 11) - or ask a lead.")
+    return applied and not unresolved
 
 
 # ----------------------------------------------------------------------------
@@ -781,6 +1412,9 @@ def confirm_kicad_closed(stem):
 def menu(dry_run):
     stem = find_project_stem()
     confirm_kicad_closed(stem)
+    if project_file_problems():
+        print("\n  ! The project files have unresolved merge conflicts or invalid JSON.\n"
+              "    Choose 5. Check config to see them and resolve what can be resolved automatically.")
     if is_fresh_template(stem):
         print("\nThis looks like a fresh copy of the template - let's set it up.")
         action_board_info(dry_run, first_time=True)
@@ -790,18 +1424,21 @@ def menu(dry_run):
         heading(f"{defs.get('PROJECT_NAME') or stem}  -  stage: {read_stage()}")
         print("  1. Change project stage (DRAFT / PRELIMINARY / CHECKED / RELEASED)\n"
               "  2. Edit board info (title, description, designer, revision...)\n"
-              "  3. Show current settings\n"
-              "  4. Check config for problems\n"
+              "  3. Review fab / assembly notes, impedance table, stackup\n"
+              "  4. Show current settings\n"
+              "  5. Check config for problems\n"
               "  q. Quit")
-        choice = ask("Choose", validate=lambda v: None if v.lower() in ("1", "2", "3", "4", "q") else "Enter 1-4 or q.").lower()
+        choice = ask("Choose", validate=lambda v: None if v.lower() in ("1", "2", "3", "4", "5", "q") else "Enter 1-5 or q.").lower()
         try:
             if choice == "1":
                 action_stage(dry_run)
             elif choice == "2":
                 action_board_info(dry_run)
             elif choice == "3":
-                action_show()
+                action_manufacturing_docs(dry_run)
             elif choice == "4":
+                action_show()
+            elif choice == "5":
                 action_check(fix=True, dry_run=dry_run)
             else:
                 return
