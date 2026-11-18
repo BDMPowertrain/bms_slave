@@ -82,6 +82,10 @@ def read(path):
     return text.replace("\r\n", "\n")
 
 
+def interactive():
+    return sys.stdin is not None and sys.stdin.isatty()
+
+
 def _input(prompt_text):
     try:
         return input(prompt_text)
@@ -777,6 +781,50 @@ def review_impedance_table(plan, ask_first):
 # Board Setup) on the fabrication drawing, with STACKUP_TABLE_NOTE under it
 # ----------------------------------------------------------------------------
 
+STACKUP_YAML = KIBOT_MAIN.parent / "kibot_pre_draw_stackup.yaml"
+STACKUP_BLOCK_RE = re.compile(r"^  draw_fancy_stackup:(?P<off> false)?[ \t]*\n"
+                              r"(?P<options>(?:^ {4}[^\n]*\n?)*)", re.MULTILINE)
+STACKUP_OFF_PREFIX = "    # "
+
+
+def stackup_options(text):
+    block = STACKUP_BLOCK_RE.search(text)
+    if not block:
+        raise ConfigError(f"Expected draw_fancy_stackup settings in {STACKUP_YAML.name}.")
+    return block
+
+
+def stackup_enabled(text):
+    return stackup_options(text)["off"] is None
+
+
+def action_stackup_generation(dry_run):
+    text = read(STACKUP_YAML)
+    enabled = ask_yes_no("Generate the layer stackup on the fabrication drawing?", stackup_enabled(text))
+    plan = Plan()
+    plan_stackup_generation(plan, enabled)
+    commit(plan, dry_run)
+
+
+def plan_stackup_generation(plan, enabled):
+    text = plan.text_of(STACKUP_YAML)
+    block = stackup_options(text)
+    current = block["off"] is None
+    if enabled != current:
+        # Use a scalar false to disable the preflight in KiBot's runner.
+        # Keep the table settings as comments so turning it back on restores them.
+        options = block["options"].splitlines(keepends=True)
+        if enabled:
+            header = "  draw_fancy_stackup:\n"
+            options = ["    " + line[len(STACKUP_OFF_PREFIX):] if line.startswith(STACKUP_OFF_PREFIX)
+                       else line for line in options]
+        else:
+            header = "  draw_fancy_stackup: false\n"
+            options = [STACKUP_OFF_PREFIX + line[4:] for line in options]
+        updated = text[:block.start()] + header + "".join(options) + text[block.end():]
+        plan.write(STACKUP_YAML, updated, f"fabrication stackup generation {'on' if enabled else 'off'}")
+
+
 def sexpr_block(text, start):
     """The balanced (...) starting at text[start], skipping quoted strings."""
     depth, i, in_str = 0, start, False
@@ -850,6 +898,9 @@ def review_stackup(plan, releasing):
     """Show the stackup and its note. Returns False when the stackup itself
     is wrong during a release (it can only be fixed in KiCad), so the
     release is cancelled."""
+    if not stackup_enabled(plan.text_of(STACKUP_YAML)):
+        print("\n  Fabrication stackup generation is off.")
+        return True
     stem = find_project_stem()
     layers, finish = read_stackup(read(PROJECT_DIR / f"{stem}.kicad_pcb"))
     heading("Stackup (drawn on the fabrication drawing, from the .kicad_pcb)")
@@ -1127,7 +1178,7 @@ def commit(plan, dry_run, confirm=True):
     if dry_run:
         print("\n(--dry-run: nothing written)")
         return False
-    if confirm and sys.stdin.isatty() and not ask_yes_no("Apply these changes?", default=True):
+    if confirm and interactive() and not ask_yes_no("Apply these changes?", default=True):
         print("Cancelled - nothing written.")
         return False
     plan.apply()
@@ -1164,13 +1215,13 @@ def action_stage(dry_run, requested=None, version=None):
         tags = git_version_tags()
         print(f"\n  Last release: {tags[0] if tags else 'none yet'}")
         if version is None:
-            if not sys.stdin.isatty():
+            if not interactive():
                 raise ConfigError("RELEASED needs a version: --stage RELEASED --version 1.0.0")
             version = ask("Version to release", suggest_next_version(tags), validate_release_version)
         error = validate_release_version(version)
         if error:
             raise ConfigError(error)
-        if sys.stdin.isatty():
+        if interactive():
             # Stackup first: if it's wrong the fix is in KiCad, so cancel
             # before anyone has typed release notes that would be thrown away.
             if not review_stackup(plan, releasing=True):
@@ -1196,43 +1247,69 @@ def action_stage(dry_run, requested=None, version=None):
         print(f"\nAlready at {current}{' ' + version if version else ''}.")
         return
 
+    plan_stage(plan, requested, version)
+    commit(plan, dry_run)
+
+
+def plan_stage(plan, requested, version=""):
+    current = read_stage()
+    current_version = read_release_version() if current == "RELEASED" else ""
+
     def label(stage, v):
         return f"{stage} {v}" if v else stage
     plan.write(CI_YAML, set_stage_lines(read(CI_YAML), requested, version),
                f"stage {label(current, current_version)} -> {label(requested, version)}")
-    commit(plan, dry_run)
+
+
+BOARD_FIELDS = (
+    ("board_name", "Board name (repo name, e.g. bms_slave)", validate_board_name),
+    ("title", "Board title", lambda v: validate_free_text(v, required=True) or validate_title_block("PROJECT_NAME", v)),
+    ("description", "One-sentence description (shown in README)", validate_free_text),
+    ("designer", "Designer", lambda v: validate_free_text(v) or validate_title_block("DESIGNER", v)),
+    ("company", "Company", validate_free_text),
+    ("revision", "Revision (cosmetic; real revisions come from Git tags)", validate_revision),
+)
+
+
+def board_info():
+    stem = find_project_stem()
+    defs = read_definitions(read(KIBOT_MAIN))
+    pro = load_project_json(PROJECT_DIR / f"{stem}.kicad_pro")
+    revision = pro.get("text_variables", {}).get("REVISION") or ""
+    return {
+        "board_name": "" if stem == PLACEHOLDER_STEM else stem,
+        "title": defs.get("PROJECT_NAME", ""),
+        "description": defs.get("DESCRIPTION", ""),
+        "designer": defs.get("DESIGNER", ""),
+        "company": defs.get("COMPANY") or "Blue Devil Motor Sports",
+        "revision": "0.1.0" if stem == PLACEHOLDER_STEM and not revision else revision,
+    }
 
 
 def action_board_info(dry_run, first_time=False):
+    heading("First-time setup" if first_time else "Board info")
+    print("  Press Enter to keep the value in [brackets].\n")
+    defaults = board_info()
+    defaults["board_name"] = defaults["board_name"].lower()
+    if validate_revision(defaults["revision"]):
+        defaults["revision"] = "0.1.0"
+    values = {key: ask(label, defaults[key], validate) for key, label, validate in BOARD_FIELDS}
+    impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?",
+                           impedance_enabled(read(KIBOT_MAIN)))
+    plan = Plan()
+    plan_board_info(plan, values)
+    plan_impedance(plan, impedance)
+    commit(plan, dry_run)
+
+
+def plan_board_info(plan, values):
     stem = find_project_stem()
-    kibot_text = read(KIBOT_MAIN)
+    kibot_text = plan.text_of(KIBOT_MAIN)
     defs = read_definitions(kibot_text)
     pro_path = PROJECT_DIR / f"{stem}.kicad_pro"
     pro = load_project_json(pro_path)
     text_vars = pro.get("text_variables", {})
-
-    heading("First-time setup" if first_time else "Board info")
-    print("  Press Enter to keep the value in [brackets].\n")
-
-    board_name = ask("Board name (repo name, e.g. bms_slave)",
-                     "" if stem == PLACEHOLDER_STEM else stem.lower(), validate_board_name)
-    title = ask("Board title", defs.get("PROJECT_NAME", ""),
-                lambda v: validate_free_text(v, required=True) or validate_title_block("PROJECT_NAME", v))
-    description = ask("One-sentence description (shown in README)", defs.get("DESCRIPTION", ""), validate_free_text)
-    designer = ask(f"Designer (max ~{title_block_max_chars('DESIGNER')} characters)", defs.get("DESIGNER", ""),
-                   lambda v: validate_free_text(v) or validate_title_block("DESIGNER", v))
-    company = ask("Company", defs.get("COMPANY") or "Blue Devil Motor Sports", validate_free_text)
-    # CI writes values like "+ (Unreleased)" here; don't offer those as a
-    # default the validator would then reject.
-    current_rev = text_vars.get("REVISION") or ""
-    revision = ask("Revision (cosmetic; real revisions come from git tags)",
-                   current_rev if not validate_revision(current_rev) else "0.1.0", validate_revision)
-
-    impedance = ask_yes_no("Controlled-impedance board (enable impedance table)?", impedance_enabled(kibot_text))
-
-    plan = Plan()
-
-    # kibot_main.yaml
+    board_name, title, description, designer, company, revision = (values[key] for key, _, _ in BOARD_FIELDS)
     new_kibot = quote_passthroughs(kibot_text)
     git_url = git_remote_url() or defs.get("GIT_URL") or f"https://github.com/BDMPowertrain/{board_name}"
     for key, value in (("PROJECT_NAME", title), ("BOARD_NAME", board_name.upper()), ("DESCRIPTION", description),
@@ -1240,18 +1317,17 @@ def action_board_info(dry_run, first_time=False):
         if defs.get(key) != value or key in FREE_TEXT_KEYS:
             new_kibot = set_definition(new_kibot, key, value)
     plan.write(KIBOT_MAIN, new_kibot, "board metadata")
-    plan_impedance(plan, impedance)
 
     # .kicad_pro text variables
-    if text_vars.get("COMPANY") != company or text_vars.get("REVISION") != revision:
-        pro.setdefault("text_variables", {}).update({"COMPANY": company, "REVISION": revision})
+    variable_edits = {key: value for key, value in (("COMPANY", company), ("REVISION", revision))
+                      if text_vars.get(key, "") != value}
+    if variable_edits:
+        pro.setdefault("text_variables", {}).update(variable_edits)
         plan.write(pro_path, project_json_text(pro, read(pro_path)), "COMPANY/REVISION text variables")
 
     # Rename project files if the board name changed
     if board_name != stem:
         plan_rename(plan, stem, board_name)
-
-    commit(plan, dry_run)
 
 
 def toggle_impedance(text, enabled):
@@ -1313,13 +1389,129 @@ def action_show():
             ("Title", defs.get("PROJECT_NAME", "")), ("Board name", defs.get("BOARD_NAME", "")),
             ("Description", defs.get("DESCRIPTION", "")), ("Designer", defs.get("DESIGNER", "")),
             ("Company", defs.get("COMPANY", "")), ("Revision", pro.get("text_variables", {}).get("REVISION", "")),
-            ("GitHub URL", defs.get("GIT_URL", ""))]
+            ("GitHub URL", defs.get("GIT_URL", "")),
+            ("Fabrication stackup", "On" if stackup_enabled(read(STACKUP_YAML)) else "Off")]
     width = max(len(r[0]) for r in rows)
     for label, value in rows:
         print(f"  {label:<{width}}  {value}")
 
 
-def action_check(fix=False, dry_run=False):
+# Assembly-drawing renders: KiBot's pcb_print replaces each PCB group named
+# kibot_image_<output> with that output's PNG, sized to the group. Ungroup
+# one in KiCad (easy to do by accident) and its frame prints as an empty box.
+# (group name, the template's group uuid, the template's frame-rectangle uuid)
+IMAGE_GROUPS = (
+    ("kibot_image_png_3d_viewer_angled_top", "04d08607-677d-4f8a-bfdd-849fe27e04a9",
+     "7475ec0d-efe9-4437-8754-ed4d70b95384"),
+    ("kibot_image_png_3d_viewer_angled_bottom", "39efd57c-746f-4653-8062-18e9f1205178",
+     "30ea6013-eb0f-48ca-a65b-bacfb90e1e0d"),
+    ("kibot_image_png_3d_viewer_top", "877de656-5906-4f36-867e-2227d093f610",
+     "6d718cde-f3d5-4888-b231-52014ce71b38"),
+    ("kibot_image_png_3d_viewer_bottom", "1a349a17-5bec-4257-a55f-57a4c736ca21",
+     "1d3aaa28-c9c1-45fd-8d0a-40340f504692"),
+)
+def drawing_groups(pcb_text):
+    groups = {}
+    for match in re.finditer(r'^\t\(group "([^"]*)"', pcb_text, re.MULTILINE):
+        block = sexpr_block(pcb_text, match.start() + 1)
+        members = re.search(r'\(members\s+([^)]*)\)', block)
+        groups.setdefault(match[1], []).append(set(re.findall(r'"([^"]+)"', members[1])) if members else set())
+    return groups
+
+
+def image_group_fixes(pcb_text, check_stackup=True):
+    """Returns (problems, fixed_text). fixed_text re-creates every missing
+    group whose template frame rectangle is still in the PCB and not in some
+    other group; it's None when there's nothing it can fix."""
+    groups = drawing_groups(pcb_text)
+    grouped = {uid for matches in groups.values() for members in matches for uid in members}
+    frames = {}
+    for match in re.finditer(r'^\t\(gr_rect\b', pcb_text, re.MULTILINE):
+        block = sexpr_block(pcb_text, match.start() + 1)
+        uid = re.search(r'\(uuid "([^"]+)"\)', block)
+        layer = re.search(r'\(layer "([^"]+)"\)', block)
+        if uid and layer:
+            frames[uid[1]] = layer[1]
+    problems, new_groups = [], []
+    for name, group_uuid, rect_uuid in IMAGE_GROUPS:
+        layer = "Dwgs.User" if "_angled_" in name else ("User.4" if name.endswith("_top") else "User.5")
+        if name in groups:
+            if len(groups[name]) != 1 or not any(frames.get(uid) == layer for uid in groups[name][0]):
+                problems.append(f"PCB image group '{name}' needs a unique group with a frame rectangle on {layer}.")
+            continue
+        if frames.get(rect_uuid) == layer and rect_uuid not in grouped and f'"{group_uuid}"' not in pcb_text:
+            problems.append(f"PCB group '{name}' is missing, so the assembly drawing shows an empty frame "
+                            "where that 3D render goes (its frame rectangle is still there).")
+            new_groups.append(f'\t(group "{name}"\n\t\t(uuid "{group_uuid}")\n\t\t(members "{rect_uuid}")\n\t)\n')
+        else:
+            problems.append(f"PCB group '{name}' is missing, so that 3D render won't appear on the assembly "
+                            "drawing. In KiCad, draw a rectangle where it should go (TitlePage layer for the "
+                            "angled views, F/B.AssemblyText for top/bottom), select it, Group it, and name the "
+                            f"group {name}.")
+    stackup = "kibot_fancy_stackup"
+    if check_stackup and stackup not in groups:
+        group_uuid = "3854e0e8-20ee-419d-a125-a98e4f66521d"
+        members = ("45afa94d-0274-4dc8-b787-0d50767327c9", "80964ee5-e706-474a-9b94-fee381934114",
+                   "ae24ec74-2a84-4c8f-b73c-fd0591174ddb", "bdd9a7b4-5b99-4209-91ce-c2c1e5366d6f",
+                   "e03ca4ae-4b46-4421-b513-521a6b97a5b0")
+        problems.append(f"Fabrication stackup group '{stackup}' is missing. Group its frame objects in KiCad.")
+        if f'"{group_uuid}"' not in pcb_text and all(
+            uid not in grouped and f'(uuid "{uid}")' in pcb_text for uid in members
+        ):
+            # The two zero-length lines bound KiBot's stackup. A resized
+            # rectangle can leave the old bottom-right marker beyond it.
+            def member_block(kind, uid):
+                pos = pcb_text.index(f'(uuid "{uid}")')
+                start = pcb_text.rfind(f'\n\t({kind}\n', 0, pos)
+                if start >= 0:
+                    block = sexpr_block(pcb_text, start + 2)
+                    if f'(uuid "{uid}")' in block:
+                        return block
+                return ""
+
+            frame = member_block("gr_rect", members[1])
+            marker = member_block("gr_line", members[0])
+            corner = re.search(r'\(end ([^()]+)\)', frame)
+            point = re.search(r'\(start ([^()]+)\)\s*\(end \1\)', marker)
+            if corner and point:
+                moved = re.sub(r'\((start|end) [^()]+\)', lambda m: f'({m[1]} {corner[1]})', marker)
+                pcb_text = pcb_text.replace(marker, moved, 1)
+            ids = " ".join(f'"{uid}"' for uid in members)
+            new_groups.append(f'\t(group "{stackup}"\n\t\t(uuid "{group_uuid}")\n\t\t(members {ids})\n\t)\n')
+    if not new_groups:
+        return problems, None
+    m = re.search(r"^\t\(group ", pcb_text, re.MULTILINE) or re.search(r"^\t\(embedded_fonts", pcb_text, re.MULTILINE)
+    at = m.start() if m else pcb_text.rstrip().rfind(")")
+    return problems, pcb_text[:at] + "".join(new_groups) + pcb_text[at:]
+
+
+def manufacturing_note_problems(pcb_text):
+    problems = []
+    for (label, path), layer in zip(MANUFACTURING_NOTES, ("User.6", "User.4")):
+        if not path.is_file() or not parse_notes(read(path))["notes"]:
+            problems.append(f"{label}: {path.name} needs at least one numbered note.")
+        variable = "${" + path.stem.upper() + "}"
+        pattern = r'^\t\(gr_text "' + re.escape(variable) + '"'
+        if pcb_text is not None and not any(
+            f'(layer "{layer}")' in sexpr_block(pcb_text, match.start() + 1)
+            for match in re.finditer(pattern, pcb_text, re.MULTILINE)
+        ):
+            problems.append(f"{label}: place the text {variable} on PCB layer {layer}.")
+    return problems
+
+
+def check_drawings():
+    pcb = read(PROJECT_DIR / (find_project_stem() + ".kicad_pcb"))
+    image_problems, _ = image_group_fixes(pcb, check_stackup=stackup_enabled(read(STACKUP_YAML)))
+    problems = image_problems + manufacturing_note_problems(pcb)
+    for problem in problems:
+        print(problem)
+    if problems:
+        print("Open configure.py and choose Check config to review repairs.")
+    return not problems
+
+
+def config_check_plan():
     text = read(KIBOT_MAIN)
     file_problems = project_file_problems()
     defs = read_definitions(text)
@@ -1338,25 +1530,35 @@ def action_check(fix=False, dry_run=False):
         impedance_problems.append(
             f"The impedance table is off, but {PDF_FAB_YAML.name} predates the on/off switch, so the "
             "fabrication drawing still fills it in. Copy that file from the current template.")
-    problems = file_problems + lint(text) + fit_problems + impedance_problems
-    if not problems:
-        print("\nConfig OK - no problems found.")
-        return True
-    print("\nProblems found:")
-    for p in problems:
-        print(f"  - {p}")
-
+    pcbs = sorted(PROJECT_DIR.glob("*.kicad_pcb"))
+    pcb_path = pcbs[0] if len(pcbs) == 1 else None
+    image_problems, image_fixed = ([], None)
+    pcb_text = read(pcb_path) if pcb_path else None
+    if pcb_text and CONFLICT_MARKER_RE.search(pcb_text):
+        pcb_text = None
+    if pcb_text is not None:
+        check_stackup = stackup_enabled(read(STACKUP_YAML))
+        image_problems, image_fixed = image_group_fixes(pcb_text, check_stackup=check_stackup)
+    notes_problems = manufacturing_note_problems(pcb_text)
+    problems = file_problems + lint(text) + fit_problems + impedance_problems + image_problems + notes_problems
     # Automatic fixes: quoting in kibot_main.yaml, and .kicad_pro merge
     # conflicts (almost always just CI's regenerated text variables).
     plan = Plan()
+    if not problems:
+        return problems, plan, [], file_problems
     fixed = quote_passthroughs(text)
     if fixed != text and not lint(fixed):
         plan.write(KIBOT_MAIN, fixed, "quoted free-text @VAR@ passthroughs")
-    unresolved = [p for p in file_problems if ".kicad_pro" not in p] + fit_problems
+    unresolved = [p for p in file_problems if ".kicad_pro" not in p] + fit_problems + notes_problems
     if include is not None and include != enabled:
         plan_impedance(plan, enabled)
     else:
         unresolved += impedance_problems
+    if image_fixed is not None:
+        plan.write(pcb_path, image_fixed, "restored missing assembly or fabrication drawing groups")
+        unresolved += image_group_fixes(image_fixed, check_stackup=check_stackup)[0]
+    else:
+        unresolved += image_problems
     for pro in sorted(PROJECT_DIR.glob("*.kicad_pro")):
         if not CONFLICT_MARKER_RE.search(read(pro)):
             if any(p.startswith(pro.name) for p in file_problems):
@@ -1367,6 +1569,18 @@ def action_check(fix=False, dry_run=False):
             unresolved.append(f"{pro.name}: can't resolve the conflict automatically - {reason}")
         else:
             plan.write(pro, merged, "merge conflict resolved (both sides' changes kept)")
+
+    return problems, plan, unresolved, file_problems
+
+
+def action_check(fix=False, dry_run=False):
+    problems, plan, unresolved, file_problems = config_check_plan()
+    if not problems:
+        print("\nConfig OK - no problems found.")
+        return True
+    print("\nProblems found:")
+    for problem in problems:
+        print(f"  - {problem}")
 
     applied = False
     if plan.empty():
@@ -1405,7 +1619,7 @@ def confirm_kicad_closed(stem):
     locks = kicad_is_open(stem)
     if locks:
         raise ConfigError("This project is open in KiCad (" + ", ".join(locks) + "). Close KiCad and run this again.")
-    if sys.stdin.isatty() and not ask_yes_no("Is KiCad closed for this project?", default=True):
+    if interactive() and not ask_yes_no("Is KiCad closed for this project?", default=True):
         raise ConfigError("Close KiCad, then run this again.")
 
 
@@ -1427,8 +1641,9 @@ def menu(dry_run):
               "  3. Review fab / assembly notes, impedance table, stackup\n"
               "  4. Show current settings\n"
               "  5. Check config for problems\n"
+              "  6. Set fabrication stackup generation\n"
               "  q. Quit")
-        choice = ask("Choose", validate=lambda v: None if v.lower() in ("1", "2", "3", "4", "5", "q") else "Enter 1-5 or q.").lower()
+        choice = ask("Choose", validate=lambda v: None if v.lower() in ("1", "2", "3", "4", "5", "6", "q") else "Enter 1-6 or q.").lower()
         try:
             if choice == "1":
                 action_stage(dry_run)
@@ -1440,10 +1655,22 @@ def menu(dry_run):
                 action_show()
             elif choice == "5":
                 action_check(fix=True, dry_run=dry_run)
+            elif choice == "6":
+                action_stackup_generation(dry_run)
             else:
                 return
         except ConfigError as e:
             print(f"\n  ! {e}")
+
+
+def desktop_menu(dry_run):
+    try:
+        import configure_gui
+    except ImportError as error:
+        if error.name not in ("tkinter", "_tkinter"):
+            raise
+        return False
+    return configure_gui.run(sys.modules[__name__], dry_run)
 
 
 def main():
@@ -1451,13 +1678,17 @@ def main():
     parser.add_argument("--stage", "--variant", dest="stage", metavar="NAME",
                         help="Set the project stage directly (DRAFT, PRELIMINARY, CHECKED, RELEASED).")
     parser.add_argument("--version", metavar="X.Y.Z", help="With --stage RELEASED, the version to release.")
+    parser.add_argument("--cli", action="store_true", help="Open the terminal menu.")
     parser.add_argument("--init", action="store_true", help="Run first-time setup (board info) directly.")
     parser.add_argument("--check", action="store_true", help="Validate the config; exit 1 if there are problems.")
+    parser.add_argument("--check-drawings", action="store_true", help="Validate the drawing frames and notes before rendering.")
     parser.add_argument("--fix", action="store_true", help="With --check, auto-fix fixable problems.")
     parser.add_argument("--dry-run", action="store_true", help="Show what would change without writing.")
     args = parser.parse_args()
 
     try:
+        if args.check_drawings:
+            sys.exit(0 if check_drawings() else 1)
         fix_remote_library_paths(dry_run=args.dry_run)
         if args.check:
             sys.exit(0 if action_check(fix=args.fix, dry_run=args.dry_run) else 1)
@@ -1465,7 +1696,9 @@ def main():
             confirm_kicad_closed(find_project_stem())
             action_stage(args.dry_run, requested=args.stage, version=args.version)
             return
-        if not sys.stdin.isatty():
+        if not args.cli and not args.init and desktop_menu(args.dry_run):
+            return True
+        if not interactive():
             raise ConfigError("The menu needs an interactive terminal. Use --stage or --check for scripts.")
         if args.init:
             stem = find_project_stem()
@@ -1494,8 +1727,9 @@ def launched_by_double_click():
 if __name__ == "__main__":
     if sys.version_info < (3, 8):
         sys.exit("configure.py needs Python 3.8 or newer.")
+    opened_desktop = False
     try:
-        main()
+        opened_desktop = main()
     finally:
-        if launched_by_double_click():
+        if not opened_desktop and interactive() and len(sys.argv) == 1 and launched_by_double_click():
             input("\nPress Enter to close...")

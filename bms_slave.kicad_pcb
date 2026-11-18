@@ -368493,8 +368493,8 @@
 		(uuid "bdd9a7b4-5b99-4209-91ce-c2c1e5366d6f")
 	)
 	(gr_line
-		(start 109.570362 94.936034)
-		(end 109.570362 94.936034)
+		(start 97.5 94.936034)
+		(end 97.5 94.936034)
 		(stroke
 			(width 0.01)
 			(type default)
@@ -410404,6 +410404,10 @@
 			)
 		)
 	)
+	(group "kibot_fancy_stackup"
+		(uuid "3854e0e8-20ee-419d-a125-a98e4f66521d")
+		(members "45afa94d-0274-4dc8-b787-0d50767327c9" "80964ee5-e706-474a-9b94-fee381934114" "ae24ec74-2a84-4c8f-b73c-fd0591174ddb" "bdd9a7b4-5b99-4209-91ce-c2c1e5366d6f" "e03ca4ae-4b46-4421-b513-521a6b97a5b0")
+	)
 	(group "ViaStitching /Project Architecture/GND L1:L4"
 		(uuid "88c65101-8608-4d91-9b48-8366f0fb96e9")
 		(members "009e96b7-d89d-4251-a146-73048e2f5a08" "01749890-4e27-4f0f-b75b-d63f41753be1"
@@ -410496,6 +410500,14 @@
 			"d489eada-1673-47d8-94a4-bbe77adb6d38" "dbac9858-6f9f-4585-96e7-3985cf04434a"
 			"ebac2ffb-5d81-4202-abd6-a1374bf0f35b"
 		)
+	)
+	(group "kibot_image_png_3d_viewer_angled_top"
+		(uuid "04d08607-677d-4f8a-bfdd-849fe27e04a9")
+		(members "7475ec0d-efe9-4437-8754-ed4d70b95384")
+	)
+	(group "kibot_image_png_3d_viewer_bottom"
+		(uuid "1a349a17-5bec-4257-a55f-57a4c736ca21")
+		(members "1d3aaa28-c9c1-45fd-8d0a-40340f504692")
 	)
 	(group "kibot_image_png_3d_viewer_angled_bottom"
 		(uuid "39efd57c-746f-4653-8062-18e9f1205178")

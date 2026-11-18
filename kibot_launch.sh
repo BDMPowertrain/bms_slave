@@ -199,8 +199,11 @@ fi
 # layer pair always exists and crashes (IndexError in draw_drill_map) when
 # it doesn't. See the README's "Hard requirement" note in CI/CD, Variants,
 # and the Changelog: add at least one via or through-hole part first.
+if [[ "$costs_flag" == false && "$variant" != DRAFT ]]; then
+    python3 configure.py --check-drawings || exit $?
+fi
 echo -e "${GREEN}Running: $kibot_command1${NC}"
-eval $kibot_command1
+eval "$kibot_command1" || exit $?
 if [[ "$costs_flag" == false ]]; then
     echo -e "${GREEN}Running: $kibot_command2${NC}"
     eval $kibot_command2

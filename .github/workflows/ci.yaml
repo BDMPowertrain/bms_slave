@@ -248,6 +248,10 @@ jobs:
           path: ~/cache_3d
           key: cache_3d
 
+      - name: Check drawing frames and manufacturing notes
+        if: env.kibot_variant != 'DRAFT'
+        run: python3 configure.py --check-drawings
+
       # Generate notes (skipped for DRAFT variant)
       - name: Generate notes (KiCad 10)
         if: env.kibot_variant != 'DRAFT'
