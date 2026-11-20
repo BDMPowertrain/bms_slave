@@ -21,7 +21,7 @@
 				)
 			)
 		)
-		(property "Value" "PESD1CAN,215"
+		(property "Value" "ESD562DBZRQ1"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42,7 +42,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -53,7 +53,7 @@
 				)
 			)
 		)
-		(property "Description" "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB"
+		(property "Description" "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64,7 +64,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Nexperia USA Inc."
+		(property "Manufacturer" "Texas Instruments"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -75,7 +75,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Part Number" "PESD1CAN,215"
+		(property "Manufacturer Part Number" "ESD562DBZRQ1"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

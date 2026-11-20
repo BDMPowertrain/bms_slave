@@ -52,8 +52,8 @@
         "zones": {
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.0,
-          "corner_smoothing": 0,
+          "corner_radius": 0.5,
+          "corner_smoothing": 1,
           "fill_mode": 0,
           "hatch_gap": 1.5,
           "hatch_orientation": 0.0,
@@ -78,8 +78,16 @@
       ],
       "drc_exclusions": [
         [
-          "skew_out_of_range|170250000|78000000|c7446f6e-67fb-4ce3-9cca-f8456420dcff|00000000-0000-0000-0000-000000000000",
-          "Short Enough does not matter."
+          "lib_footprint_mismatch|110500000|87212500|f56a11d9-260b-4360-ba27-1672235d2a96|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "lib_footprint_mismatch|135649999|90149999|d2b57a41-f89c-4600-a04d-b293206649c1|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "skew_out_of_range|170250000|78000000|2d5d23e7-36af-4540-8d8b-c4486091cb99|00000000-0000-0000-0000-000000000000",
+          ""
         ]
       ],
       "meta": {
@@ -1245,7 +1253,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "#G1-2,#PWR1-66,C1-84,CR1-4,D1-2,F1-11,FID1-6,G1-3,H1-6,J1-12,JP1,NT1-2,Q1-2,R1-86,TP1-20,U1-6",
+    "used_designators": "#G1-2,#PWR1-66,C1-84,CR1-4,D1-2,F1-11,FID1-6,G1-3,H1-6,J1-12,JP1,NT1-2,Q1-2,R1-86,TP1-20,U1-11",
     "variants": []
   },
   "sheets": [

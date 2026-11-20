@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Changed
+
+-   Replaced CR1 and CR2 with ESD562DBZRQ1 for daisy-chain ESD protection.
+-   Added TPD1E05U06QDPYRQ1 ESD protection to temperature inputs TMP1–TMP8.
+
 ## [1.2.0] - 2026-11-03
 
 ### Fixed
