@@ -7,7 +7,7 @@
 	(lib (name "remote_crcw251210r0fkeg") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_crcw251210r0fkeg.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_zxtn4004kqtc") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_zxtn4004kqtc.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_crcw1210150rfkea") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_crcw1210150rfkea.pretty/") (options "") (descr "Remote download"))
-	(lib (name "remote_c0805x224k1racauto") (type "KiCad") (uri "/home/aidan/git/bms_slave/RemoteLibrary/footprints/remote_c0805x224k1racauto.pretty/") (options "") (descr "Remote download"))
+	(lib (name "remote_c0805x224k1racauto") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_c0805x224k1racauto.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_cl05a105ko5nnnc") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_cl05a105ko5nnnc.pretty/") (options "") (descr "Remote download"))
 	(lib (name "remote_cl31b475kbhnfne") (type "KiCad") (uri "${KIPRJMOD}/RemoteLibrary/footprints/remote_cl31b475kbhnfne.pretty/") (options "") (descr "Remote download"))
 	(lib (name "0_Library") (type "KiCad") (uri "${KIPRJMOD}/0_Library.pretty") (options "") (descr ""))
