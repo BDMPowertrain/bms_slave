@@ -1,10 +1,10 @@
 # KiCad text formats — diffable as text (also what Prism's semantic diffing
-# reads). merge=union stops git from refusing to merge two changed
-# schematics, but a unioned S-expression file is still nonsense to open in
-# KiCad — this exists to make a conflict an obvious mess someone stops and
-# asks about, not to make schematic merges actually work. The real
-# protection is the one-owner-at-a-time convention in README.md.
-*.kicad_sch text merge=union
+# reads). Deliberately NO merge=union: union "resolves" a conflict by keeping
+# both sides' lines with no conflict markers and reports a clean merge, so a
+# corrupted schematic got committed with nothing flagging it. Default merging
+# leaves <<<<<<< markers, which configure.py --check and CI both catch. The
+# real protection is the one-owner-at-a-time convention in README.md.
+*.kicad_sch text
 *.kicad_pcb text
 *.kicad_pro text
 *.kicad_wks text

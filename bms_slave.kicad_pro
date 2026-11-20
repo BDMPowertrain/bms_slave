@@ -52,8 +52,8 @@
         "zones": {
           "border_display_style": 2,
           "border_hatch_pitch": 0.5,
-          "corner_radius": 0.0,
-          "corner_smoothing": 0,
+          "corner_radius": 0.5,
+          "corner_smoothing": 1,
           "fill_mode": 0,
           "hatch_gap": 1.5,
           "hatch_orientation": 0.0,
@@ -78,8 +78,16 @@
       ],
       "drc_exclusions": [
         [
-          "skew_out_of_range|170250000|78000000|c7446f6e-67fb-4ce3-9cca-f8456420dcff|00000000-0000-0000-0000-000000000000",
-          "Short Enough does not matter."
+          "lib_footprint_mismatch|110500000|87212500|f56a11d9-260b-4360-ba27-1672235d2a96|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "lib_footprint_mismatch|135649999|90149999|d2b57a41-f89c-4600-a04d-b293206649c1|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "skew_out_of_range|170250000|78000000|2d5d23e7-36af-4540-8d8b-c4486091cb99|00000000-0000-0000-0000-000000000000",
+          ""
         ]
       ],
       "meta": {
@@ -312,6 +320,34 @@
   },
   "erc": {
     "erc_exclusions": [
+      [
+        "pin_to_pin|1727200|1143000|6595efe8-2568-49ac-b854-11650d12b7c7|a9d92105-0007-4783-9c4b-e263b3da1031|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|1397000|a9d92105-0007-4783-9c4b-e263b3da1031|1ee5d94c-d9fb-4d3e-bd51-c1c779c8a5c7|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|1651000|1ee5d94c-d9fb-4d3e-bd51-c1c779c8a5c7|e555d891-cd28-478d-82ff-b1669c80b2f8|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|1905000|e555d891-cd28-478d-82ff-b1669c80b2f8|f299f790-834b-4bc9-ad09-b61e7dee77a6|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|2159000|f299f790-834b-4bc9-ad09-b61e7dee77a6|e2805baf-49b9-4ed3-8503-93cdf0792fa7|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|2413000|e2805baf-49b9-4ed3-8503-93cdf0792fa7|7195b07f-bc0f-4f48-8027-5593046996dd|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
+      [
+        "pin_to_pin|1727200|889000|30cfeca3-c06f-4295-8d9d-72d18fb43149|6595efe8-2568-49ac-b854-11650d12b7c7|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855",
+        ""
+      ],
       [
         "power_pin_not_driven|1244600|1092200|aba63301-2cbf-4de6-9eea-03fe7d489da6|00000000-0000-0000-0000-000000000000|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531|",
         ""
@@ -1245,7 +1281,7 @@
         "uuid": "f9e05184-c88b-4a88-ae9c-ab2bdb32be7c"
       }
     ],
-    "used_designators": "#G1-2,#PWR1-66,C1-84,CR1-4,D1-2,F1-11,FID1-6,G1-3,H1-6,J1-12,JP1,NT1-2,Q1-2,R1-86,TP1-20,U1-6",
+    "used_designators": "#G1-2,#PWR1-66,C1-84,CR1-4,D1-2,F1-11,FID1-6,G1-3,H1-6,J1-12,JP1,NT1-2,Q1-2,R1-86,TP1-20,U1-11",
     "variants": []
   },
   "sheets": [
@@ -1298,24 +1334,22 @@
     "COMPANY": "Blue Devil Motor Sports",
     "DESCRIPTION": "8S BMS slave board for Blue Devil Motor Sports’ EV27 FSAE Electric accumulator: a TI BQ7961x-Q1 cell monitor with passive balancing, 8 Enepaq temperature channels and a transformer-isolated daisy chain.",
     "DESIGNER": "Aidan Brzezinski",
-    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n1)\tFABRICATE PER IPC-6012A CLASS 2.\n\n2)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n3)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.\n\n4)\tSURFACE FINISH: IMMERSION GOLD\n\n5)\tSOLDERMASK ON BOTH SIDES OF THE BOARD SHALL \n\tBE LPI, COLOR BLUE.\n\n6)\tSILK SCREEN LEGEND TO BE APPLIED PER LAYER \n\tSTACKUP USING WHITE NON-CONDUCTIVE EPOXY INK.\n\n7)\tALL VIAS ARE TENTED ON BOTH SIDES UNLESS \n\tSOLDERMASK OPENED IN GERBER.\n\n8)\tVENDOR SHOULD FOLLOW ROHS COMPLIANT PROCESS \n\tAND Pb FREE FOR MANUFACTURING\n\n9)\tPCB MATERIAL REQUIREMENTS:\n\n\tA.\tFLAMMABILITY RATING MUST MEET OR EXCEED \n\t\tUL94V-0 REQUIREMENTS.\n\tB.\tTg 170 C OR EQUIVALENT.\n\tC.\tEQUIVALENT MATERIAL SHALL BE RoHS COMPLIANT, \n\t\tHALOGEN FREE AND APPROVED BY BLUE DEVIL MOTOR SPORTS.\n\n10)\tDESIGN GEOMETRY MINIMUM FEATURE SIZES:\n\n\tBOARD SIZE\t\t\t\t80.000 × 45.000 mm\n\tBOARD THICKNESS\t\t1.581 mm\n\tTRACE WIDTH\t\t\t0.200 mm\n\tTRACE TO TRACE\t\t-0.000 mm\n\tMIN. HOLE (PTH)\t\t\t0.200 mm\n\tMIN. HOLE (NPTH)\t\t3.050 mm\n\tANNULAR RING\t\t\t0.150 mm\n\tCOPPER TO HOLE\t\t0.254 mm\n\tCOPPER TO EDGE\t\t0.500 mm\n\tHOLE TO HOLE\t\t\t0.254 mm\n\n11)\tREFER TO IMPEDANCE TABLE FOR IMPEDANCE CONTROL REQUIREMENTS.\n\n12)\tCONFIRM SPACE WIDTHS AND SPACINGS.",
-    "GIT_HASH_PCB": "d748911",
+    "FABRICATION_NOTES": "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n\n1)\tOUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n\t\"Edge_Cuts.GBR\" SUFFIX.\n\n\tDIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n\tDRAWING FOR REFERENCE ONLY.\n\n2)\tSEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n\tFOR HOLE LOCATIONS.\n\n\tSELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n\tFOR REFERENCE ONLY.",
+    "GIT_HASH_PCB": "f84edfb",
     "GIT_HASH_SCH": "6537258",
     "GIT_URL": "https://github.com/BDMPowertrain/BMS_Slave",
     "PROJECT_NAME": "BMS Slave",
-    "RELEASE_BODY_1.0.0": "",
-    "RELEASE_BODY_1.0.1": "",
-    "RELEASE_BODY_1.0.2": "",
-    "RELEASE_BODY_1.1.0": "",
-    "RELEASE_BODY_UNRELEASED": "Version Unreleased not found.",
-    "RELEASE_DATE": "03-Nov-2026",
-    "RELEASE_DATE_NUM": "2026-11-03",
-    "RELEASE_TITLE_1.0.0": "",
-    "RELEASE_TITLE_1.0.1": "",
-    "RELEASE_TITLE_1.0.2": "",
-    "RELEASE_TITLE_1.1.0": "",
-    "RELEASE_TITLE_UNRELEASED": "Version Unreleased not found.",
-    "REVISION": "1.2.0",
+    "RELEASE_BODY_1": "___________________________________\n\nChanged\n\n- Replaced CR1 and CR2 with ESD562DBZRQ1 for daisy-chain ESD protection.\n\n- Added TPD1E05U06QDPYRQ1 ESD protection to temperature inputs TMP1–TMP8.",
+    "RELEASE_BODY_2": "___________________________________\n\nFixed\n\n- Main board to board connector centered.",
+    "RELEASE_BODY_3": "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.",
+    "RELEASE_BODY_4": "___________________________________\n\nChanged\n\n- Inital Release.",
+    "RELEASE_DATE": "20-Nov-2026",
+    "RELEASE_DATE_NUM": "2026-11-20",
+    "RELEASE_TITLE_1": "Version 1.3.0 - 2026-11-20",
+    "RELEASE_TITLE_2": "Version 1.2.0 - 2026-11-03",
+    "RELEASE_TITLE_3": "Version 1.1.0 - 2026-11-03",
+    "RELEASE_TITLE_4": "Version 1.0.0 - 2026-10-29",
+    "REVISION": "1.3.0",
     "SHEET_NAME_1": "Cover Page",
     "SHEET_NAME_10": "Revision History",
     "SHEET_NAME_11": "......................................",

@@ -48,7 +48,7 @@ env:
   # CHECKED: will generate both schematic and PCB documents, with ERC/DRC
   # RELEASED: same as CHECKED, then releases release_version (see "Releases" above)
   kibot_variant: RELEASED
-  release_version: "1.2.0"
+  release_version: "1.3.0"
 
   kibot_log: kibot_run.log
 
@@ -247,6 +247,10 @@ jobs:
         with:
           path: ~/cache_3d
           key: cache_3d
+
+      - name: Check drawing frames and manufacturing notes
+        if: env.kibot_variant != 'DRAFT'
+        run: python3 configure.py --check-drawings
 
       # Generate notes (skipped for DRAFT variant)
       - name: Generate notes (KiCad 10)

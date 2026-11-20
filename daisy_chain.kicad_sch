@@ -3006,7 +3006,7 @@
 					)
 				)
 			)
-			(property "Value" "PESD1CAN,215"
+			(property "Value" "ESD562DBZRQ1"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3027,7 +3027,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf"
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3038,7 +3038,7 @@
 					)
 				)
 			)
-			(property "Description" "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB"
+			(property "Description" "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3049,7 +3049,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "Nexperia USA Inc."
+			(property "Manufacturer" "Texas Instruments"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3060,7 +3060,7 @@
 					)
 				)
 			)
-			(property "Manufacturer Part Number" "PESD1CAN,215"
+			(property "Manufacturer Part Number" "ESD562DBZRQ1"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4627,13 +4627,13 @@
 		(uuid "fd8b5fa4-a69f-4a56-a29c-8922715198aa")
 	)
 	(junction
-		(at 177.8 125.73)
+		(at 177.8 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "02f50112-4b61-4bb1-8ba2-911129df62d7")
 	)
 	(junction
-		(at 187.96 125.73)
+		(at 187.96 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1f0c6931-2afd-47b3-afc4-666724c443c6")
@@ -4669,7 +4669,7 @@
 		(uuid "77805a96-b1b6-4be1-b345-bba139f560c7")
 	)
 	(junction
-		(at 177.8 146.05)
+		(at 177.8 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8906c6c3-aa16-4d7e-b4b2-8501ce866b07")
@@ -4681,19 +4681,19 @@
 		(uuid "bd6c623f-2590-49b1-9529-568dfe1577b7")
 	)
 	(junction
-		(at 205.74 146.05)
+		(at 205.74 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c5c63158-1c62-45d8-92f1-c8e2917b3f6e")
 	)
 	(junction
-		(at 205.74 125.73)
+		(at 205.74 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1892121-d434-4907-b64c-0e0d16be6e42")
 	)
 	(junction
-		(at 187.96 146.05)
+		(at 187.96 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eddcda13-b407-497e-bff8-4bd35932df1e")
@@ -4707,7 +4707,7 @@
 		(uuid "5179ec1f-ce62-4f0c-a511-e56e3a9ae20d")
 	)
 	(no_connect
-		(at 295.91 135.89)
+		(at 295.91 137.16)
 		(uuid "8fe259c7-7fc4-4be5-98ac-6ef57d7b76dd")
 	)
 	(no_connect
@@ -4715,7 +4715,7 @@
 		(uuid "a2507b34-f195-4957-bb96-4dc20eef5eb8")
 	)
 	(bus_entry
-		(at 299.72 138.43)
+		(at 299.72 139.7)
 		(size -2.54 2.54)
 		(stroke
 			(width 0)
@@ -4742,7 +4742,7 @@
 		(uuid "b7c4b064-ee60-49a1-b453-08b34fb672a9")
 	)
 	(bus_entry
-		(at 299.72 128.27)
+		(at 299.72 129.54)
 		(size -2.54 2.54)
 		(stroke
 			(width 0)
@@ -4752,7 +4752,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 138.43) (xy 228.6 135.89)
+			(xy 228.6 139.7) (xy 228.6 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4762,7 +4762,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 135.89) (xy 295.91 135.89)
+			(xy 287.02 137.16) (xy 295.91 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4772,7 +4772,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 146.05) (xy 205.74 146.05)
+			(xy 203.2 147.32) (xy 205.74 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4782,7 +4782,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 125.73) (xy 195.58 125.73)
+			(xy 187.96 127) (xy 195.58 127)
 		)
 		(stroke
 			(width 0)
@@ -4792,7 +4792,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 146.05) (xy 187.96 148.59)
+			(xy 187.96 147.32) (xy 187.96 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4802,7 +4802,7 @@
 	)
 	(bus
 		(pts
-			(xy 307.34 125.73) (xy 302.26 125.73)
+			(xy 307.34 127) (xy 302.26 127)
 		)
 		(stroke
 			(width 0)
@@ -4812,7 +4812,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 125.73) (xy 205.74 133.35)
+			(xy 205.74 127) (xy 205.74 134.62)
 		)
 		(stroke
 			(width 0)
@@ -4822,7 +4822,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 135.89) (xy 246.38 135.89)
+			(xy 238.76 137.16) (xy 246.38 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4832,7 +4832,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 140.97) (xy 236.22 146.05)
+			(xy 236.22 142.24) (xy 236.22 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4842,7 +4842,7 @@
 	)
 	(polyline
 		(pts
-			(xy 266.7 144.78) (xy 266.7 165.1)
+			(xy 266.7 146.05) (xy 266.7 166.37)
 		)
 		(stroke
 			(width 0)
@@ -4852,7 +4852,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 146.05) (xy 195.58 146.05)
+			(xy 187.96 147.32) (xy 195.58 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4862,7 +4862,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 125.73) (xy 177.8 130.81)
+			(xy 177.8 127) (xy 177.8 132.08)
 		)
 		(stroke
 			(width 0)
@@ -4872,7 +4872,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 135.89) (xy 231.14 135.89)
+			(xy 228.6 137.16) (xy 231.14 137.16)
 		)
 		(stroke
 			(width 0)
@@ -4922,7 +4922,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 140.97) (xy 297.18 140.97)
+			(xy 287.02 142.24) (xy 297.18 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4942,7 +4942,7 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 140.97) (xy 236.22 140.97)
+			(xy 246.38 142.24) (xy 236.22 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4972,7 +4972,7 @@
 	)
 	(bus
 		(pts
-			(xy 299.72 128.27) (xy 299.72 138.43)
+			(xy 299.72 129.54) (xy 299.72 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5052,7 +5052,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 146.05) (xy 177.8 146.05)
+			(xy 165.1 147.32) (xy 177.8 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5102,7 +5102,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 125.73) (xy 236.22 125.73)
+			(xy 205.74 127) (xy 236.22 127)
 		)
 		(stroke
 			(width 0)
@@ -5142,7 +5142,7 @@
 	)
 	(bus
 		(pts
-			(xy 302.26 125.73) (xy 299.72 128.27)
+			(xy 302.26 127) (xy 299.72 129.54)
 		)
 		(stroke
 			(width 0)
@@ -5152,7 +5152,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 125.73) (xy 205.74 125.73)
+			(xy 203.2 127) (xy 205.74 127)
 		)
 		(stroke
 			(width 0)
@@ -5162,7 +5162,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 146.05) (xy 236.22 146.05)
+			(xy 205.74 147.32) (xy 236.22 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5172,7 +5172,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 156.21) (xy 187.96 158.75)
+			(xy 187.96 157.48) (xy 187.96 160.02)
 		)
 		(stroke
 			(width 0)
@@ -5202,7 +5202,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 135.89) (xy 187.96 138.43)
+			(xy 187.96 137.16) (xy 187.96 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5222,7 +5222,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 146.05) (xy 187.96 146.05)
+			(xy 177.8 147.32) (xy 187.96 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5232,7 +5232,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 125.73) (xy 177.8 125.73)
+			(xy 165.1 127) (xy 177.8 127)
 		)
 		(stroke
 			(width 0)
@@ -5282,7 +5282,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 130.81) (xy 236.22 125.73)
+			(xy 236.22 132.08) (xy 236.22 127)
 		)
 		(stroke
 			(width 0)
@@ -5292,7 +5292,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 125.73) (xy 187.96 125.73)
+			(xy 177.8 127) (xy 187.96 127)
 		)
 		(stroke
 			(width 0)
@@ -5302,7 +5302,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 130.81) (xy 246.38 130.81)
+			(xy 236.22 132.08) (xy 246.38 132.08)
 		)
 		(stroke
 			(width 0)
@@ -5362,7 +5362,7 @@
 	)
 	(polyline
 		(pts
-			(xy 266.7 96.52) (xy 266.7 121.92)
+			(xy 266.7 97.79) (xy 266.7 123.19)
 		)
 		(stroke
 			(width 0)
@@ -5402,7 +5402,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 138.43) (xy 205.74 146.05)
+			(xy 205.74 139.7) (xy 205.74 147.32)
 		)
 		(stroke
 			(width 0)
@@ -5412,7 +5412,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 130.81) (xy 297.18 130.81)
+			(xy 287.02 132.08) (xy 297.18 132.08)
 		)
 		(stroke
 			(width 0)
@@ -5442,7 +5442,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 125.73) (xy 187.96 128.27)
+			(xy 187.96 127) (xy 187.96 129.54)
 		)
 		(stroke
 			(width 0)
@@ -5472,7 +5472,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 146.05) (xy 177.8 138.43)
+			(xy 177.8 147.32) (xy 177.8 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5524,7 +5524,7 @@
 		)
 	)
 	(label "COML_WN"
-		(at 238.76 130.81 0)
+		(at 238.76 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5534,7 +5534,7 @@
 		)
 		(uuid "24d8a70e-7b74-4d5f-a58a-31d3619f51b4")
 		(property "Netclass" "DAISY"
-			(at 238.76 132.08 0)
+			(at 238.76 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5557,7 +5557,7 @@
 		(uuid "365dc1b9-e2c3-425c-a18f-542feb915ae1")
 	)
 	(label "COML_WP"
-		(at 238.76 140.97 0)
+		(at 238.76 142.24 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5567,7 +5567,7 @@
 		)
 		(uuid "39e58f65-ec4a-46e4-b75a-28e21810a52d")
 		(property "Netclass" "DAISY"
-			(at 238.76 142.24 0)
+			(at 238.76 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5580,7 +5580,7 @@
 		)
 	)
 	(label "COML_CT"
-		(at 238.76 135.89 0)
+		(at 238.76 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5590,7 +5590,7 @@
 		)
 		(uuid "3ae681b6-ecd4-4f42-a7a3-237c38698f8d")
 		(property "Netclass" "DAISY"
-			(at 238.76 137.16 0)
+			(at 238.76 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5626,7 +5626,7 @@
 		)
 	)
 	(label "COML.CT"
-		(at 287.02 135.89 0)
+		(at 287.02 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5636,7 +5636,7 @@
 		)
 		(uuid "3fc3d211-04dd-44a8-bcf4-62c80012b0f7")
 		(property "Netclass" "ISO"
-			(at 287.02 137.16 0)
+			(at 287.02 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5649,7 +5649,7 @@
 		)
 	)
 	(label "U1_COMLN"
-		(at 165.1 125.73 0)
+		(at 165.1 127 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5659,7 +5659,7 @@
 		)
 		(uuid "4314a508-3cfd-4afd-ab29-415917ed369b")
 		(property "Netclass" "DAISY"
-			(at 165.1 127 0)
+			(at 165.1 128.27 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5672,7 +5672,7 @@
 		)
 	)
 	(label "U1_COMLP"
-		(at 165.1 146.05 0)
+		(at 165.1 147.32 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5682,7 +5682,7 @@
 		)
 		(uuid "4a3ec689-de4e-4a26-94aa-e1ea4c5de03a")
 		(property "Netclass" "DAISY"
-			(at 165.1 147.32 0)
+			(at 165.1 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5695,7 +5695,7 @@
 		)
 	)
 	(label "COML.P"
-		(at 287.02 140.97 0)
+		(at 287.02 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5738,7 +5738,7 @@
 		)
 	)
 	(label "COML.N"
-		(at 287.02 130.81 0)
+		(at 287.02 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5893,7 +5893,7 @@
 	)
 	(hierarchical_label "COML{P N}"
 		(shape bidirectional)
-		(at 307.34 125.73 0)
+		(at 307.34 127 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5902,7 +5902,7 @@
 		)
 		(uuid "b9eb4e58-97e9-4fe0-a288-4c0697334146")
 		(property "Netclass" "ISO"
-			(at 308.61 128.27 0)
+			(at 308.61 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5925,6 +5925,220 @@
 			(justify right)
 		)
 		(uuid "d83c3232-3469-404a-a84b-eda126c68c18")
+	)
+	(symbol
+		(lib_id "remote_pesd1can_215:PESD1CAN_215")
+		(at 205.74 86.36 0)
+		(unit 1)
+		(body_style 0)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0342ab79-4964-4dba-94e3-bb1b0b88ad8c")
+		(property "Reference" "CR1"
+			(at 217.17 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "ESD562DBZRQ1"
+			(at 217.17 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "remote_pesd1can_215:SOT23_PESD1_NEX"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "ESD562DBZRQ1"
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Vendor" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Vendor Part Number" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mass (g)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "RQjC (C/W)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "RQjC_top (C/W)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temp_max (C)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temp_min (C)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Power Dissipation (W)" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Rate" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SAP Code" ""
+			(at 205.74 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2323d7f0-c1b4-4843-b3f3-e15dc668b830")
+		)
+		(pin "3"
+			(uuid "605dc11f-b4d1-409f-a3cc-e30b8f7eb6ae")
+		)
+		(pin "2"
+			(uuid "bd7cf678-0156-43fa-90b9-770a00caa245")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
+					(reference "CR1")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:VSSA")
@@ -6219,7 +6433,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 138.43 0)
+		(at 187.96 139.7 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6230,7 +6444,7 @@
 		(fields_autoplaced yes)
 		(uuid "3a8380d4-4305-4afd-9e79-aed41d740c43")
 		(property "Reference" "#PWR053"
-			(at 187.96 144.78 0)
+			(at 187.96 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6241,7 +6455,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 143.51 0)
+			(at 187.96 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6251,7 +6465,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 138.43 0)
+			(at 187.96 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6262,7 +6476,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 138.43 0)
+			(at 187.96 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6273,7 +6487,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 187.96 138.43 0)
+			(at 187.96 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6297,7 +6511,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 158.75 0)
+		(at 187.96 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6308,7 +6522,7 @@
 		(fields_autoplaced yes)
 		(uuid "48e2c084-12eb-4625-8562-d499eb9925fa")
 		(property "Reference" "#PWR054"
-			(at 187.96 165.1 0)
+			(at 187.96 166.37 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6319,7 +6533,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 163.83 0)
+			(at 187.96 165.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6329,7 +6543,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 158.75 0)
+			(at 187.96 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6340,7 +6554,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 158.75 0)
+			(at 187.96 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6351,7 +6565,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 187.96 158.75 0)
+			(at 187.96 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6375,7 +6589,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 228.6 138.43 0)
+		(at 228.6 139.7 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6386,7 +6600,7 @@
 		(fields_autoplaced yes)
 		(uuid "49cf6181-5bfd-4140-ab12-4e103f8243a2")
 		(property "Reference" "#PWR056"
-			(at 228.6 144.78 0)
+			(at 228.6 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6397,7 +6611,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.6 143.51 0)
+			(at 228.6 144.78 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6407,7 +6621,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 138.43 0)
+			(at 228.6 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6418,7 +6632,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 138.43 0)
+			(at 228.6 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6429,7 +6643,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a local label with name \"GND\" , ground"
-			(at 228.6 138.43 0)
+			(at 228.6 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6453,7 +6667,7 @@
 	)
 	(symbol
 		(lib_id "remote_sm91502ala-e:SM91502ALA-E")
-		(at 246.38 130.81 0)
+		(at 246.38 132.08 0)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -6464,7 +6678,7 @@
 		(fields_autoplaced yes)
 		(uuid "4ea2e7bb-9f38-4eaf-b75b-dbbae44a3305")
 		(property "Reference" "U3"
-			(at 266.7 123.19 0)
+			(at 266.7 124.46 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6474,7 +6688,7 @@
 			)
 		)
 		(property "Value" "SM91502ALA-E"
-			(at 266.7 125.73 0)
+			(at 266.7 127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6484,7 +6698,7 @@
 			)
 		)
 		(property "Footprint" "remote_sm91502ala-e:IC6_SM91502ALA-E_BRN"
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6495,7 +6709,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/sm91502ala.pdf"
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6506,7 +6720,7 @@
 			)
 		)
 		(property "Description" "150µH Pulse Transformer 1:1 Surface Mount"
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6517,7 +6731,7 @@
 			)
 		)
 		(property "Manufacturer" "Bourns Inc."
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6528,7 +6742,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "SM91502ALA-E"
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6539,7 +6753,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6550,7 +6764,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6561,7 +6775,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6572,7 +6786,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6583,7 +6797,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6594,7 +6808,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6605,7 +6819,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6616,7 +6830,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6627,7 +6841,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6638,7 +6852,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 246.38 130.81 0)
+			(at 246.38 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6670,220 +6884,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "remote_pesd1can_215:PESD1CAN_215")
-		(at 205.74 86.36 0)
-		(unit 1)
-		(body_style 0)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4f5b1003-5e3d-45c8-84bc-b915a53f2055")
-		(property "Reference" "CR1"
-			(at 217.17 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "PESD1CAN,215"
-			(at 217.17 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "remote_pesd1can_215:SOT23_PESD1_NEX"
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf"
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB"
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Nexperia USA Inc."
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD1CAN,215"
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Vendor" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Vendor Part Number" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mass (g)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "RQjC (C/W)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "RQjC_top (C/W)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temp_max (C)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temp_min (C)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Power Dissipation (W)" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Rate" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SAP Code" ""
-			(at 205.74 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e7887f6c-e486-417f-bbaa-71858888e3e2")
-		)
-		(pin "2"
-			(uuid "780264d6-d40a-446e-8b03-d586f88225d9")
-		)
-		(pin "3"
-			(uuid "52b5b519-81dc-4a2a-bb36-70db75679a5b")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
-					(reference "CR1")
 					(unit 1)
 				)
 			)
@@ -7105,7 +7105,7 @@
 	)
 	(symbol
 		(lib_id "remote_gcm1555c1h221ja16d:C")
-		(at 187.96 128.27 270)
+		(at 187.96 129.54 270)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -7116,7 +7116,7 @@
 		(fields_autoplaced yes)
 		(uuid "668e77a1-f96a-4959-bd3e-115741bc26b3")
 		(property "Reference" "C39"
-			(at 190.5 130.8099 90)
+			(at 190.5 132.0799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7127,7 +7127,7 @@
 			)
 		)
 		(property "Value" "220pF"
-			(at 190.5 133.3499 90)
+			(at 190.5 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7138,7 +7138,7 @@
 			)
 		)
 		(property "Footprint" "remote_cl05a105ko5nnnc:C_0402_1005Metric"
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7149,7 +7149,7 @@
 			)
 		)
 		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C1H221JA16-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7160,7 +7160,7 @@
 			)
 		)
 		(property "Description" "220 pF ±5% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)"
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7171,7 +7171,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7182,7 +7182,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "GCM1555C1H221JA16D"
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7193,7 +7193,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7204,7 +7204,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7215,7 +7215,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7226,7 +7226,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7237,7 +7237,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7248,7 +7248,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7259,7 +7259,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7270,7 +7270,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7281,7 +7281,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7292,7 +7292,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 187.96 128.27 0)
+			(at 187.96 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7319,7 +7319,7 @@
 	)
 	(symbol
 		(lib_id "remote_erj-2rkf1001x:R_US")
-		(at 177.8 130.81 270)
+		(at 177.8 132.08 270)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -7329,7 +7329,7 @@
 		(dnp no)
 		(uuid "6b26b3d7-9e92-4205-9125-861251d82aff")
 		(property "Reference" "R40"
-			(at 180.34 133.3499 90)
+			(at 180.34 134.6199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7340,7 +7340,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 180.34 135.89 90)
+			(at 180.34 137.16 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7351,7 +7351,7 @@
 			)
 		)
 		(property "Footprint" "remote_erj-2ge0r00x:R_0402_1005Metric"
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7362,7 +7362,7 @@
 			)
 		)
 		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7373,7 +7373,7 @@
 			)
 		)
 		(property "Description" "1 kOhms ±1% 0.1W, 1/10W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7384,7 +7384,7 @@
 			)
 		)
 		(property "Manufacturer" "Panasonic Industry"
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7395,7 +7395,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "ERJ-2RKF1001X"
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7406,7 +7406,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7417,7 +7417,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7428,7 +7428,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7439,7 +7439,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7450,7 +7450,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7461,7 +7461,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7472,7 +7472,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7483,7 +7483,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7494,7 +7494,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7505,7 +7505,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 177.8 130.81 0)
+			(at 177.8 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7743,7 +7743,7 @@
 	)
 	(symbol
 		(lib_id "remote_gcm1555c1h221ja16d:C")
-		(at 187.96 148.59 270)
+		(at 187.96 149.86 270)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -7754,7 +7754,7 @@
 		(fields_autoplaced yes)
 		(uuid "716187e3-e38e-4054-815a-61ad05a4e6a2")
 		(property "Reference" "C40"
-			(at 190.5 151.1299 90)
+			(at 190.5 152.3999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7765,7 +7765,7 @@
 			)
 		)
 		(property "Value" "220pF"
-			(at 190.5 153.6699 90)
+			(at 190.5 154.9399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7776,7 +7776,7 @@
 			)
 		)
 		(property "Footprint" "remote_cl05a105ko5nnnc:C_0402_1005Metric"
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7787,7 +7787,7 @@
 			)
 		)
 		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C1H221JA16-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7798,7 +7798,7 @@
 			)
 		)
 		(property "Description" "220 pF ±5% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)"
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7809,7 +7809,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7820,7 +7820,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "GCM1555C1H221JA16D"
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7831,7 +7831,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7842,7 +7842,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7853,7 +7853,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7864,7 +7864,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7875,7 +7875,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7886,7 +7886,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7897,7 +7897,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7908,7 +7908,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7919,7 +7919,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7930,7 +7930,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 187.96 148.59 0)
+			(at 187.96 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8035,7 +8035,7 @@
 	)
 	(symbol
 		(lib_id "remote_gcm1555c1h101ja16d:C")
-		(at 238.76 135.89 180)
+		(at 238.76 137.16 180)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -8045,7 +8045,7 @@
 		(dnp no)
 		(uuid "75569d31-ccca-43fd-851b-ef3507f00bc3")
 		(property "Reference" "C42"
-			(at 234.95 132.08 0)
+			(at 234.95 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8055,7 +8055,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 234.95 139.7 0)
+			(at 234.95 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8065,7 +8065,7 @@
 			)
 		)
 		(property "Footprint" "remote_cl05a105ko5nnnc:C_0402_1005Metric"
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8076,7 +8076,7 @@
 			)
 		)
 		(property "Datasheet" "https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GCM1555C1H101JA16-01A-EN_PDF_CERAMICCAPACITORSMD"
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8087,7 +8087,7 @@
 			)
 		)
 		(property "Description" "100 pF ±5% 50V Ceramic Capacitor C0G, NP0 0402 (1005 Metric)"
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8098,7 +8098,7 @@
 			)
 		)
 		(property "Manufacturer" "Murata Electronics"
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8109,7 +8109,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "GCM1555C1H101JA16D"
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8120,7 +8120,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8131,7 +8131,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8142,7 +8142,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8153,7 +8153,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8164,7 +8164,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8175,7 +8175,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8186,7 +8186,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8197,7 +8197,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8208,7 +8208,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8219,7 +8219,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 238.76 135.89 0)
+			(at 238.76 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8246,7 +8246,7 @@
 	)
 	(symbol
 		(lib_id "remote_crcw040249r9fked:R_US")
-		(at 195.58 146.05 0)
+		(at 195.58 147.32 0)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -8257,7 +8257,7 @@
 		(fields_autoplaced yes)
 		(uuid "781cbc7e-69af-4c42-8daf-31a6b666fe14")
 		(property "Reference" "R44"
-			(at 199.39 139.7 0)
+			(at 199.39 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8267,7 +8267,7 @@
 			)
 		)
 		(property "Value" "49.9"
-			(at 199.39 142.24 0)
+			(at 199.39 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8277,7 +8277,7 @@
 			)
 		)
 		(property "Footprint" "remote_erj-2ge0r00x:R_0402_1005Metric"
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8288,7 +8288,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8299,7 +8299,7 @@
 			)
 		)
 		(property "Description" "49.9 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8310,7 +8310,7 @@
 			)
 		)
 		(property "Manufacturer" "Vishay Dale"
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8321,7 +8321,7 @@
 			)
 		)
 		(property "Manufacturer Part Number" "CRCW040249R9FKED"
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8332,7 +8332,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8343,7 +8343,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8354,7 +8354,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8365,7 +8365,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8376,7 +8376,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8387,7 +8387,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8398,7 +8398,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8409,7 +8409,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8420,7 +8420,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8431,7 +8431,7 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 195.58 146.05 0)
+			(at 195.58 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9032,220 +9032,6 @@
 			(project "bms_slave"
 				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
 					(reference "#PWR055")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "remote_pesd1can_215:PESD1CAN_215")
-		(at 205.74 133.35 0)
-		(unit 1)
-		(body_style 0)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8e2bf5f6-b511-42ef-8410-8eda62b54022")
-		(property "Reference" "CR2"
-			(at 217.17 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "PESD1CAN,215"
-			(at 217.17 142.24 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "remote_pesd1can_215:SOT23_PESD1_NEX"
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf"
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB"
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Nexperia USA Inc."
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer Part Number" "PESD1CAN,215"
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Vendor" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Vendor Part Number" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mass (g)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "RQjC (C/W)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "RQjC_top (C/W)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temp_max (C)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Temp_min (C)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Power Dissipation (W)" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Rate" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SAP Code" ""
-			(at 205.74 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d4d80b5e-96b7-4b93-b004-bb055cd7d21c")
-		)
-		(pin "2"
-			(uuid "d8242f14-b0fa-4e7d-90b1-1c7ba29107f5")
-		)
-		(pin "3"
-			(uuid "84f1e3e9-db51-46d6-8852-acab1f1234f0")
-		)
-		(instances
-			(project "bms_slave"
-				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
-					(reference "CR2")
 					(unit 1)
 				)
 			)
@@ -9944,8 +9730,8 @@
 		)
 	)
 	(symbol
-		(lib_id "remote_crcw040249r9fked:R_US")
-		(at 195.58 125.73 0)
+		(lib_id "remote_pesd1can_215:PESD1CAN_215")
+		(at 205.74 134.62 0)
 		(unit 1)
 		(body_style 0)
 		(exclude_from_sim no)
@@ -9953,10 +9739,19 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d8bfbed4-591f-49ba-a9d0-564642d4c28b")
-		(property "Reference" "R43"
-			(at 199.39 119.38 0)
+		(uuid "caa5f316-d0d4-4fcb-a573-46c31a2f3159")
+		(property "Reference" "CR2"
+			(at 217.17 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "ESD562DBZRQ1"
+			(at 217.17 143.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9965,18 +9760,8 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
-			(at 199.39 121.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "remote_erj-2ge0r00x:R_0402_1005Metric"
-			(at 195.58 125.73 0)
+		(property "Footprint" "remote_pesd1can_215:SOT23_PESD1_NEX"
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9986,8 +9771,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
-			(at 195.58 125.73 0)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907"
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9997,8 +9782,8 @@
 				)
 			)
 		)
-		(property "Description" "49.9 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
-			(at 195.58 125.73 0)
+		(property "Description" "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3"
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10008,8 +9793,8 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Vishay Dale"
-			(at 195.58 125.73 0)
+		(property "Manufacturer" "Texas Instruments"
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10019,8 +9804,8 @@
 				)
 			)
 		)
-		(property "Manufacturer Part Number" "CRCW040249R9FKED"
-			(at 195.58 125.73 0)
+		(property "Manufacturer Part Number" "ESD562DBZRQ1"
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10031,7 +9816,7 @@
 			)
 		)
 		(property "Vendor" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10042,7 +9827,7 @@
 			)
 		)
 		(property "Vendor Part Number" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10053,7 +9838,7 @@
 			)
 		)
 		(property "Mass (g)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10064,7 +9849,7 @@
 			)
 		)
 		(property "RQjC (C/W)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10075,7 +9860,7 @@
 			)
 		)
 		(property "RQjC_top (C/W)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10086,7 +9871,7 @@
 			)
 		)
 		(property "Temp_max (C)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10097,7 +9882,7 @@
 			)
 		)
 		(property "Temp_min (C)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10108,7 +9893,7 @@
 			)
 		)
 		(property "Power Dissipation (W)" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10119,7 +9904,7 @@
 			)
 		)
 		(property "Rate" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10130,7 +9915,222 @@
 			)
 		)
 		(property "SAP Code" ""
-			(at 195.58 125.73 0)
+			(at 205.74 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "060c1d4b-40e0-4bb9-a441-6b395eb5760b")
+		)
+		(pin "3"
+			(uuid "e0a76ed5-90fb-4786-bafa-b5ff2e76bd12")
+		)
+		(pin "2"
+			(uuid "e1e50ca8-a72e-40ba-a5ac-6ecd0e64a635")
+		)
+		(instances
+			(project "bms_slave"
+				(path "/f9e05184-c88b-4a88-ae9c-ab2bdb32be7c/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1"
+					(reference "CR2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "remote_crcw040249r9fked:R_US")
+		(at 195.58 127 0)
+		(unit 1)
+		(body_style 0)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8bfbed4-591f-49ba-a9d0-564642d4c28b")
+		(property "Reference" "R43"
+			(at 199.39 120.65 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "49.9"
+			(at 199.39 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "remote_erj-2ge0r00x:R_0402_1005Metric"
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "49.9 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Automotive AEC-Q200 Thick Film"
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Vishay Dale"
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer Part Number" "CRCW040249R9FKED"
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Vendor" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Vendor Part Number" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mass (g)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "RQjC (C/W)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "RQjC_top (C/W)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temp_max (C)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Temp_min (C)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Power Dissipation (W)" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Rate" ""
+			(at 195.58 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SAP Code" ""
+			(at 195.58 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

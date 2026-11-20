@@ -1,10 +1,214 @@
 ** Drc report for bms_slave.kicad_pcb **
-** Created on 2026-11-03T19:49:19 **
+** Created on 2026-11-20T18:07:26 **
 
-** Found 9 DRC violations **
+** Found 77 DRC violations **
 [skew_out_of_range]: Skew between tracks out of range (rule 'Daisy skew' max skew 0.5000 mm; actual -2.3786 mm; target net length 6.6468 mm (from /Project Architecture/Connectors/COMH.N); actual 4.2683 mm)
     ; error
     @(170.1 mm, 77.0 mm): Track [/Project Architecture/Connectors/COMH.P] on L1, length 0.2828 mm
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 92.9929 mm): Footprint U6
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 95.1371 mm): Footprint U5
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 74.6171 mm): Footprint U11
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 86.1379 mm): Footprint U8
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 79.3029 mm): Footprint U10
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 81.4521 mm): Footprint U9
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 88.2871 mm): Footprint U7
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (not a closed shape)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
+[malformed_courtyard]: Footprint has malformed courtyard (self-intersecting)
+    ; error
+    @(107.1 mm, 99.8429 mm): Footprint U4
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 69.0 mm): Footprint FID3
@@ -14,12 +218,6 @@
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 106.0 mm): Footprint FID1
-[lib_footprint_mismatch]: Footprint 'BQ79616PAPRQ1' does not match copy in library 'remote_bq79616paprq1'
-    ; warning
-    @(136.05 mm, 90.149999 mm): Footprint U1
-[lib_footprint_mismatch]: Footprint 'SAMTEC_IPS1-110-01-L-D' does not match copy in library 'remote_ips1-110-01-l-d'
-    ; warning
-    @(110.5 mm, 87.5 mm): Footprint J3
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 69.0 mm): Footprint FID5
@@ -29,6 +227,12 @@
 [lib_footprint_mismatch]: Footprint 'Fiducial_0.5mm_Mask1mm' does not match copy in library 'Fiducial'
     ; warning
     @(106.0 mm, 106.0 mm): Footprint FID4
+[lib_footprint_mismatch]: Footprint 'BQ79616PAPRQ1' does not match copy in library 'remote_bq79616paprq1'
+    ; warning (excluded)
+    @(136.05 mm, 90.149999 mm): Footprint U1
+[lib_footprint_mismatch]: Footprint 'SAMTEC_IPS1-110-01-L-D' does not match copy in library 'remote_ips1-110-01-l-d'
+    ; warning (excluded)
+    @(110.5 mm, 87.5 mm): Footprint J3
 
 ** Found 0 unconnected pads **
 

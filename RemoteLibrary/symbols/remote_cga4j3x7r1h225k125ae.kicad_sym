@@ -24,7 +24,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2µF"
+		(property "Value" "2.2 µF"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45,7 +45,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_en.pdf"
+		(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -56,7 +56,7 @@
 				)
 			)
 		)
-		(property "Description" "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)"
+		(property "Description" "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -67,7 +67,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "TDK"
+		(property "Manufacturer" "YAGEO"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -78,7 +78,7 @@
 				)
 			)
 		)
-		(property "Manufacturer Part Number" "CGA4J3X7R1H225K125AE"
+		(property "Manufacturer Part Number" "CC0805KKX7R9BB225"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

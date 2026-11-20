@@ -539,14 +539,14 @@
 	)
 	(tbtext "${BOARD_NAME} ${TITLE} Document"
 		(name "")
-		(pos 269.989 180.502)
+		(pos 7.011 9.498 ltcorner)
 		(font
 			(face "Times New Roman")
 			(size 4 4) bold)
 	)
 	(tbtext "${LAYER}"
 		(name "")
-		(pos 138.6322 159.1072)
+		(pos 138.3678 30.8928 ltcorner)
 		(font
 			(face "Times New Roman")
 			(size 3.226 3.226) bold
