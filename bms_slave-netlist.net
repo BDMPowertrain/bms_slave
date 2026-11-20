@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-q6x270ow/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-v408bczx/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -21,35 +21,36 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n\n1)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n2)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.")
 		(textvar
-			(name "GIT_HASH_PCB") "f84edfb")
+			(name "GIT_HASH_PCB") "0eecb42")
 		(textvar
-			(name "GIT_HASH_SCH") "6537258")
+			(name "GIT_HASH_SCH") "0eecb42")
 		(textvar
 			(name "GIT_URL") "https://github.com/BDMPowertrain/BMS_Slave")
 		(textvar
 			(name "PROJECT_NAME") "BMS Slave")
 		(textvar
-			(name "RELEASE_BODY_1") "___________________________________\n\nChanged\n\n- Replaced CR1 and CR2 with ESD562DBZRQ1 for daisy-chain ESD protection.\n\n- Added TPD1E05U06QDPYRQ1 ESD protection to temperature inputs TMP1–TMP8.")
+			(name "RELEASE_BODY_1")
+		)
 		(textvar
-			(name "RELEASE_BODY_2") "___________________________________\n\nFixed\n\n- Main board to board connector centered.")
+			(name "RELEASE_BODY_2") "___________________________________\n\nChanged\n\n- Replaced CR1 and CR2 with ESD562DBZRQ1 for daisy-chain ESD protection.\n\n- Added TPD1E05U06QDPYRQ1 ESD protection to temperature inputs TMP1–TMP8.")
 		(textvar
-			(name "RELEASE_BODY_3") "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.")
+			(name "RELEASE_BODY_3") "___________________________________\n\nFixed\n\n- Main board to board connector centered.")
 		(textvar
-			(name "RELEASE_BODY_4") "___________________________________\n\nChanged\n\n- Inital Release.")
+			(name "RELEASE_BODY_4") "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.")
 		(textvar
 			(name "RELEASE_DATE") "20-Nov-2026")
 		(textvar
 			(name "RELEASE_DATE_NUM") "2026-11-20")
 		(textvar
-			(name "RELEASE_TITLE_1") "Version 1.3.0 - 2026-11-20")
+			(name "RELEASE_TITLE_1") "Version 1.3.1 - 2026-11-20")
 		(textvar
-			(name "RELEASE_TITLE_2") "Version 1.2.0 - 2026-11-03")
+			(name "RELEASE_TITLE_2") "Version 1.3.0 - 2026-11-20")
 		(textvar
-			(name "RELEASE_TITLE_3") "Version 1.1.0 - 2026-11-03")
+			(name "RELEASE_TITLE_3") "Version 1.2.0 - 2026-11-03")
 		(textvar
-			(name "RELEASE_TITLE_4") "Version 1.0.0 - 2026-10-29")
+			(name "RELEASE_TITLE_4") "Version 1.1.0 - 2026-11-03")
 		(textvar
-			(name "REVISION") "1.3.0")
+			(name "REVISION") "1.3.1")
 		(textvar
 			(name "SHEET_NAME_1") "Cover Page")
 		(textvar
@@ -137,7 +138,7 @@
 			(title_block
 				(title)
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "bms_slave.kicad_sch")
 				(comment
@@ -185,7 +186,7 @@
 			(title_block
 				(title "Block Diagram")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "Block Diagram.kicad_sch")
 				(comment
@@ -233,7 +234,7 @@
 			(title_block
 				(title "Project Architecture")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "Project Architecture.kicad_sch")
 				(comment
@@ -281,7 +282,7 @@
 			(title_block
 				(title "Connectors")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "connectors.kicad_sch")
 				(comment
@@ -329,7 +330,7 @@
 			(title_block
 				(title "Cell Sense & Balance")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "cell_sense_and_balance.kicad_sch")
 				(comment
@@ -377,7 +378,7 @@
 			(title_block
 				(title "Power & Reference")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "power_and_reference.kicad_sch")
 				(comment
@@ -425,7 +426,7 @@
 			(title_block
 				(title "Temperature Sense")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "temperature_sense.kicad_sch")
 				(comment
@@ -473,7 +474,7 @@
 			(title_block
 				(title "Daisy Chain")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "daisy_chain.kicad_sch")
 				(comment
@@ -521,7 +522,7 @@
 			(title_block
 				(title "Mechanical")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "mechanical.kicad_sch")
 				(comment
@@ -569,7 +570,7 @@
 			(title_block
 				(title "Revision History")
 				(company "Blue Devil Motor Sports")
-				(rev "1.3.0")
+				(rev "1.3.1")
 				(date "Date")
 				(source "Revision History.kicad_sch")
 				(comment
