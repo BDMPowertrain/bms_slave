@@ -1,7 +1,7 @@
 (export
 	(version "E")
 	(design
-		(source "/tmp/tmp-kibot-net_sch_print-dvgo9arm/bms_slave.kicad_sch")
+		(source "/tmp/tmp-kibot-net_sch_print-q6x270ow/bms_slave.kicad_sch")
 		(date "Date")
 		(tool "Eeschema 10.0.5-unknown-202607221313~667fa36054~ubuntu25.10.1")
 		(textvar
@@ -9,9 +9,9 @@
 		(textvar
 			(name "BOARD_NAME") "BMS_SLAVE")
 		(textvar
-			(name "BRANCH") "dev")
+			(name "BRANCH") "main")
 		(textvar
-			(name "BUILD_VARIANT") "CHECKED")
+			(name "BUILD_VARIANT") "RELEASED")
 		(textvar
 			(name "COMPANY") "Blue Devil Motor Sports")
 		(textvar
@@ -21,7 +21,7 @@
 		(textvar
 			(name "FABRICATION_NOTES") "FABRICATION NOTES (UNLESS OTHERWISE SPECIFIED)\n\n\n1)	OUTLINE DEFINED IN SEPARATE GERBER FILE WITH\n	\"Edge_Cuts.GBR\" SUFFIX.\n\n	DIMENSIONS OF CIRCUMSIZED RECTANGLE SHOWN ON THIS\n	DRAWING FOR REFERENCE ONLY.\n\n2)	SEE SEPARATE DRILL FILES WITH \".DRL\" SUFFIX \n	FOR HOLE LOCATIONS.\n\n	SELECTED HOLE LOCATIONS SHOWN ON THIS DRAWING \n	FOR REFERENCE ONLY.")
 		(textvar
-			(name "GIT_HASH_PCB") "1f2d690")
+			(name "GIT_HASH_PCB") "f84edfb")
 		(textvar
 			(name "GIT_HASH_SCH") "6537258")
 		(textvar
@@ -29,29 +29,27 @@
 		(textvar
 			(name "PROJECT_NAME") "BMS Slave")
 		(textvar
-			(name "RELEASE_BODY_1") "___________________________________\n\nFixed\n\n- Main board to board connector centered.")
+			(name "RELEASE_BODY_1") "___________________________________\n\nChanged\n\n- Replaced CR1 and CR2 with ESD562DBZRQ1 for daisy-chain ESD protection.\n\n- Added TPD1E05U06QDPYRQ1 ESD protection to temperature inputs TMP1–TMP8.")
 		(textvar
-			(name "RELEASE_BODY_2") "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.")
+			(name "RELEASE_BODY_2") "___________________________________\n\nFixed\n\n- Main board to board connector centered.")
 		(textvar
-			(name "RELEASE_BODY_3") "___________________________________\n\nChanged\n\n- Inital Release.")
+			(name "RELEASE_BODY_3") "___________________________________\n\nFixed\n\n- Rules error with clearnce, fixed and passes with no DRC errors.")
 		(textvar
-			(name "RELEASE_BODY_4")
-		)
+			(name "RELEASE_BODY_4") "___________________________________\n\nChanged\n\n- Inital Release.")
 		(textvar
-			(name "RELEASE_DATE") "17-Nov-2026")
+			(name "RELEASE_DATE") "20-Nov-2026")
 		(textvar
-			(name "RELEASE_DATE_NUM") "2026-11-17")
+			(name "RELEASE_DATE_NUM") "2026-11-20")
 		(textvar
-			(name "RELEASE_TITLE_1") "Version 1.2.0 - 2026-11-03")
+			(name "RELEASE_TITLE_1") "Version 1.3.0 - 2026-11-20")
 		(textvar
-			(name "RELEASE_TITLE_2") "Version 1.1.0 - 2026-11-03")
+			(name "RELEASE_TITLE_2") "Version 1.2.0 - 2026-11-03")
 		(textvar
-			(name "RELEASE_TITLE_3") "Version 1.0.0 - 2026-10-29")
+			(name "RELEASE_TITLE_3") "Version 1.1.0 - 2026-11-03")
 		(textvar
-			(name "RELEASE_TITLE_4")
-		)
+			(name "RELEASE_TITLE_4") "Version 1.0.0 - 2026-10-29")
 		(textvar
-			(name "REVISION") "1.2.0+ (Unreleased)")
+			(name "REVISION") "1.3.0")
 		(textvar
 			(name "SHEET_NAME_1") "Cover Page")
 		(textvar
@@ -139,7 +137,7 @@
 			(title_block
 				(title)
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "bms_slave.kicad_sch")
 				(comment
@@ -187,7 +185,7 @@
 			(title_block
 				(title "Block Diagram")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "Block Diagram.kicad_sch")
 				(comment
@@ -235,7 +233,7 @@
 			(title_block
 				(title "Project Architecture")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "Project Architecture.kicad_sch")
 				(comment
@@ -283,7 +281,7 @@
 			(title_block
 				(title "Connectors")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "connectors.kicad_sch")
 				(comment
@@ -331,7 +329,7 @@
 			(title_block
 				(title "Cell Sense & Balance")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "cell_sense_and_balance.kicad_sch")
 				(comment
@@ -379,7 +377,7 @@
 			(title_block
 				(title "Power & Reference")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "power_and_reference.kicad_sch")
 				(comment
@@ -427,7 +425,7 @@
 			(title_block
 				(title "Temperature Sense")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "temperature_sense.kicad_sch")
 				(comment
@@ -475,7 +473,7 @@
 			(title_block
 				(title "Daisy Chain")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "daisy_chain.kicad_sch")
 				(comment
@@ -523,7 +521,7 @@
 			(title_block
 				(title "Mechanical")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "mechanical.kicad_sch")
 				(comment
@@ -571,7 +569,7 @@
 			(title_block
 				(title "Revision History")
 				(company "Blue Devil Motor Sports")
-				(rev "1.2.0+ (Unreleased)")
+				(rev "1.3.0")
 				(date "Date")
 				(source "Revision History.kicad_sch")
 				(comment
@@ -723,6 +721,9 @@
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
 			)
+			(property
+				(name "dnp")
+			)
 			(sheetpath
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
@@ -850,6 +851,9 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "dnp")
 			)
 			(sheetpath
 				(names "/Project Architecture/Connectors/")
@@ -997,6 +1001,9 @@
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
 			)
+			(property
+				(name "dnp")
+			)
 			(sheetpath
 				(names "/Project Architecture/Connectors/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/6c6a059d-71c7-49d0-bb31-68bf0320ac4e/")
@@ -1098,6 +1105,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1147,6 +1160,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1200,6 +1219,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1249,6 +1274,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1302,6 +1333,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1351,6 +1388,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1404,6 +1447,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1453,6 +1502,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1506,6 +1561,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1555,6 +1616,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1608,6 +1675,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1657,6 +1730,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1710,6 +1789,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1759,6 +1844,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1812,6 +1903,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1861,6 +1958,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -1914,6 +2017,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -1963,6 +2072,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -2016,6 +2131,12 @@
 				(value "connectors.kicad_sch")
 			)
 			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
+			)
+			(property
 				(name "ki_keywords")
 				(value "test point tp")
 			)
@@ -2065,6 +2186,12 @@
 			(property
 				(name "Sheetfile")
 				(value "connectors.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "exclude_from_pos_files")
 			)
 			(property
 				(name "ki_keywords")
@@ -7975,15 +8102,15 @@
 		)
 		(comp
 			(ref "C21")
-			(value "2.2µF")
+			(value "2.2 µF")
 			(footprint "remote_c0805x224k1racauto:C_0805_2012Metric")
-			(datasheet "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_en.pdf")
-			(description "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
+			(datasheet "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V")
+			(description "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
 			(fields
 				(field
-					(name "Manufacturer") "TDK")
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "Manufacturer Part Number") "CGA4J3X7R1H225K125AE")
+					(name "Manufacturer Part Number") "CC0805KKX7R9BB225")
 				(field
 					(name "Vendor")
 				)
@@ -8019,22 +8146,22 @@
 				(field
 					(name "Footprint") "remote_c0805x224k1racauto:C_0805_2012Metric")
 				(field
-					(name "Datasheet") "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_en.pdf")
+					(name "Datasheet") "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V")
 				(field
-					(name "Description") "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
+					(name "Description") "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
 			)
 			(libsource
 				(lib "remote_cga4j3x7r1h225k125ae")
 				(part "C")
-				(description "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
+				(description "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
 			)
 			(property
 				(name "Manufacturer")
-				(value "TDK")
+				(value "YAGEO")
 			)
 			(property
 				(name "Manufacturer Part Number")
-				(value "CGA4J3X7R1H225K125AE")
+				(value "CC0805KKX7R9BB225")
 			)
 			(property
 				(name "Vendor")
@@ -8100,7 +8227,7 @@
 				(names "/Project Architecture/Power & Reference/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/dc8544ca-af63-40ad-8cbc-696b729b5531/")
 			)
-			(tstamps "bfcc3d77-b8b5-4745-88ac-4c0f02dbd865")
+			(tstamps "7771df5f-9461-43b1-99af-57441142a3f0")
 			(units
 				(unit
 					(name "A")
@@ -10003,7 +10130,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "d2c23ab4-1745-4f02-8896-c625e4e3d693")
+			(tstamps "3c6094ee-ee4d-48ba-9625-8f63744c0b78")
 			(units
 				(unit
 					(name "A")
@@ -10145,7 +10272,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "e22f4068-0ea9-4489-99bf-da6cf1a3acda")
+			(tstamps "e6046a4e-3686-45e1-8535-427f0311ba4f")
 			(units
 				(unit
 					(name "A")
@@ -10287,7 +10414,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "7ea65581-8507-4507-bb03-2eb7bde41661")
+			(tstamps "90668922-fdff-413c-a7e0-64b9bcce52c2")
 			(units
 				(unit
 					(name "A")
@@ -10429,7 +10556,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "af1ea648-f4c0-40e2-91cf-cc99ec512cd6")
+			(tstamps "9e35a7da-b65a-4854-8d17-2654d9bb192c")
 			(units
 				(unit
 					(name "A")
@@ -10571,7 +10698,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "8921f456-cb69-4c80-97d4-801fd3117c6b")
+			(tstamps "7264a334-96c3-4f57-b926-ba8812995307")
 			(units
 				(unit
 					(name "A")
@@ -10713,7 +10840,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "fc80d504-4912-4e4d-8cea-ae0cb69d3249")
+			(tstamps "e3316d25-e9e8-4392-bc19-b47f4ef12e11")
 			(units
 				(unit
 					(name "A")
@@ -10855,7 +10982,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "6827c076-a438-4fe4-b523-23d5190b67e6")
+			(tstamps "133442e9-08d7-4da8-944a-c3a1554c43b5")
 			(units
 				(unit
 					(name "A")
@@ -10997,7 +11124,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "0b3b785f-c895-438e-b6b7-566df2407803")
+			(tstamps "c8ec2e5e-1764-42c4-9889-af8dcb866d8a")
 			(units
 				(unit
 					(name "A")
@@ -11287,7 +11414,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "bca496c8-611c-4e72-a868-6b4e84981404")
+			(tstamps "f5151bb8-38dd-479e-8b15-66c17097d182")
 			(units
 				(unit
 					(name "A")
@@ -11429,7 +11556,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "288090ed-0dbc-4322-aaf3-8eb689a4f669")
+			(tstamps "95cc3041-6504-4dba-bbe5-ed0cfc5fc9d1")
 			(units
 				(unit
 					(name "A")
@@ -11571,7 +11698,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "83e42021-473b-4406-9ab4-c0c3bb455ab7")
+			(tstamps "d3d7362b-cae4-4d13-b005-122b6dbc65db")
 			(units
 				(unit
 					(name "A")
@@ -11713,7 +11840,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "4e73f224-771e-4554-b1c3-0d16680d5afe")
+			(tstamps "2bfac2ed-a3d9-4e53-8d53-b38ec1566260")
 			(units
 				(unit
 					(name "A")
@@ -11855,7 +11982,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "08d10e34-8a97-497a-b21b-a3be7f3d3685")
+			(tstamps "97f776bc-f1cc-416c-a5ae-c139f0044eb4")
 			(units
 				(unit
 					(name "A")
@@ -11997,7 +12124,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "3bcac923-d3c8-4970-9743-dddba9777a6b")
+			(tstamps "b6ec62ac-49e4-4e92-b0fa-044e20c57ffd")
 			(units
 				(unit
 					(name "A")
@@ -12139,7 +12266,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "55fc0b5a-aaa1-4888-98c3-91040c2c8860")
+			(tstamps "715ef60f-b25c-4462-9601-f869d42a3dcd")
 			(units
 				(unit
 					(name "A")
@@ -12281,7 +12408,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "7c98d417-143f-4190-aa19-b442150c28de")
+			(tstamps "f06062d8-9329-4881-a238-a94f301995e7")
 			(units
 				(unit
 					(name "A")
@@ -12423,7 +12550,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "f37dc2f9-092f-410a-86f0-2276b5240f48")
+			(tstamps "8ae32e5f-d191-4b42-8294-26d7547ed6be")
 			(units
 				(unit
 					(name "A")
@@ -12565,7 +12692,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "746e9353-6abd-4e92-8760-09d23d4456e0")
+			(tstamps "98a7b5ba-d177-48ef-acda-6152f0c7766f")
 			(units
 				(unit
 					(name "A")
@@ -12707,7 +12834,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "0dcaefc4-12e1-4768-8438-a5a15f38b7dd")
+			(tstamps "c97dd5ad-64bb-48ce-bea4-8f8473ea30e8")
 			(units
 				(unit
 					(name "A")
@@ -12849,7 +12976,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "d4549912-58f2-4352-bcd4-04bf867a56f9")
+			(tstamps "7bbc67ff-fe69-4b64-9494-150e6e1406d2")
 			(units
 				(unit
 					(name "A")
@@ -12991,7 +13118,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "1bb1749c-404c-4e3f-aad6-df472863b9fe")
+			(tstamps "edd9e72b-392d-4317-8e90-523413ac325b")
 			(units
 				(unit
 					(name "A")
@@ -13133,7 +13260,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "6e6d83c5-69b7-45b3-b1ab-7673c22bb954")
+			(tstamps "7bfb4083-63b4-489a-ab27-12b93adbdcf6")
 			(units
 				(unit
 					(name "A")
@@ -13275,7 +13402,7 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "39f2f6e5-7034-406f-8fc2-fbe83d86dd37")
+			(tstamps "0c8d9362-3d93-47e3-917f-63cb867786c9")
 			(units
 				(unit
 					(name "A")
@@ -13417,7 +13544,1095 @@
 				(names "/Project Architecture/Temperature Sense/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
 			)
-			(tstamps "90fb336c-d71b-438c-b4c0-5b8bb771c80e")
+			(tstamps "b420ccc4-3371-4533-8941-3437d0fab10a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "3ea58ab1-0af1-4012-a8b8-9d9f43b4e905")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "5872cbe1-8d99-4a5b-8215-97bd67c9f8b9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U6")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "79e6b2d8-1b2d-4146-bf19-b0e6f62d7da3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U7")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "e6ef2e4e-554e-45d5-ba83-07068f304023")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U8")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "2850266e-ddc8-4827-b292-b4ef0fb26df7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U9")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "b3acf1c4-c8b1-499f-abbc-868cd4f9eb0d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U10")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "484417a5-db00-4535-bda1-6f6dfc0011dc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U11")
+			(value "TPD1E05U06QDPYRQ1")
+			(footprint "remote_tpd1e04u04dpyr:DPY2_TEX")
+			(datasheet "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(fields
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(libsource
+				(lib "remote_tpd1e04u04dpyr")
+				(part "TPD1E04U04DPYR")
+				(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			)
+			(property
+				(name "Manufacturer")
+				(value "Texas Instruments")
+			)
+			(property
+				(name "Manufacturer Part Number")
+				(value "TPD1E05U06QDPYRQ1")
+			)
+			(property
+				(name "Vendor")
+				(value "")
+			)
+			(property
+				(name "Vendor Part Number")
+				(value "")
+			)
+			(property
+				(name "Mass (g)")
+				(value "")
+			)
+			(property
+				(name "RQjC (C/W)")
+				(value "")
+			)
+			(property
+				(name "RQjC_top (C/W)")
+				(value "")
+			)
+			(property
+				(name "Temp_max (C)")
+				(value "")
+			)
+			(property
+				(name "Temp_min (C)")
+				(value "")
+			)
+			(property
+				(name "Power Dissipation (W)")
+				(value "")
+			)
+			(property
+				(name "Rate")
+				(value "")
+			)
+			(property
+				(name "SAP Code")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Temperature Sense")
+			)
+			(property
+				(name "Sheetfile")
+				(value "temperature_sense.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "TPD1E04U04DPYR")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DPY2_TEX DPY2_TEX-M DPY2_TEX-L")
+			)
+			(sheetpath
+				(names "/Project Architecture/Temperature Sense/")
+				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/5c43fae8-c8c3-4cd8-ae8e-f6cc7c617855/")
+			)
+			(tstamps "d5bd936d-5246-4b83-b0c5-ac311aaccfb8")
 			(units
 				(unit
 					(name "A")
@@ -14286,15 +15501,15 @@
 		)
 		(comp
 			(ref "CR1")
-			(value "PESD1CAN,215")
+			(value "ESD562DBZRQ1")
 			(footprint "remote_pesd1can_215:SOT23_PESD1_NEX")
-			(datasheet "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
-			(description "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+			(datasheet "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
+			(description "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			(fields
 				(field
-					(name "Manufacturer") "Nexperia USA Inc.")
+					(name "Manufacturer") "Texas Instruments")
 				(field
-					(name "Manufacturer Part Number") "PESD1CAN,215")
+					(name "Manufacturer Part Number") "ESD562DBZRQ1")
 				(field
 					(name "Vendor")
 				)
@@ -14328,22 +15543,22 @@
 				(field
 					(name "Footprint") "remote_pesd1can_215:SOT23_PESD1_NEX")
 				(field
-					(name "Datasheet") "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
 				(field
-					(name "Description") "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+					(name "Description") "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			)
 			(libsource
 				(lib "remote_pesd1can_215")
 				(part "PESD1CAN_215")
-				(description "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+				(description "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Nexperia USA Inc.")
+				(value "Texas Instruments")
 			)
 			(property
 				(name "Manufacturer Part Number")
-				(value "PESD1CAN,215")
+				(value "ESD562DBZRQ1")
 			)
 			(property
 				(name "Vendor")
@@ -14405,7 +15620,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "4f5b1003-5e3d-45c8-84bc-b915a53f2055")
+			(tstamps "0342ab79-4964-4dba-94e3-bb1b0b88ad8c")
 			(units
 				(unit
 					(name "A")
@@ -14425,15 +15640,15 @@
 		)
 		(comp
 			(ref "CR2")
-			(value "PESD1CAN,215")
+			(value "ESD562DBZRQ1")
 			(footprint "remote_pesd1can_215:SOT23_PESD1_NEX")
-			(datasheet "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
-			(description "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+			(datasheet "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
+			(description "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			(fields
 				(field
-					(name "Manufacturer") "Nexperia USA Inc.")
+					(name "Manufacturer") "Texas Instruments")
 				(field
-					(name "Manufacturer Part Number") "PESD1CAN,215")
+					(name "Manufacturer Part Number") "ESD562DBZRQ1")
 				(field
 					(name "Vendor")
 				)
@@ -14467,22 +15682,22 @@
 				(field
 					(name "Footprint") "remote_pesd1can_215:SOT23_PESD1_NEX")
 				(field
-					(name "Datasheet") "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
 				(field
-					(name "Description") "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+					(name "Description") "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			)
 			(libsource
 				(lib "remote_pesd1can_215")
 				(part "PESD1CAN_215")
-				(description "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+				(description "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 			)
 			(property
 				(name "Manufacturer")
-				(value "Nexperia USA Inc.")
+				(value "Texas Instruments")
 			)
 			(property
 				(name "Manufacturer Part Number")
-				(value "PESD1CAN,215")
+				(value "ESD562DBZRQ1")
 			)
 			(property
 				(name "Vendor")
@@ -14544,7 +15759,7 @@
 				(names "/Project Architecture/Daisy Chain/")
 				(tstamps "/c5103ceb-5325-4a84-a025-9638a412984e/f0b77e72-3d76-4cd4-bd9c-26bca4deb7f1/")
 			)
-			(tstamps "8e2bf5f6-b511-42ef-8410-8eda62b54022")
+			(tstamps "caa5f316-d0d4-4fcb-a573-46c31a2f3159")
 			(units
 				(unit
 					(name "A")
@@ -17466,8 +18681,8 @@
 		(libpart
 			(lib "remote_cga4j3x7r1h225k125ae")
 			(part "C")
-			(description "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
-			(docs "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_en.pdf")
+			(description "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
+			(docs "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V")
 			(footprints
 				(fp "C_*")
 			)
@@ -17475,17 +18690,17 @@
 				(field
 					(name "Reference") "C")
 				(field
-					(name "Value") "2.2µF")
+					(name "Value") "2.2 µF")
 				(field
 					(name "Footprint") "remote_c0805x224k1racauto:C_0805_2012Metric")
 				(field
-					(name "Datasheet") "https://product.tdk.com/en/system/files/dam/doc/product/capacitor/ceramic/mlcc/catalog/mlcc_automotive_soft_en.pdf")
+					(name "Datasheet") "https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X7R_6_3V-TO-250V")
 				(field
-					(name "Description") "2.2 µF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
+					(name "Description") "2.2 uF ±10% 50V Ceramic Capacitor X7R 0805 (2012 Metric)")
 				(field
-					(name "Manufacturer") "TDK")
+					(name "Manufacturer") "YAGEO")
 				(field
-					(name "Manufacturer Part Number") "CGA4J3X7R1H225K125AE")
+					(name "Manufacturer Part Number") "CC0805KKX7R9BB225")
 				(field
 					(name "Vendor")
 				)
@@ -18710,8 +19925,8 @@
 		(libpart
 			(lib "remote_pesd1can_215")
 			(part "PESD1CAN_215")
-			(description "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
-			(docs "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
+			(description "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
+			(docs "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
 			(footprints
 				(fp "SOT23_PESD1_NEX")
 				(fp "SOT23_PESD1_NEX-M")
@@ -18721,17 +19936,17 @@
 				(field
 					(name "Reference") "CR")
 				(field
-					(name "Value") "PESD1CAN,215")
+					(name "Value") "ESD562DBZRQ1")
 				(field
 					(name "Footprint") "remote_pesd1can_215:SOT23_PESD1_NEX")
 				(field
-					(name "Datasheet") "https://assets.nexperia.com/documents/data-sheet/PESD1CAN.pdf")
+					(name "Datasheet") "https://www.ti.com/lit/ds/symlink/esd562-q1.pdf?ts=1750228012907")
 				(field
-					(name "Description") "70V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount TO-236AB")
+					(name "Description") "25V Clamp 3A (8/20µs) Ipp Tvs Diode Surface Mount SOT-23-3")
 				(field
-					(name "Manufacturer") "Nexperia USA Inc.")
+					(name "Manufacturer") "Texas Instruments")
 				(field
-					(name "Manufacturer Part Number") "PESD1CAN,215")
+					(name "Manufacturer Part Number") "ESD562DBZRQ1")
 				(field
 					(name "Vendor")
 				)
@@ -18919,6 +20134,75 @@
 					(num "6")
 					(name "")
 					(type "unspecified")
+				)
+			)
+		)
+		(libpart
+			(lib "remote_tpd1e04u04dpyr")
+			(part "TPD1E04U04DPYR")
+			(description "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+			(docs "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+			(footprints
+				(fp "DPY2_TEX")
+				(fp "DPY2_TEX-M")
+				(fp "DPY2_TEX-L")
+			)
+			(fields
+				(field
+					(name "Reference") "U4")
+				(field
+					(name "Value") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Footprint") "remote_tpd1e04u04dpyr:DPY2_TEX")
+				(field
+					(name "Datasheet") "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Ftpd1e05u06-q1")
+				(field
+					(name "Description") "14V (Typ) Clamp 2.5A (8/20µs) Ipp Tvs Diode Surface Mount 2-X1SON (1x.60)")
+				(field
+					(name "Manufacturer") "Texas Instruments")
+				(field
+					(name "Manufacturer Part Number") "TPD1E05U06QDPYRQ1")
+				(field
+					(name "Vendor")
+				)
+				(field
+					(name "Vendor Part Number")
+				)
+				(field
+					(name "Mass (g)")
+				)
+				(field
+					(name "RQjC (C/W)")
+				)
+				(field
+					(name "RQjC_top (C/W)")
+				)
+				(field
+					(name "Temp_max (C)")
+				)
+				(field
+					(name "Temp_min (C)")
+				)
+				(field
+					(name "Power Dissipation (W)")
+				)
+				(field
+					(name "Rate")
+				)
+				(field
+					(name "SAP Code")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "I/O")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "power_out")
 				)
 			)
 		)
@@ -19925,6 +21209,12 @@
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "I/O_1")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "37")
@@ -19950,6 +21240,12 @@
 				(ref "TP18")
 				(pin "1")
 				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "I/O_1")
 				(pintype "passive")
 			)
 		)
@@ -19979,6 +21275,12 @@
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
+			(node
+				(ref "U6")
+				(pin "1")
+				(pinfunction "I/O_1")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "39")
@@ -20004,6 +21306,12 @@
 				(ref "TP16")
 				(pin "1")
 				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U7")
+				(pin "1")
+				(pinfunction "I/O_1")
 				(pintype "passive")
 			)
 		)
@@ -20033,6 +21341,12 @@
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
+			(node
+				(ref "U8")
+				(pin "1")
+				(pinfunction "I/O_1")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "41")
@@ -20058,6 +21372,12 @@
 				(ref "TP14")
 				(pin "1")
 				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U9")
+				(pin "1")
+				(pinfunction "I/O_1")
 				(pintype "passive")
 			)
 		)
@@ -20087,6 +21407,12 @@
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
+			(node
+				(ref "U10")
+				(pin "1")
+				(pinfunction "I/O_1")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "43")
@@ -20112,6 +21438,12 @@
 				(ref "TP12")
 				(pin "1")
 				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U11")
+				(pin "1")
+				(pinfunction "I/O_1")
 				(pintype "passive")
 			)
 		)
@@ -20955,6 +22287,54 @@
 				(pin "65")
 				(pinfunction "PAD_65")
 				(pintype "unspecified")
+			)
+			(node
+				(ref "U10")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U11")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U6")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U7")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U8")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U9")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_out")
 			)
 		)
 		(net
