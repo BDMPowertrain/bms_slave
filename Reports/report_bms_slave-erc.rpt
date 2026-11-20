@@ -1,4 +1,4 @@
-ERC report (2026-11-20T18:07:16, Encoding UTF8)
+ERC report (2026-11-20T18:44:58, Encoding UTF8)
 
 ***** Sheet /
 [lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
@@ -265,14 +265,6 @@ ERC report (2026-11-20T18:07:16, Encoding UTF8)
     ; warning
     @(1.0922 mm, 1.3716 mm): Symbol #PWR029 [GND]
 
-[footprint_link_issues]: The current configuration does not include the footprint library 'remote_c0805x224k1racauto'
-    ; warning
-    @(1.1176 mm, 0.9398 mm): Symbol C21 [C]
-
-[lib_symbol_issues]: The symbol library 'remote_cga4j3x7r1h225k125ae' was not found at '/home/aidan/git/bms_slave/RemoteLibrary/symbols/remote_cga4j3x7r1h225k125ae.kicad_sym'
-    ; warning
-    @(1.1176 mm, 0.9398 mm): Symbol C21 [C]
-
 [lib_symbol_mismatch]: Symbol 'VSSA' doesn't match copy in library 'power'
     ; warning
     @(1.2192 mm, 0.6604 mm): Symbol #PWR030 [VSSA]
@@ -292,10 +284,6 @@ ERC report (2026-11-20T18:07:16, Encoding UTF8)
 [lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
     ; warning
     @(1.7526 mm, 0.9398 mm): Symbol #PWR034 [GND]
-
-[footprint_link_issues]: The current configuration does not include the footprint library 'remote_c0805x224k1racauto'
-    ; warning
-    @(1.9558 mm, 0.7366 mm): Symbol C28 [C]
 
 [lib_symbol_mismatch]: Symbol 'GND' doesn't match copy in library 'power'
     ; warning
@@ -558,4 +546,4 @@ ERC report (2026-11-20T18:07:16, Encoding UTF8)
 
 ***** Sheet /Project Architecture/Mechanical/
 ***** Sheet /Revision History/
- ** ERC messages: 113  Errors 0  Warnings 113
+ ** ERC messages: 110  Errors 0  Warnings 110
